@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductHomeController;
 use App\Http\Controllers\ProductCreateController;
 use App\Http\Controllers\ProductListController;
+use App\Http\Controllers\ProductStockController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,3 +26,4 @@ Route::get('/product/home',[ProductHomeController::class, 'index'])->name('produ
 Route::get('/product/create',[ProductCreateController::class, 'index'])->name('productCreate.index');
 Route::get('/product/list',[ProductListController::class, 'index'])->name('productList.index');
 Route::get('/product/list/faulty',[ProductListController::class, 'faulty'])->name('productListFaulty.index');
+Route::get('/product/stocks',[ProductStockController::class, 'index'])->name('productStocks.index');
