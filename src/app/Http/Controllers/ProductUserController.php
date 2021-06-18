@@ -11,4 +11,8 @@ class ProductUserController extends Controller
     {
         return view('product.user.activities.index');
     }
+    public function leave()
+    {
+        return view('product.user.leave.index');
+    }
 }
