@@ -72,7 +72,7 @@
                         <div class="text-left mt-2">
                             <h4>Others</h4>
                             <a href="" class="btn btn-outline-dark btn-sm mb-2">Leave Request</a> <br>
-                            <a href="" class="btn btn-outline-dark btn-sm mb-2">Activities</a> <br>
+                            <a href="{{route('userActivities.index')}}" class="btn btn-outline-dark btn-sm mb-2">Activities</a> <br>
                             <a href="" class="btn btn-outline-dark btn-sm mb-2">Administration</a> <br>
                         </div>
                     </div>
