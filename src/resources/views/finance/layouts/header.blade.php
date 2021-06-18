@@ -18,7 +18,7 @@
                         <li class="nav-item"><a class="nav-link" href="lawyer_meetings.php">Reports</a></li>
                         <li class="nav-item"><a class="nav-link" href="lawyer_reports.php">Budgeting</a></li>
                         <li class="nav-item"><a class="nav-link" href="lawyer_payments.php">Leave Request</a></li>
-                        <li class="nav-item"><a class="nav-link" href="lawyer_chats.php">Chats</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{route('finance.chat.index')}}">Chats</a></li>
                         <li class="nav-item"><a class="nav-link" href="lawyer_reviews.php">Import/Export</a></li>
                     </ul>
                 <div class="navbar-nav ml-auto">

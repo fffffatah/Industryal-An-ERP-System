@@ -4,7 +4,7 @@
     <table>
         <tr>
             <td align="left" style="padding:20px;">
-            <div class="card border-warning mb3" style="height:300px;width:1000px">
+            <div class="card border-warning mb3" style="height:300px;width:1120px">
                 <div class="card-header">Organization</div>
                     <div class="card-body">
                     <table>
@@ -27,8 +27,6 @@
                         </table>
                     </div>
                 </div>
-            </td>
-            <td align="center" style="padding:20px;">
             </td>
         </tr>
     </table>

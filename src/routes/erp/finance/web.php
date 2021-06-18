@@ -16,3 +16,4 @@ Route::get('/finance/dashboard', ['as'=>'finance.dashboard.index', 'uses'=>'Fina
 Route::get('/finance/invoice', ['as'=>'finance.invoice.index', 'uses'=>'FinanceInvoiceController@index_invoice']);
 Route::get('/finance/invoice/listcustomer', ['as'=>'finance.invoice.listcustomer.index', 'uses'=>'FinanceInvoiceController@index_invoice_listcustomer']);
 Route::get('/finance/invoice/listsupplier', ['as'=>'finance.invoice.listsupplier.index', 'uses'=>'FinanceInvoiceController@index_invoice_listsupplier']);
+Route::get('/finance/chat', ['as'=>'finance.chat.index', 'uses'=>'FinanceChatController@index']);
