@@ -5,6 +5,8 @@ use App\Http\Controllers\ProductHomeController;
 use App\Http\Controllers\ProductCreateController;
 use App\Http\Controllers\ProductListController;
 use App\Http\Controllers\ProductStockController;
+use App\Http\Controllers\ProductStatisticsController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,3 +29,4 @@ Route::get('/product/create',[ProductCreateController::class, 'index'])->name('p
 Route::get('/product/list',[ProductListController::class, 'index'])->name('productList.index');
 Route::get('/product/list/faulty',[ProductListController::class, 'faulty'])->name('productListFaulty.index');
 Route::get('/product/stocks',[ProductStockController::class, 'index'])->name('productStocks.index');
+Route::get('/product/statistics',[ProductStatisticsController::class, 'index'])->name('productStatistics.index');
