@@ -15,4 +15,8 @@ class ProductUserController extends Controller
     {
         return view('product.user.leave.index');
     }
+    public function administration()
+    {
+        return view('product.user.administration.index');
+    }
 }
