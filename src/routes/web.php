@@ -8,6 +8,7 @@ use App\Http\Controllers\ProductStockController;
 use App\Http\Controllers\ProductStatisticsController;
 use App\Http\Controllers\WarehouseListController;
 use App\Http\Controllers\WarehouseStatisticsController;
+use App\Http\Controllers\ProductOtherActivitiesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,3 +37,6 @@ Route::get('/product/statistics',[ProductStatisticsController::class, 'index'])-
 //Warehouse
 Route::get('/warehouse/list',[WarehouseListController::class, 'index'])->name('warehouseList.index');
 Route::get('/warehouse/statistics',[WarehouseStatisticsController::class, 'index'])->name('warehouseStatistics.index');
+
+//Others
+Route::get('/user/activities',[ProductOtherActivitiesController::class, 'index'])->name('userActivities.index');
