@@ -9,6 +9,7 @@ use App\Http\Controllers\ProductStatisticsController;
 use App\Http\Controllers\WarehouseListController;
 use App\Http\Controllers\WarehouseStatisticsController;
 use App\Http\Controllers\ProductUserController;
+use App\Http\Controllers\ProductTransferController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,6 +34,7 @@ Route::get('/product/list',[ProductListController::class, 'index'])->name('produ
 Route::get('/product/list/faulty',[ProductListController::class, 'faulty'])->name('productListFaulty.index');
 Route::get('/product/stocks',[ProductStockController::class, 'index'])->name('productStocks.index');
 Route::get('/product/statistics',[ProductStatisticsController::class, 'index'])->name('productStatistics.index');
+Route::get('/product/transfer',[ProductTransferController::class, 'index'])->name('productTransfer.index');
 
 //Warehouse
 Route::get('/warehouse/list',[WarehouseListController::class, 'index'])->name('warehouseList.index');
