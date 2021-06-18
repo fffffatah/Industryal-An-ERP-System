@@ -71,7 +71,7 @@
                         </div>
                         <div class="text-left mt-2">
                             <h4>Others</h4>
-                            <a href="" class="btn btn-outline-dark btn-sm mb-2">Leave Request</a> <br>
+                            <a href="{{route('userLeave.index')}}" class="btn btn-outline-dark btn-sm mb-2">Leave Request</a> <br>
                             <a href="{{route('userActivities.index')}}" class="btn btn-outline-dark btn-sm mb-2">Activities</a> <br>
                             <a href="" class="btn btn-outline-dark btn-sm mb-2">Administration</a> <br>
                         </div>
@@ -120,7 +120,7 @@
                                         <tr>
                                             <td clospan="3">Description</td>
                                             <td colspan="3">
-                                                <textarea name="" id="" cols="50" rows="2" class="form-control"></textarea>  
+                                                <input type="text" name="" id="" class="form-control">  
                                             </td>
                                         </tr>
                                         <tr>
@@ -139,8 +139,8 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td clospan="3">Nature of product</td>
-                                            <td clospan="3">
+                                            <td>Nature of product</td>
+                                            <td clospan="2">
                                                 <select class="form-control" id="warehouse">
                                                     <option>Manufactired Product</option>
                                                     <option>Raw Material</option>
