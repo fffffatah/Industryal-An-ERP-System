@@ -17,7 +17,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-2">
             <div class="container">
-            <a href="" class="navbar-brand">Industryal</a>
+            <a href="{{route('productHome.index')}}" class="navbar-brand">Industryal</a>
             <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -56,7 +56,7 @@
                 <div class="col-12 col-lg-2 border border-dark bg-light rounded p-3">
                         <div class="text-left mt-2 rounded">
                             <h4>Products</h4>
-                            <a href="" class="btn btn-outline-dark btn-sm mb-2">New Product</a> <br>
+                            <a href="{{route('productCreate.index')}}" class="btn btn-outline-dark btn-sm mb-2">New Product</a> <br>
                             <a href="" class="btn btn-outline-dark btn-sm mb-2">List</a> <br>
                             <a href="" class="btn btn-outline-dark btn-sm mb-2">Faulty Products</a> <br>
                             <a href="" class="btn btn-outline-dark btn-sm mb-2">Stocks</a> <br>
