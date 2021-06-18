@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductCreateController;
 use App\Http\Controllers\ProductListController;
 use App\Http\Controllers\ProductStockController;
 use App\Http\Controllers\ProductStatisticsController;
+use App\Http\Controllers\WarehouseListsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,10 +24,14 @@ Route::get('/', function () {
 });
 
 
-// Product
+                                    // Products
+//Product
 Route::get('/product/home',[ProductHomeController::class, 'index'])->name('productHome.index');
 Route::get('/product/create',[ProductCreateController::class, 'index'])->name('productCreate.index');
 Route::get('/product/list',[ProductListController::class, 'index'])->name('productList.index');
 Route::get('/product/list/faulty',[ProductListController::class, 'faulty'])->name('productListFaulty.index');
 Route::get('/product/stocks',[ProductStockController::class, 'index'])->name('productStocks.index');
 Route::get('/product/statistics',[ProductStatisticsController::class, 'index'])->name('productStatistics.index');
+
+//Warehouse
+Route::get('/warehouse/list',[WarehouseListsController::class, 'index'])->name('warehouseList.index');
