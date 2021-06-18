@@ -6,7 +6,7 @@ use App\Http\Controllers\ProductCreateController;
 use App\Http\Controllers\ProductListController;
 use App\Http\Controllers\ProductStockController;
 use App\Http\Controllers\ProductStatisticsController;
-use App\Http\Controllers\WarehouseListsController;
+use App\Http\Controllers\WarehouseListController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,4 +34,4 @@ Route::get('/product/stocks',[ProductStockController::class, 'index'])->name('pr
 Route::get('/product/statistics',[ProductStatisticsController::class, 'index'])->name('productStatistics.index');
 
 //Warehouse
-Route::get('/warehouse/list',[WarehouseListsController::class, 'index'])->name('warehouseList.index');
+Route::get('/warehouse/list',[WarehouseListController::class, 'index'])->name('warehouseList.index');
