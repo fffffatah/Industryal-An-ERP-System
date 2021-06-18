@@ -22,9 +22,8 @@
             <td align="center">
             <div class="card border-warning mb3" style="height:600px;width:1100px">
                 <div class="card-header">Supplier Invoices</div>
-                    <div class="card-body">
-                    <div class="card-body scroll-box">
-                    <div class="overflow-auto">
+                <div class="card-body scroll-box">
+                    <div class="table-responsive">
                         <table class="table table-striped">
                             <tr>
                                 <th scope="col">#SR</th>
