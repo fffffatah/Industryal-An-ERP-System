@@ -61,7 +61,7 @@
                             <a href="{{route('productListFaulty.index')}}" class="btn btn-outline-dark btn-sm mb-2">Faulty Products</a> <br>
                             <a href="{{route('productStocks.index')}}" class="btn btn-outline-dark btn-sm mb-2">Stocks</a> <br>
                             <a href="" class="btn btn-outline-dark btn-sm mb-2">Transfer Product</a> <br>
-                            <a href="" class="btn btn-outline-dark btn-sm mb-2">Statistics</a> <br> <hr>
+                            <a href="{{route('productStatistics.index')}}" class="btn btn-outline-dark btn-sm mb-2">Statistics</a> <br> <hr>
                         </div>
                         <div class="text-left mt-2">
                             <h4>Warehouse</h4>

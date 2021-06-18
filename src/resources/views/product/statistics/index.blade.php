@@ -79,7 +79,7 @@
                 <div class="col-12 col-lg-9 border border-dark rounded p-3">
                         <div class="container">
                             <div class="row justify-content-center">
-                                <h3>All Products</h3>
+                                <h3>Statistics</h3>
                             </div>
                         </div>
                     </div>
