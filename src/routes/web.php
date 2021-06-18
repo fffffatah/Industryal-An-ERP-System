@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductHomeController;
+use App\Http\Controllers\ProductCreateController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,4 +20,5 @@ Route::get('/', function () {
 
 
 // Product
-Route::get('/product/home',[ProductHomeController::class, 'index'])->name('producthome.index');
+Route::get('/product/home',[ProductHomeController::class, 'index'])->name('productHome.index');
+Route::get('/product/create',[ProductCreateController::class, 'index'])->name('productCreate.index');
