@@ -73,7 +73,7 @@
                             <h4>Others</h4>
                             <a href="{{route('userLeave.index')}}" class="btn btn-outline-dark btn-sm mb-2">Leave Request</a> <br>
                             <a href="{{route('userActivities.index')}}" class="btn btn-outline-dark btn-sm mb-2">Activities</a> <br>
-                            <a href="" class="btn btn-outline-dark btn-sm mb-2">Administration</a> <br>
+                            <a href="{{route('userAdministration.index')}}" class="btn btn-outline-dark btn-sm mb-2">Administration</a> <br>
                         </div>
                     </div>
                 <div class="col-12 col-lg-9 border border-dark rounded p-3">
@@ -112,7 +112,7 @@
                                         <tr>
                                             <td clospan="3">Description</td>
                                             <td colspan="3">
-                                                <input type="text" name="" id="" class="form-control">  
+                                                <textarea type="text" name="" id="" class="form-control"> </textarea>  
                                             </td>
                                         </tr>
                                         <tr>
