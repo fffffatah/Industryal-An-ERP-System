@@ -67,7 +67,7 @@
                             <h4>Warehouse</h4>
                             <a href="" class="btn btn-outline-dark btn-sm mb-2">New Warehouse</a> <br>
                             <a href="{{route('warehouseList.index')}}" class="btn btn-outline-dark btn-sm mb-2">List</a> <br>
-                            <a href="" class="btn btn-outline-dark btn-sm mb-2">Statistics</a> <br> <hr>
+                            <a href="{{route('warehouseStatistics.index')}}" class="btn btn-outline-dark btn-sm mb-2">Statistics</a> <br> <hr>
                         </div>
                         <div class="text-left mt-2">
                             <h4>Others</h4>
