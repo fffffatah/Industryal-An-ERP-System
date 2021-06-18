@@ -57,8 +57,8 @@
                         <div class="text-left mt-2 rounded">
                             <h4>Products</h4>
                             <a href="{{route('productCreate.index')}}" class="btn btn-outline-dark btn-sm mb-2">New Product</a> <br>
-                            <a href="" class="btn btn-outline-dark btn-sm mb-2">List</a> <br>
-                            <a href="" class="btn btn-outline-dark btn-sm mb-2">Faulty Products</a> <br>
+                            <a href="{{route('productList.index')}}" class="btn btn-outline-dark btn-sm mb-2">List</a> <br>
+                            <a href="{{route('productListFaulty.index')}}" class="btn btn-outline-dark btn-sm mb-2">Faulty Products</a> <br>
                             <a href="" class="btn btn-outline-dark btn-sm mb-2">Stocks</a> <br>
                             <a href="" class="btn btn-outline-dark btn-sm mb-2">Transfer Product</a> <br>
                             <a href="" class="btn btn-outline-dark btn-sm mb-2">Statistics</a> <br> <hr>
