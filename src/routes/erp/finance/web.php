@@ -1,10 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
-| Web Routes
+| Web Routes (Finance and Accounting Features)
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
@@ -13,7 +12,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-Route::get('/', function () {
-    return redirect() -> route('signin.index');  
-});
+Route::get('/finance/dashboard', ['as'=>'finance.dashboard.index', 'uses'=>'FinanceController@index_dashboard']);
