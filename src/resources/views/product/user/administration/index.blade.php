@@ -88,7 +88,7 @@
                                 <form action="">
                                     <table class="table table-striped table-bordered">
                                         <tr>
-                                            <td>Description</td>
+                                            <td>Message</td>
                                             <td>
                                                 <textarea type="text" name="" id="" class="form-control"> </textarea>  
                                             </td>
