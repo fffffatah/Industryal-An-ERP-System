@@ -7,6 +7,7 @@ use App\Http\Controllers\HRemployeeController;
 use App\Http\Controllers\HRexpenseController;
 use App\Http\Controllers\HRexpenseListController;
 use App\Http\Controllers\HRLeaveController;
+use App\Http\Controllers\HRpayrollController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,5 +34,8 @@ Route::get('/expense/report',[HRexpenseController::class,'report'])->name('HRexp
 //Expense List
 Route::get('/expense/list',[HRexpenseListController::class,'list'])->name('HRexpenseList.list');
 //leave request
-Route::get('/leave/request',[HRLeaveController::class,'leave'])->name('HRLeaveController.leave');
+Route::get('/leave/request',[HRLeaveController::class,'leave'])->name('HRLeave.leave');
+//payroll
+Route::get('/payroll/show',[HRpayrollController::class,'show'])->name('HRpayroll.show');
+
 

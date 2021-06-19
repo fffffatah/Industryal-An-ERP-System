@@ -39,18 +39,18 @@
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRuser.index')}}">User List</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRemployee.create')}}">New Employee</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="#">New group</a></li>
-                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRLeaveController.leave')}}">Create Leave Request</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRLeave.leave')}}">Create Leave Request</a></li>
                         
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRexpense.report')}}">Create Expense Report</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRexpenseList.list')}}">List Expense  Report</a></li>
-                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="#">Payroll</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRpayroll.show')}}">Payroll</a></li>
                     </ul>
                 </nav>
             </div>
             <div class="col-10">
                 <div class="info-section p-3 text-black my-5">
                     <div class="title text-center mb-3">
-                        <h3 class="font-width-border">User information</h3>
+                        <h3 class="font-width-border"><i class="fal fa-person-sign"></i>Employee information</h3>
                     </div>
                     <div class="border border-primary w-75  m-auto">
                         <form action="" class="w-50 m-auto  " >
