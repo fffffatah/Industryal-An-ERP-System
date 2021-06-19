@@ -1,4 +1,4 @@
-{{-- @include('sales.layouts.header'); --}}
+@include('sales.layouts.header');
 <!DOCTYPE html>
 <html lang="en">
 <head>
