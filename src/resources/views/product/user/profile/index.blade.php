@@ -51,31 +51,16 @@
             <div class="row mt-2 justify-content-around">
                 <div class="col-12 col-lg-2 border border-dark bg-light rounded p-3">
                         <div class="text-left mt-2 rounded">
-                            <h4>Products</h4>
-                            <a href="{{route('productCreate.index')}}" class="btn btn-outline-dark btn-sm mb-2">New Product</a> <br>
-                            <a href="{{route('productList.index')}}" class="btn btn-outline-dark btn-sm mb-2">List</a> <br>
-                            <a href="{{route('productListFaulty.index')}}" class="btn btn-outline-dark btn-sm mb-2">Faulty Products</a> <br>
-                            <a href="{{route('productStocks.index')}}" class="btn btn-outline-dark btn-sm mb-2">Stocks</a> <br>
-                            <a href="{{route('productTransfer.index')}}" class="btn btn-outline-dark btn-sm mb-2">Transfer Product</a> <br>
-                            <a href="{{route('productStatistics.index')}}" class="btn btn-outline-dark btn-sm mb-2">Statistics</a> <br> <hr>
-                        </div>
-                        <div class="text-left mt-2">
-                            <h4>Warehouse</h4>
-                            <a href="{{route('warehouseCreate.index')}}" class="btn btn-outline-dark btn-sm mb-2">New Warehouse</a> <br>
-                            <a href="{{route('warehouseList.index')}}" class="btn btn-outline-dark btn-sm mb-2">List</a> <br>
-                            <a href="{{route('warehouseStatistics.index')}}" class="btn btn-outline-dark btn-sm mb-2">Statistics</a> <br> <hr>
-                        </div>
-                        <div class="text-left mt-2">
-                            <h4>Others</h4>
-                            <a href="{{route('userLeave.index')}}" class="btn btn-outline-dark btn-sm mb-2">Leave Request</a> <br>
-                            <a href="{{route('userActivities.index')}}" class="btn btn-outline-dark btn-sm mb-2">Activities</a> <br>
-                            <a href="{{route('userAdministration.index')}}" class="btn btn-outline-dark btn-sm mb-2">Administration</a> <br>
+                            <h4>Username</h4>
+                            <a href="{{route('userEditProfile.index')}}" class="btn btn-primary btn-sm mb-2">Edit Profile</a> <br>
+                            <a href="{{route('userEditProfilePicture.index')}}" class="btn btn-warning btn-sm mb-2">Update Profile Picture</a> <br>
+                            <a href="{{route('userChangePassword.index')}}" class="btn btn-danger btn-sm mb-2">Change Password</a> <br>
                         </div>
                     </div>
                 <div class="col-12 col-lg-9 border border-dark rounded p-3">
                         <div class="container">
                             <div class="row justify-content-center">
-                                <h3> <i class="fas fa-user"></i> &nbsp Administration</h3>
+                                <h3><i class="fas fa-user"></i> Profile</h3>
                             </div>
                         </div>
                         <hr class="mb-4">
@@ -84,19 +69,39 @@
                                 <form action="">
                                     <table class="table table-striped table-bordered">
                                         <tr>
-                                            <td>Message</td>
-                                            <td>
-                                                <textarea type="text" name="" id="" class="form-control"> </textarea>  
-                                            </td>
+                                            <td >First Name</td>
+                                            <td > Gennady</td>
                                         </tr>
                                         <tr>
-                                            <td colspan="2" align="center" ><input type="submit" class="btn btn-success" value="Send" style="width:400px"></td>
+                                            <td >Last Name</td>
+                                            <td > Korotkevich </td>
+                                        </tr>
+                                        <tr>
+                                            <td >Email</td>
+                                            <td >Gennady@industryal.com</td>
+                                        </tr>
+                                        <tr>
+                                            <td >Phone Number</td>
+                                            <td >+8968745132</td>
+                                        </tr>
+                                        <tr>
+                                            <td >Supervisor</td>
+                                            <td >Null</td>
+                                        </tr>
+                                        <tr>
+                                            <td >Job Postion</td>
+                                            <td >Product Manager</td>
+                                        </tr>
+                                        <tr>
+                                            <td >Address</td>
+                                            <td > Russia </td>
                                         </tr>
                                     </table>
                                 </form>
                             </div>
                         </div>
                     </div>
+                </div>
             </div>
         </div>
     </main>
