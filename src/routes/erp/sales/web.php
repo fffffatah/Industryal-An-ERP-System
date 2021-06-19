@@ -14,3 +14,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/sales', function () {
     return view('sales.index');
 });
+
+Route::get('/sales/profile', function(){
+    return view('sales.profile.index');
+});
+
+Route::get('/sales/statistics', function(){
+    return view('sales.stats.index');
+});
