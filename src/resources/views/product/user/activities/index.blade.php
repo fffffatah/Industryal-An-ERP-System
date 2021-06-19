@@ -28,7 +28,7 @@
                     <i class="fas fa-user"></i> Welcome Username
                     </a>
                     <div class="dropdown-menu">
-                    <a href="" class="dropdown-item">
+                    <a href="{{route('userProfile.index')}}" class="dropdown-item">
                         <i class="fas fa-user-circle"></i> Profile
                     </a>
                     <a href="" class="dropdown-item">
