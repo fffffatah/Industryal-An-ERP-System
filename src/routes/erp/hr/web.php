@@ -1,10 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
-| Web Routes (Product Features)
+| Web Routes (Human Resources Features)
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
