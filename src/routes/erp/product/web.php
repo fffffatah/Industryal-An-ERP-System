@@ -52,3 +52,4 @@ Route::get('/user/administration',[ProductUserController::class, 'administration
 Route::get('/user/profile',[ProductUserController::class, 'profile'])->name('userProfile.index');
 Route::get('/user/profile',[ProductUserController::class, 'profile'])->name('userProfile.index');
 Route::get('/user/edit',[ProductUserController::class, 'editProfile'])->name('userEditProfile.index');
+Route::get('/user/edit/profilepicture',[ProductUserController::class, 'editProfilePicture'])->name('userEditProfilePicture.index');
