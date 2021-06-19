@@ -54,7 +54,7 @@
                             <h4>Username</h4>
                             <a href="{{route('userEditProfile.index')}}" class="btn btn-primary btn-sm mb-2">Edit Profile</a> <br>
                             <a href="{{route('userEditProfilePicture.index')}}" class="btn btn-warning btn-sm mb-2">Update Profile Picture</a> <br>
-                            <a href="" class="btn btn-danger btn-sm mb-2">Change Password</a> <br>
+                            <a href="{{route('userChangePassword.index')}}" class="btn btn-danger btn-sm mb-2">Change Password</a> <br>
                         </div>
                     </div>
                 <div class="col-12 col-lg-9 border border-dark rounded p-3">
