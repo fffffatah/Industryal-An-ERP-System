@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home page</title>
+    <title>Expense Report</title>
    <!--  Bootstrap cdn -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
     crossorigin="anonymous">
@@ -39,13 +39,13 @@
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRuser.index')}}">User List</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRemployee.create')}}">New Employee</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="#">New group</a></li>
-                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRexpense.report')}}">Create Expense Report</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="route('HRexpense.report')}}">Create Expense Report</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRexpenseList.list')}}">List Expense  Report</a></li>
                     </ul>
                 </nav>
             </div>
             <div class="col-10">
-                <h1 class="text-center">Chart</h1>
+                <h1 class="text-center">Expense Report</h1>
         
            </div>
             
