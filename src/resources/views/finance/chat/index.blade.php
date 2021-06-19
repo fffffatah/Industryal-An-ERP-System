@@ -4,7 +4,7 @@
     <tr>
         <td align="center" style="padding-top:100px;">
             <div class="card border-info mb3" style="height:600px;width:600px;">
-                <div class="card-header">My Clients</div>
+                <div class="card-header">People from Organization</div>
                 <div class="card-body scroll-box">
                     <div class="table-responsive">
                         <table class="table table-striped">

@@ -10,9 +10,16 @@ class FinanceInvoiceController extends Controller
         return view('finance.invoice.index');
     }
     public function index_invoice_listcustomer(){
-        return view('finance.invoice.listcustomer.index');
+        return view('finance.invoice.listcustomer');
     }
     public function index_invoice_listsupplier(){
-        return view('finance.invoice.listsupplier.index');
+        return view('finance.invoice.listsupplier');
+    }
+
+    public function index_invoice_newcustomer(){
+        return view('finance.invoice.customer');
+    }
+    public function index_invoice_newsupplier(){
+        return view('finance.invoice.supplier');
     }
 }
