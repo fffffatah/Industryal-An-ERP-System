@@ -15,9 +15,20 @@
             </div>
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item"><a class="nav-link" href="{{route('sales.dashboard.index')}}">Dashboard</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{route('finance.invoice.index')}}">Invoice</a></li>
-                    <li class="nav-item"><a class="nav-link" href="lawyer_clients.php">Payments</a></li>
-                    <li class="nav-item"><a class="nav-link" href="lawyer_meetings.php">Reports</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{route('finance.invoice.index')}}">Analytics</a></li>
+                    <li class="nav-item"><a class="nav-link" href="lawyer_clients.php">Orders</a></li>
+                    <li class="nav-item dropdown">
+                        {{-- <a class="nav-link" href="lawyer_meetings.php">Customers</a> --}}
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Customers
+                          </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Check Customer Status</a>
+                        <a class="dropdown-item" href="#">Send Mass Emails</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
                     <li class="nav-item"><a class="nav-link" href="lawyer_reports.php">Budgeting</a></li>
                     <li class="nav-item"><a class="nav-link" href="lawyer_payments.php">Leave Request</a></li>
                     <li class="nav-item"><a class="nav-link" href="lawyer_chats.php">Chats</a></li>

@@ -28,6 +28,8 @@ Route::get('/sales/dashboard', function(){
 });
 
 Route::get('/sales/dashboard', [
-    'uses' => ''
+    'uses' => 'SalesController@dashboardIndex',
+    'as' => 'sales.dashboard.index'
 ]);
 
+Route::get('/finance/invoice/listsupplier', ['as'=>'finance.invoice.listsupplier.index', 'uses'=>'FinanceController@index_invoice_listsupplier']);
