@@ -54,8 +54,6 @@
                             <h4>Username</h4>
                             <a href="{{route('userEditProfile.index')}}" class="btn btn-primary btn-sm mb-2">Edit Profile</a> <br>
                             <a href="{{route('userEditProfilePicture.index')}}" class="btn btn-warning btn-sm mb-2">Update Profile Picture</a> <br>
-                            <a href="" class="btn btn-success btn-sm mb-2">Update Phone Number</a> <br>
-                            <a href="" class="btn btn-info btn-sm mb-2">Update Email</a> <br>
                             <a href="" class="btn btn-danger btn-sm mb-2">Change Password</a> <br>
                         </div>
                     </div>
@@ -77,6 +75,14 @@
                                         <tr>
                                             <td >Last Name</td>
                                             <td > Korotkevich </td>
+                                        </tr>
+                                        <tr>
+                                            <td >Email</td>
+                                            <td >Gennady@industryal.com</td>
+                                        </tr>
+                                        <tr>
+                                            <td >Phone Number</td>
+                                            <td >+8968745132</td>
                                         </tr>
                                         <tr>
                                             <td >Supervisor</td>
