@@ -27,14 +27,10 @@
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
                     <i class="fas fa-user"></i> Welcome Username
                     </a>
-                    <div class="dropdown-menu">
+                    <div class="dropdown-menu mt-2 ml-3 bg-light">
                     <a href="{{route('userProfile.index')}}" class="dropdown-item">
                         <i class="fas fa-user-circle"></i> Profile
                     </a>
-                    <a href="" class="dropdown-item">
-                        <i class="fas fa-cog"></i> Settings
-                    </a>
-                    </div>
                 </li>
                 <li class="nav-item">
                     <a href="" class="nav-link">
