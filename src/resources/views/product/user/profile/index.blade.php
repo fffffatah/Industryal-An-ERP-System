@@ -62,10 +62,40 @@
                 <div class="col-12 col-lg-9 border border-dark rounded p-3">
                         <div class="container">
                             <div class="row justify-content-center">
-                                <h3>User Profile</h3>
+                                <h3><i class="fas fa-user"></i> Profile</h3>
+                            </div>
+                        </div>
+                        <hr class="mb-4">
+                        <div class="container">
+                            <div class="text-left">
+                                <form action="">
+                                    <table class="table table-striped table-bordered">
+                                        <tr>
+                                            <td >First Name</td>
+                                            <td > Gennady</td>
+                                        </tr>
+                                        <tr>
+                                            <td >Last Name</td>
+                                            <td > Korotkevich </td>
+                                        </tr>
+                                        <tr>
+                                            <td >Supervisor</td>
+                                            <td >Null</td>
+                                        </tr>
+                                        <tr>
+                                            <td >Job Postion</td>
+                                            <td >Product Manager</td>
+                                        </tr>
+                                        <tr>
+                                            <td >Address</td>
+                                            <td > Russia </td>
+                                        </tr>
+                                    </table>
+                                </form>
                             </div>
                         </div>
                     </div>
+                </div>
             </div>
         </div>
     </main>
