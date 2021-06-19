@@ -62,7 +62,7 @@
                 <div class="col-12 col-lg-9 border border-dark rounded p-3">
                         <div class="container">
                             <div class="row justify-content-center">
-                                <h3><i class="fas fa-edit"></i> Edit Profile</h3>
+                                <h3><i class="fas fa-edit"></i> Update Profile Picture</h3>
                             </div>
                         </div>
                         <hr class="mb-4">
@@ -71,23 +71,14 @@
                                 <form action="">
                                     <table class="table table-striped table-bordered">
                                         <tr>
-                                            <td >First Name</td>
+                                            <td>Upload</td>
                                             <td>
-                                                <input type="text" value="Gennady" class="form-control">
+                                                <input type="file" class="form-control">
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td >Last Name</td>
-                                            <td > <input type="text" value
-                                            ="Korotkevich" class="form-control"> </td>
-                                        </tr>
-                                        <tr>
-                                            <td >Address</td>
-                                            <td > <textarea name="address" id="" cols="30" rows="2" class="form-control">Russia</textarea> </td>
-                                        </tr>
-                                        <tr>
                                             <td colspan='2' align='center'>
-                                            <input type="submit" value="&#10003; &nbsp Save" class="btn btn-success" style="width:400px">
+                                            <input type="submit" value="&#10003; &nbsp Change" class="btn btn-success" style="width:400px">
                                             </td>
                                         </tr>
                                     </table>
