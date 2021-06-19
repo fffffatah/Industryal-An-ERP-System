@@ -31,4 +31,8 @@ class ProductUserController extends Controller
     {
         return view('product.user.profile.editProfilePicture');
     }
+    public function changePassword()
+    {
+        return view('product.user.profile.changePassword');
+    }
 }
