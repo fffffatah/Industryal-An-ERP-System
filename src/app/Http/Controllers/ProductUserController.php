@@ -19,4 +19,8 @@ class ProductUserController extends Controller
     {
         return view('product.user.administration.index');
     }
+    public function profile()
+    {
+        return view('product.user.profile.index');
+    }
 }
