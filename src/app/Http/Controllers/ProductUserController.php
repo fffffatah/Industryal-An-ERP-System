@@ -23,4 +23,8 @@ class ProductUserController extends Controller
     {
         return view('product.user.profile.index');
     }
+    public function editProfile()
+    {
+        return view('product.user.profile.edit');
+    }
 }
