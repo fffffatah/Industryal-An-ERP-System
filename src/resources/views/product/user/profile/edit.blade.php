@@ -69,19 +69,33 @@
                                 <form action="">
                                     <table class="table table-striped table-bordered">
                                         <tr>
-                                            <td >First Name</td>
+                                            <td >First Name: </td>
                                             <td>
                                                 <input type="text" value="Gennady" class="form-control">
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td >Last Name</td>
+                                            <td >Last Name: </td>
                                             <td > <input type="text" value
                                             ="Korotkevich" class="form-control"> </td>
                                         </tr>
                                         <tr>
-                                            <td >Address</td>
+                                            <td >Phone Number: </td>
+                                            <td > <input type="number" value
+                                            ="+8968745132" class="form-control"> </td>
+                                        </tr>
+                                        <tr>
+                                            <td >Email: </td>
+                                            <td > <input type="email" value
+                                            ="Gennady@industryal.com" class="form-control"> </td>
+                                        </tr>
+                                        <tr>
+                                            <td >Address: </td>
                                             <td > <textarea name="address" id="" cols="30" rows="2" class="form-control">Russia</textarea> </td>
+                                        </tr>
+                                        <tr>
+                                            <td >Old Password: </td>
+                                            <td > <input type="password" class="form-control"> </td>
                                         </tr>
                                         <tr>
                                             <td colspan='2' align='center'>
