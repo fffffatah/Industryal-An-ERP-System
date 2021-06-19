@@ -182,6 +182,12 @@
                                             </td>
                                         </tr>
                                         <tr>
+                                            <td>Image: </td>
+                                            <td colspan='3'>
+                                                <input type="file" class="form-control">
+                                            </td>
+                                        </tr>
+                                        <tr>
                                             <td colspan="3" align="center" ><input type="submit" class="btn btn-success" value="Create" style="width:400px"></td>
                                         </tr>
                                     </table>
