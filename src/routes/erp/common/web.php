@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
-| Web Routes (Product Features)
+| Web Routes (Common Features)
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
@@ -11,3 +11,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+Route::get('/common/signin', ['as'=>'signin.index', 'uses'=>'SigninController@index']);
+Route::post('/common/signin', ['as'=>'signin.verify', 'uses'=>'SigninController@verify']);
+Route::get('/common/signup/admin', ['as'=>'signup.admin', 'uses'=>'SignupController@admin']);
+Route::get('/common/signup/employee', ['as'=>'signup.employee', 'uses'=>'SignupController@employee']);
