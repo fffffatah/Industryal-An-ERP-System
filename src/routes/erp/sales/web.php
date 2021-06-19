@@ -22,3 +22,12 @@ Route::get('/sales/profile', function(){
 Route::get('/sales/statistics', function(){
     return view('sales.stats.index');
 });
+
+Route::get('/sales/dashboard', function(){
+    return view('sales.dashboard.index');
+});
+
+Route::get('/sales/dashboard', [
+    'uses' => ''
+]);
+
