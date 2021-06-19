@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+<<<<<<< HEAD
+=======
+
+>>>>>>> bfb9a25383602d9edbec272bd3e9ad3a352af954
 /*
 |--------------------------------------------------------------------------
 | Web Routes (Product Features)
