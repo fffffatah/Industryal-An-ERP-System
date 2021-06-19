@@ -36,18 +36,8 @@
                 </ul>
             <div class="navbar-nav ml-auto">
                 <li class="nav-item dropdown">
-                    {{-- <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-address-card"></i>
-                        [[Insert Name]]
-                    </a>
-                    <div class="dropdown-menu">
-                        <a href="#" class="dropdown-item">A</a>
-                        <a href="#" class="dropdown-item">B</a>
-                        <a href="#" class="dropdown-item">C</a>
-                    </div> --}}
-                    <!-- Example split danger button -->
                     <div class="btn-group" style="padding-right: 20px">
-                        <button type="button" class="btn btn-outline-info">Action</button>
+                        <button type="button" class="btn btn-outline-info">Insert Name</button>
                         <button type="button" class="btn btn-outline-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="sr-only">Toggle Dropdown</span>
                         </button>

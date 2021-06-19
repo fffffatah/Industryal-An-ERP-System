@@ -32,4 +32,6 @@ Route::get('/sales/dashboard', [
     'as' => 'sales.dashboard.index'
 ]);
 
-Route::get('/finance/invoice/listsupplier', ['as'=>'finance.invoice.listsupplier.index', 'uses'=>'FinanceController@index_invoice_listsupplier']);
+Route::get('/sales/customers/list', function(){
+    return view('sales.customers.list');
+});
