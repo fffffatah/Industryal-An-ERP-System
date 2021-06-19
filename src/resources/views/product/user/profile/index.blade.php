@@ -55,25 +55,10 @@
             <div class="row mt-2 justify-content-around">
                 <div class="col-12 col-lg-2 border border-dark bg-light rounded p-3">
                         <div class="text-left mt-2 rounded">
-                            <h4>Products</h4>
-                            <a href="{{route('productCreate.index')}}" class="btn btn-outline-dark btn-sm mb-2">New Product</a> <br>
-                            <a href="{{route('productList.index')}}" class="btn btn-outline-dark btn-sm mb-2">List</a> <br>
-                            <a href="{{route('productListFaulty.index')}}" class="btn btn-outline-dark btn-sm mb-2">Faulty Products</a> <br>
-                            <a href="{{route('productStocks.index')}}" class="btn btn-outline-dark btn-sm mb-2">Stocks</a> <br>
-                            <a href="{{route('productTransfer.index')}}" class="btn btn-outline-dark btn-sm mb-2">Transfer Product</a> <br>
-                            <a href="{{route('productStatistics.index')}}" class="btn btn-outline-dark btn-sm mb-2">Statistics</a> <br> <hr>
-                        </div>
-                        <div class="text-left mt-2">
-                            <h4>Warehouse</h4>
-                            <a href="{{route('warehouseCreate.index')}}" class="btn btn-outline-dark btn-sm mb-2">New Warehouse</a> <br>
-                            <a href="{{route('warehouseList.index')}}" class="btn btn-outline-dark btn-sm mb-2">List</a> <br>
-                            <a href="{{route('warehouseStatistics.index')}}" class="btn btn-outline-dark btn-sm mb-2">Statistics</a> <br> <hr>
-                        </div>
-                        <div class="text-left mt-2">
-                            <h4>Others</h4>
-                            <a href="{{route('userLeave.index')}}" class="btn btn-outline-dark btn-sm mb-2">Leave Request</a> <br>
-                            <a href="{{route('userActivities.index')}}" class="btn btn-outline-dark btn-sm mb-2">Activities</a> <br>
-                            <a href="{{route('userAdministration.index')}}" class="btn btn-outline-dark btn-sm mb-2">Administration</a> <br>
+                            <h4>Username</h4>
+                            <a href="{{route('productCreate.index')}}" class="btn btn-success btn-sm mb-2">Edit Profile</a> <br>
+                            <a href="{{route('productList.index')}}" class="btn btn-warning btn-sm mb-2">Update Profile Picture</a> <br>
+                            <a href="{{route('productListFaulty.index')}}" class="btn btn-danger btn-sm mb-2">Change Password</a> <br>
                         </div>
                     </div>
                 <div class="col-12 col-lg-9 border border-dark rounded p-3">
