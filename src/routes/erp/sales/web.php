@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\SalesProfileController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes (Sales and Marketing Features)
@@ -33,16 +32,23 @@ Route::get('/sales/dashboard', [
     'as' => 'sales.dashboard.index'
 ]);
 
+Route::get('/sales/profile/', [
+    'uses' => 'SalesProfileController@profileIndex',
+    'as' => 'sales.profile.details.index'
+]);
+
+Route::get('/sales/profile/edit', [
+    'uses' => 'SalesProfileController@editProfile',
+    'as' => 'sales.profile.edit'
+]);
+
+
+
 Route::get('/sales/customers/list', function(){
     return view('sales.customers.list');
 });
 
-Route::get(
-    '/sales/profile',
-    [SalesProfileController::class, 'profileIndex']
-)->name('sales.profile.details.index');
-
-Route::get(
-    '/sales/dashboard', 
-    [SalesController::class, 'dashboardIndex']
-)->name('sales.dashboard.index');
+// Route::get(
+//     '/sales/profile',
+//     [SalesProfileController::class, 'profileIndex']
+// )->name('sales.profile.details.index');
