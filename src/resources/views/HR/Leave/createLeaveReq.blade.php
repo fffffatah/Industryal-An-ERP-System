@@ -41,7 +41,8 @@
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="#">New group</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRLeave.leave')}}">Create Leave Request</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRexpense.report')}}">Create Expense Report</a></li>
-                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRexpenseList.list')}}">List Expense  Report</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRexpenseList.list')}}"> Expense  Report List</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRExStatistic.statistic')}}">Expense Statistic</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRpayroll.show')}}">Payroll</a></li>
 
                     </ul>
@@ -54,7 +55,7 @@
                     </div>
                     <div class="border border-primary w-75   m-auto">
                         <form action="" class="w-50 m-auto  " >
-                        <table>
+                        
                             <div class="form-group">
                                 <label>User</label>
                                 <select name="User" id="super" class="form-control">
@@ -94,10 +95,23 @@
                             </div>
                              
                         </form>
+                    </div>
                 </div>
             </div>
-            
         </div>
+        <footer id="main-footer" class="bg-primary text-white mt-5 p-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <p class="lead text-center"><b>
+                            Copyright &copy;
+                            <span id="year"></span>
+                            Industryal</b>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
        
     
     
