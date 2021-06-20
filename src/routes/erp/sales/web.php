@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SalesProfileController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes (Sales and Marketing Features)
@@ -16,7 +17,7 @@ Route::get('/sales', function () {
 });
 
 Route::get('/sales/profile', function(){
-    return view('sales.profile.index');
+    return view('sales.profile.details.index');
 });
 
 Route::get('/sales/statistics', function(){
@@ -35,3 +36,13 @@ Route::get('/sales/dashboard', [
 Route::get('/sales/customers/list', function(){
     return view('sales.customers.list');
 });
+
+Route::get(
+    '/sales/profile',
+    [SalesProfileController::class, 'profileIndex']
+)->name('sales.profile.details.index');
+
+Route::get(
+    '/sales/dashboard', 
+    [SalesController::class, 'dashboardIndex']
+)->name('sales.dashboard.index');
