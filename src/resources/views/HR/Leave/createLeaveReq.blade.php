@@ -16,12 +16,14 @@
         <header class="border bg-dark m-0 p-1 fixed-top">
             <div class="row">
                 <div class="col-9 ">
-                    <h1 class="text-white  ">Industryal</h1>
+                    <h1 class="text-white"><i>Industryal</i></h1>
                 </div>
                 
                 <div class=" col-lg-3  ">
                     <ul class="nav justify-content-center ">
-                        <li class="nav-item"><a class="nav-link text-white btn btn-outline-primary btn-block  mt-2 "href="#"><i class="fas fa-user"></i>Profile</a></li>
+                        <li class="nav-item"><a class="nav-link text-white btn btn-outline-primary btn-block  mt-2" href="{{route('HRhome.index')}}"><i class="fas fa-home"></i>Home</a></li>
+                        <span style="padding-right:7px;"></span>
+                        <li class="nav-item"><a class="nav-link text-white btn btn-outline-primary btn-block  mt-2" href="{{route('HRuserProfile.details')}}"><i class="fas fa-user"></i>Profile</a></li>
                         <span style="padding-right:7px;"></span>
                         <li class="nav-item"><a class="nav-link text-white btn btn-outline-primary btn-block mt-2" href="#"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
                     </ul>
@@ -38,10 +40,11 @@
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="#">Search User</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRuser.index')}}">User List</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRemployee.create')}}">New Employee</a></li>
-                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="#">New group</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRgroup.index')}}">Add group</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRLeave.leave')}}">Create Leave Request</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRexpense.report')}}">Create Expense Report</a></li>
-                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRexpenseList.list')}}">List Expense  Report</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRexpenseList.list')}}"> Expense  Report List</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRExStatistic.statistic')}}">Expense Statistic</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRpayroll.show')}}">Payroll</a></li>
 
                     </ul>
@@ -50,11 +53,11 @@
             <div class="col-10">
                 <div class="info-section p-3 text-black my-5">
                     <div class="title text-center mb-3">
-                        <h3 class="font-width-border"><i class="fal fa-house-leave"></i>Leave Request</h3>
+                        <h1 class="font-width-border"><i class="far fa-house-leave"></i>Leave Request</h1>
                     </div>
                     <div class="border border-primary w-75   m-auto">
                         <form action="" class="w-50 m-auto  " >
-                        <table>
+                        
                             <div class="form-group">
                                 <label>User</label>
                                 <select name="User" id="super" class="form-control">
@@ -89,15 +92,29 @@
                                 </select>
                             </div>
                               
-                            <div class="from-group">
-                                <input class="btn btn-outline-primary btn-block mt-3" type="submit" value="Create Leave Request" style="color:tomato">
-                            </div>
+                            
                              
                         </form>
+                    </div>
+                    <div class="from-group">
+                        <center><input class="btn btn-outline-primary btn-block w-50 mt-3" type="submit" value="Create Leave Request" style="color:tomato"></center> 
+                    </div>
                 </div>
             </div>
-            
         </div>
+        <footer id="main-footer" class="bg-primary text-white mt-5 p-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <p class="lead text-center"><b>
+                            Copyright &copy;
+                            <span >2021</span>
+                            Industryal</b>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
        
     
     
