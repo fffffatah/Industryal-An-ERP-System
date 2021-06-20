@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/finance/dashboard', ['as'=>'finance.dashboard.index', 'uses'=>'FinanceController@index_dashboard']);
 
+#Profile Routes
+Route::get('/finance/profile', ['as'=>'finance.profile.index', 'uses'=>'FinanceProfileController@index']);
+
 #Routes for Invoice
 Route::get('/finance/invoice', ['as'=>'finance.invoice.index', 'uses'=>'FinanceInvoiceController@index_invoice']);
 Route::get('/finance/invoice/listcustomer', ['as'=>'finance.invoice.listcustomer', 'uses'=>'FinanceInvoiceController@index_invoice_listcustomer']);
