@@ -79,78 +79,82 @@
                             </div>
                         </div>
                         <hr class="mb-4">
-                        <div class="container">
-                            <div class="text-left">
-                                <form action="">
-                                    <table class="table table-striped table-bordered">
-                                        <tr>
-                                            <td >Id</td>
-                                            <td >
-                                                <input type="text" class="form-control">
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td clospan="3">Name</td>
-                                            <td clospan="3">
-                                                <input type="text" class="form-control">
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td clospan="3">Description</td>
-                                            <td colspan="3">
-                                                <textarea name="" id="" cols="50" rows="2" class="form-control"></textarea>  
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td clospan="3">Address</td>
-                                            <td colspan="3">
-                                                <textarea name="" id="" cols="20" rows="1" class="form-control"></textarea>  
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td clospan="3">Zip Code</td>
-                                            <td clospan="3">
-                                                <input type="text" class="form-control">
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td clospan="3">City</td>
-                                            <td clospan="3">
-                                                <input type="text" class="form-control">
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td clospan="3">Country</td>
-                                            <td clospan="3">
-                                                <select class="form-control" id="warehouse">
-                                                    <option>Bangladesh</option>
-                                                    <option>India</option>
-                                                </select>  
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td clospan="3">Phone</td>
-                                            <td clospan="3">
-                                                <input type="text" class="form-control">
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Status</td>
-                                            <td>
-                                                <select class="form-control" id="warehouse">
-                                                    <option>Open</option>
-                                                    <option>Closed</option>
-                                                </select>  
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="3" align="center" ><input type="submit" class="btn btn-success" value="Create" style="width:400px"></td>
-                                        </tr>
-                                    </table>
-                                </form>
+                        <div class="row justify-content-center">
+                            <div class="col-10">
+                                <div class="container">
+                                <div class="text-left">
+                                    <form action="{{route('warehouseList.index')}}">
+                                        <table class="table table-striped table-bordered">
+                                            <tr>
+                                                <td >Id</td>
+                                                <td >
+                                                    <input type="text" class="form-control">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td clospan="3">Name</td>
+                                                <td clospan="3">
+                                                    <input type="text" class="form-control">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td clospan="3">Description</td>
+                                                <td colspan="3">
+                                                    <textarea name="" id="" cols="50" rows="2" class="form-control"></textarea>  
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td clospan="3">Address</td>
+                                                <td colspan="3">
+                                                    <textarea name="" id="" cols="20" rows="1" class="form-control"></textarea>  
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td clospan="3">Zip Code</td>
+                                                <td clospan="3">
+                                                    <input type="text" class="form-control">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td clospan="3">City</td>
+                                                <td clospan="3">
+                                                    <input type="text" class="form-control">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td clospan="3">Country</td>
+                                                <td clospan="3">
+                                                    <select class="form-control" id="warehouse">
+                                                        <option>Bangladesh</option>
+                                                        <option>India</option>
+                                                    </select>  
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td clospan="3">Phone</td>
+                                                <td clospan="3">
+                                                    <input type="text" class="form-control">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Status</td>
+                                                <td>
+                                                    <select class="form-control" id="warehouse">
+                                                        <option>Open</option>
+                                                        <option>Closed</option>
+                                                    </select>  
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="3" align="center" ><input type="submit" class="btn btn-success" value="Create" style="width:400px"></td>
+                                            </tr>
+                                        </table>
+                                    </form>
+                                </div>
+                            </div>
                             </div>
                         </div>
-                    </div>
+                </div>
             </div>
         </div>
     </main>

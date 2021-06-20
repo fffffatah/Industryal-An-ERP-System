@@ -73,12 +73,23 @@
                         </div>
                     </div>
                 <div class="col-12 col-lg-9 border border-dark rounded p-3">
-                        <div class="container">
+                <div class="container">
                             <div class="row justify-content-center">
-                                <h3>Stocks</h3>
+                                <h3><i class="fas fa-shopping-basket"></i>&nbsp &nbsp Stocks</h3>
                             </div>
-                        </div>
+                            <hr class="mb-4">
+                            <table class="table table-striped table-bordered">
+                                <tr>
+                                    <th>Product ID</th>
+                                    <th>Product Name</th>
+                                    <th>Warehouse Id</th>
+                                    <th>Warehouse Name</th>
+                                    <th>Quantity</th>
+                                    <th>Alert Status</th>
+                                </tr>
+                            </table>
                     </div>
+                </div>
             </div>
         </div>
     </main>
