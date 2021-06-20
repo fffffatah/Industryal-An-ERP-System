@@ -44,14 +44,13 @@ Route::get('/warehouse/list',[WarehouseListController::class, 'index'])->name('w
 Route::get('/warehouse/statistics',[WarehouseStatisticsController::class, 'index'])->name('warehouseStatistics.index');
 
 //Others
-Route::get('/user/activities',[ProductUserController::class, 'activities'])->name('userActivities.index');
-Route::get('/user/leave',[ProductUserController::class, 'leave'])->name('userLeave.index');
-Route::get('/user/administration',[ProductUserController::class, 'administration'])->name('userAdministration.index');
+Route::get('/product/user/activities',[ProductUserController::class, 'activities'])->name('userActivities.index');
+Route::get('/product/user/leave',[ProductUserController::class, 'leave'])->name('userLeave.index');
+Route::get('/product/user/administration',[ProductUserController::class, 'administration'])->name('userAdministration.index');
 
 //User
-Route::get('/user/profile',[ProductUserController::class, 'profile'])->name('userProfile.index');
-Route::get('/user/profile',[ProductUserController::class, 'profile'])->name('userProfile.index');
-Route::get('/user/edit',[ProductUserController::class, 'editProfile'])->name('userEditProfile.index');
-Route::get('/user/edit/profilepicture',[ProductUserController::class, 'editProfilePicture'])->name('userEditProfilePicture.index');
-Route::get('/user/edit/changePassword',[ProductUserController::class, 'changePassword'])->name('userChangePassword.index');
-Route::get('/user/edit/verify',[ProductUserController::class, 'verification'])->name('userChangeProfileVerication.index');
+Route::get('/product/user/profile',[ProductUserController::class, 'profile'])->name('userProfile.index');
+Route::get('/product/user/edit',[ProductUserController::class, 'editProfile'])->name('userEditProfile.index');
+Route::get('/product/user/edit/profilepicture',[ProductUserController::class, 'editProfilePicture'])->name('userEditProfilePicture.index');
+Route::get('/product/user/edit/changePassword',[ProductUserController::class, 'changePassword'])->name('userChangePassword.index');
+Route::get('/product/user/edit/verify',[ProductUserController::class, 'verification'])->name('userChangeProfileVerication.index');
