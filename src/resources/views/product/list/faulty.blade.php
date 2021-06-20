@@ -73,10 +73,24 @@
                         </div>
                     </div>
                 <div class="col-12 col-lg-9 border border-dark rounded p-3">
-                        <div class="container">
+                <div class="container">
                             <div class="row justify-content-center">
-                                <h3>Faluty Products</h3>
+                                <h3><i class="fas fa-box-open"></i>&nbsp &nbsp Faulty Products</h3>
                             </div>
+                            <hr class="mb-4">
+                            <table class="table table-striped table-bordered">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Status</th>
+                                    <th>Warehouse</th>
+                                    <th>Number of Faulty Products</th>
+                                    <th>Stock</th>
+                                    <th>Product Nature</th>
+                                    <th>Selling Price</th>
+                                    <th>Description</th>
+                                </tr>
+                            </table>
                         </div>
                     </div>
             </div>

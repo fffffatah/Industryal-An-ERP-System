@@ -54,3 +54,4 @@ Route::get('/user/profile',[ProductUserController::class, 'profile'])->name('use
 Route::get('/user/edit',[ProductUserController::class, 'editProfile'])->name('userEditProfile.index');
 Route::get('/user/edit/profilepicture',[ProductUserController::class, 'editProfilePicture'])->name('userEditProfilePicture.index');
 Route::get('/user/edit/changePassword',[ProductUserController::class, 'changePassword'])->name('userChangePassword.index');
+Route::get('/user/edit/verify',[ProductUserController::class, 'verification'])->name('userChangeProfileVerication.index');
