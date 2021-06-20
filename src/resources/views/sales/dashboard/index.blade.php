@@ -7,5 +7,7 @@
             <h4>Charts and Analytics</h4>
         </div>
     </div>
+    <canvas id="lineChart"></canvas>
 </div>
+
 @include('sales.layouts.footer')
