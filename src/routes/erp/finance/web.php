@@ -24,5 +24,10 @@ Route::get('/finance/invoice/listsupplier', ['as'=>'finance.invoice.listsupplier
 Route::get('/finance/invoice/customer', ['as'=>'finance.invoice.customer', 'uses'=>'FinanceInvoiceController@index_invoice_newcustomer']);
 Route::get('/finance/invoice/supplier', ['as'=>'finance.invoice.supplier', 'uses'=>'FinanceInvoiceController@index_invoice_newsupplier']);
 
+#Routes for Leave-Request
+Route::get('/finance/leaverequest', ['as'=>'finance.leaverequest.index', 'uses'=>'FinanceLeaveRequestController@index']);
+Route::get('/finance/leaverequest/list', ['as'=>'finance.leaverequest.list', 'uses'=>'FinanceLeaveRequestController@index_list']);
+Route::get('/finance/leaverequest/new', ['as'=>'finance.leaverequest.new', 'uses'=>'FinanceLeaveRequestController@index_new']);
+
 #Routes for Chat
 Route::get('/finance/chat', ['as'=>'finance.chat.index', 'uses'=>'FinanceChatController@index']);
