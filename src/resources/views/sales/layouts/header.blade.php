@@ -25,13 +25,12 @@
                             Customers
                           </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Check Customer Status</a>
+                        <a class="dropdown-item" href="{{route('sales.customers.list')}}">Check Customers</a>
                         <a class="dropdown-item" href="#">Send Mass Emails</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Something else here</a>
                         </div>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="lawyer_reports.php">Budgeting</a></li>
                     <li class="nav-item"><a class="nav-link" href="lawyer_payments.php">Leave Request</a></li>
                     <li class="nav-item"><a class="nav-link" href="lawyer_chats.php">Chats</a></li>
                     <li class="nav-item"><a class="nav-link" href="lawyer_reviews.php">Import/Export</a></li>
