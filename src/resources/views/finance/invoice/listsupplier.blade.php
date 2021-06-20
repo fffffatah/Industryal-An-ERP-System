@@ -1,30 +1,17 @@
-@include('finance.layouts.header');
+@include('finance.layouts.header')
 <div style="padding-top:80px;">
     <table>
         <tr>
             <td align="center" style="padding:20px;">
-            <div class="card border-warning mb3" style="height:600px;width:250px">
-                <div class="card-header">Invoice Options</div>
-                    <div class="card-body">
-                        <table align="left">
-                        <div class="btn-group-vertical">
-                            <a class="btn btn-info text-left" href="{{route('finance.invoice.listcustomer.index')}}"><i class="fas fa-list"></i> Customer Invoices</a>
-                            <a class="btn btn-info text-left" href="{{route('finance.invoice.listsupplier.index')}}"><i class="fas fa-list"></i> Supplier Invoices</a>
-                            <a class="btn btn-info text-left" href="{{route('signup.admin')}}"><i class="fas fa-plus"></i> New Customer Invoice</a>
-                            <a class="btn btn-info text-left" href="{{route('signup.admin')}}"><i class="fas fa-plus"></i> New Supplier Invoice</a>
-                        </div>
-                        </table>
-                    </div>
-                </div>
+                @include('finance.layouts.invoiceoptions')
             </td>
             <td align="center" style="padding:20px;">
             </td>
             <td align="center">
             <div class="card border-warning mb3" style="height:600px;width:1100px">
                 <div class="card-header">Supplier Invoices</div>
-                    <div class="card-body">
-                    <div class="card-body scroll-box">
-                    <div class="overflow-auto">
+                <div class="card-body scroll-box">
+                    <div class="table-responsive">
                         <table class="table table-striped">
                             <tr>
                                 <th scope="col">#SR</th>
@@ -55,4 +42,4 @@
         </tr>
     </table>
 </div>
-@include('finance.layouts.footer');
+@include('finance.layouts.footer')
