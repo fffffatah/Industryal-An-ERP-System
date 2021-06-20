@@ -184,9 +184,12 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>Image: </td>
-                                        <td colspan='3'>
-                                            <input type="file" class="form-control">
+                                        <td>Upload Image: </td>
+                                        <td colspan='2'>
+                                        <div class="custom-file">
+                                            <input class="custom-file-input" type="file" id="myfile">
+                                            <label class="custom-file-label" for="myfile">Choose file</label>
+                                        </div>
                                         </td>
                                     </tr>
                                     <tr>
