@@ -81,7 +81,7 @@
                         <hr class="mb-4">
                         <div class="container">
                             <div class="text-left">
-                                <form action="">
+                                <form action="{{route('warehouseList.index')}}">
                                     <table class="table table-striped table-bordered">
                                         <tr>
                                             <td >Id</td>
