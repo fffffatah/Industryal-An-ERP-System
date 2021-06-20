@@ -110,7 +110,7 @@
                             </div>
                               
                             <div class="from-group">
-                                <input class="btn btn-outline-primary btn-block mt-3" type="submit" value="Create User" style="color:tomato">
+                                <input class="btn btn-outline-primary btn-block mt-3" type="submit" value="Create employee" style="color:tomato">
                             </div>
                              
                         </form>
