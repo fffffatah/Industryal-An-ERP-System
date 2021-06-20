@@ -13,4 +13,10 @@ class SalesProfileController extends Controller
     public function editProfile(){
         return view('sales.profile.edit.edit');
     }
+
+    public function updatePassword(){
+        return view('sales.profile.edit.password');
+    }
+
+    
 }
