@@ -1,4 +1,4 @@
-
+    <div style="padding-top: 70px"/>
     <!-- Footer -->
     
     <footer class="class-footer fixed-bottom">
