@@ -66,7 +66,7 @@
                         <hr class="mb-4">
                         <div class="container">
                             <div class="text-left">
-                                <form action="">
+                                <form action="{{route('userChangeProfileVerication.index')}}">
                                     <table class="table table-striped table-bordered">
                                         <tr>
                                             <td >Old Password: </td>
@@ -82,7 +82,7 @@
                                         </tr>
                                         <tr>
                                             <td colspan='2' align='center'>
-                                            <input type="submit" value="&#10003; &nbsp Change" class="btn btn-success" style="width:400px">
+                                            <input type="submit" value="Proceed &nbsp  &#8594;" class="btn btn-success" style="width:400px">
                                             </td>
                                         </tr>
                                     </table>

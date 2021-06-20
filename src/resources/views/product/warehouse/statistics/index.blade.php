@@ -73,10 +73,11 @@
                         </div>
                     </div>
                 <div class="col-12 col-lg-9 border border-dark rounded p-3">
-                        <div class="container">
+                <div class="container">
                             <div class="row justify-content-center">
-                                <h3>Warehouse Statistics</h3>
+                                <h3><i class="fas fa-chart-line"></i> &nbsp &nbsp Warehouse Statistics</h3>
                             </div>
+                            <hr class="mb-4">
                         </div>
                     </div>
             </div>

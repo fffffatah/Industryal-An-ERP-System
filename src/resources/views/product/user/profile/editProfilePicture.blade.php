@@ -66,12 +66,21 @@
                         <hr class="mb-4">
                         <div class="container">
                             <div class="text-left">
-                                <form action="">
+                                <form action="{{route('userProfile.index')}}">
                                     <table class="table table-striped table-bordered">
                                         <tr>
-                                            <td>Upload</td>
+                                            <td>Upload Image: </td>
+                                            <td colspan='2'>
+                                            <div class="custom-file">
+                                                <input class="custom-file-input" type="file" id="myfile">
+                                                <label class="custom-file-label" for="myfile">Choose file</label>
+                                            </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Old Password</td>
                                             <td>
-                                                <input type="file" class="form-control">
+                                                <input type="text" class="form-control">
                                             </td>
                                         </tr>
                                         <tr>

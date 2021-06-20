@@ -66,7 +66,7 @@
                         <hr class="mb-4">
                         <div class="container">
                             <div class="text-left">
-                                <form action="">
+                                <form action="{{route('userProfile.index')}}">
                                     <table class="table table-striped table-bordered">
                                         <tr>
                                             <td >First Name: </td>
