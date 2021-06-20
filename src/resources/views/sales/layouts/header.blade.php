@@ -65,7 +65,6 @@
                     </div>
                 </li>
             </div>
-            
         </div>
     </nav>
-  <div style="padding-top: 40px"/>
+  <div style="padding-top: 70px"/>
