@@ -1,4 +1,4 @@
-@include('finance.layouts.header');
+@include('finance.layouts.header')
 <div style="padding-top:80px;">
     <table>
         <tr>
@@ -19,4 +19,4 @@
         </tr>
     </table>
 </div>
-@include('finance.layouts.footer');
+@include('finance.layouts.footer')
