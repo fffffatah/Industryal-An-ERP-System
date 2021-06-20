@@ -15,7 +15,7 @@
                         <li class="nav-item"><a class="nav-link" href="{{route('finance.dashboard.index')}}">Dashboard</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{route('finance.invoice.index')}}">Invoice</a></li>
                         <li class="nav-item"><a class="nav-link" href="lawyer_clients.php">Payments</a></li>
-                        <li class="nav-item"><a class="nav-link" href="lawyer_meetings.php">Reports</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{route('finance.reports.index')}}">Reports</a></li>
                         <li class="nav-item"><a class="nav-link" href="lawyer_reports.php">Budgeting</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{route('finance.leaverequest.index')}}">Leave Request</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{route('finance.chat.index')}}">Chats</a></li>
