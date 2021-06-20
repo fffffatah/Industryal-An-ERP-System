@@ -75,6 +75,12 @@
                                             </td>
                                         </tr>
                                         <tr>
+                                            <td>Old Password</td>
+                                            <td>
+                                                <input type="text" class="form-control">
+                                            </td>
+                                        </tr>
+                                        <tr>
                                             <td colspan='2' align='center'>
                                             <input type="submit" value="&#10003; &nbsp Change" class="btn btn-success" style="width:400px">
                                             </td>
