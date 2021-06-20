@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expense Statistic</title>
+    <title>profile</title>
    <!--  Bootstrap cdn -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
     crossorigin="anonymous">
@@ -34,30 +34,22 @@
             <div class="col-2" >
                 <nav class=" navbar border-dark w-25">
                     <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRuser.create')}}">New user</a></li>
-                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="#">Search User</a></li>
-                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRuser.index')}}">User List</a></li>
-                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRemployee.create')}}">New Employee</a></li>
-                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRgroup.index')}}">Add group</a></li>
-                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRLeave.leave')}}">Create Leave Request</a></li>
-                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRexpense.report')}}">Create Expense Report</a></li>
-                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRexpenseList.list')}}"> Expense  Report List</a></li>
-                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRExStatistic.statistic')}}">Expense Statistic</a></li>
-                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRpayroll.show')}}">Payroll</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="#">Edit Profile</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="#">Change Password</a></li>
+                        <!-- <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="#">User List</a></li> -->
                         
-
 
                     </ul>
                 </nav>
             </div>
             <div class="col-10">
-                <h1 class="text-center">Statistic</h1>
+                <h1 class="text-center">info</h1>
         
            </div>
             
         </div>
 
-         <!-- Footer Starts-->
+    <!-- Footer Starts-->
     <footer id="main-footer" class="bg-primary text-white mt-5 p-2">
         <div class="container">
         <div class="row">

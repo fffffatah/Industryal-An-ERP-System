@@ -10,6 +10,7 @@ use App\Http\Controllers\HRexpenseListController;
 use App\Http\Controllers\HRExStatisticController;
 use App\Http\Controllers\HRLeaveController;
 use App\Http\Controllers\HRpayrollController;
+use App\Http\Controllers\HRuserProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,7 @@ use App\Http\Controllers\HRpayrollController;
 
 //Hr home
 Route::get('/home',[HRhomeController::class,'index'])->name('HRhome.index');
+
 
 //HR user create
 Route::get('/user/create',[HRuserController::class,'create'])->name('HRuser.create');
@@ -41,6 +43,8 @@ Route::get('/payroll/show',[HRpayrollController::class,'show'])->name('HRpayroll
 Route::get('/expense/report',[HRexpenseController::class,'report'])->name('HRexpense.report');
 Route::get('/expense/list',[HRexpenseListController::class,'list'])->name('HRexpenseList.list');
 Route::get('/expense/statistic',[HRExStatisticController::class,'statistic'])->name('HRExStatistic.statistic');
+//user profile
+Route::get('/user/profile1',[HRuserProfileController::class,'details'])->name('HRuserProfile.details');
 
 
 

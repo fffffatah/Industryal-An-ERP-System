@@ -9,6 +9,6 @@ class HRhomeController extends Controller
 {
      public function index()
      {
-         return view('HR.home.index');
+        return view('HR.home.index');
      }
 }
