@@ -68,4 +68,4 @@
             
         </div>
     </nav>
-  <div style="padding-top: 60px"/>
+  <div style="padding-top: 40px"/>
