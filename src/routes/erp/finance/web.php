@@ -43,5 +43,8 @@ Route::get('/finance/importexport/export', ['as'=>'finance.importexport.export',
 #Routes for Budgeting
 Route::get('/finance/budgeting', ['as'=>'finance.budgeting.index', 'uses'=>'FinanceBudgetingController@index']);
 
+#Routes for Payments
+Route::get('/finance/payments', ['as'=>'finance.payments.index', 'uses'=>'FinancePaymentController@index']);
+
 #Routes for Chat
 Route::get('/finance/chat', ['as'=>'finance.chat.index', 'uses'=>'FinanceChatController@index']);
