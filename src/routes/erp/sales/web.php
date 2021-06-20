@@ -16,7 +16,7 @@ Route::get('/sales', function () {
 });
 
 Route::get('/sales/profile', function(){
-    return view('sales.profile.index');
+    return view('sales.profile.details.index');
 });
 
 Route::get('/sales/statistics', function(){
@@ -32,6 +32,23 @@ Route::get('/sales/dashboard', [
     'as' => 'sales.dashboard.index'
 ]);
 
+Route::get('/sales/profile/', [
+    'uses' => 'SalesProfileController@profileIndex',
+    'as' => 'sales.profile.details.index'
+]);
+
+Route::get('/sales/profile/edit', [
+    'uses' => 'SalesProfileController@editProfile',
+    'as' => 'sales.profile.edit'
+]);
+
+
+
 Route::get('/sales/customers/list', function(){
     return view('sales.customers.list');
 });
+
+// Route::get(
+//     '/sales/profile',
+//     [SalesProfileController::class, 'profileIndex']
+// )->name('sales.profile.details.index');
