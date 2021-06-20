@@ -40,7 +40,7 @@
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="#">Search User</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRuser.index')}}">User List</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRemployee.create')}}">New Employee</a></li>
-                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="#">New group</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRgroup.index')}}">Add group</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRLeave.leave')}}">Create Leave Request</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="route('HRexpense.report')}}">Create Expense Report</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRexpenseList.list')}}"> Expense  Report List</a></li>
@@ -119,11 +119,10 @@
                                 <input type="date" class="form-control" id="hiredate" name="hiredate">
                             </div>
                               
-                            <div class="from-group">
-                                <input class="btn btn-outline-primary btn-block mt-3" type="submit" value="Create User" style="color:tomato">
-                            </div>
-                             
                         </form>
+                    </div>
+                    <div class="from-group">
+                        <center><input class="btn btn-outline-primary btn-block w-50 mt-3" type="submit" value="Create User" style="color:tomato"></center>
                     </div>
                 </div>
             </div>
