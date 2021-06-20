@@ -73,128 +73,132 @@
                         </div>
                     </div>
                 <div class="col-12 col-lg-9 border border-dark rounded p-3">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <h3> <i class="fas fa-box-open"></i> &nbsp New Product</h3>
-                            </div>
-                        </div>
-                        <hr class="mb-4">
-                        <div class="container">
-                            <div class="text-left">
-                                <form action="{{route('productList.index')}}">
-                                    <table class="table table-striped table-bordered">
-                                        <tr>
-                                            <td >Id</td>
-                                            <td >
-                                                <input type="text" class="form-control">
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td clospan="3">Name</td>
-                                            <td clospan="3">
-                                                <input type="text" class="form-control">
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td clospan="3">Status (Sell)</td>
-                                            <td clospan="3">
-                                                <select class="form-control" id="sellStatus">
-                                                    <option>For sale</option>
-                                                    <option>Not for sale</option>
-                                                </select>  
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td clospan="3">Status (Purchase)</td>
-                                            <td clospan="3">
-                                                <select class="form-control" id="purchaseStatus">
-                                                    <option>For Purchase</option>
-                                                    <option>Not for purchase</option>
-                                                </select>  
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td clospan="3">Description</td>
-                                            <td colspan="3">
-                                                <textarea type="text" name="" id="" class="form-control"> </textarea>  
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td clospan="3">Warehouse</td>
-                                            <td clospan="3">
-                                                <select class="form-control" id="warehouse">
-                                                    <option>Dummy 1</option>
-                                                    <option>Dummy 2</option>
-                                                </select>  
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td clospan="3">Stock</td>
-                                            <td clospan="3">
-                                                <input type="text" class="form-control">
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Nature of product</td>
-                                            <td clospan="2">
-                                                <select class="form-control" id="warehouse">
-                                                    <option>Manufactired Product</option>
-                                                    <option>Raw Material</option>
-                                                </select>  
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Weight</td>
-                                            <td><input type="text" class="form-control"></td>
-                                            <td>
-                                                <select class="form-control" id="warehouse">
-                                                    <option>kilogram</option>
-                                                    <option>gram</option>
-                                                    <option>tonne</option>
-                                                    <option>mg</option>
-                                                    <option>ounce</option>
-                                                    <option>pound</option>
-                                                </select>  
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Length x Width x Height</td>
-                                            <td><input type="text" class="form-control"></td>
-                                            <td>
-                                                <select class="form-control" id="warehouse">
-                                                    <option>m</option>
-                                                    <option>dm</option>
-                                                    <option>cm</option>
-                                                    <option>mm</option>
-                                                    <option>foot</option>
-                                                    <option>inch</option>
-                                                </select>  
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Selling Price</td>
-                                            <td><input type="text" class="form-control"></td>
-                                            <td>
-                                                <select class="form-control" id="warehouse">
-                                                    <option>Excluding Tax</option>
-                                                    <option>Including Tax</option>
-                                                </select>  
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Image: </td>
-                                            <td colspan='3'>
-                                                <input type="file" class="form-control">
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="3" align="center" ><input type="submit" class="btn btn-success" value="Create" style="width:400px"></td>
-                                        </tr>
-                                    </table>
-                                </form>
-                            </div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <h3> <i class="fas fa-box-open"></i> &nbsp New Product</h3>
                         </div>
                     </div>
+                    <hr class="mb-4">
+                    <div class="row justify-content-center">
+                        <div class="col-10">
+                        <div class="container">
+                        <div class="text-left">
+                            <form action="{{route('productList.index')}}">
+                                <table class="table table-striped table-bordered">
+                                    <tr>
+                                        <td >Id</td>
+                                        <td colspan='2' >
+                                            <input type="text" class="form-control">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Name</td>
+                                        <td colspan='2'>
+                                            <input type="text" class="form-control">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Status (Sell)</td>
+                                        <td colspan='2'>
+                                            <select class="form-control" id="sellStatus">
+                                                <option>For sale</option>
+                                                <option>Not for sale</option>
+                                            </select>  
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Status (Purchase)</td>
+                                        <td colspan='2'>
+                                            <select class="form-control" id="purchaseStatus">
+                                                <option>For Purchase</option>
+                                                <option>Not for purchase</option>
+                                            </select>  
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Description</td>
+                                        <td colspan='2'>
+                                            <textarea type="text" name="" id="" class="form-control"> </textarea>  
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Warehouse</td>
+                                        <td colspan='2'>
+                                            <select class="form-control" id="warehouse">
+                                                <option>Dummy 1</option>
+                                                <option>Dummy 2</option>
+                                            </select>  
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Stock</td>
+                                        <td colspan='2'>
+                                            <input type="text" class="form-control">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Nature of product</td>
+                                        <td colspan='2'>
+                                            <select class="form-control" id="warehouse">
+                                                <option>Manufactired Product</option>
+                                                <option>Raw Material</option>
+                                            </select>  
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Weight</td>
+                                        <td><input type="text" class="form-control"></td>
+                                        <td>
+                                            <select class="form-control" id="warehouse">
+                                                <option>kilogram</option>
+                                                <option>gram</option>
+                                                <option>tonne</option>
+                                                <option>mg</option>
+                                                <option>ounce</option>
+                                                <option>pound</option>
+                                            </select>  
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Length x Width x Height</td>
+                                        <td><input type="text" class="form-control"></td>
+                                        <td>
+                                            <select class="form-control" id="warehouse">
+                                                <option>m</option>
+                                                <option>dm</option>
+                                                <option>cm</option>
+                                                <option>mm</option>
+                                                <option>foot</option>
+                                                <option>inch</option>
+                                            </select>  
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Selling Price</td>
+                                        <td><input type="text" class="form-control"></td>
+                                        <td>
+                                            <select class="form-control" id="warehouse">
+                                                <option>Excluding Tax</option>
+                                                <option>Including Tax</option>
+                                            </select>  
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Image: </td>
+                                        <td colspan='3'>
+                                            <input type="file" class="form-control">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3" align="center" ><input type="submit" class="btn btn-success" value="Create" style="width:400px"></td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
