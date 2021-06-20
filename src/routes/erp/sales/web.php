@@ -42,7 +42,20 @@ Route::get('/sales/profile/edit', [
     'as' => 'sales.profile.edit'
 ]);
 
+Route::get('/sales/profile/change/password', [
+    'uses' => 'SalesProfileController@updatePassword',
+    'as' => 'sales.profile.edit.password'
+]);
 
+Route::get('/sales/customers/', [
+    'uses' => 'SalesCustomerController@showCustomersList',
+    'as' => 'sales.customers.list'
+]);
+
+Route::get('/sales/customers/email', [
+    'uses' => 'SalesCustomerController@sendEmail',
+    'as' => 'sales.customers.send'
+]);
 
 Route::get('/sales/customers/list', function(){
     return view('sales.customers.list');
