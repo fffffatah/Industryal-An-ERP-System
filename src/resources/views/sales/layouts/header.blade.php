@@ -40,7 +40,10 @@
                 
                 <li class="nav-item dropdown">
                     <div class="btn-group" style="padding-right: 10px; padding-top:5px">
-                        <button type="button" class="btn btn-outline-info"><i class='fas fa-id-card' style="padding-right: 5px"></i>Insert Name</button>
+                        <button type="button" class="btn btn-outline-info" onclick="document.location='{{route('sales.profile.details.index')}}'">
+                            <i class='fas fa-id-card' style="padding-right: 5px"></i>
+                            Insert Name
+                        </button>
                         <button type="button" class="btn btn-outline-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="sr-only">Toggle Dropdown</span>
                         </button>
@@ -65,4 +68,4 @@
             
         </div>
     </nav>
-  <div style="padding-top: 70px"/>
+  <div style="padding-top: 60px"/>
