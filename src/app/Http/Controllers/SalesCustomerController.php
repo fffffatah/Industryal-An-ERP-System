@@ -10,4 +10,9 @@ class SalesCustomerController extends Controller
     {
         return view('sales.customers.list');
     }
+
+    public function sendEmail()
+    {
+        return view('sales.customers.send');
+    }
 }
