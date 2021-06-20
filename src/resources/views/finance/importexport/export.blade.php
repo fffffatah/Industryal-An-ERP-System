@@ -12,7 +12,7 @@
                 <div class="card-header">Export</div>
                     <div class="card-body">
                         <h1 align="center" style="color:green; font-size:20px;">Select data that you want to export</h1><br><br>
-                        <table>
+                        <table class="table table-striped">
                             <tr>
                                 <th><input type="checkbox" id="invoiceexport" name="invoiceexport" value=""><label for="invoiceexport">  Invoice</label></th>
                             </tr>
