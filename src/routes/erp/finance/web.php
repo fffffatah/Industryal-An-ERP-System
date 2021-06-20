@@ -42,6 +42,8 @@ Route::get('/finance/importexport/export', ['as'=>'finance.importexport.export',
 
 #Routes for Budgeting
 Route::get('/finance/budgeting', ['as'=>'finance.budgeting.index', 'uses'=>'FinanceBudgetingController@index']);
+Route::get('/finance/budgeting/connectedbanks', ['as'=>'finance.budgeting.connectedbanks', 'uses'=>'FinanceBudgetingController@index_connectedbanks']);
+Route::get('/finance/budgeting/newbank', ['as'=>'finance.budgeting.newbank', 'uses'=>'FinanceBudgetingController@index_newbank']);
 
 #Routes for Payments
 Route::get('/finance/payments', ['as'=>'finance.payments.index', 'uses'=>'FinancePaymentController@index']);
