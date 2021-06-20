@@ -48,7 +48,7 @@
                         <span class="sr-only">Toggle Dropdown</span>
                         </button>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Edit Profile</a>
+                            <a class="dropdown-item" href="{{route('sales.profile.edit')}}">Edit Profile</a>
                             <a class="dropdown-item" href="#">Deactivate Account</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Separated link</a>
