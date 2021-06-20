@@ -60,7 +60,7 @@
                     <div class="col">
                         <p class="lead text-center">
                             Copyright &copy;
-                            <span id="year"></span>
+                            <span >2021</span>
                             Industryal
                         </p>
                     </div>
