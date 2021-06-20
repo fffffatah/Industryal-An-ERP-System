@@ -15,12 +15,14 @@
         <header class="border bg-dark m-0 p-1 fixed-top">
             <div class="row">
                 <div class="col-9 ">
-                    <h1 class="text-white  ">Industryal</h1>
+                    <h1 class="text-white"><i>Industryal</i></h1>
                 </div>
                 
                 <div class="col-lg-3 ">
                     <ul class="nav justify-content-center ">
-                    <li class="nav-item"><a class="nav-link text-white btn btn-outline-primary btn-block  mt-2" href="{{route('HRuserProfile.details')}}"><i class="fas fa-user"></i>Profile</a></li>
+                        <li class="nav-item"><a class="nav-link text-white btn btn-outline-primary btn-block  mt-2" href="{{route('HRhome.index')}}"><i class="fas fa-home"></i>Home</a></li>
+                        <span style="padding-right:7px;"></span>
+                        <li class="nav-item"><a class="nav-link text-white btn btn-outline-primary btn-block  mt-2" href="{{route('HRuserProfile.details')}}"><i class="fas fa-user"></i>Profile</a></li>
                         <span style="padding-right:7px;"></span>
                         <li class="nav-item"><a class="nav-link text-white btn btn-outline-primary btn-block mt-2" href="#"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
                     </ul>

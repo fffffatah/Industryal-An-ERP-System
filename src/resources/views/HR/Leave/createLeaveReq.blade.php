@@ -16,11 +16,13 @@
         <header class="border bg-dark m-0 p-1 fixed-top">
             <div class="row">
                 <div class="col-9 ">
-                    <h1 class="text-white  ">Industryal</h1>
+                    <h1 class="text-white"><i>Industryal</i></h1>
                 </div>
                 
                 <div class=" col-lg-3  ">
                     <ul class="nav justify-content-center ">
+                        <li class="nav-item"><a class="nav-link text-white btn btn-outline-primary btn-block  mt-2" href="{{route('HRhome.index')}}"><i class="fas fa-home"></i>Home</a></li>
+                        <span style="padding-right:7px;"></span>
                         <li class="nav-item"><a class="nav-link text-white btn btn-outline-primary btn-block  mt-2" href="{{route('HRuserProfile.details')}}"><i class="fas fa-user"></i>Profile</a></li>
                         <span style="padding-right:7px;"></span>
                         <li class="nav-item"><a class="nav-link text-white btn btn-outline-primary btn-block mt-2" href="#"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
@@ -51,7 +53,7 @@
             <div class="col-10">
                 <div class="info-section p-3 text-black my-5">
                     <div class="title text-center mb-3">
-                        <h3 class="font-width-border"><i class="fal fa-house-leave"></i>Leave Request</h3>
+                        <h1 class="font-width-border"><i class="far fa-house-leave"></i>Leave Request</h1>
                     </div>
                     <div class="border border-primary w-75   m-auto">
                         <form action="" class="w-50 m-auto  " >

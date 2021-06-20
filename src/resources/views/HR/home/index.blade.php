@@ -16,7 +16,7 @@
         <header class="border bg-dark m-0 p-1 fixed-top">
             <div class="row">
                 <div class="col-9 ">
-                    <h1 class="text-white  ">Industryal</h1>
+                    <h1 class="text-white"><i>Industryal</i></h1>
                 </div>
                 
                 <div class=" col-lg-3  ">
