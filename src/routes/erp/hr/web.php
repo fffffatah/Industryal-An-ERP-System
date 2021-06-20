@@ -24,27 +24,27 @@ use App\Http\Controllers\HRuserProfileController;
 */
 
 //Hr home
-Route::get('/home',[HRhomeController::class,'index'])->name('HRhome.index');
+Route::get('/HR/home',[HRhomeController::class,'index'])->name('HRhome.index');
 
 
 //HR user create
-Route::get('/user/create',[HRuserController::class,'create'])->name('HRuser.create');
-Route::get('/user/list',[HRuserController::class,'index'])->name('HRuser.index');
+Route::get('/HR/user/create',[HRuserController::class,'create'])->name('HRuser.create');
+Route::get('/HR/user/list',[HRuserController::class,'index'])->name('HRuser.index');
 //Employee Create
-Route::get('/employee/create',[HRemployeeController::class,'create'])->name('HRemployee.create');
-Route::get('/employee/group',[HRgroupController::class,'index'])->name('HRgroup.index');
+Route::get('/HR/employee/create',[HRemployeeController::class,'create'])->name('HRemployee.create');
+Route::get('/HR/employee/group',[HRgroupController::class,'index'])->name('HRgroup.index');
 
 //leave request
-Route::get('/leave/request',[HRLeaveController::class,'leave'])->name('HRLeave.leave');
+Route::get('/HR/leave/request',[HRLeaveController::class,'leave'])->name('HRLeave.leave');
 //payroll
-Route::get('/payroll/show',[HRpayrollController::class,'show'])->name('HRpayroll.show');
+Route::get('/HR/payroll/show',[HRpayrollController::class,'show'])->name('HRpayroll.show');
 
 //expense report
-Route::get('/expense/report',[HRexpenseController::class,'report'])->name('HRexpense.report');
-Route::get('/expense/list',[HRexpenseListController::class,'list'])->name('HRexpenseList.list');
-Route::get('/expense/statistic',[HRExStatisticController::class,'statistic'])->name('HRExStatistic.statistic');
+Route::get('/HR/expense/report',[HRexpenseController::class,'report'])->name('HRexpense.report');
+Route::get('/HR/expense/list',[HRexpenseListController::class,'list'])->name('HRexpenseList.list');
+Route::get('/HR/expense/statistic',[HRExStatisticController::class,'statistic'])->name('HRExStatistic.statistic');
 //user profile
-Route::get('/user/profile1',[HRuserProfileController::class,'details'])->name('HRuserProfile.details');
+Route::get('/HR/user/profile',[HRuserProfileController::class,'details'])->name('HRuserProfile.details');
 
 
 

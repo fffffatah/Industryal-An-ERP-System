@@ -90,11 +90,12 @@
                                 </select>
                             </div>
                               
-                            <div class="from-group">
-                                <input class="btn btn-outline-primary btn-block mt-3" type="submit" value="Create Leave Request" style="color:tomato">
-                            </div>
+                            
                              
                         </form>
+                    </div>
+                    <div class="from-group">
+                        <center><input class="btn btn-outline-primary btn-block w-50 mt-3" type="submit" value="Create Leave Request" style="color:tomato"></center> 
                     </div>
                 </div>
             </div>
