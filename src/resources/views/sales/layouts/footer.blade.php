@@ -3,10 +3,8 @@
     
     <footer class="class-footer fixed-bottom">
         <div class=" bg-dark">
-            <div class="footer-copyright text-center text-info py-1">© 2020 Copyright:
-            <a href="https://mdbootstrap.com/"> 
-                MDBootstrap.com
-            </a>
+            <div class="footer-copyright text-center text-info py-1">© 2021 Industryal
+            
             </div>
         </div>
     </footer>
