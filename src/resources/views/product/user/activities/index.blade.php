@@ -73,10 +73,18 @@
                         </div>
                     </div>
                 <div class="col-12 col-lg-9 border border-dark rounded p-3">
-                        <div class="container">
+                <div class="container">
                             <div class="row justify-content-center">
-                                <h3>Activities</h3>
+                                <h3><i class="fas fa-tasks"></i></i>&nbsp &nbsp Activities</h3>
                             </div>
+                            <hr class="mb-4">
+                            <table class="table table-striped table-bordered">
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                    <th>Time</th>
+                                </tr>
+                            </table>
                         </div>
                     </div>
             </div>

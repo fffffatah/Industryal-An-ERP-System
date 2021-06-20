@@ -74,9 +74,21 @@
                     </div>
                 <div class="col-12 col-lg-9 border border-dark rounded p-3">
                         <div class="container">
-                            <div class="row justify-content-center">
-                                <h3>Warehouse List</h3>
+                        <div class="row justify-content-center">
+                                <h3><i class="fas fa-warehouse"></i>&nbsp &nbsp Warehouse List</h3>
                             </div>
+                            <hr class="mb-4">
+                            <table class="table table-striped table-bordered">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                    <th>Address</th>
+                                    <th>Total Quantity</th>
+                                    <th>Remaining Quantity</th>
+                                    <th>Status</th>
+                                </tr>
+                            </table>
                         </div>
                     </div>
             </div>
