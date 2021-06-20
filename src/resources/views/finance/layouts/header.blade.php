@@ -14,9 +14,9 @@
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li class="nav-item"><a class="nav-link" href="{{route('finance.dashboard.index')}}">Dashboard</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{route('finance.invoice.index')}}">Invoice</a></li>
-                        <li class="nav-item"><a class="nav-link" href="lawyer_clients.php">Payments</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{route('finance.payments.index')}}">Payments</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{route('finance.reports.index')}}">Reports</a></li>
-                        <li class="nav-item"><a class="nav-link" href="lawyer_reports.php">Budgeting</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{route('finance.budgeting.index')}}">Budgeting</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{route('finance.leaverequest.index')}}">Leave Request</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{route('finance.chat.index')}}">Chats</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{route('finance.importexport.index')}}">Import/Export</a></li>

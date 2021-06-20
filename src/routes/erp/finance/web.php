@@ -40,5 +40,8 @@ Route::get('/finance/importexport/history', ['as'=>'finance.importexport.history
 Route::get('/finance/importexport/import', ['as'=>'finance.importexport.import', 'uses'=>'FinanceImportExportController@index_import']);
 Route::get('/finance/importexport/export', ['as'=>'finance.importexport.export', 'uses'=>'FinanceImportExportController@index_export']);
 
+#Routes for Budgeting
+Route::get('/finance/budgeting', ['as'=>'finance.budgeting.index', 'uses'=>'FinanceBudgetingController@index']);
+
 #Routes for Chat
 Route::get('/finance/chat', ['as'=>'finance.chat.index', 'uses'=>'FinanceChatController@index']);
