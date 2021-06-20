@@ -19,7 +19,7 @@
                         <li class="nav-item"><a class="nav-link" href="lawyer_reports.php">Budgeting</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{route('finance.leaverequest.index')}}">Leave Request</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{route('finance.chat.index')}}">Chats</a></li>
-                        <li class="nav-item"><a class="nav-link" href="lawyer_reviews.php">Import/Export</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{route('finance.importexport.index')}}">Import/Export</a></li>
                     </ul>
                 <div class="navbar-nav ml-auto">
                     <li class="nav-item"><a class="btn btn-outline-info" href="{{route('finance.profile.index')}}" style="color:white;"><i class="fas fa-address-card"></i> Profile</a></li>

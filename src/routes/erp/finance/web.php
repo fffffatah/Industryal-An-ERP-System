@@ -34,5 +34,11 @@ Route::get('/finance/reports', ['as'=>'finance.reports.index', 'uses'=>'FinanceR
 Route::get('/finance/reports/financial', ['as'=>'finance.reports.financial', 'uses'=>'FinanceReportController@index_financial']);
 Route::get('/finance/reports/invoice', ['as'=>'finance.reports.invoice', 'uses'=>'FinanceReportController@index_invoice']);
 
+#Routes for Import/Export
+Route::get('/finance/importexport', ['as'=>'finance.importexport.index', 'uses'=>'FinanceImportExportController@index']);
+Route::get('/finance/importexport/history', ['as'=>'finance.importexport.history', 'uses'=>'FinanceImportExportController@index_history']);
+Route::get('/finance/importexport/import', ['as'=>'finance.importexport.import', 'uses'=>'FinanceImportExportController@index_import']);
+Route::get('/finance/importexport/export', ['as'=>'finance.importexport.export', 'uses'=>'FinanceImportExportController@index_export']);
+
 #Routes for Chat
 Route::get('/finance/chat', ['as'=>'finance.chat.index', 'uses'=>'FinanceChatController@index']);
