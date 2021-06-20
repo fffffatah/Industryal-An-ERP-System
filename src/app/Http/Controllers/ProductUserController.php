@@ -35,4 +35,8 @@ class ProductUserController extends Controller
     {
         return view('product.user.profile.changePassword');
     }
+    public function verification()
+    {
+        return view('product.user.profile.verificationCode');
+    }
 }
