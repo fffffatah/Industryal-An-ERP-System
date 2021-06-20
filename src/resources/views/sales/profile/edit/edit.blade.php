@@ -1,25 +1,16 @@
 @include('sales.layouts.header')
-<div class="wrapper ">
-  <div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
-    <!--
-      Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
-
-      Tip 2: you can also add an image using data-image tag
-  -->
-    <div class="logo"><a href="http://www.creative-tim.com" class="simple-text logo-normal">
-        Creative Tim
-      </a></div>
-  <div class="main-panel">
-    <div class="content">
+<div class="float-left>
+  <div class="container">
+    <div class="content" style="margin:auto">
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-8">
             <div class="card">
-              <div class="card-header card-header-primary">
+              <div class="card-header card-header-primary bg-info">
                 <h4 class="card-title">Edit Profile</h4>
                 <p class="card-category">Complete your profile</p>
               </div>
-              <div class="card-body">
+              <div class="card-body" style="width:100%">
                 <form>
                   <div class="row">
                     <div class="col-md-5">
@@ -101,16 +92,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="card card-profile">
-              {{-- <div class="card-avatar">
-                <a href="javascript:;">
-                  <img class="img" src="../assets/img/faces/marc.jpg" />
-                </a>
-              </div>
-              
-            </div> --}}
-          </div>
+          
         </div>
       </div>
     </div>
