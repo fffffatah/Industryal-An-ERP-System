@@ -11,3 +11,27 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/sales', function () {
+    return view('sales.index');
+});
+
+Route::get('/sales/profile', function(){
+    return view('sales.profile.index');
+});
+
+Route::get('/sales/statistics', function(){
+    return view('sales.stats.index');
+});
+
+Route::get('/sales/dashboard', function(){
+    return view('sales.dashboard.index');
+});
+
+Route::get('/sales/dashboard', [
+    'uses' => 'SalesController@dashboardIndex',
+    'as' => 'sales.dashboard.index'
+]);
+
+Route::get('/sales/customers/list', function(){
+    return view('sales.customers.list');
+});
