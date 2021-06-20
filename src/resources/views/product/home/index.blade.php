@@ -75,8 +75,9 @@
                 <div class="col-12 col-lg-9 border border-dark rounded p-3">
                     <div class="container">
                         <div class="row justify-content-center">
-                            <h3>Charts</h3>
+                            <h3><i class="fas fa-chart-pie"></i> &nbsp Charts</h3>
                         </div>
+                        <hr>
                     </div>
                 </div>
             </div>
