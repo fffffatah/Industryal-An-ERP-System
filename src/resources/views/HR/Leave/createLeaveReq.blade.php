@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expense List</title>
+    <title>Leave request</title>
    <!--  Bootstrap cdn -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
     crossorigin="anonymous">
@@ -43,13 +43,59 @@
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRexpense.report')}}">Create Expense Report</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRexpenseList.list')}}">List Expense  Report</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRpayroll.show')}}">Payroll</a></li>
+
                     </ul>
                 </nav>
             </div>
             <div class="col-10">
-                <h1 class="text-center">Expense List</h1>
-        
-           </div>
+                <div class="info-section p-3 text-black my-5">
+                    <div class="title text-center mb-3">
+                        <h3 class="font-width-border"><i class="fal fa-house-leave"></i>Leave Request</h3>
+                    </div>
+                    <div class="border border-primary w-75   m-auto">
+                        <form action="" class="w-50 m-auto  " >
+                        <table>
+                            <div class="form-group">
+                                <label>User</label>
+                                <select name="User" id="super" class="form-control">
+                                    <option value="HRmanager">HR manager</option>
+                                </select>
+                            </div>
+                            
+                            
+                            <div class="form-group">
+                                <label>Type</label>
+                                <select name="type" id="type" class="form-control">
+                                    <option value="sick">Sick Leave</option>
+                                    <option value="other">Other leave</option>
+                                </select>
+                            </div>
+                            
+                            
+                            
+                            <div class="from-group">
+                                <label>Start date</label>
+                                <input type="date" class="form-control" id="startdate" name="startdate">
+                            </div>
+                            <div class="from-group">
+                                <label>End date</label>
+                                <input type="date" class="form-control" id="startdate" name="startdate">
+                            </div>
+                            <div class="form-group">
+                                <label>Approved by</label>
+                                <select name="approve" id="approve" class="form-control">
+                                    <option value="Super">Super Admin</option>
+                                    <option value="Hrmanager">HR manager</option>
+                                </select>
+                            </div>
+                              
+                            <div class="from-group">
+                                <input class="btn btn-outline-primary btn-block mt-3" type="submit" value="Create Leave Request" style="color:tomato">
+                            </div>
+                             
+                        </form>
+                </div>
+            </div>
             
         </div>
        
