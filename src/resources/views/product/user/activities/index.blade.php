@@ -78,6 +78,13 @@
                                 <h3><i class="fas fa-tasks"></i></i>&nbsp &nbsp Activities</h3>
                             </div>
                             <hr class="mb-4">
+                            <div class="input-group">
+                                <input class="form-control" type="text" placeholder="Find By Type...">
+                                <div class="input-group-append">
+                                    <button type="button" class="btn btn-outline-secondary">Search &nbsp <i class="fas fa-search"></i></button>
+                                </div>
+                            </div>
+                            <br>
                             <table class="table table-striped table-bordered">
                                 <tr>
                                     <th>Type</th>
