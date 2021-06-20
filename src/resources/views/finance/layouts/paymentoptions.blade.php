@@ -4,7 +4,8 @@
                         <table align="left">
                         <div class="btn-group-vertical">
                             <a class="btn btn-info text-left" href="#"><i class="fas fa-list"></i> Payment History</a>
-                            <a class="btn btn-info text-left" href="#"><i class="fas fa-exclamation"></i> Pending</a>
+                            <a class="btn btn-info text-left" href="#"><i class="fas fa-users"></i> Customer Payments</a>
+                            <a class="btn btn-info text-left" href="#"><i class="fas fa-users"></i> Supplier Payments</a>
                         </div>
                         </table>
                     </div>
