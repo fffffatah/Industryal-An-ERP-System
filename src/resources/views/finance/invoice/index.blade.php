@@ -3,7 +3,7 @@
     <table>
         <tr>
             <td align="center" style="padding:20px;">
-                @include('finance.layouts.invoiceoptions');
+                @include('finance.layouts.invoiceoptions')
             </td>
             <td align="center" style="padding:20px;">
             </td>
