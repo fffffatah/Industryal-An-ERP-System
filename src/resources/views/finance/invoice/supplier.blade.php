@@ -28,7 +28,7 @@
                         </table>
                     </div>
                     </div>
-                <div class="card-footer"><a class="btn btn-info text-left" href="#"><i class="fas fa-pen"></i> Adjust & Create</a> <a class="btn btn-info text-left" href="#"><i class="fas fa-plus"></i> Create</a></div>
+                <div class="card-footer"><a class="btn btn-info text-left" href="#"><i class="fas fa-plus"></i> Create</a></div>
             </div>
             </td>
         </tr>
