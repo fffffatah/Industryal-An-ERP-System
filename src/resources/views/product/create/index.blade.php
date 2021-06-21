@@ -175,7 +175,7 @@
                                     </tr>
                                     <tr>
                                         <td>Selling Price</td>
-                                        <td><input type="text" class="form-control"></td>
+                                        <td><input type="number" class="form-control"></td>
                                         <td>
                                             <select class="form-control" id="warehouse">
                                                 <option>Excluding Tax</option>

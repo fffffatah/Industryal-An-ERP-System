@@ -146,6 +146,12 @@
                                                 </td>
                                             </tr>
                                             <tr>
+                                                <td clospan="3">Quantity</td>
+                                                <td clospan="3">
+                                                    <input type="text" class="form-control">
+                                                </td>
+                                            </tr>
+                                            <tr>
                                                 <td colspan="3" align="center" ><input type="submit" class="btn btn-success" value="Create" style="width:400px"></td>
                                             </tr>
                                         </table>
