@@ -14,18 +14,24 @@
         <td>Tony Stark</td>
         <td>tony.stark@gmail.com</td>
         <td>+1 NXX-NXX-XXXX</td>
+        <td align="center"><button type="button" class="btn btn-info" onclick="document.location='{{route('sales.customers.send')}}'">Mail Customer</button>
+
       </tr>
       <tr>
         <th scope="row">2</th>
         <td>Bruce Wayne</td>
         <td>batman@gmail.com</td>
         <td>+1 NXX-NXX-XXXX</td>
+        <td align="center"><button type="button" class="btn btn-info" onclick="document.location='{{route('sales.customers.send')}}'">Mail Customer</button>
+
       </tr>
       <tr>
         <th scope="row">3</th>
         <td scope="row">Peter Parker</td>
         <td>new.yorker@gmail.com</td>
         <td>+1 NXX-NXX-XXXX</td>
+        <td align="center"><button type="button" class="btn btn-info" onclick="document.location='{{route('sales.customers.send')}}'">Mail Customer</button>
+        </td>
       </tr>
     </tbody>
   </table>
