@@ -57,6 +57,11 @@ Route::get('/sales/customers/email', [
     'as' => 'sales.customers.send'
 ]);
 
+Route::get('/sales/stats/analytics/status', [
+    'uses' => 'SalesStatsController@viewStatus',
+    'as' => 'sales.stats.analytics.status'
+]);
+
 Route::get('/sales/customers/list', function(){
     return view('sales.customers.list');
 });
