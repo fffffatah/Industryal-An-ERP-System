@@ -50,6 +50,19 @@
             </div>
             <div class="col-10">
                 <h1 class="text-center"><i class="fas fa-address-book"></i>User List</h1>
+                    <table  class="table table-hover ">
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>User Name</th>
+                        <th>Password</th>
+                        <th>Gender</th>
+                        <th>Supervisor</th>
+                        <th>Address</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Job Position</th>
+                        <th>Employment Start date</th>
+                    </table>
         
            </div>
             

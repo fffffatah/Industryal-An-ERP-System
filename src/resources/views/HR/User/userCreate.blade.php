@@ -69,7 +69,7 @@
                                 <input type="txt" class="form-control" id="lastname" name="lname">
                             </div>
                             <div class="from-group">
-                                <label>Login</label></td>
+                                <label>User Name</label></td>
                                 <input type="text" class="form-control" name="login" id="loginid">
                             </div>
                             <div class="form-group">

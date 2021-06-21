@@ -45,10 +45,38 @@
                 </nav>
             </div>
             <div class="col-10">
+                
                 <h1 class="text-center"><i class="fas fa-user"></i>Profile</h1>
-        
-           </div>
-            
+               
+                    <table class="table table-hover w-75">
+                        <tr>
+                            <td>First Name</td>
+                            <td>Md.</td>
+                        </tr>
+                        <tr>
+                            <td>Last Name</td>
+                            <td>Rasel</td>
+                        </tr>
+                        <tr>
+                            <td>Job position</td>
+                            <td>HR manager</td>
+                        </tr>
+                        <tr>
+                            <td>Phone No</td>
+                            <td>01767227082</td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>rasel@gamil.com</td>
+                        </tr>
+                        <tr>
+                            <td>Address</td>
+                            <td>Dhaka</td>
+                        </tr>
+                    </table>
+                    
+                
+            </div>
         </div>
 
     <!-- Footer Starts-->
