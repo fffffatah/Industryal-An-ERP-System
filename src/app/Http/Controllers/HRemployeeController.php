@@ -11,4 +11,10 @@ class HRemployeeController extends Controller
     {
         return view('HR.employee.employeeCreate');
     }
+
+    public function emplist()
+    {
+        return view('HR.employee.employeeList');
+    }
+    
 }
