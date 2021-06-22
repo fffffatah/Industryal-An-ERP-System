@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HRuserController;
 use App\Http\Controllers\HRhomeController;
 use App\Http\Controllers\HRemployeeController;
+use App\Http\Controllers\HREmpScheduleController;
 use App\Http\Controllers\HRgroupController;
 use App\Http\Controllers\HRexpenseController;
 use App\Http\Controllers\HRexpenseListController;
@@ -32,7 +33,9 @@ Route::get('/HR/user/create',[HRuserController::class,'create'])->name('HRuser.c
 Route::get('/HR/user/list',[HRuserController::class,'index'])->name('HRuser.index');
 //Employee Create
 Route::get('/HR/employee/create',[HRemployeeController::class,'create'])->name('HRemployee.create');
+Route::get('/HR/employee/list',[HRemployeeController::class,'emplist'])->name('HRemployee.emplist');
 Route::get('/HR/employee/group',[HRgroupController::class,'index'])->name('HRgroup.index');
+Route::get('/HR/employee/schedule',[HREmpScheduleController::class,'schedule'])->name('HREmpSchedule.schedule');
 
 //leave request
 Route::get('/HR/leave/request',[HRLeaveController::class,'leave'])->name('HRLeave.leave');

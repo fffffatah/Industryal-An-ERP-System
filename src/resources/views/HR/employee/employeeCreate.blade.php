@@ -41,6 +41,8 @@
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRuser.index')}}">User List</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRemployee.create')}}">New Employee</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRgroup.index')}}">Add group</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRemployee.emplist')}}">Employee List</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HREmpSchedule.schedule')}}">Schedules</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRLeave.leave')}}">Create Leave Request</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRexpense.report')}}">Create Expense Report</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRexpenseList.list')}}"> Expense  Report List</a></li>
@@ -56,6 +58,10 @@
                     </div>
                     <div class="border border-primary w-75  m-auto">
                         <form action="" class="w-50 m-auto  " >
+                            <div class="form-group">
+                                <label>Employee ID</label> 
+                                <input type="number" class="form-control" id="employeeid" name="eid" >
+                            </div>
                         
                             <div class="form-group">
                                 <label>Employee Name</label> 
@@ -98,6 +104,15 @@
                                 <label>Job Position</label> 
                                 <input type="txt" class="form-control" id="position" name="position" >
                             </div>
+                            <div class="from-group">
+                                <label>Start Time(per day)</label> 
+                                <input type="time" class="form-control" id="stime" name="stime" >
+                            </div>
+                            <div class="from-group">
+                                <label>End Time(per day)</label> 
+                                <input type="time" class="form-control" id="etime" name="etime" >
+                            </div>
+
                             <div class="form-group">
                                 <label>Hour Worked(Per week)</label> 
                                 <input type="txt" class="form-control" id="worked" name="worked" >
