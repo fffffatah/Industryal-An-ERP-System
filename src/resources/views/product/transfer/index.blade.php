@@ -81,12 +81,14 @@
                         <hr class="mb-4">
                         <div class="container">
                             <div class="text-left">
-                                <form action="">
+                                <form method="POST">
+                                    @csrf
                                     <table class="table table-striped table-bordered">
                                         <tr>
                                             <td >Id</td>
                                             <td >
-                                                <input type="text" class="form-control">
+                                                <input type="text" class="form-control" name="product_id" value="{{old('product_id')}}">
+                                                <span class="text-danger">{{$errors->first('product_id')}}</span>
                                             </td>
                                         </tr>
                                         <tr>
@@ -101,7 +103,8 @@
                                         <tr>
                                             <td clospan="3">Quantity</td>
                                             <td clospan="3">
-                                                <input type="text" class="form-control">
+                                                <input type="text" class="form-control" name="product_quantity" value="{{old('product_quantity')}}">
+                                                <span class="text-danger">{{$errors->first('product_quantity')}}</span>
                                             </td>
                                         </tr>
                                         <tr>

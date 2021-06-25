@@ -10,7 +10,7 @@
     crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous"> <!-- for fontawesome -->
 
-    <title>Product | Home</title>
+    <title>Product | Create</title>
 </head>
 <body>
     <!-- Header Starts -->
@@ -83,73 +83,84 @@
                         <div class="col-10">
                         <div class="container">
                         <div class="text-left">
-                            <form action="{{route('productList.index')}}">
+                            <form method="POST">
+                                @csrf
                                 <table class="table table-striped table-bordered">
                                     <tr>
                                         <td >Id</td>
                                         <td colspan='2' >
-                                            <input type="text" class="form-control">
+                                            <input type="text" class="form-control" name="product_id" value="{{old('product_id')}}">
+                                            <span class="text-danger">{{$errors->first('product_id')}}</span>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>Name</td>
                                         <td colspan='2'>
-                                            <input type="text" class="form-control">
+                                            <input type="text" class="form-control" name="product_name" value="{{old('product_name')}}">
+                                            <span class="text-danger">{{$errors->first('product_name')}}</span>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>Status (Sell)</td>
                                         <td colspan='2'>
-                                            <select class="form-control" id="sellStatus">
+                                            <select class="form-control" id="sellStatus" name="product_sell_status" value="{{old('product_sell_status')}}">
                                                 <option>For sale</option>
                                                 <option>Not for sale</option>
-                                            </select>  
+                                            </select>
+                                            <span class="text-danger">{{$errors->first('product_sell_status')}}</span>  
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>Status (Purchase)</td>
                                         <td colspan='2'>
-                                            <select class="form-control" id="purchaseStatus">
+                                            <select class="form-control" id="purchaseStatus" name="product_purchase_status" value="{{old('product_purchase_status')}}">
                                                 <option>For Purchase</option>
                                                 <option>Not for purchase</option>
-                                            </select>  
+                                            </select> 
+                                            <span class="text-danger">{{$errors->first('product_purchase_status')}}</span> 
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>Description</td>
                                         <td colspan='2'>
-                                            <textarea type="text" name="" id="" class="form-control"> </textarea>  
+                                            <textarea type="text" name="product_description" id="" class="form-control">{{old('product_description')}}</textarea> 
+                                            <span class="text-danger">{{$errors->first('product_description')}}</span> 
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>Warehouse</td>
                                         <td colspan='2'>
-                                            <select class="form-control" id="warehouse">
+                                            <select class="form-control" name="warehouse_name" value="{{old('warehouse_name')}}">
                                                 <option>Dummy 1</option>
                                                 <option>Dummy 2</option>
                                             </select>  
+                                            <span class="text-danger">{{$errors->first('warehouse_name')}}</span>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>Stock</td>
                                         <td colspan='2'>
-                                            <input type="text" class="form-control">
+                                            <input type="text" class="form-control" name="product_stock" value="{{old('product_stock')}}">
+                                            <span class="text-danger">{{$errors->first('product_stock')}}</span>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>Nature of product</td>
                                         <td colspan='2'>
-                                            <select class="form-control" id="warehouse">
+                                            <select class="form-control" name="product_nature" value="{{old('product_nature')}}">
                                                 <option>Manufactired Product</option>
                                                 <option>Raw Material</option>
-                                            </select>  
+                                            </select> 
+                                            <span class="text-danger">{{$errors->first('product_nature')}}</span> 
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>Weight</td>
-                                        <td><input type="text" class="form-control"></td>
+                                        <td><input type="text" class="form-control" name="product_weight" value="{{old('product_weight')}}">
+                                        <span class="text-danger">{{$errors->first('product_weight')}}</span>
+                                        </td>
                                         <td>
-                                            <select class="form-control" id="warehouse">
+                                            <select class="form-control" name="product_weight_unit" value="{{old('product_weight_unit')}}">
                                                 <option>kilogram</option>
                                                 <option>gram</option>
                                                 <option>tonne</option>
@@ -161,32 +172,39 @@
                                     </tr>
                                     <tr>
                                         <td>Length x Width x Height</td>
-                                        <td><input type="text" class="form-control"></td>
+                                        <td><input type="text" class="form-control" name="product_dimention" value="{{old('product_dimention')}}">
+                                        <span class="text-danger">{{$errors->first('product_dimention')}}</span>
+                                        </td>
                                         <td>
-                                            <select class="form-control" id="warehouse">
+                                            <select class="form-control" name="product_dimention_unit" value="{{old('product_dimention_unit')}}">
                                                 <option>m</option>
                                                 <option>dm</option>
                                                 <option>cm</option>
                                                 <option>mm</option>
                                                 <option>foot</option>
                                                 <option>inch</option>
-                                            </select>  
+                                            </select> 
+                                            <span class="text-danger">{{$errors->first('product_dimention_unit')}}</span> 
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>Selling Price</td>
-                                        <td><input type="number" class="form-control"></td>
+                                        <td><input type="number" class="form-control" name="product_selling_price" value="{{old('product_selling_price')}}">
+                                        <span class="text-danger">{{$errors->first('product_selling_price')}}</span>
+                                        </td>
                                         <td>
-                                            <select class="form-control" id="warehouse">
+                                            <select class="form-control" name="product_selling_tax" value="{{old('product_selling_tax')}}">
                                                 <option>Excluding Tax</option>
                                                 <option>Including Tax</option>
                                             </select>  
+                                            <span class="text-danger">{{$errors->first('product_selling_tax')}}</span>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>Upload Image: </td>
                                         <td colspan='2'>
-                                            <input class="form-control" type="file" id="myfile">
+                                            <input class="form-control" type="file" id="myfile" name="product_image" value="{{old('product_image')}}">
+                                            <span class="text-danger">{{$errors->first('product_image')}}</span>
                                         </td>
                                     </tr>
                                     <tr>

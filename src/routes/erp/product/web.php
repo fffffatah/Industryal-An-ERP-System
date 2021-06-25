@@ -31,15 +31,22 @@ Route::get('/', function () {
                                     // Products
 //Product
 Route::get('/product/home',[ProductHomeController::class, 'index'])->name('productHome.index');
+
 Route::get('/product/create',[ProductCreateController::class, 'index'])->name('productCreate.index');
+Route::post('/product/create',[ProductCreateController::class, 'create']);
+
 Route::get('/product/list',[ProductListController::class, 'index'])->name('productList.index');
 Route::get('/product/list/faulty',[ProductListController::class, 'faulty'])->name('productListFaulty.index');
 Route::get('/product/stocks',[ProductStockController::class, 'index'])->name('productStocks.index');
 Route::get('/product/statistics',[ProductStatisticsController::class, 'index'])->name('productStatistics.index');
+
 Route::get('/product/transfer',[ProductTransferController::class, 'index'])->name('productTransfer.index');
+Route::post('/product/transfer',[ProductTransferController::class, 'transfer']);
 
 //Warehouse
 Route::get('/warehouse/create',[WarehouseCreateController::class, 'index'])->name('warehouseCreate.index');
+Route::post('/warehouse/create',[WarehouseCreateController::class, 'create']);
+
 Route::get('/warehouse/list',[WarehouseListController::class, 'index'])->name('warehouseList.index');
 Route::get('/warehouse/statistics',[WarehouseStatisticsController::class, 'index'])->name('warehouseStatistics.index');
 
@@ -50,7 +57,15 @@ Route::get('/product/user/administration',[ProductUserController::class, 'admini
 
 //User
 Route::get('/product/user/profile',[ProductUserController::class, 'profile'])->name('userProfile.index');
+
 Route::get('/product/user/edit',[ProductUserController::class, 'editProfile'])->name('userEditProfile.index');
+Route::post('/product/user/edit',[ProductUserController::class, 'editProfileVerify']);
+
 Route::get('/product/user/edit/profilepicture',[ProductUserController::class, 'editProfilePicture'])->name('userEditProfilePicture.index');
+Route::post('/product/user/edit/profilepicture',[ProductUserController::class, 'editProfilePictureVerify']);
+
 Route::get('/product/user/edit/changePassword',[ProductUserController::class, 'changePassword'])->name('userChangePassword.index');
-Route::get('/product/user/edit/verify',[ProductUserController::class, 'verification'])->name('userChangeProfileVerication.index');
+Route::post('/product/user/edit/changePassword',[ProductUserController::class, 'changePasswordVerify']);
+
+Route::get('/product/user/edit/changePassword/verify',[ProductUserController::class, 'verification'])->name('userChangeProfileVerication.index');
+Route::post('/product/user/edit/changePassword/verify',[ProductUserController::class, 'verificationVerify']);

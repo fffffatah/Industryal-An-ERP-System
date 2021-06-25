@@ -66,7 +66,8 @@
                         <hr class="mb-4">
                         <div class="container">
                             <div class="text-left">
-                                <form action="{{route('userProfile.index')}}">
+                                <form method="POST">
+                                    @csrf
                                     <table class="table table-striped table-bordered">
                                         <tr>
                                             <td>Upload Image: </td>
@@ -75,9 +76,10 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>Old Password</td>
+                                            <td>Current Password</td>
                                             <td>
-                                                <input type="text" class="form-control">
+                                                <input type="text" class="form-control" name="current_password">
+                                                <span class="text-danger">{{$errors->first('current_password')}}</span>
                                             </td>
                                         </tr>
                                         <tr>

@@ -86,7 +86,7 @@
                                         <tr>
                                             <td clospan="3">Type</td>
                                             <td clospan="3">
-                                                <select class="form-control" id="sellStatus">
+                                                <select class="form-control" name="leave_type">
                                                     <option>Sick leave</option>
                                                     <option>Other leave</option>
                                                 </select>  
@@ -95,20 +95,20 @@
                                         <tr>
                                             <td clospan="3">Start date</td>
                                             <td clospan="3">
-                                                <input type="date" class="form-control">  
+                                                <input type="date" class="form-control" name="leave_start_date" value="{{old('leave_start_date')}}">  
                                             </td>
                                         </tr>
                                         <tr>
                                             <td clospan="3">End date</td>
                                             <td clospan="3">
-                                                <input type="date" class="form-control">  
+                                                <input type="date" class="form-control" name="leave_end_date" value="{{old('leave_end_date')}}">  
                                             </td>
                                         </tr>
                                         <tr>
                                         <tr>
                                             <td clospan="3">Description</td>
                                             <td colspan="3">
-                                                <textarea type="text" name="" id="" class="form-control"> </textarea>  
+                                                <textarea type="text" name="leave_description" id="" class="form-control">{{old('leave_description')}}</textarea>  
                                             </td>
                                         </tr>
                                         <tr>

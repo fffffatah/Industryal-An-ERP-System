@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\Product\UserChangePasswordRequest;
+use App\Http\Requests\Product\UserEditProfileRequest;
+use App\Http\Requests\Product\UserCodeRequest;
 
 class ProductUserController extends Controller
 {
@@ -27,16 +30,32 @@ class ProductUserController extends Controller
     {
         return view('product.user.profile.edit');
     }
+    public function editProfileVerify(UserEditProfileRequest $req)
+    {
+        return redirect()->route('userProfile.index');
+    }
     public function editProfilePicture()
     {
         return view('product.user.profile.editProfilePicture');
+    }
+    public function editProfilePictureVerify(UserEditProfileRequest $req)
+    {
+        return redirect()->route('userProfile.index');
     }
     public function changePassword()
     {
         return view('product.user.profile.changePassword');
     }
+    public function changePasswordVerify(UserChangePasswordRequest $req)
+    {
+        return redirect()->route('userChangeProfileVerication.index');
+    }
     public function verification()
     {
         return view('product.user.profile.verificationCode');
+    }
+    public function verificationVerify(UserCodeRequest $req)
+    {
+        return redirect()->route('userProfile.index');
     }
 }
