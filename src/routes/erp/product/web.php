@@ -39,7 +39,9 @@ Route::get('/product/list',[ProductListController::class, 'index'])->name('produ
 Route::get('/product/list/faulty',[ProductListController::class, 'faulty'])->name('productListFaulty.index');
 Route::get('/product/stocks',[ProductStockController::class, 'index'])->name('productStocks.index');
 Route::get('/product/statistics',[ProductStatisticsController::class, 'index'])->name('productStatistics.index');
+
 Route::get('/product/transfer',[ProductTransferController::class, 'index'])->name('productTransfer.index');
+Route::post('/product/transfer',[ProductTransferController::class, 'transfer']);
 
 //Warehouse
 Route::get('/warehouse/create',[WarehouseCreateController::class, 'index'])->name('warehouseCreate.index');
