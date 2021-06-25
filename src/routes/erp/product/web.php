@@ -45,6 +45,8 @@ Route::post('/product/transfer',[ProductTransferController::class, 'transfer']);
 
 //Warehouse
 Route::get('/warehouse/create',[WarehouseCreateController::class, 'index'])->name('warehouseCreate.index');
+Route::post('/warehouse/create',[WarehouseCreateController::class, 'create']);
+
 Route::get('/warehouse/list',[WarehouseListController::class, 'index'])->name('warehouseList.index');
 Route::get('/warehouse/statistics',[WarehouseStatisticsController::class, 'index'])->name('warehouseStatistics.index');
 
