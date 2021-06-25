@@ -83,63 +83,79 @@
                             <div class="col-10">
                                 <div class="container">
                                 <div class="text-left">
-                                    <form action="{{route('warehouseList.index')}}">
+                                    <form method="POST">
+                                        @csrf
                                         <table class="table table-striped table-bordered">
                                             <tr>
                                                 <td >Id</td>
                                                 <td >
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" class="form-control" name="warehouse_id" value="{{old('warehouse_id')}}">
+                                                    <span class="text-danger">{{$errors->first('warehouse_id')}}</span>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td clospan="3">Name</td>
                                                 <td clospan="3">
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" class="form-control" name="warehouse_name" value="{{old('warehouse_name')}}">
+                                                    <span class="text-danger">{{$errors->first('warehouse_name')}}</span>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td clospan="3">Description</td>
                                                 <td colspan="3">
-                                                    <textarea name="" id="" cols="50" rows="2" class="form-control"></textarea>  
+                                                    <textarea id="" cols="50" rows="2" class="form-control" name="warehouse_description">{{old('warehouse_description')}}</textarea> 
+                                                    <span class="text-danger">{{$errors->first('warehouse_description')}}</span> 
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td clospan="3">Address</td>
                                                 <td colspan="3">
-                                                    <textarea name="" id="" cols="20" rows="1" class="form-control"></textarea>  
+                                                    <textarea name="warehouse_address" id="" cols="20" rows="1" class="form-control">{{old('warehouse_address')}}</textarea>
+                                                    <span class="text-danger">{{$errors->first('warehouse_address')}}</span>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td clospan="3">Zip Code</td>
                                                 <td clospan="3">
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" class="form-control" name="warehouse_zip_code" value="{{old('warehouse_zip_code')}}">
+                                                    <span class="text-danger">{{$errors->first('warehouse_zip_code')}}</span>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td clospan="3">City</td>
                                                 <td clospan="3">
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" class="form-control" name="warehouse_city" value="{{old('warehouse_city')}}">
+                                                    <span class="text-danger">{{$errors->first('warehouse_city')}}</span>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td clospan="3">Country</td>
                                                 <td clospan="3">
-                                                    <select class="form-control" id="warehouse">
+                                                    <select class="form-control" id="warehouse" name="warehouse_country">
                                                         <option>Bangladesh</option>
                                                         <option>India</option>
+                                                        <option>China</option>
+                                                        <option>Indonesia</option>
+                                                        <option>Japan</option>
+                                                        <option>Philippines</option>
+                                                        <option>Thailand</option>
+                                                        <option>Malaysia</option>
+                                                        <option>Nepal</option>
+                                                        <option>Singapore</option>
                                                     </select>  
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td clospan="3">Phone</td>
                                                 <td clospan="3">
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" class="form-control" name="warehouse_phone" value="{{old('warehouse_phone')}}">
+                                                    <span class="text-danger">{{$errors->first('warehouse_phone')}}</span>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>Status</td>
                                                 <td>
-                                                    <select class="form-control" id="warehouse">
+                                                    <select class="form-control" id="warehouse" name="warehouse_status">
                                                         <option>Open</option>
                                                         <option>Closed</option>
                                                     </select>  
@@ -148,7 +164,8 @@
                                             <tr>
                                                 <td clospan="3">Quantity</td>
                                                 <td clospan="3">
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" class="form-control" name="warehouse_quantity" value="{{old('warehouse_quantity')}}">
+                                                    <span class="text-danger">{{$errors->first('warehouse_quantity')}}</span>
                                                 </td>
                                             </tr>
                                             <tr>
