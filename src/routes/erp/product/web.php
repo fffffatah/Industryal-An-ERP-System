@@ -31,7 +31,10 @@ Route::get('/', function () {
                                     // Products
 //Product
 Route::get('/product/home',[ProductHomeController::class, 'index'])->name('productHome.index');
+
 Route::get('/product/create',[ProductCreateController::class, 'index'])->name('productCreate.index');
+Route::post('/product/create',[ProductCreateController::class, 'create']);
+
 Route::get('/product/list',[ProductListController::class, 'index'])->name('productList.index');
 Route::get('/product/list/faulty',[ProductListController::class, 'faulty'])->name('productListFaulty.index');
 Route::get('/product/stocks',[ProductStockController::class, 'index'])->name('productStocks.index');
