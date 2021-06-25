@@ -15,6 +15,6 @@ class ProductTransferController extends Controller
 
     public function transfer(TransferProductRequest $req)
     {
-        return redirect()->rouote('productTransfer.index');
+        return redirect()->route('productTransfer.index');
     }
 }
