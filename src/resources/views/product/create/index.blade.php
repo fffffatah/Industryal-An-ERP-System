@@ -84,6 +84,7 @@
                         <div class="container">
                         <div class="text-left">
                             <form method="POST">
+                                @csrf
                                 <table class="table table-striped table-bordered">
                                     <tr>
                                         <td >Id</td>
