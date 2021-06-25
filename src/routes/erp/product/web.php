@@ -57,7 +57,15 @@ Route::get('/product/user/administration',[ProductUserController::class, 'admini
 
 //User
 Route::get('/product/user/profile',[ProductUserController::class, 'profile'])->name('userProfile.index');
+
 Route::get('/product/user/edit',[ProductUserController::class, 'editProfile'])->name('userEditProfile.index');
+Route::post('/product/user/edit',[ProductUserController::class, 'editProfileVerify']);
+
 Route::get('/product/user/edit/profilepicture',[ProductUserController::class, 'editProfilePicture'])->name('userEditProfilePicture.index');
+Route::post('/product/user/edit/profilepicture',[ProductUserController::class, 'editProfilePictureVerify']);
+
 Route::get('/product/user/edit/changePassword',[ProductUserController::class, 'changePassword'])->name('userChangePassword.index');
-Route::get('/product/user/edit/verify',[ProductUserController::class, 'verification'])->name('userChangeProfileVerication.index');
+Route::post('/product/user/edit/changePassword',[ProductUserController::class, 'changePasswordVerify']);
+
+Route::get('/product/user/edit/changePassword/verify',[ProductUserController::class, 'verification'])->name('userChangeProfileVerication.index');
+Route::post('/product/user/edit/changePassword/verify',[ProductUserController::class, 'verificationVerify']);

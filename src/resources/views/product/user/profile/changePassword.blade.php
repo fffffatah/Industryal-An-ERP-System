@@ -66,19 +66,24 @@
                         <hr class="mb-4">
                         <div class="container">
                             <div class="text-left">
-                                <form action="{{route('userChangeProfileVerication.index')}}">
+                                <form method="POST">
+                                    @csrf
                                     <table class="table table-striped table-bordered">
                                         <tr>
-                                            <td >Old Password: </td>
-                                            <td > <input type="password" class="form-control"> </td>
+                                            <td >Current Password: </td>
+                                            <td > <input type="password" class="form-control" name="current_password"> <span class="text-danger">{{$errors->first('current_password')}}</span></td>
                                         </tr>
                                         <tr>
                                             <td >New Password: </td>
-                                            <td > <input type="password" class="form-control"> </td>
+                                            <td > <input type="password" class="form-control" name="new_password"> 
+                                            <span class="text-danger">{{$errors->first('new_password')}}</span>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td >Confirm New Password: </td>
-                                            <td > <input type="password" class="form-control"> </td>
+                                            <td > <input type="password" class="form-control" name="confirm_new_password"> 
+                                            <span class="text-danger">{{$errors->first('confirm_new_password')}}</span>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td colspan='2' align='center'>

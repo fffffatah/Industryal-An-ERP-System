@@ -67,13 +67,16 @@
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div class="col-8">
-                                <form action="{{route('userProfile.index')}}">
+                                <form method="POST">
+                                    @csrf
                                     <table class="table table-striped table-bordered">
                                         <tr>
                                             <td class="text-danger font-weight-bold">A verification code was sent to your email. Please enter the code to change password.</td>
                                         </tr>
                                         <tr>
-                                            <td > <input type="password" class="form-control" placeholder="Verification Code"> </td>
+                                            <td > <input type="password" class="form-control" placeholder="Verification Code" name="verification_code">
+                                            <span class="text-danger">{{$errors->first('verification_code')}}</span>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td colspan='2' align='center'>
