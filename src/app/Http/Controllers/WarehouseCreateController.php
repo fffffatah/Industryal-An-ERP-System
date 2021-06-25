@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Requests\WarehouseCreateRequest;
+use App\Http\Requests\Product\WarehouseCreateRequest;
 
 class WarehouseCreateController extends Controller
 {
