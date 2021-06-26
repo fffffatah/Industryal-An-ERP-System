@@ -37,6 +37,14 @@ Route::post('/product/create',[ProductCreateController::class, 'create']);
 
 Route::get('/product/list',[ProductListController::class, 'index'])->name('productList.index');
 Route::get('/product/list/faulty',[ProductListController::class, 'faulty'])->name('productListFaulty.index');
+
+// Update
+Route::get('/product/edit/{product_id}',[ProductListController::class, 'editProduct'])->name('productList.editProduct');
+Route::post('/product/edit/{product_id}',[ProductListController::class, 'updateProduct']);
+
+Route::get('/product/delete/{product_id}',[ProductListController::class, 'deleteProduct'])->name('productList.deleteProduct');
+Route::post('/product/delete/{product_id}',[ProductListController::class, 'destroyProduct']);
+
 Route::get('/product/stocks',[ProductStockController::class, 'index'])->name('productStocks.index');
 Route::get('/product/statistics',[ProductStatisticsController::class, 'index'])->name('productStatistics.index');
 
@@ -48,6 +56,11 @@ Route::get('/warehouse/create',[WarehouseCreateController::class, 'index'])->nam
 Route::post('/warehouse/create',[WarehouseCreateController::class, 'create']);
 
 Route::get('/warehouse/list',[WarehouseListController::class, 'index'])->name('warehouseList.index');
+
+// Edit
+Route::get('/warehouse/edit/{warehouse_id}',[WarehouseListController::class, 'editWarehouse'])->name('warehouseList.edit');
+Route::post('/warehouse/edit/{warehouse_id}',[WarehouseListController::class, 'updateWarehouse']);
+
 Route::get('/warehouse/statistics',[WarehouseStatisticsController::class, 'index'])->name('warehouseStatistics.index');
 
 //Others

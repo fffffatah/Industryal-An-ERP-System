@@ -38,7 +38,6 @@ class ProductCreateRequest extends FormRequest
             "product_dimention_unit" => "required",
             "product_selling_price" => "required",
             "product_selling_tax" => "required",
-            "product_image" => "required|mimes:jpg,png",
         ];
     }
 }

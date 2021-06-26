@@ -10,7 +10,7 @@
     crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous"> <!-- for fontawesome -->
 
-    <title>Product | Home</title>
+    <title>Product | List</title>
 </head>
 <body>
     <!-- Header Starts -->
@@ -95,9 +95,35 @@
                                     <th>Product Nature</th>
                                     <th>Selling Price</th>
                                     <th>Description</th>
+                                    <th>Image</th>
                                     <th>Condition</th>
                                     <th>Action</th>
                                 </tr>
+
+                                @foreach($productList as $product)
+                                    <tr>
+                                        <td>{{$product['product_id']}}</td>
+                                        <td>{{$product['product_name']}}</td>
+                                        <td>
+                                            {{$product['status_sell']}}
+                                            <br>
+                                            {{$product['status_purchase']}}
+                                        </td>
+                                        <td>{{$product['warehouse_name']}}</td>
+                                        <td>{{$product['stock']}}</td>
+                                        <td>{{$product['nature']}}</td>
+                                        <td>{{$product['selling_price']}}</td>
+                                        <td>{{$product['product_description']}}</td>
+                                        <td>
+                                        <img src="/upload/Product/{{$product['image']}}" alt="Potato" width="200" height="200"> 
+                                        </td>
+                                        <td>{{$product['product_condition']}}</td>
+                                        <td>
+                                        <a href="/product/edit/{{$product['product_id']}}" class="btn btn-success mb-2">Update</a>
+                                        <a href="/product/delete/{{$product['product_id']}}" class="btn btn-danger">Delete</a>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </table>
                         </div>
                     </div>
