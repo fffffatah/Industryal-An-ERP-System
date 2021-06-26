@@ -198,10 +198,13 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>Condition: </td>
+                                            <td>Condition:</td>
                                             <td colspan='2'>
-                                                <input type="text" name="product_condition" value="{{$product['product_condition']}}" class="form-control">
-                                                <span class="text-danger">{{$errors->first('product_condition')}}</span>
+                                                <select class="form-control" name="product_condition" value="{{$product['product_condition']}}">
+                                                    <option>Good</option>
+                                                    <option>Faulty</option>
+                                                </select> 
+                                                <span class="text-danger">{{$errors->first('product_condition')}}</span> 
                                             </td>
                                         </tr>
                                         <tr>
