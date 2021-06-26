@@ -59,6 +59,19 @@
                         <th>End Time(Per Day)</th>
                         <th>Job Position</th>
                         <th>Hour Worked (Per Week)</th>
+                        
+
+                        @foreach ($employeeList as $employee)
+                        <tr>
+                            <td>{{$employee['employee_id']}}</td>
+                            <td>{{$employee['employee_name']}}</td>
+                            <td>{{$employee['start_time']}}</td>
+                            <td>{{$employee['end_time']}}</td>
+                            <td>{{$employee['job_position']}}</td>
+                            <td>{{$employee['hour_worked']}}</td>
+
+                        </tr>
+                        @endforeach
                     </table>
         
            </div>

@@ -51,14 +51,19 @@
             </div>
             <div class="col-10">
                 <h1 class="text-center"><i class="fas fa-address-book"></i>Employee List</h1>
+                @if(session('msg'))
+                <div class="alert alert-success">
+                    <strong>{{session('msg')}}</strong> 
+                </div>
+                 @endif
                 <hr class="mb-4">
                     <div class="input-group">
                         <input class="form-control" type="text" placeholder="Find By Name...">
                         <div class="input-group-append">
                             <button type="button" class="btn btn-outline-secondary">Search &nbsp <i class="fas fa-search"></i></button>
                         </div>
-                            </div>
-                            <br>
+                    </div>
+                    <br>
                     <table  class="table table-hover ">
                         <th>Employee Id</th>
                         <th>Employee Name</th>
@@ -68,9 +73,29 @@
                         <th>Phone</th>
                         <th>Job Position</th>
                         <th>Employment Start date</th>
+                        <th>Action</th>
+                        @foreach ($employeeList as $employee)
+                        <tr>
+                            <td>{{$employee['employee_id']}}</td>
+                            <td>{{$employee['employee_name']}}</td>
+                            <td>{{$employee['gender']}}</td>
+                            <td>{{$employee['supervisor']}}</td>
+                            <td>{{$employee['present_address']}}</td>
+                            <td>{{$employee['phone']}}</td>
+                            <td>{{$employee['job_position']}}</td>
+                            <td>{{$employee['employment_start_date']}}</td>
+                            
+                            <td>
+                                <a href="/HR/employee/list/{{$employee['employee_id']}}" class="btn btn-success m-1"> Update </a>
+                                <a href="#" class="btn btn-danger m-1"> Delete </a>
+                           
+                            </td>
+                        </tr>
+                        @endforeach
                     </table>
         
            </div>
+          
             
         </div>
         <footer id="main-footer" class="bg-primary text-white mt-5 p-2">

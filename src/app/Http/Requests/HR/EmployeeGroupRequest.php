@@ -25,7 +25,7 @@ class EmployeeGroupRequest extends FormRequest
     {
         return [
             "employee_id"=>"required|numeric",
-            "group"=>"required",
+            "employee_group"=>"required",
         ];
     }
 }
