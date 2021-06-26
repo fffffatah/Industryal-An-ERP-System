@@ -4,7 +4,7 @@ namespace App\Http\Requests\HR;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class expenseReportRequest extends FormRequest
+class ProfileEditRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,11 +24,12 @@ class expenseReportRequest extends FormRequest
     public function rules()
     {
         return [
-            "catagory" => "required|string",
-            "amount" => "required|integer",
-            "name" => "required|alpha|min:3|max:50",
-            "description" => "required|min:10|max:10000",
-            "expense_date" => "required|date",
+            "first_name" => "required|min:2",
+            "last_name" => "required|min:3|max:100|alpha",
+            "job_position" => "required",
+            "phone" => "required|min:11",
+            "email" => "required|string|email",
+            "present_address" => "required|string|max:100",
         ];
     }
 }

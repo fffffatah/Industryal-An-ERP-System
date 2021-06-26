@@ -24,7 +24,7 @@ class HRuserCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            "first_name" => "required|min:2|alpha",
+            "first_name" => "required|min:2",
             "last_name" => "required|min:3|max:100|alpha",
             "user_name" => "required|string|min:3|max:50",
             "password" => "required||min:8|max:15|alpha_num",

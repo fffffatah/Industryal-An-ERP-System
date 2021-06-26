@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Change Password</title>
+    <title>Profile Edit</title>
    <!--  Bootstrap cdn -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
     crossorigin="anonymous">
@@ -46,7 +46,8 @@
                 
                 <h3 class="text-center"><i class="fas fa-user-edit"></i>Profile Edit</h3>
                 <div class="border border-primary w-75  m-auto">
-                    <form action="{{route('HRuserProfile.details')}}" class="w-50 m-auto  " >
+                    <form method="post" class="w-50 m-auto" >
+                    @csrf
                            
                         <div class="form-group">
                             <label>First Name</label> 
@@ -78,12 +79,13 @@
                             <input type="text" class="form-control" id="presentaddress" name="present_address" Value="Dhaka">
                             <span class="text-danger">{{$errors->first('present_address')}}</span>
                         </div>
+                        <div class="from-group">
+                            <center><input class="btn btn-outline-primary btn-block w-50 mt-3" type="submit" value="Update" style="color:tomato"></center>
+                        </div>
                             
                     </form>
                 </div>
-                    <div class="from-group">
-                        <center><input class="btn btn-outline-primary btn-block w-50 mt-3" type="submit" value="Update" style="color:tomato"></center>
-                    </div>
+                    
                 </div>
             </div>
         </div>

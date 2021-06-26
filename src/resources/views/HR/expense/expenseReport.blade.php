@@ -54,7 +54,8 @@
             <div class="col-10">
                 <h1 class="text-center">Expense Report</h1>
                 <div class="border border-primary w-75  m-auto">
-                    <form action="" class="w-50 m-auto  " >
+                    <form   method="post" class="w-50 m-auto  " >
+                    @csrf
                            
                         <div class="form-group">
                             <label>Catagory</label> 
@@ -81,11 +82,12 @@
                             <input type="date" class="form-control" id="expense_date" name="expense_date" Value="{{old('expense_date')}}">
                             <span class="text-danger">{{$errors->first('expense_date')}}</span>
                         </div>
+                        <div class="from-group">
+                            <center><input class="btn btn-outline-primary btn-block w-50 mt-3" type="submit" value="Save" ></center>
+                        </div>
                     </form>
                 </div>
-                <div class="from-group">
-                    <center><input class="btn btn-outline-primary btn-block w-50 mt-3" type="submit" value="Save" ></center>
-                </div>
+                
         
            </div>
             

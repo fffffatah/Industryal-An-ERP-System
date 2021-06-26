@@ -60,12 +60,12 @@
                         <h3 class="font-width-border"><i class="fas fa-users"></i>Employee Group</h3>
                     </div>
                     <div class="border border-primary w-75  m-auto">
-                        <form action="" class="w-50 m-auto  " >
-                           
+                        <form method="post" class="w-50 m-auto  " >
+                         @csrf  
                             
                             <div class="form-group">
                                 <label >Employee ID</label> 
-                                <input type="txt" class="form-control" id="lastname" name="employee_id" Value="{{old('employee_id')}}">
+                                <input type="number" class="form-control" id="lastname" name="employee_id" Value="{{old('employee_id')}}">
                                 <span class="text-danger">{{$errors->first('employee_id')}}</span>
                             </div>
                             <div class="form-group">
@@ -78,14 +78,15 @@
                                     </select>
                                     <span class="text-danger">{{$errors->first('group')}}</span>
                             </div>
+                            </div>
+                    
+                                <center> <input class="btn btn-outline-success btn-block w-25 mt-3 "  type="submit" value="Add"></center>
+                            </div>
                            
                              
                         </form>
                         
-                    </div>
-                    
-                       <center> <input class="btn btn-outline-success btn-block w-50 mt-3 "  type="submit" value="Add" "></center>
-                    </div>
+                   
                 </div>
             </div>
         </div>

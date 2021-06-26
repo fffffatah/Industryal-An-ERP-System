@@ -25,7 +25,7 @@ class HRempCreateRequest extends FormRequest
     {
         return [
             "employee_id" => "required|string",
-            "employee_name" => "required|string|min:3|max:50|alpha",
+            "employee_name" => "required|string|min:3|max:50",
             "gender" => "required",
             "supervisor" => "required",
             "present_address" => "required|string|max:100",

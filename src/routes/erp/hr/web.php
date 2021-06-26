@@ -37,6 +37,7 @@ Route::get('/HR/employee/create',[HRemployeeController::class,'create'])->name('
 Route::post('/HR/employee/create',[HRemployeeController::class,'index']);
 Route::get('/HR/employee/list',[HRemployeeController::class,'emplist'])->name('HRemployee.emplist');
 Route::get('/HR/employee/group',[HRgroupController::class,'index'])->name('HRgroup.index');
+Route::post('/HR/employee/group',[HRgroupController::class,'CreateGroup']);;
 Route::get('/HR/employee/schedule',[HREmpScheduleController::class,'schedule'])->name('HREmpSchedule.schedule');
 
 //leave request
@@ -47,12 +48,15 @@ Route::get('/HR/payroll/show',[HRpayrollController::class,'show'])->name('HRpayr
 
 //expense report
 Route::get('/HR/expense/report',[HRexpenseController::class,'report'])->name('HRexpense.report');
+Route::post('/HR/expense/report',[HRexpenseController::class,'create']);
 Route::get('/HR/expense/list',[HRexpenseListController::class,'list'])->name('HRexpenseList.list');
 Route::get('/HR/expense/statistic',[HRExStatisticController::class,'statistic'])->name('HRExStatistic.statistic');
 //user profile
 Route::get('/HR/user/profile',[HRuserProfileController::class,'details'])->name('HRuserProfile.details');
 Route::get('/HR/user/profile/edit',[HRuserProfileController::class,'profileEdit'])->name('HRuserProfile.profileEdit');
+Route::post('/HR/user/profile/edit',[HRuserProfileController::class,'profileUpdate']);
 Route::get('/HR/user/profile/edit/changePassword',[HRuserProfileController::class,'changePassword'])->name('HRuserProfile.changePassword');
+Route::post('/HR/user/profile/edit/changePassword',[HRuserProfileController::class,'PasswordUpdate']);
 Route::get('/HR/user/profile/edit/uploadImage',[HRuserProfileController::class,'uploadImage'])->name('HRuserProfile.uploadImage');
 
 
