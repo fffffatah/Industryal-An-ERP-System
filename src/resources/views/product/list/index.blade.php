@@ -95,6 +95,7 @@
                                     <th>Product Nature</th>
                                     <th>Selling Price</th>
                                     <th>Description</th>
+                                    <th>Image</th>
                                     <th>Condition</th>
                                     <th>Action</th>
                                 </tr>
