@@ -38,6 +38,10 @@ Route::post('/product/create',[ProductCreateController::class, 'create']);
 Route::get('/product/list',[ProductListController::class, 'index'])->name('productList.index');
 Route::get('/product/list/faulty',[ProductListController::class, 'faulty'])->name('productListFaulty.index');
 
+// Product Update
+Route::get('/product/edit/{product_id}',[ProductListController::class, 'editProduct'])->name('productList.editProduct');
+Route::post('/product/edit/{product_id}',[ProductListController::class, 'updateProduct']);
+
 Route::get('/product/delete/{product_id}',[ProductListController::class, 'deleteProduct'])->name('productList.deleteProduct');
 Route::post('/product/delete/{product_id}',[ProductListController::class, 'destroyProduct']);
 
