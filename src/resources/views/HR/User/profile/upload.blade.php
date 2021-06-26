@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>profile</title>
+    <title>Update|Image</title>
    <!--  Bootstrap cdn -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
     crossorigin="anonymous">
@@ -42,42 +42,35 @@
                     </ul>
                 </nav>
             </div>
-            <div class="col-10 ">
+            <div class="col-10">
                 
-                <h1 class="text-center"><i class="fas fa-user"></i>Profile</h1>
-               
-               <center>
-                    <table class="table table-hover w-75">
-                        <tr>
-                            <td>First Name</td>
-                            <td>Md.</td>
-                        </tr>
-                        <tr>
-                            <td>Last Name</td>
-                            <td>Rasel</td>
-                        </tr>
-                        <tr>
-                            <td>Job position</td>
-                            <td>HR manager</td>
-                        </tr>
-                        <tr>
-                            <td>Phone No</td>
-                            <td>01767227082</td>
-                        </tr>
-                        <tr>
-                            <td>Email</td>
-                            <td>rasel@gamil.com</td>
-                        </tr>
-                        <tr>
-                            <td>Address</td>
-                            <td>Dhaka</td>
-                        </tr>
-                    </table>
-                </center>    
-                    
-                
+                <h3 class="text-center"><i class="fas fa-edit"></i>Upload Profile Picture </h3>
+                <div class=" w-100 m-auto">
+                    <form action="" class="w-50 m-auto" >
+                        <table class="table table-hover">
+                            <tr>
+                                <td >Image Upload: </td>
+                                <td> 
+                                <div class="custom-file">
+                                    <input class="custom-file-input" type="file" id="myfile">
+                                    <label class="custom-file-label" for="myfile">Choose Image</label>
+                                </div>
+                                
+                                </td>
+                            </tr>
+                            
+                            
+                            <tr>
+                                <td colspan='2' align='center'>
+                                <input type="submit" value="Upload" class="btn btn-dark" style="width:400px">
+                                </td>
+                            </tr>
+                        </table>    
+                    </form>
+                </div>
             </div>
-        </div>
+        </div>    
+        
 
     <!-- Footer Starts-->
     <footer id="main-footer" class="bg-primary text-white mt-5 p-2">
