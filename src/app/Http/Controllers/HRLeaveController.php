@@ -11,4 +11,9 @@ class HRLeaveController extends Controller
     {
         return view('HR.Leave.createLeaveReq');
     }
+
+    public function leaveList()
+    {
+        return view('HR.Leave.LeaveList');
+    }
 }

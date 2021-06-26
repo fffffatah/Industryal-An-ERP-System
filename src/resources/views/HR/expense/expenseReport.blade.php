@@ -37,14 +37,14 @@
                 <nav class=" navbar border-dark w-25">
                     <ul class="navbar-nav">
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRuser.create')}}">New user</a></li>
-                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="#">Search User</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRuser.index')}}">User List</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRemployee.create')}}">New Employee</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRgroup.index')}}">Add group</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRemployee.emplist')}}">Employee List</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HREmpSchedule.schedule')}}">Schedules</a></li>
-                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRLeave.leave')}}">Create Leave Request</a></li>
-                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="route('HRexpense.report')}}">Create Expense Report</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRLeave.leave')}}">Leave Request</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRLeave.leaveList')}}">Leave Request List</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="route('HRexpense.report')}}">Expense Report</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRexpenseList.list')}}"> Expense  Report List</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRExStatistic.statistic')}}">Expense Statistic</a></li>                        
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRpayroll.show')}}">Payroll</a></li>
@@ -53,6 +53,34 @@
             </div>
             <div class="col-10">
                 <h1 class="text-center">Expense Report</h1>
+                <div class="border border-primary w-75  m-auto">
+                    <form action="" class="w-50 m-auto  " >
+                           
+                        <div class="form-group">
+                            <label>Catagory</label> 
+                            <input type="txt" class="form-control" id="catagory" name="catagory" >
+                        </div>
+                        <div class="form-group">
+                            <label >Amount</label> 
+                            <input type="number" class="form-control" id="amount" name="amount">
+                        </div>
+                        <div class="from-group">
+                            <label>Name</label></td>
+                            <input type="text" class="form-control" name="user" id="user">
+                        </div>
+                        <div class="form-group">
+                            <label>Descreption</label>
+                            <textarea type="text" name="leave_description" id="leave_description" class="form-control"></textarea>
+                        </div>
+                        <div class="from-group">
+                            <label>Expense Date</label>
+                            <input type="date" class="form-control" id="expense_date" name="expense_date">
+                        </div>
+                    </form>
+                </div>
+                <div class="from-group">
+                    <center><input class="btn btn-outline-primary btn-block w-50 mt-3" type="submit" value="Save" ></center>
+                </div>
         
            </div>
             

@@ -39,14 +39,14 @@
                 <nav class=" navbar border-dark w-25">
                     <ul class="navbar-nav">
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRuser.create')}}">New user</a></li>
-                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="#">Search User</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRuser.index')}}">User List</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRemployee.create')}}">New Employee</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRgroup.index')}}">Add group</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRemployee.emplist')}}">Employee List</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HREmpSchedule.schedule')}}">Schedules</a></li>
-                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRLeave.leave')}}">Create Leave Request</a></li>
-                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="route('HRexpense.report')}}">Create Expense Report</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRLeave.leave')}}">Leave Request</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRLeave.leaveList')}}">Leave Request List</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="route('HRexpense.report')}}">Expense Report</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRexpenseList.list')}}"> Expense  Report List</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRExStatistic.statistic')}}">Expense Statistic</a></li>                        
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRpayroll.show')}}">Payroll</a></li>
@@ -61,22 +61,27 @@
                     </div>
                     <div class="border border-primary w-75  m-auto">
                         <form action="" class="w-50 m-auto  " >
+                        @csrf
                            
                             <div class="form-group">
                                 <label>First Name</label> 
-                                <input type="txt" class="form-control" id="firstname" name="fname" >
+                                <input type="txt" class="form-control" id="firstname" name="first_name" Value="{{old('first_name')}}" >
+                                <span class="text-danger">{{$errors->first('first_name')}}</span>
                             </div>
                             <div class="form-group">
                                 <label >Last Name</label> 
-                                <input type="txt" class="form-control" id="lastname" name="lname">
+                                <input type="txt" class="form-control" id="lastname" name="last_name" Value="{{old('last_name')}}">
+                                <span class="text-danger">{{$errors->first('last_name')}}</span>
                             </div>
                             <div class="from-group">
                                 <label>User Name</label></td>
-                                <input type="text" class="form-control" name="login" id="loginid">
+                                <input type="text" class="form-control" name="user_name" id="uname" Value="{{old('user_name')}}">
+                                <span class="text-danger">{{$errors->first('user_name')}}</span>
                             </div>
                             <div class="form-group">
                                  <label>password</label>
-                                <input type="password" class="form-control"  name="password" id="password">
+                                <input type="password" class="form-control"  name="password" id="password" Value="{{old('password')}}">
+                                <span class="text-danger">{{$errors->first('password')}}</span>
                             </div>
                             <div class="from-group">
                                 <label>Gender</label>
@@ -90,6 +95,7 @@
                                 {{'checked'}}
                                  @endif
                                 value="female">Female
+                                <span class="text-danger">{{$errors->first('gender')}}</span>
                             </div>
                             <div class="form-group">
                                 <label>Supervisor</label>
@@ -97,30 +103,44 @@
                                     <option value="Superadmin">Super admin</option>
                                     <option value="HRmanager">HR manager</option>
                                 </select>
+                                <span class="text-danger">{{$errors->first('supervisor')}}</span>
                             </div>
                             <div class="foem-group">
                                 <label>Present address</label></td>
-                                <input type="text" class="form-control" id="presentaddress" name="preAdd">
+                                <input type="text" class="form-control" id="presentaddress" name="present_address" Value="{{old('present_address')}}">
+                                <span class="text-danger">{{$errors->first('present_address')}}</span>
                             </div>
                             <div class="from-group">
                                  <label>Phone</label></td>
-                                <input type="number" class="form-control" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+                                <input type="number" class="form-control" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" Value="{{old('phone')}}">
+                                <span class="text-danger">{{$errors->first('phone')}}</span>
                             </div>
                             <div class="from-group">
                                 <label for="email">Email</label>
-                                <input type="email" class="form-control" id="EmailId" name="email">
+                                <input type="email" class="form-control" id="EmailId" name="email" Value="{{old('email')}}">
+                                <span class="text-danger">{{$errors->first('email')}}</span>
                             </div>
                             <div class="from-group">
                                 <label>Job Position</label> 
-                                <input type="txt" class="form-control" id="position" name="position" >
+                                <input type="txt" class="form-control" id="position" name="job_position" Value="{{old('job_position')}}">
+                                <span class="text-danger">{{$errors->first('job_position')}}</span>
                             </div>
                             <div class="form-group">
                                 <label>Hour Worked(Per week)</label> 
-                                <input type="txt" class="form-control" id="worked" name="worked" >
+                                <input type="txt" class="form-control" id="worked" name="hour_worked" Value="{{old('hour_worked')}}" >
+                                <span class="text-danger">{{$errors->first('hour_worked')}}</span>
                             </div>
                             <div class="from-group">
                                 <label>Employment start date</label>
-                                <input type="date" class="form-control" id="hiredate" name="hiredate">
+                                <input type="date" class="form-control" id="hiredate" name="employment_start_date" Value="{{old('employment_start_date')}}">
+                                <span class="text-danger">{{$errors->first('employment_start_date')}}</span>
+                            </div>
+                            <br>
+                            <div class="from-group">
+                                <label for="myfile">Choose Image</label>
+                                <input type="file" id="myfile" name="myfile" class="form-controll"Value="{{old('myfile')}}">
+                                <span class="text-danger">{{$errors->first('myfile')}}</span>
+                                    
                             </div>
                               
                         </form>

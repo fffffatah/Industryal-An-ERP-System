@@ -45,6 +45,7 @@
             <div class="col-10">
                 
                 <h1 class="text-center"><i class="fas fa-key"></i> Change Password</h1>
+                
                 <div class="border border-primary w-75  m-auto">
                     <form action="" class="w-50 m-auto" >
                         <table class="table table-hover">

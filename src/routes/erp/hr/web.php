@@ -39,6 +39,7 @@ Route::get('/HR/employee/schedule',[HREmpScheduleController::class,'schedule'])-
 
 //leave request
 Route::get('/HR/leave/request',[HRLeaveController::class,'leave'])->name('HRLeave.leave');
+Route::get('/HR/leave/request/list',[HRLeaveController::class,'leaveList'])->name('HRLeave.leaveList');
 //payroll
 Route::get('/HR/payroll/show',[HRpayrollController::class,'show'])->name('HRpayroll.show');
 
