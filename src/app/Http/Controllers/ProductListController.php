@@ -57,8 +57,7 @@ class ProductListController extends Controller
          $product->dimention_unit = $req->product_dimention_unit;
          $product->selling_price = $req->product_selling_price;
          $product->tax = $req->product_selling_tax;
-         $product->product_condition = $req->product_weight;
-         $product->product_condition = "Good";
+         $product->product_condition = $req->product_condition;
          $product->save();
 
         return redirect()->route('productList.index');
@@ -66,6 +65,7 @@ class ProductListController extends Controller
 
     public function faulty()
     {
-        return view('product.list.faulty');
+        $list = product_table::all();
+        return view('product.list.faulty')->with('productList', $list);
     }
 }
