@@ -50,27 +50,33 @@
                            
                         <div class="form-group">
                             <label>First Name</label> 
-                            <input type="txt" class="form-control" id="firstname" name="fname" value="Md.">
+                            <input type="txt" class="form-control" id="firstname" name="first_name" value="Md.">
+                            <span class="text-danger">{{$errors->first('first_name')}}</span>
                         </div>
                         <div class="form-group">
                             <label >Last Name</label> 
-                            <input type="txt" class="form-control" id="lastname" name="lname" value="Rasel">
+                            <input type="txt" class="form-control" id="lastname" name="last_name" value="Rasel">
+                            <span class="text-danger">{{$errors->first('last_name')}}</span>
                         </div>
                         <div class="from-group">
                             <label>Job Position</label></td>
-                            <input type="text" class="form-control" name="position" id="position" value="HR Manager">
+                            <input type="text" class="form-control" name="job_position" id="position" value="HR Manager">
+                            <span class="text-danger">{{$errors->first('job_position')}}</span>
                         </div>
                         <div class="form-group">
-                            <label>Phone No</label>
+                            <label>Phone</label>
                             <input type="number" class="form-control"  name="phone" id="phone" value="01767227082">
+                            <span class="text-danger">{{$errors->first('phone')}}</span>
                         </div>
                         <div class="from-group">
                             <label for="email">Email</label>
                             <input type="email" class="form-control" id="EmailId" name="email" value="rasel@gmail.com">
+                            <span class="text-danger">{{$errors->first('email')}}</span>
                         </div>
                         <div class="foem-group">
                             <label>Present address</label></td>
-                            <input type="text" class="form-control" id="presentaddress" name="preAdd">
+                            <input type="text" class="form-control" id="presentaddress" name="present_address" Value="Dhaka">
+                            <span class="text-danger">{{$errors->first('present_address')}}</span>
                         </div>
                             
                     </form>

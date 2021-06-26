@@ -62,25 +62,30 @@
                             
                             <div class="form-group">
                                 <label>Type</label>
-                                <select name="type" id="type" class="form-control">
+                                <select name="type" id="type" class="form-control" Value="{{old('type')}}">
                                     <option value="sick">Sick Leave</option>
                                     <option value="other">Other leave</option>
                                 </select>
+                                <span class="text-danger">{{$errors->first('type')}}</span>
                             </div>
                             
                             
                             
                             <div class="from-group">
                                 <label>Start date</label>
-                                <input type="date" class="form-control" id="startdate" name="startdate">
+                                <input type="date" class="form-control" id="startdate" name="start_date" Value="{{old('start_date')}}">
+                                <span class="text-danger">{{$errors->first('start_date')}}</span>
                             </div>
                             <div class="from-group">
                                 <label>End date</label>
-                                <input type="date" class="form-control" id="startdate" name="startdate">
+                                <input type="date" class="form-control" id="startdate" name="end_date" Value="{{old('end_date')}}">
+                                <span class="text-danger">{{$errors->first('end_date')}}</span>
+                                
                             </div>
                             <div class="form-group">
                                 <label>Descreption</label>
-                                <textarea type="text" name="leave_description" id="leave_description" class="form-control"></textarea>
+                                <textarea type="text" name="description" id="leave_description" class="form-control" Value="{{old('description')}}"></textarea>
+                                <span class="text-danger">{{$errors->first('description')}}</span>
                             </div>
                               
                             

@@ -45,21 +45,25 @@
             <div class="col-10">
                 
                 <h1 class="text-center"><i class="fas fa-key"></i> Change Password</h1>
-                
+
                 <div class="border border-primary w-75  m-auto">
                     <form action="" class="w-50 m-auto" >
                         <table class="table table-hover">
                             <tr>
                                 <td >Old Password: </td>
-                                <td > <input type="password" class="form-control"> </td>
+                                <td > <input type="password" class="form-control" name="old_password" Value="{{old('old_password')}}"> </td>
+                                <span class="text-danger">{{$errors->first('old_password')}}</span>
+
                             </tr>
                             <tr>
                                 <td >New Password: </td>
-                                 <td > <input type="password" class="form-control"> </td>
+                                 <td > <input type="password" class="form-control" name="new_password" Value="{{old('new_password')}}"> </td>
+                                 <span class="text-danger">{{$errors->first('new_password')}}</span>
                             </tr>
                             <tr>
                                 <td >Confirm New Password: </td>
-                                <td > <input type="password" class="form-control"> </td>
+                                <td > <input type="password" class="form-control" name="confirm_new_password" Value="{{old('confirm_new_password')}}"> </td>
+                                <span class="text-danger">{{$errors->first('confirm_new_password')}}</span>
                             </tr>
                             <tr>
                                 <td colspan='2' align='center'>

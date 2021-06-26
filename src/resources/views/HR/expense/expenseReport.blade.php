@@ -58,23 +58,28 @@
                            
                         <div class="form-group">
                             <label>Catagory</label> 
-                            <input type="txt" class="form-control" id="catagory" name="catagory" >
+                            <input type="txt" class="form-control" id="catagory" name="catagory" Value="{{old('catagory')}}">
+                            <span class="text-danger">{{$errors->first('catagory')}}</span>
                         </div>
                         <div class="form-group">
                             <label >Amount</label> 
-                            <input type="number" class="form-control" id="amount" name="amount">
+                            <input type="number" class="form-control" id="amount" name="amount" Value="{{old('amount')}}">
+                            <span class="text-danger">{{$errors->first('amount')}}</span>
                         </div>
                         <div class="from-group">
                             <label>Name</label></td>
-                            <input type="text" class="form-control" name="user" id="user">
+                            <input type="text" class="form-control" name="name" id="user" Value="{{old('name')}}">
+                            <span class="text-danger">{{$errors->first('name')}}</span>
                         </div>
                         <div class="form-group">
                             <label>Descreption</label>
-                            <textarea type="text" name="leave_description" id="leave_description" class="form-control"></textarea>
+                            <textarea type="text" name="description" id="leave_description" class="form-control" Value="{{old('description')}}"></textarea>
+                            <span class="text-danger">{{$errors->first('description')}}</span>
                         </div>
                         <div class="from-group">
                             <label>Expense Date</label>
-                            <input type="date" class="form-control" id="expense_date" name="expense_date">
+                            <input type="date" class="form-control" id="expense_date" name="expense_date" Value="{{old('expense_date')}}">
+                            <span class="text-danger">{{$errors->first('expense_date')}}</span>
                         </div>
                     </form>
                 </div>

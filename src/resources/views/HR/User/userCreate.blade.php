@@ -99,7 +99,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Supervisor</label>
-                                <select name="supervisor" id="super" class="form-control">
+                                <select name="supervisor" id="super" class="form-control" Value="{{old('supervisor')}}">
                                     <option value="Superadmin">Super admin</option>
                                     <option value="HRmanager">HR manager</option>
                                 </select>
@@ -138,7 +138,7 @@
                             <br>
                             <div class="from-group">
                                 <label for="myfile">Choose Image</label>
-                                <input type="file" id="myfile" name="myfile" class="form-controll"Value="{{old('myfile')}}">
+                                <input type="file" id="myfile" name="myfile" class="form-controll" Value="{{old('myfile')}}">
                                 <span class="text-danger">{{$errors->first('myfile')}}</span>
                                     
                             </div>

@@ -87,7 +87,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Supervisor</label>
-                                <select name="supervisor" id="super" class="form-control">
+                                <select name="supervisor" id="super" class="form-control" Value="{{old('supervisor')}}">
                                     <option value="superadmin">Super admin</option>
                                     <option value="HRmanager">HR manager</option>
                                     <option value="productMgr">Product manager</option>
