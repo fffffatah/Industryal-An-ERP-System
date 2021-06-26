@@ -60,7 +60,7 @@
                         <h3 class="font-width-border"><i class="fal fa-person-sign"></i>User information</h3>
                     </div>
                     <div class="border border-primary w-75  m-auto">
-                        <form action="" class="w-50 m-auto  " >
+                        <form method="post" class="w-50 m-auto  " >
                         @csrf
                            
                             <div class="form-group">
@@ -138,16 +138,17 @@
                             <br>
                             <div class="from-group">
                                 <label for="myfile">Choose Image</label>
-                                <input type="file" id="myfile" name="myfile" class="form-controll" Value="{{old('myfile')}}">
-                                <span class="text-danger">{{$errors->first('myfile')}}</span>
+                                <input type="file" id="myfile" name="image" class="form-controll" Value="{{old('image')}}">
+                                <span class="text-danger">{{$errors->first('image')}}</span>
                                     
+                            </div>
+                            <div class="from-group">
+                                <center><input class="btn btn-outline-primary btn-block w-50 mt-3" type="submit" value="Create User"></center>
                             </div>
                               
                         </form>
                     </div>
-                    <div class="from-group">
-                        <center><input class="btn btn-outline-primary btn-block w-50 mt-3" type="submit" value="Create User" style="color:tomato"></center>
-                    </div>
+                   
                 </div>
             </div>
         </div>
