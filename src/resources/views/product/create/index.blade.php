@@ -131,8 +131,9 @@
                                         <td>Warehouse</td>
                                         <td colspan='2'>
                                             <select class="form-control" name="warehouse_name" value="{{old('warehouse_name')}}">
-                                                <option>Dummy 1</option>
-                                                <option>Dummy 2</option>
+                                                @foreach($warehouseList as $warehouse)
+                                                    <option>{{$warehouse}}</option>
+                                                @endforeach
                                             </select>  
                                             <span class="text-danger">{{$errors->first('warehouse_name')}}</span>
                                         </td>
