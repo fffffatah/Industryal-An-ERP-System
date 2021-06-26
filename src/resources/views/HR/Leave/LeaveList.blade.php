@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expense Report</title>
+    <title>Expense List</title>
    <!--  Bootstrap cdn -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
     crossorigin="anonymous">
@@ -44,7 +44,7 @@
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HREmpSchedule.schedule')}}">Schedules</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRLeave.leave')}}">Leave Request</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRLeave.leaveList')}}">Leave Request List</a></li>
-                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="route('HRexpense.report')}}">Expense Report</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRexpense.report')}}">Expense Report</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRexpenseList.list')}}"> Expense  Report List</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRExStatistic.statistic')}}">Expense Statistic</a></li>                        
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRpayroll.show')}}">Payroll</a></li>
@@ -52,42 +52,31 @@
                 </nav>
             </div>
             <div class="col-10">
-                <h1 class="text-center">Expense Report</h1>
-                <div class="border border-primary w-75  m-auto">
-                    <form   method="post" class="w-50 m-auto  " >
-                    @csrf
-                           
-                        <div class="form-group">
-                            <label>Catagory</label> 
-                            <input type="txt" class="form-control" id="catagory" name="catagory" Value="{{old('catagory')}}">
-                            <span class="text-danger">{{$errors->first('catagory')}}</span>
-                        </div>
-                        <div class="form-group">
-                            <label >Amount</label> 
-                            <input type="number" class="form-control" id="amount" name="amount" Value="{{old('amount')}}">
-                            <span class="text-danger">{{$errors->first('amount')}}</span>
-                        </div>
-                        <div class="from-group">
-                            <label>Name</label></td>
-                            <input type="text" class="form-control" name="name" id="user" Value="{{old('name')}}">
-                            <span class="text-danger">{{$errors->first('name')}}</span>
-                        </div>
-                        <div class="form-group">
-                            <label>Descreption</label>
-                            <textarea type="text" name="description" id="leave_description" class="form-control" Value="{{old('description')}}"></textarea>
-                            <span class="text-danger">{{$errors->first('description')}}</span>
-                        </div>
-                        <div class="from-group">
-                            <label>Expense Date</label>
-                            <input type="date" class="form-control" id="expense_date" name="expense_date" Value="{{old('expense_date')}}">
-                            <span class="text-danger">{{$errors->first('expense_date')}}</span>
-                        </div>
-                        <div class="from-group">
-                            <center><input class="btn btn-outline-primary btn-block w-50 mt-3" type="submit" value="Save" ></center>
-                        </div>
-                    </form>
-                </div>
-                
+                <h1 class="text-center">Leave Request List</h1>
+                <table  class="table table-hover ">
+                <tr>
+                    <th>Type</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>Seck</td>
+                    <td>24-JUL-21</td>
+                    <td>27-JUL-21</td>
+                    <td>Very Seck</td>
+                    <td>pending</td>
+
+                    <td>
+                        <a class="btn btn-outline-primary" href="#" > Approve </a> 
+                        <a class="btn btn-outline-primary" href="#"> Reject</a> 
+                        
+                    </td>
+                </tr>
+                  
+                </table>
         
            </div>
             
@@ -96,10 +85,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col">
-                        <p class="lead text-center">
+                        <p class="lead text-center"><b>
                             Copyright &copy;
                             <span >2021</span>
-                            Industryal
+                            Industryal</b>
                         </p>
                     </div>
                 </div>

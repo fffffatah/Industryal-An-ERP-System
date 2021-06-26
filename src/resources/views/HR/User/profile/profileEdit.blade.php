@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Change Password</title>
+    <title>Profile Edit</title>
    <!--  Bootstrap cdn -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
     crossorigin="anonymous">
@@ -46,38 +46,46 @@
                 
                 <h3 class="text-center"><i class="fas fa-user-edit"></i>Profile Edit</h3>
                 <div class="border border-primary w-75  m-auto">
-                    <form action="{{route('HRuserProfile.details')}}" class="w-50 m-auto  " >
+                    <form method="post" class="w-50 m-auto" >
+                    @csrf
                            
                         <div class="form-group">
                             <label>First Name</label> 
-                            <input type="txt" class="form-control" id="firstname" name="fname" value="Md.">
+                            <input type="txt" class="form-control" id="firstname" name="first_name" value="Md.">
+                            <span class="text-danger">{{$errors->first('first_name')}}</span>
                         </div>
                         <div class="form-group">
                             <label >Last Name</label> 
-                            <input type="txt" class="form-control" id="lastname" name="lname" value="Rasel">
+                            <input type="txt" class="form-control" id="lastname" name="last_name" value="Rasel">
+                            <span class="text-danger">{{$errors->first('last_name')}}</span>
                         </div>
                         <div class="from-group">
                             <label>Job Position</label></td>
-                            <input type="text" class="form-control" name="position" id="position" value="HR Manager">
+                            <input type="text" class="form-control" name="job_position" id="position" value="HR Manager">
+                            <span class="text-danger">{{$errors->first('job_position')}}</span>
                         </div>
                         <div class="form-group">
-                            <label>Phone No</label>
+                            <label>Phone</label>
                             <input type="number" class="form-control"  name="phone" id="phone" value="01767227082">
+                            <span class="text-danger">{{$errors->first('phone')}}</span>
                         </div>
                         <div class="from-group">
                             <label for="email">Email</label>
                             <input type="email" class="form-control" id="EmailId" name="email" value="rasel@gmail.com">
+                            <span class="text-danger">{{$errors->first('email')}}</span>
                         </div>
                         <div class="foem-group">
                             <label>Present address</label></td>
-                            <input type="text" class="form-control" id="presentaddress" name="preAdd">
+                            <input type="text" class="form-control" id="presentaddress" name="present_address" Value="Dhaka">
+                            <span class="text-danger">{{$errors->first('present_address')}}</span>
+                        </div>
+                        <div class="from-group">
+                            <center><input class="btn btn-outline-primary btn-block w-50 mt-3" type="submit" value="Update" style="color:tomato"></center>
                         </div>
                             
                     </form>
                 </div>
-                    <div class="from-group">
-                        <center><input class="btn btn-outline-primary btn-block w-50 mt-3" type="submit" value="Update" style="color:tomato"></center>
-                    </div>
+                    
                 </div>
             </div>
         </div>

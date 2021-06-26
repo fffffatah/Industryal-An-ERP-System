@@ -37,14 +37,14 @@
                 <nav class=" navbar border-dark w-25">
                     <ul class="navbar-nav">
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRuser.create')}}">New user</a></li>
-                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="#">Search User</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRuser.index')}}">User List</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRemployee.create')}}">New Employee</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRgroup.index')}}">Add group</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRemployee.emplist')}}">Employee List</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HREmpSchedule.schedule')}}">Schedules</a></li>
-                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRLeave.leave')}}">Create Leave Request</a></li>
-                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRexpense.report')}}">Create Expense Report</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRLeave.leave')}}">Leave Request</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRLeave.leaveList')}}">Leave Request List</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRexpense.report')}}">Expense Report</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRexpenseList.list')}}"> Expense  Report List</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRExStatistic.statistic')}}">Expense Statistic</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRpayroll.show')}}">Payroll</a></li>
@@ -62,28 +62,30 @@
                             
                             <div class="form-group">
                                 <label>Type</label>
-                                <select name="type" id="type" class="form-control">
+                                <select name="type" id="type" class="form-control" Value="{{old('type')}}">
                                     <option value="sick">Sick Leave</option>
                                     <option value="other">Other leave</option>
                                 </select>
+                                <span class="text-danger">{{$errors->first('type')}}</span>
                             </div>
                             
                             
                             
                             <div class="from-group">
                                 <label>Start date</label>
-                                <input type="date" class="form-control" id="startdate" name="startdate">
+                                <input type="date" class="form-control" id="startdate" name="start_date" Value="{{old('start_date')}}">
+                                <span class="text-danger">{{$errors->first('start_date')}}</span>
                             </div>
                             <div class="from-group">
                                 <label>End date</label>
-                                <input type="date" class="form-control" id="startdate" name="startdate">
+                                <input type="date" class="form-control" id="startdate" name="end_date" Value="{{old('end_date')}}">
+                                <span class="text-danger">{{$errors->first('end_date')}}</span>
+                                
                             </div>
                             <div class="form-group">
-                                <label>Approved by</label>
-                                <select name="approve" id="approve" class="form-control">
-                                    <option value="Super">Super Admin</option>
-                                    <option value="Hrmanager">HR manager</option>
-                                </select>
+                                <label>Descreption</label>
+                                <textarea type="text" name="description" id="leave_description" class="form-control" Value="{{old('description')}}"></textarea>
+                                <span class="text-danger">{{$errors->first('description')}}</span>
                             </div>
                               
                             

@@ -37,14 +37,14 @@
                 <nav class=" navbar border-dark w-25">
                     <ul class="navbar-nav">
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRuser.create')}}">New user</a></li>
-                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="#">Search User</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRuser.index')}}">User List</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRemployee.create')}}">New Employee</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRgroup.index')}}">Add group</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRemployee.emplist')}}">Employee List</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HREmpSchedule.schedule')}}">Schedules</a></li>
-                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRLeave.leave')}}">Create Leave Request</a></li>
-                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRexpense.report')}}">Create Expense Report</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRLeave.leave')}}">Leave Request</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRLeave.leaveList')}}">Leave Request List</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRexpense.report')}}">Expense Report</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRexpenseList.list')}}"> Expense Report List</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRExStatistic.statistic')}}">Expense Statistic</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRpayroll.show')}}">Payroll</a></li>
@@ -60,30 +60,33 @@
                         <h3 class="font-width-border"><i class="fas fa-users"></i>Employee Group</h3>
                     </div>
                     <div class="border border-primary w-75  m-auto">
-                        <form action="" class="w-50 m-auto  " >
-                           
+                        <form method="post" class="w-50 m-auto  " >
+                         @csrf  
                             
                             <div class="form-group">
-                                <label >Employee Name</label> 
-                                <input type="txt" class="form-control" id="lastname" name="lname">
+                                <label >Employee ID</label> 
+                                <input type="number" class="form-control" id="lastname" name="employee_id" Value="{{old('employee_id')}}">
+                                <span class="text-danger">{{$errors->first('employee_id')}}</span>
                             </div>
                             <div class="form-group">
                                 <label>Group</label>
-                                    <select name="group" id="group" class="form-control">
-                                        <option value="Huamn">Human Resource Department</option>
+                                    <select name="employee_group" id="group" class="form-control" Value="{{old('employee_group')}}">
+                                    <option value="Huamn">Human Resource Department</option>
                                         <option value="product">Product Department</option>
                                         <option value="finance">Finance Department</option>
                                         <option value="sales">Sales Department </option>
                                     </select>
+                                    <span class="text-danger">{{$errors->first('employee_group')}}</span>
+                            </div>
+                            </div>
+                    
+                                <center> <input class="btn btn-outline-success btn-block w-25 mt-3 "  type="submit" value="Add"></center>
                             </div>
                            
                              
                         </form>
                         
-                    </div>
-                    
-                       <center> <input class="btn btn-outline-success btn-block w-50 mt-3 "  type="submit" value="Add" "></center>
-                    </div>
+                   
                 </div>
             </div>
         </div>

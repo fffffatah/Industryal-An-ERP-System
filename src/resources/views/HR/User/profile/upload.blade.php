@@ -45,15 +45,16 @@
             <div class="col-10">
                 
                 <h3 class="text-center"><i class="fas fa-edit"></i>Upload Profile Picture </h3>
+                <hr>
                 <div class=" w-100 m-auto">
                     <form action="" class="w-50 m-auto" >
                         <table class="table table-hover">
                             <tr>
-                                <td >Image Upload: </td>
                                 <td> 
-                                <div class="custom-file">
-                                    <input class="custom-file-input" type="file" id="myfile">
-                                    <label class="custom-file-label" for="myfile">Choose Image</label>
+                                <div >
+                                    <label for="myfile">Choose Image</label>
+                                    <input type="file" id="myfile" name="myfile" class="form-controll">
+                                    
                                 </div>
                                 
                                 </td>
