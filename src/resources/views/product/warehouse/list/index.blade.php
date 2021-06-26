@@ -95,6 +95,7 @@
                                     <th>Remaining Quantity</th>
                                     <th>Status</th>
                                     <th>Condition</th>
+                                    <th>Action</th>
                                 </tr>
                                 @foreach($warehouseList as $warehouse)
                                     <tr>
@@ -125,6 +126,9 @@
                                                     @endif
                                                 @endif
                                             @endforeach
+                                        </td>
+                                        <td>
+                                        <a href="/warehouse/edit/{{$warehouse['warehouse_id']}}" class="btn btn-warning">Update</a>
                                         </td>
                                     </tr>
                                 @endforeach
