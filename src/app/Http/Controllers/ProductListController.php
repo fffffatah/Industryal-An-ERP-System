@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product\product_table;
 use Illuminate\Support\Facades\File;
+use App\Http\Requests\Product\ProductCreateRequest;
 
 class ProductListController extends Controller
 {
@@ -30,6 +31,36 @@ class ProductListController extends Controller
             File::delete($img_path);
         }
         product_table::where('product_id', $product_id)->delete();
+        return redirect()->route('productList.index');
+    }
+
+    public function editProduct($product_id)
+    {
+        $product = product_table::where('product_id', $product_id)->first();
+        return view('product.list.edit')->with('product', $product);
+    }
+
+    public function updateProduct(ProductCreateRequest $req,$product_id)
+    {
+         $product = product_table::where('product_id', $product_id)->first();
+         $product->product_id = $req->product_id;
+         $product->product_name = $req->product_name;
+         $product->status_sell = $req->product_sell_status;
+         $product->status_purchase = $req->product_purchase_status;
+         $product->product_description = $req->product_description;
+         $product->warehouse_name = $req->warehouse_name;
+         $product->stock = $req->product_stock;
+         $product->nature = $req->product_nature;
+         $product->weight = $req->product_weight;
+         $product->weight_unit = $req->product_weight_unit;
+         $product->dimention = $req->product_dimention;
+         $product->dimention_unit = $req->product_dimention_unit;
+         $product->selling_price = $req->product_selling_price;
+         $product->tax = $req->product_selling_tax;
+         $product->product_condition = $req->product_weight;
+         $product->product_condition = "Good";
+         $product->save();
+
         return redirect()->route('productList.index');
     }
 
