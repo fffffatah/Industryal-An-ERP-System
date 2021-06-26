@@ -11,4 +11,18 @@ class HRuserProfileController extends Controller
     {
         return view('HR.User.profile.index');
     }
+
+    public function profileEdit()
+    {
+        return view('HR.User.profile.profileEdit');
+    }
+    public function changePassword()
+    {
+        return view('HR.User.profile.changePass');
+    }
+    public function uploadImage()
+    {
+        return view('HR.User.profile.upload');
+    }
+
 }

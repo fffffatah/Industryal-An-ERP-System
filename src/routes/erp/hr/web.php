@@ -48,6 +48,11 @@ Route::get('/HR/expense/list',[HRexpenseListController::class,'list'])->name('HR
 Route::get('/HR/expense/statistic',[HRExStatisticController::class,'statistic'])->name('HRExStatistic.statistic');
 //user profile
 Route::get('/HR/user/profile',[HRuserProfileController::class,'details'])->name('HRuserProfile.details');
+Route::get('/HR/user/profile/edit',[HRuserProfileController::class,'profileEdit'])->name('HRuserProfile.profileEdit');
+Route::get('/HR/user/profile/edit/changePassword',[HRuserProfileController::class,'changePassword'])->name('HRuserProfile.changePassword');
+Route::get('/HR/user/profile/edit/uploadImage',[HRuserProfileController::class,'uploadImage'])->name('HRuserProfile.uploadImage');
+
+
 
 
 

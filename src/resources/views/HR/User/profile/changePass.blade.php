@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>profile</title>
+    <title>profile Edit</title>
    <!--  Bootstrap cdn -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
     crossorigin="anonymous">
@@ -42,42 +42,35 @@
                     </ul>
                 </nav>
             </div>
-            <div class="col-10 ">
+            <div class="col-10">
                 
-                <h1 class="text-center"><i class="fas fa-user"></i>Profile</h1>
-               
-               <center>
-                    <table class="table table-hover w-75">
-                        <tr>
-                            <td>First Name</td>
-                            <td>Md.</td>
-                        </tr>
-                        <tr>
-                            <td>Last Name</td>
-                            <td>Rasel</td>
-                        </tr>
-                        <tr>
-                            <td>Job position</td>
-                            <td>HR manager</td>
-                        </tr>
-                        <tr>
-                            <td>Phone No</td>
-                            <td>01767227082</td>
-                        </tr>
-                        <tr>
-                            <td>Email</td>
-                            <td>rasel@gamil.com</td>
-                        </tr>
-                        <tr>
-                            <td>Address</td>
-                            <td>Dhaka</td>
-                        </tr>
-                    </table>
-                </center>    
-                    
-                
+                <h1 class="text-center"><i class="fas fa-key"></i> Change Password</h1>
+                <div class="border border-primary w-75  m-auto">
+                    <form action="" class="w-50 m-auto" >
+                        <table class="table table-hover">
+                            <tr>
+                                <td >Old Password: </td>
+                                <td > <input type="password" class="form-control"> </td>
+                            </tr>
+                            <tr>
+                                <td >New Password: </td>
+                                 <td > <input type="password" class="form-control"> </td>
+                            </tr>
+                            <tr>
+                                <td >Confirm New Password: </td>
+                                <td > <input type="password" class="form-control"> </td>
+                            </tr>
+                            <tr>
+                                <td colspan='2' align='center'>
+                                <input type="submit" value="Proceed &nbsp  &#8594;" class="btn btn-dark" style="width:400px">
+                                </td>
+                            </tr>
+                        </table>    
+                    </form>
+                </div>
             </div>
-        </div>
+        </div>    
+        
 
     <!-- Footer Starts-->
     <footer id="main-footer" class="bg-primary text-white mt-5 p-2">
