@@ -37,6 +37,10 @@ Route::post('/product/create',[ProductCreateController::class, 'create']);
 
 Route::get('/product/list',[ProductListController::class, 'index'])->name('productList.index');
 Route::get('/product/list/faulty',[ProductListController::class, 'faulty'])->name('productListFaulty.index');
+
+Route::get('/product/delete/{product_id}',[ProductListController::class, 'deleteProduct'])->name('productList.deleteProduct');
+Route::post('/product/delete/{product_id}',[ProductListController::class, 'destroyProduct']);
+
 Route::get('/product/stocks',[ProductStockController::class, 'index'])->name('productStocks.index');
 Route::get('/product/statistics',[ProductStatisticsController::class, 'index'])->name('productStatistics.index');
 
