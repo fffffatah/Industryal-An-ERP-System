@@ -95,6 +95,17 @@
                                     <th>Remaining Quantity</th>
                                     <th>Status</th>
                                 </tr>
+                                @foreach($warehouseList as $warehouse)
+                                    <tr>
+                                        <td>{{$warehouse['warehouse_id']}}</td>
+                                        <td>{{$warehouse['name']}}</td>
+                                        <td>{{$warehouse['description']}}</td>
+                                        <td>{{$warehouse['address']}}</td>
+                                        <td>{{$warehouse['quantity']}}</td>
+                                        <td>{{$warehouse['status']}}</td>
+                                        <td>{{$warehouse['status']}}</td>
+                                    </tr>
+                                @endforeach
                             </table>
                         </div>
                     </div>
