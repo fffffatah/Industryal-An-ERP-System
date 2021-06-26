@@ -120,7 +120,7 @@
                                         <td>{{$product['product_condition']}}</td>
                                         <td>
                                         <a href="" class="btn btn-success mb-2">Update</a>
-                                        <a href="" class="btn btn-danger">Delete</a>
+                                        <a href="/product/delete/{{$product['product_id']}}" class="btn btn-danger">Delete</a>
                                         </td>
                                     </tr>
                                 @endforeach
