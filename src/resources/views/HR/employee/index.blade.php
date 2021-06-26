@@ -64,17 +64,19 @@
                            
                             
                             <div class="form-group">
-                                <label >Employee Name</label> 
-                                <input type="txt" class="form-control" id="lastname" name="lname">
+                                <label >Employee ID</label> 
+                                <input type="txt" class="form-control" id="lastname" name="employee_id" Value="{{old('employee_id')}}">
+                                <span class="text-danger">{{$errors->first('employee_id')}}</span>
                             </div>
                             <div class="form-group">
                                 <label>Group</label>
-                                    <select name="group" id="group" class="form-control">
-                                        <option value="Huamn">Human Resource Department</option>
+                                    <select name="group" id="group" class="form-control" Value="{{old('group')}}">
+                                    <option value="Huamn">Human Resource Department</option>
                                         <option value="product">Product Department</option>
                                         <option value="finance">Finance Department</option>
                                         <option value="sales">Sales Department </option>
                                     </select>
+                                    <span class="text-danger">{{$errors->first('group')}}</span>
                             </div>
                            
                              

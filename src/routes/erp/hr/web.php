@@ -33,6 +33,7 @@ Route::get('/HR/user/create',[HRuserController::class,'create'])->name('HRuser.c
 Route::get('/HR/user/list',[HRuserController::class,'index'])->name('HRuser.index');
 //Employee Create
 Route::get('/HR/employee/create',[HRemployeeController::class,'create'])->name('HRemployee.create');
+Route::post('/HR/employee/create',[HRemployeeController::class,'index']);
 Route::get('/HR/employee/list',[HRemployeeController::class,'emplist'])->name('HRemployee.emplist');
 Route::get('/HR/employee/group',[HRgroupController::class,'index'])->name('HRgroup.index');
 Route::get('/HR/employee/schedule',[HREmpScheduleController::class,'schedule'])->name('HREmpSchedule.schedule');

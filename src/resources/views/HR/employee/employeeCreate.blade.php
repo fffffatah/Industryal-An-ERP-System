@@ -58,7 +58,8 @@
                     </div>
                     <hr>
                     <div class="border border-primary w-75  m-auto">
-                        <form action="" class="w-50 m-auto  " >
+                        <form method="post" class="w-50 m-auto  " >
+                        @csrf
                             <div class="form-group">
                                 <label>Employee ID</label> 
                                 <input type="number" class="form-control" id="employeeid" name="employee_id" Value="{{old('employee_id')}}" >
@@ -134,13 +135,12 @@
                                 <input type="date" class="form-control" id="hiredate" name="employment_start_date" Value="{{old('employment_start_date')}}">
                                 <span class="text-danger">{{$errors->first('employment_start_date')}}</span>
                             </div>
-                              
+                            <div class="from-group">
+                                <center><input class="btn btn-outline-primary btn-block w-50 mt-3" type="submit" value="Create employee"></center>
+                            </div>    
                            
                              
                         </form>
-                    </div>
-                    <div class="from-group">
-                        <center><input class="btn btn-outline-primary btn-block w-50 mt-3" type="submit" value="Create employee" style="color:tomato"><</center>
                     </div>
                 </div>
             </div>
