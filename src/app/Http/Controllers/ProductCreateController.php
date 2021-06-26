@@ -28,8 +28,10 @@ class ProductCreateController extends Controller
         $product->warehouse_name = $req->warehouse_name;
         $product->stock = $req->product_stock;
         $product->nature = $req->product_nature;
-        $product->weight = $req->product_weight." ".$req->product_weight_unit;
-        $product->dimention = $req->product_dimention." ".$req->product_dimention_unit;
+        $product->weight = $req->product_weight;
+        $product->weight_unit = $req->product_weight_unit;
+        $product->dimention = $req->product_dimention;
+        $product->dimention_unit = $req->product_dimention_unit;
         $product->selling_price = $req->product_selling_price;
         $product->tax = $req->product_selling_tax;
         $product->image = $req->product_id.'.'.$img->getClientOriginalExtension();
