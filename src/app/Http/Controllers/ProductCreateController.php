@@ -6,12 +6,14 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\Product\ProductCreateRequest;
 use App\Models\Product\product_table;
+use App\Models\Product\warehouse_table;
 
 class ProductCreateController extends Controller
 {
     public function index()
     {
-        return view('product.create.index');
+        $warehouseList = warehouse_table::pluck('name');
+        return view('product.create.index')->with('warehouseList', $warehouseList);
     }
 
     public function create(ProductCreateRequest $req)
