@@ -54,7 +54,7 @@
             <div class="col-10">
                 <div class="info-section p-3 text-black my-5">
                     <div class="title text-center mb-3">
-                        <h3 class="font-width-border"><i class="fal fa-person-sign"></i>Employee information</h3>
+                        <h3 class="font-width-border"><i class="fas fa-user-edit"></i>Update Employee information</h3>
                     </div>
                     <hr>
                     <div class="border border-primary w-75  m-auto">

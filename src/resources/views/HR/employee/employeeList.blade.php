@@ -52,7 +52,7 @@
             <div class="col-10">
                 <h1 class="text-center"><i class="fas fa-address-book"></i>Employee List</h1>
                 @if(session('msg'))
-                <div class="alert alert-success">
+                <div class="alert alert-success w-25">
                     <strong>{{session('msg')}}</strong> 
                 </div>
                  @endif
