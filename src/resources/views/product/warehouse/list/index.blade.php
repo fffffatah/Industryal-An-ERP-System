@@ -94,6 +94,7 @@
                                     <th>Total Quantity</th>
                                     <th>Remaining Quantity</th>
                                     <th>Status</th>
+                                    <th>Condition</th>
                                 </tr>
                                 @foreach($warehouseList as $warehouse)
                                     <tr>
@@ -102,8 +103,29 @@
                                         <td>{{$warehouse['description']}}</td>
                                         <td>{{$warehouse['address']}}</td>
                                         <td>{{$warehouse['quantity']}}</td>
+                                        <td>
+                                            @foreach($productList as $product)
+                                                @if($product['warehouse_name'] == $warehouse['name'])
+                                                    @if($warehouse['quantity']-$product['stock'] < 1)
+                                                        {{0}}
+                                                    @else
+                                                        {{$warehouse['quantity']-$product['stock']}}
+                                                    @endif
+                                                @endif
+                                            @endforeach
+                                        </td>
                                         <td>{{$warehouse['status']}}</td>
-                                        <td>{{$warehouse['status']}}</td>
+                                        <td>
+                                            @foreach($productList as $product)
+                                                @if($product['warehouse_name'] == $warehouse['name'])
+                                                    @if($warehouse['quantity']-$product['stock'] < 1)
+                                                        <b class="text-danger">Out of Stock</b>
+                                                    @else
+                                                        <b class="text-success">In Stock</b>
+                                                    @endif
+                                                @endif
+                                            @endforeach
+                                        </td>
                                     </tr>
                                 @endforeach
                             </table>
