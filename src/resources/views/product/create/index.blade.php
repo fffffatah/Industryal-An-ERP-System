@@ -83,7 +83,7 @@
                         <div class="col-10">
                         <div class="container">
                         <div class="text-left">
-                            <form method="POST">
+                            <form method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <table class="table table-striped table-bordered">
                                     <tr>
@@ -203,7 +203,7 @@
                                     <tr>
                                         <td>Upload Image: </td>
                                         <td colspan='2'>
-                                            <input class="form-control" type="file" id="myfile" name="product_image" value="{{old('product_image')}}">
+                                            <input type="file" name="product_image">
                                             <span class="text-danger">{{$errors->first('product_image')}}</span>
                                         </td>
                                     </tr>
