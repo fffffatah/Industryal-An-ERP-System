@@ -88,12 +88,12 @@
                             </div>
                             <div class="form-group">
                                 <label>Supervisor</label>
-                                <select name="supervisor" id="super" class="form-control" >
-                                    <option value="{{$employee['supervisor']}}">Super admin</option>
-                                    <option value="{{$employee['supervisor']}}">HR manager</option>
-                                    <option value="{{$employee['supervisor']}}">Product manager</option>
-                                    <option value="{{$employee['supervisor']}}r">Finance manager</option>
-                                    <option value="{{$employee['supervisor']}}">Sales manager</option>
+                                <select name="supervisor" id="super" class="form-control" value="{{$employee['supervisor']}}">
+                                    <option value="super_admin">Super admin</option>
+                                    <option value="HR_manager">HR manager</option>
+                                    <option value="product_manager">Product manager</option>
+                                    <option value="finance_manager">Finance manager</option>
+                                    <option value="sales_manager">Sales manager</option>
                                 </select>
                                 <span class="text-danger">{{$errors->first('supervisor')}}</span>
                             </div>
@@ -132,7 +132,7 @@
                             </div>
                             <div class="from-group">
                                 <label>Employment start date</label>
-                                <input type="date" class="form-control" id="hiredate" name="employment_start_date" Value="{{$employee['employment_start_date']}}}">
+                                <input type="date" class="form-control" id="hiredate" name="employment_start_date" Value="{{$employee['employment_start_date']}}">
                                 <span class="text-danger">{{$errors->first('employment_start_date')}}</span>
                             </div>
                             <div class="from-group">

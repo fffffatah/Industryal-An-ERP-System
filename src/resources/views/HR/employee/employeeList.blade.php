@@ -36,6 +36,7 @@
                 <nav class=" navbar border-dark w-25">
                     <ul class="navbar-nav">
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRuser.create')}}">New user</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRuser.index')}}">User List</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRemployee.create')}}">New Employee</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRgroup.index')}}">Add group</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRemployee.emplist')}}">Employee List</a></li>
@@ -72,7 +73,7 @@
                         <th>Address</th>
                         <th>Phone</th>
                         <th>Job Position</th>
-                        <th>Employment Start date</th>
+                        <th>Group</th>
                         <th>Action</th>
                         @foreach ($employeeList as $employee)
                         <tr>
@@ -83,11 +84,11 @@
                             <td>{{$employee['present_address']}}</td>
                             <td>{{$employee['phone']}}</td>
                             <td>{{$employee['job_position']}}</td>
-                            <td>{{$employee['employment_start_date']}}</td>
+                            <td>{{$employee['employee_group']}}</td>
                             
                             <td>
-                                <a href="/HR/employee/list/{{$employee['employee_id']}}" class="btn btn-success m-1"> Update </a>
-                                <a href="#" class="btn btn-danger m-1"> Delete </a>
+                                <a href="/HR/employee/edit/{{$employee['employee_id']}}" class="btn btn-success m-1"> Update </a>
+                                <a href="/HR/employee/delete/{{$employee['employee_id']}}" class="btn btn-danger m-1"> Delete </a>
                            
                             </td>
                         </tr>

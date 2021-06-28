@@ -64,5 +64,19 @@ class HRemployeeController extends Controller
         return redirect()->route('HRemployee.emplist');
 
     }
+    public function empDelete($employee_id)
+    {
+        $employee = Employee::where('employee_id', $employee_id)->first();
+        return view('HR.employee.employeeDelete')->with('employee',$employee);
+    }
+    public function empDestroy($employee_id,Request $req)
+    {
+        
+        Employee::where('employee_id', $employee_id)->delete();
+        $req->session()->flash('msg','Delete successfully');
+        return redirect()->route('HRemployee.emplist');
+
+
+    }
     
 }

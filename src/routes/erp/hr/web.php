@@ -36,8 +36,10 @@ Route::get('/HR/user/list',[HRuserController::class,'index'])->name('HRuser.inde
 Route::get('/HR/employee/create',[HRemployeeController::class,'create'])->name('HRemployee.create');
 Route::post('/HR/employee/create',[HRemployeeController::class,'index']);
 Route::get('/HR/employee/list',[HRemployeeController::class,'emplist'])->name('HRemployee.emplist');
-Route::get('/HR/employee/list/{employee_id}',[HRemployeeController::class,'empEdit'])->name('HRemployee.empEdit');
-Route::post('/HR/employee/list/{employee_id}',[HRemployeeController::class,'empUpdate']);
+Route::get('/HR/employee/edit/{employee_id}',[HRemployeeController::class,'empEdit'])->name('HRemployee.empEdit');
+Route::post('/HR/employee/edit/{employee_id}',[HRemployeeController::class,'empUpdate']);
+Route::get('/HR/employee/delete/{employee_id}',[HRemployeeController::class,'empDelete'])->name('HRemployee.empDelete');
+Route::post('/HR/employee/delete/{employee_id}',[HRemployeeController::class,'empDestroy']);
 Route::get('/HR/employee/group',[HRgroupController::class,'index'])->name('HRgroup.index');
 Route::post('/HR/employee/group',[HRgroupController::class,'CreateGroup']);;
 Route::get('/HR/employee/schedule',[HREmpScheduleController::class,'schedule'])->name('HREmpSchedule.schedule');
