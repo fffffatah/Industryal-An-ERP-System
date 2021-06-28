@@ -73,62 +73,62 @@
                         </div>
                     </div>
                 <div class="col-12 col-lg-9 border border-dark rounded p-3">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <h3><i class="fas fa-box-open"></i>&nbsp &nbsp All Products</h3>
-                            </div>
-                            <hr class="mb-4">
-                            <div class="input-group">
-                                <input class="form-control" type="text" placeholder="Find By Name...">
-                                <div class="input-group-append">
-                                    <button type="button" class="btn btn-outline-secondary">Search &nbsp <i class="fas fa-search"></i></button>
-                                </div>
-                            </div>
-                            <br>
-                            <table class="table table-striped table-bordered">
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Name</th>
-                                    <th>Status</th>
-                                    <th>Warehouse</th>
-                                    <th>Stock</th>
-                                    <th>Product Nature</th>
-                                    <th>Selling Price</th>
-                                    <th>Description</th>
-                                    <th>Image</th>
-                                    <th>Condition</th>
-                                    <th>Action</th>
-                                </tr>
-
-                                @foreach($productList as $product)
-                                    @if($product['product_condition'] == "Good")
-                                        <tr>
-                                            <td>{{$product['product_id']}}</td>
-                                            <td>{{$product['product_name']}}</td>
-                                            <td>
-                                                {{$product['status_sell']}}
-                                                <br>
-                                                {{$product['status_purchase']}}
-                                            </td>
-                                            <td>{{$product['warehouse_name']}}</td>
-                                            <td>{{$product['stock']}}</td>
-                                            <td>{{$product['nature']}}</td>
-                                            <td>{{$product['selling_price']}}</td>
-                                            <td>{{$product['product_description']}}</td>
-                                            <td>
-                                            <img src="/upload/Product/{{$product['image']}}" alt="Potato" width="200" height="200"> 
-                                            </td>
-                                            <td>{{$product['product_condition']}}</td>
-                                            <td>
-                                            <a href="/product/edit/{{$product['product_id']}}" class="btn btn-success mb-2">Update</a>
-                                            <a href="/product/delete/{{$product['product_id']}}" class="btn btn-danger">Delete</a>
-                                            </td>
-                                        </tr>
-                                    @endif
-                                @endforeach
-                            </table>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <h3><i class="fas fa-box-open"></i>&nbsp &nbsp All Products</h3>
                         </div>
+                        <hr class="mb-4">
+                        <div class="input-group">
+                            <input class="form-control" type="text" placeholder="Find By Name...">
+                            <div class="input-group-append">
+                                <button type="button" class="btn btn-outline-secondary">Search &nbsp <i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+                        <br>
+                        <table class="table table-striped table-bordered">
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Status</th>
+                                <th>Warehouse</th>
+                                <th>Stock</th>
+                                <th>Product Nature</th>
+                                <th>Selling Price</th>
+                                <th>Description</th>
+                                <th>Image</th>
+                                <th>Condition</th>
+                                <th>Action</th>
+                            </tr>
+
+                            @foreach($productList as $product)
+                                @if($product['product_condition'] == "Good")
+                                    <tr>
+                                        <td>{{$product['product_id']}}</td>
+                                        <td>{{$product['product_name']}}</td>
+                                        <td>
+                                            {{$product['status_sell']}}
+                                            <br>
+                                            {{$product['status_purchase']}}
+                                        </td>
+                                        <td>{{$product['warehouse_name']}}</td>
+                                        <td>{{$product['stock']}}</td>
+                                        <td>{{$product['nature']}}</td>
+                                        <td>{{$product['selling_price']}}</td>
+                                        <td>{{$product['product_description']}}</td>
+                                        <td>
+                                        <img src="/upload/Product/{{$product['image']}}" alt="Potato" width="200" height="200"> 
+                                        </td>
+                                        <td>{{$product['product_condition']}}</td>
+                                        <td>
+                                        <a href="/product/edit/{{$product['product_id']}}" class="btn btn-success mb-2">Update</a>
+                                        <a href="/product/delete/{{$product['product_id']}}" class="btn btn-danger">Delete</a>
+                                        </td>
+                                    </tr>
+                                @endif
+                            @endforeach
+                        </table>
                     </div>
+                </div>
             </div>
         </div>
     </main>
