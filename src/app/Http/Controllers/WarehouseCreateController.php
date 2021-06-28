@@ -29,6 +29,8 @@ class WarehouseCreateController extends Controller
         $warehouse->status = $req->warehouse_status;
         $warehouse->quantity = $req->warehouse_quantity;
         $warehouse->remaining_quantity = $req->warehouse_quantity;
+        $warehouse->date_added = date('Y-m-d');
+        $warehouse->last_updated = date('Y-m-d');
         $warehouse->save();
 
         return redirect()->route('warehouseList.index');
