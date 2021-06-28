@@ -33,7 +33,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="{{route('user.logout')}}" class="nav-link">
                     <i class="fas fa-user-times"></i> Logout
                     </a>
                 </li>
@@ -105,27 +105,19 @@
                                         <td>{{$warehouse['address']}}</td>
                                         <td>{{$warehouse['quantity']}}</td>
                                         <td>
-                                            @foreach($productList as $product)
-                                                @if($product['warehouse_name'] == $warehouse['name'])
-                                                    @if($warehouse['quantity']-$product['stock'] < 1)
-                                                        {{0}}
-                                                    @else
-                                                        {{$warehouse['quantity']-$product['stock']}}
-                                                    @endif
-                                                @endif
-                                            @endforeach
+                                            @if($warehouse['remaining_quantity'] < 1)
+                                                {{0}}
+                                            @else
+                                                {{$warehouse['remaining_quantity']}}
+                                            @endif
                                         </td>
                                         <td>{{$warehouse['status']}}</td>
                                         <td>
-                                            @foreach($productList as $product)
-                                                @if($product['warehouse_name'] == $warehouse['name'])
-                                                    @if($warehouse['quantity']-$product['stock'] < 1)
-                                                        <b class="text-danger">Out of Stock</b>
-                                                    @else
-                                                        <b class="text-success">In Stock</b>
-                                                    @endif
-                                                @endif
-                                            @endforeach
+                                            @if($warehouse['remaining_quantity'] < 1)
+                                                <b class="text-danger">Out of Stock</b>
+                                            @else
+                                                <b class="text-success">In Stock</b>
+                                            @endif
                                         </td>
                                         <td>
                                         <a href="/warehouse/edit/{{$warehouse['warehouse_id']}}" class="btn btn-warning">Update</a>

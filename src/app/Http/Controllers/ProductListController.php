@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product\product_table;
+use App\Models\Product\warehouse_table;
 use Illuminate\Support\Facades\File;
 use App\Http\Requests\Product\ProductCreateRequest;
 
@@ -37,7 +38,8 @@ class ProductListController extends Controller
     public function editProduct($product_id)
     {
         $product = product_table::where('product_id', $product_id)->first();
-        return view('product.list.edit')->with('product', $product);
+        $warehouseList = warehouse_table::pluck('name');
+        return view('product.list.edit')->with('product', $product)->with('warehouseList',$warehouseList);
     }
 
     public function updateProduct(ProductCreateRequest $req,$product_id)
@@ -57,8 +59,8 @@ class ProductListController extends Controller
          $product->dimention_unit = $req->product_dimention_unit;
          $product->selling_price = $req->product_selling_price;
          $product->tax = $req->product_selling_tax;
-         $product->product_condition = $req->product_weight;
-         $product->product_condition = "Good";
+         $product->product_condition = $req->product_condition;
+         $product->last_updated = date('Y-m-d');
          $product->save();
 
         return redirect()->route('productList.index');
@@ -66,6 +68,7 @@ class ProductListController extends Controller
 
     public function faulty()
     {
-        return view('product.list.faulty');
+        $list = product_table::all();
+        return view('product.list.faulty')->with('productList', $list);
     }
 }

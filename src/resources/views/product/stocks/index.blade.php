@@ -33,7 +33,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="{{route('user.logout')}}" class="nav-link">
                     <i class="fas fa-user-times"></i> Logout
                     </a>
                 </li>
@@ -89,11 +89,25 @@
                                 <tr>
                                     <th>Product ID</th>
                                     <th>Product Name</th>
-                                    <th>Warehouse Id</th>
                                     <th>Warehouse Name</th>
                                     <th>Quantity</th>
                                     <th>Alert Status</th>
                                 </tr>
+                                @foreach($productList as $product)
+                                    <tr>
+                                        <td>{{$product['product_id']}}</td>
+                                        <td>{{$product['product_name']}}</td>
+                                        <td>{{$product['warehouse_name']}}</td>
+                                        <td>{{$product['stock']}}</td>
+                                        <td>
+                                            @if($product['stock'] > 0)
+                                                <b class="text-success">In Stock</b>
+                                            @else
+                                            <b class="text-danger">Out of Stock</b>
+                                            @endif
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </table>
                     </div>
                 </div>

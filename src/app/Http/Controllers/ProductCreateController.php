@@ -37,11 +37,16 @@ class ProductCreateController extends Controller
         $product->selling_price = $req->product_selling_price;
         $product->tax = $req->product_selling_tax;
         $product->image = $req->product_id.'.'.$img->getClientOriginalExtension();
-        $product->product_condition = $req->product_weight;
         $product->product_condition = "Good";
 
         $img->move('upload/Product', $req->product_id.'.'.$img->getClientOriginalExtension());
+        $product->date_added = date('Y-m-d');
+        $product->last_updated = date('Y-m-d');
         $product->save();
+
+        $warehouse = warehouse_table::where('name',$req->warehouse_name)->first();
+        $warehouse->quantity = $warehouse->quantity - doubleval($req->product_stock);
+        $warehouse->save();
 
         return redirect()->route('productList.index');
     }

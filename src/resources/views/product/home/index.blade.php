@@ -33,7 +33,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="{{route('user.logout')}}" class="nav-link">
                     <i class="fas fa-user-times"></i> Logout
                     </a>
                 </li>
@@ -73,14 +73,34 @@
                         </div>
                     </div>
                 <div class="col-12 col-lg-9 border border-dark rounded p-3">
-                    <div class="container">
                         <div class="row justify-content-center">
-                            <h3><i class="fas fa-chart-pie"></i> &nbsp Charts</h3>
+                            <h3><i class="fas fa-thumbtack"></i> &nbsp Dashboard</h3>
                         </div>
                         <hr>
-                    </div>
+                        <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="card w-100 bg-light text-dark m-3 border border-primary">
+                                <div class="card-header bg-dark text-light" align="center" style="font-family: verdana"><b>Current Affairs</b></div>
+                                     <div class="card-body">
+                                        <div class="card-text" style="font-size:20px">
+                                        <i class="fa fa-star" aria-hidden="true"></i>&nbsp
+                                        Highest stocked product - {{$max_stocked_product}}
+                                         <hr>
+                                         <i class="fa fa-star" aria-hidden="true"></i>&nbsp 
+                                         Most expensive product - {{$most_expensive_product}}
+                                         <hr>
+                                         <i class="fa fa-star" aria-hidden="true"></i>&nbsp
+                                         Number of good product - {{$good_products_cnt}}
+                                         <hr>
+                                         <i class="fa fa-star" aria-hidden="true"></i>&nbsp
+                                         Number of faulty product - {{$faulty_products_cnt}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
                 </div>
-            </div>
         </div>
     </main>
     <!-- Main Body Ends -->

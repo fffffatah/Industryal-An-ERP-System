@@ -33,7 +33,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="{{route('user.logout')}}" class="nav-link">
                     <i class="fas fa-user-times"></i> Logout
                     </a>
                 </li>
@@ -84,12 +84,40 @@
                                     <th>Name</th>
                                     <th>Status</th>
                                     <th>Warehouse</th>
-                                    <th>Number of Faulty Products</th>
                                     <th>Stock</th>
                                     <th>Product Nature</th>
                                     <th>Selling Price</th>
                                     <th>Description</th>
+                                    <th>Image</th>
+                                    <th>Condition</th>
+                                    <th>Action</th>
                                 </tr>
+                                @foreach($productList as $product)
+                                    @if($product['product_condition'] == "Faulty")
+                                        <tr>
+                                            <td>{{$product['product_id']}}</td>
+                                            <td>{{$product['product_name']}}</td>
+                                            <td>
+                                                {{$product['status_sell']}}
+                                                <br>
+                                                {{$product['status_purchase']}}
+                                            </td>
+                                            <td>{{$product['warehouse_name']}}</td>
+                                            <td>{{$product['stock']}}</td>
+                                            <td>{{$product['nature']}}</td>
+                                            <td>{{$product['selling_price']}}</td>
+                                            <td>{{$product['product_description']}}</td>
+                                            <td>
+                                            <img src="/upload/Product/{{$product['image']}}" alt="Potato" width="200" height="200"> 
+                                            </td>
+                                            <td>{{$product['product_condition']}}</td>
+                                            <td>
+                                            <a href="/product/edit/{{$product['product_id']}}" class="btn btn-success mb-2">Update</a>
+                                            <a href="/product/delete/{{$product['product_id']}}" class="btn btn-danger">Delete</a>
+                                            </td>
+                                        </tr>
+                                    @endif
+                                @endforeach
                             </table>
                         </div>
                     </div>
