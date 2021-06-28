@@ -40,6 +40,8 @@ class ProductCreateController extends Controller
         $product->product_condition = "Good";
 
         $img->move('upload/Product', $req->product_id.'.'.$img->getClientOriginalExtension());
+        $product->date_added = date('Y-m-d');
+        $product->last_updated = date('Y-m-d');
         $product->save();
 
         $warehouse = warehouse_table::where('name',$req->warehouse_name)->first();
