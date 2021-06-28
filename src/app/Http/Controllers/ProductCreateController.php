@@ -42,6 +42,10 @@ class ProductCreateController extends Controller
         $img->move('upload/Product', $req->product_id.'.'.$img->getClientOriginalExtension());
         $product->save();
 
+        $warehouse = warehouse_table::where('name',$req->warehouse_name)->first();
+        $warehouse->quantity = $warehouse->quantity - doubleval($req->product_stock);
+        $warehouse->save();
+
         return redirect()->route('productList.index');
     }
 }
