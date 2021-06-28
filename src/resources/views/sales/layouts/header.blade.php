@@ -17,12 +17,11 @@
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item"><a class="nav-link" href="{{route('sales.dashboard.index')}}">Dashboard</a></li>
                     <li class="nav-item dropdown">
-                        {{-- <a class="nav-link" href="lawyer_meetings.php">Customers</a> --}}
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Analytics
                           </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{route('sales.customers.list')}}">Check Analytics</a>
+                        <a class="dropdown-item" href="{{route('sales.stats.analytics.status')}}">Check Analytics</a>
                         <a class="dropdown-item" href="#">View Forecasting</a>
                         <a class="dropdown-item" href="{{route('sales.stats.analytics.status')}}">Status</a>
                         </div>
@@ -36,7 +35,7 @@
                           </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{route('sales.customers.list')}}">Check Customers</a>
-                        <a class="dropdown-item" href="#">Send Mass Emails</a>
+                        <a class="dropdown-item" href="{{route('sales.customers.mail.all')}}">Emails</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Something else here</a>
                         </div>
@@ -76,4 +75,4 @@
             </div>
         </div>
     </nav>
-  <div style="padding-top: 70px"/>
+  <div style="padding-top: 50px"/>
