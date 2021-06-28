@@ -60,6 +60,7 @@ class ProductListController extends Controller
          $product->selling_price = $req->product_selling_price;
          $product->tax = $req->product_selling_tax;
          $product->product_condition = $req->product_condition;
+         $product->last_updated = date('Y-m-d');
          $product->save();
 
         return redirect()->route('productList.index');

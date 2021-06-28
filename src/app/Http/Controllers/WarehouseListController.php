@@ -35,6 +35,7 @@ class WarehouseListController extends Controller
         $warehouse->phone = $req->warehouse_phone;
         $warehouse->status = $req->warehouse_status;
         $warehouse->quantity = $req->warehouse_quantity;
+        $warehouse->last_updated = date('Y-m-d');
         $warehouse->save();
 
         return redirect()->route('warehouseList.index');
