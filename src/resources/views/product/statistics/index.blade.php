@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Google Chart API -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <!-- for bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
     crossorigin="anonymous">
@@ -78,6 +80,20 @@
                                 <h3><i class="fas fa-chart-line"></i> &nbsp &nbsp Product Statistics</h3>
                             </div>
                             <hr class="mb-4">
+                            <div class="row">
+                                <div class="card bg-light text-dark border border-primary mr-3">
+                                    <div class="card-header" align="center"><b>Product wise Count</b></div>
+                                        <div class="card-body">
+                                            <div id="piechart_3d" style="width: 500px; height: 400px;"></div>  
+                                        </div>
+                                </div>
+                                <div class="card bg-light text-dark border border-primary">
+                                    <div class="card-header" align="center"><b>Warehouse wise Count</b></div>
+                                        <div class="card-body">
+                                        <div id="warehouse_piechart_3d" style="width: 500px; height: 400px;"></div>
+                                        </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
             </div>
@@ -100,6 +116,42 @@
         </div>
     </footer>
     <!-- Footer Ends -->
+
+    <!-- product chart -->
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['User', 'Count'],
+            <?php echo $chartData; ?>
+        ]);
+        var options = {
+          title: 'Product - Current Stock',
+          is3D: true,
+        };
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+      }
+    </script>
+
+    <!-- warehouse chart -->
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Warehouse', 'Quantity'],
+            <?php echo $warehouseChartData; ?>
+        ]);
+        var options = {
+          title: 'Warehouse - Remaining Quantity',
+          is3D: true,
+        };
+        var chart = new google.visualization.PieChart(document.getElementById('warehouse_piechart_3d'));
+        chart.draw(data, options);
+      }
+    </script>
 
 
   <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
