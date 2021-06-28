@@ -44,7 +44,6 @@ class ProductTransferController extends Controller
         }
         else
         {
-            /*
             // Decrease current product stock from current warehouse
             $product = product_table::where('product_id', $req->product_id)->first();
             $prev_warehouse_name = $product->warehouse_name;
@@ -83,7 +82,7 @@ class ProductTransferController extends Controller
             $new_warehouse->save();
 
             $req->session()->flash('transfer_success', "Prodcut Successfully Transfered!");
-            return redirect()->route('productTransfer.index');*/
+            return redirect()->route('productTransfer.index');
         }
     }
 }
