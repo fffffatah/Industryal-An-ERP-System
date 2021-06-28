@@ -90,8 +90,6 @@
                                 <th>ID</th>
                                 <th>Name</th>
                                 <th>Status</th>
-                                <th>Warehouse</th>
-                                <th>Stock</th>
                                 <th>Product Nature</th>
                                 <th>Selling Price</th>
                                 <th>Description</th>
@@ -110,8 +108,6 @@
                                             <br>
                                             {{$product['status_purchase']}}
                                         </td>
-                                        <td>{{$product['warehouse_name']}}</td>
-                                        <td>{{$product['stock']}}</td>
                                         <td>{{$product['nature']}}</td>
                                         <td>{{$product['selling_price']}}</td>
                                         <td>{{$product['product_description']}}</td>
