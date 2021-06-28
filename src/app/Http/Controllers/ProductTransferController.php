@@ -34,11 +34,17 @@ class ProductTransferController extends Controller
         }
         elseif($req->product_quantity > $productQuantity)
         {
-            $req->session()->flash('qmsg', "Oops! You don't have that much product");
+            $req->session()->flash('wmsg', "Oops! You don't have that much product");
+            return back();
+        }
+        elseif($req->warehouse == $product->warehouse_name)
+        {
+            $req->session()->flash('curr_msg', "Oops! You selected the current warehouse");
             return back();
         }
         else
         {
+            /*
             // Decrease current product stock from current warehouse
             $product = product_table::where('product_id', $req->product_id)->first();
             $prev_warehouse_name = $product->warehouse_name;
@@ -77,7 +83,7 @@ class ProductTransferController extends Controller
             $new_warehouse->save();
 
             $req->session()->flash('transfer_success', "Prodcut Successfully Transfered!");
-            return redirect()->route('productTransfer.index');
+            return redirect()->route('productTransfer.index');*/
         }
     }
 }

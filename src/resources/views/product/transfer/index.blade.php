@@ -107,6 +107,9 @@
                                                         <option>{{$warehouse['name']}}</option>
                                                     @endforeach
                                                 </select>  
+                                                @if(session('curr_msg'))
+                                                    <span class="text text-danger">{{session('curr_msg')}}</span>
+                                                @endif
                                             </td>
                                         </tr>
                                         <tr>
