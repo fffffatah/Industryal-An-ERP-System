@@ -110,9 +110,9 @@
                                         <tr>
                                             <td>Status (Purchase)</td>
                                             <td colspan='2'>
-                                                <select class="form-control" id="purchaseStatus" name="product_purchase_status" value="{{$product['status_purchase']}}">
-                                                    <option>For Purchase</option>
-                                                    <option>Not for purchase</option>
+                                                <select class="form-control" id="purchaseStatus" name="product_purchase_status">
+                                                    <option <?php if($product['status_purchase'] == "For Purchase" ) { echo "selected"; } ?>>For Purchase</option>
+                                                    <option <?php if($product['status_purchase'] == "Not for purchase" ) { echo "selected"; } ?>>Not for purchase</option>
                                                 </select> 
                                                 <span class="text-danger">{{$errors->first('product_purchase_status')}}</span> 
                                             </td>
@@ -129,7 +129,7 @@
                                             <td colspan='2'>
                                                 <select class="form-control" name="warehouse_name">
                                                 @foreach($warehouseList as $warehouse)
-                                                    <option>{{$warehouse}}</option>
+                                                    <option <?php if($product['warehouse_name'] == $warehouse) { echo "selected"; } ?>>{{$warehouse}}</option>
                                                 @endforeach
                                                 </select>  
                                                 <span class="text-danger">{{$errors->first('warehouse_name')}}</span>
