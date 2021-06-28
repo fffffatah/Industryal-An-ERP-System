@@ -1,1 +1,1 @@
-{{route('sales.dashboard.index')}}
+{{redirect('sales.dashboard.index')}}
