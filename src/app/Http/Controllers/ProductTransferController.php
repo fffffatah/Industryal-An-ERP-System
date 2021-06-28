@@ -68,12 +68,12 @@ class ProductTransferController extends Controller
 
             // Increase previous warehouse quantity
             $prev_warehouse = warehouse_table::where('name', $prev_warehouse_name)->first();
-            $prev_warehouse->quantity += $prev_warehouse_quantity;
+            $prev_warehouse->remaining_quantity += $prev_warehouse_quantity;
             $prev_warehouse->save();
 
             // Decrease new warehouse quantity
             $new_warehouse = warehouse_table::where('name', $req->warehouse)->first();
-            $new_warehouse->quantity -= $req->product_quantity;
+            $new_warehouse->remaining_quantity -= $req->product_quantity;
             $new_warehouse->save();
 
             $req->session()->flash('transfer_success', "Prodcut Successfully Transfered!");
