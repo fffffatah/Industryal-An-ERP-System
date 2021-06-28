@@ -96,7 +96,9 @@
                                             <td >
                                                 <input type="text" class="form-control" name="product_id" value="{{old('product_id')}}">
                                                 <span class="text-danger">{{$errors->first('product_id')}}</span>
-                                                <span class="text-danger">{{session('msg')}}</span>
+                                                @if(session('msg'))
+                                                    <span class="text text-danger">{{session('msg')}}</span>
+                                                @endif
                                             </td>
                                         </tr>
                                         <tr>
@@ -110,6 +112,9 @@
                                                 @if(session('curr_msg'))
                                                     <span class="text text-danger">{{session('curr_msg')}}</span>
                                                 @endif
+                                                @if(session('wmsg'))
+                                                    <span class="text text-danger">{{session('wmsg')}}</span>
+                                                @endif
                                             </td>
                                         </tr>
                                         <tr>
@@ -117,7 +122,9 @@
                                             <td clospan="3">
                                                 <input type="text" class="form-control" name="product_quantity" value="{{old('product_quantity')}}">
                                                 <span class="text-danger">{{$errors->first('product_quantity')}}</span>
-                                                <span class="text-danger">{{session('qmsg')}}</span>
+                                                @if(session('qmsg'))
+                                                    <span class="text text-danger">{{session('qmsg')}}</span>
+                                                @endif
                                             </td>
                                         </tr>
                                         <tr>

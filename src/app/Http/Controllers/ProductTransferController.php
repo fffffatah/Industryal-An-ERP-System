@@ -29,12 +29,12 @@ class ProductTransferController extends Controller
         }
         elseif($req->product_quantity > $warehouseQuantity)
         {
-            $req->session()->flash('qmsg', "Oops! Warehouse doesn't have that much quantity to store");
+            $req->session()->flash('wmsg', "Oops! Warehouse doesn't have that much quantity to store");
             return back();
         }
         elseif($req->product_quantity > $productQuantity)
         {
-            $req->session()->flash('wmsg', "Oops! You don't have that much product");
+            $req->session()->flash('qmsg', "Oops! You don't have that much product");
             return back();
         }
         elseif($req->warehouse == $product->warehouse_name)
