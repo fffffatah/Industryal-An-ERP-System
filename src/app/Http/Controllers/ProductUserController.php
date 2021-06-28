@@ -58,4 +58,10 @@ class ProductUserController extends Controller
     {
         return redirect()->route('userProfile.index');
     }
+
+    public function logout()
+    {
+        session()->flush();
+        return redirect()->route('signin.index');
+    }
 }
