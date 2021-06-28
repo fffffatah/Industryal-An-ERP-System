@@ -111,7 +111,7 @@
                                             <td>Status (Purchase)</td>
                                             <td colspan='2'>
                                                 <select class="form-control" id="purchaseStatus" name="product_purchase_status">
-                                                    <option <?php if($product['status_purchase'] == "For Purchase" ) { echo "selected"; } ?>>For Purchase</option>
+                                                    <option <?php if($product['status_purchase'] == "For Purchase" ) { echo "selected"; } ?> >For Purchase</option>
                                                     <option <?php if($product['status_purchase'] == "Not for purchase" ) { echo "selected"; } ?>>Not for purchase</option>
                                                 </select> 
                                                 <span class="text-danger">{{$errors->first('product_purchase_status')}}</span> 
@@ -146,8 +146,8 @@
                                             <td>Nature of product</td>
                                             <td colspan='2'>
                                                 <select class="form-control" name="product_nature" value="{{$product['nature']}}">
-                                                    <option>Manufactired Product</option>
-                                                    <option>Raw Material</option>
+                                                    <option <?php if($product['nature'] == "Manufactired Product" ) { echo "selected"; } ?> >Manufactired Product</option>
+                                                    <option <?php if($product['nature'] == "Raw Material" ) { echo "selected"; } ?> >Raw Material</option>
                                                 </select> 
                                                 <span class="text-danger">{{$errors->first('product_nature')}}</span> 
                                             </td>
@@ -158,13 +158,13 @@
                                             <span class="text-danger">{{$errors->first('product_weight')}}</span>
                                             </td>
                                             <td>
-                                                <select class="form-control" name="product_weight_unit" value="{{old('product_weight_unit')}}">
-                                                    <option>kilogram</option>
-                                                    <option>gram</option>
-                                                    <option>tonne</option>
-                                                    <option>mg</option>
-                                                    <option>ounce</option>
-                                                    <option>pound</option>
+                                                <select class="form-control" name="product_weight_unit">
+                                                    <option <?php if($product['product_weight_unit'] == "kilogram" ) { echo "selected"; } ?> >kilogram</option>
+                                                    <option <?php if($product['product_weight_unit'] == "gram" ) { echo "selected"; } ?> >gram</option>
+                                                    <option <?php if($product['product_weight_unit'] == "tonne" ) { echo "selected"; } ?> >tonne</option>
+                                                    <option <?php if($product['product_weight_unit'] == "mg" ) { echo "selected"; } ?> >mg</option>
+                                                    <option <?php if($product['product_weight_unit'] == "ounce" ) { echo "selected"; } ?> >ounce</option>
+                                                    <option <?php if($product['product_weight_unit'] == "pound" ) { echo "selected"; } ?> >pound</option>
                                                 </select>  
                                             </td>
                                         </tr>
@@ -175,12 +175,12 @@
                                             </td>
                                             <td>
                                                 <select class="form-control" name="product_dimention_unit" value="{{old('product_dimention_unit')}}">
-                                                    <option>m</option>
-                                                    <option>dm</option>
-                                                    <option>cm</option>
-                                                    <option>mm</option>
-                                                    <option>foot</option>
-                                                    <option>inch</option>
+                                                    <option <?php if($product['product_dimention_unit'] == "m" ) { echo "selected"; } ?> >m</option>
+                                                    <option <?php if($product['product_dimention_unit'] == "dm" ) { echo "selected"; } ?> >dm</option>
+                                                    <option <?php if($product['product_dimention_unit'] == "cm" ) { echo "selected"; } ?> >cm</option>
+                                                    <option <?php if($product['product_dimention_unit'] == "mm" ) { echo "selected"; } ?> >mm</option>
+                                                    <option <?php if($product['product_dimention_unit'] == "foot" ) { echo "selected"; } ?> >foot</option>
+                                                    <option <?php if($product['product_dimention_unit'] == "inch" ) { echo "selected"; } ?> >inch</option>
                                                 </select> 
                                                 <span class="text-danger">{{$errors->first('product_dimention_unit')}}</span> 
                                             </td>
@@ -201,9 +201,9 @@
                                         <tr>
                                             <td>Condition:</td>
                                             <td colspan='2'>
-                                                <select class="form-control" name="product_condition" value="{{$product['product_condition']}}">
-                                                    <option>Good</option>
-                                                    <option>Faulty</option>
+                                                <select class="form-control" name="product_condition">
+                                                    <option <?php if($product['product_condition'] == "Good" ) { echo "selected"; } ?> >Good</option>
+                                                    <option <?php if($product['product_condition'] == "Faulty" ) { echo "selected"; } ?> >Faulty</option>
                                                 </select> 
                                                 <span class="text-danger">{{$errors->first('product_condition')}}</span> 
                                             </td>
