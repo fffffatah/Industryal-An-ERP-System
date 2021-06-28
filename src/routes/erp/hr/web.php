@@ -54,6 +54,10 @@ Route::get('/HR/payroll/show',[HRpayrollController::class,'show'])->name('HRpayr
 Route::get('/HR/expense/report',[HRexpenseController::class,'report'])->name('HRexpense.report');
 Route::post('/HR/expense/report',[HRexpenseController::class,'create']);
 Route::get('/HR/expense/list',[HRexpenseListController::class,'list'])->name('HRexpenseList.list');
+Route::get('/HR/expense/edit/{id}',[HRexpenseListController::class,'expEdit'])->name('HRexpenseList.expEdit');
+Route::post('/HR/expense/edit/{id}',[HRexpenseListController::class,'expUpdate']);
+Route::get('/HR/expense/delete/{id}',[HRexpenseListController::class,'expDelete'])->name('HRexpenseList.expDelete');
+Route::post('/HR/expense/delete/{id}',[HRexpenseListController::class,'expDestroy']);
 Route::get('/HR/expense/statistic',[HRExStatisticController::class,'statistic'])->name('HRExStatistic.statistic');
 //user profile
 Route::get('/HR/user/profile',[HRuserProfileController::class,'details'])->name('HRuserProfile.details');

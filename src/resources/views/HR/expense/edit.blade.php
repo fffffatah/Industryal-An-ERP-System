@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee List</title>
+    <title>Expense Report|Update</title>
+   <!--  Bootstrap cdn -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
     crossorigin="anonymous">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
@@ -18,7 +19,7 @@
                     <h1 class="text-white"><i>Industryal</i></h1>
                 </div>
                 
-                <div class="col-lg-3 ">
+                <div class=" col-lg-3  ">
                     <ul class="nav justify-content-center ">
                         <li class="nav-item"><a class="nav-link text-white btn btn-outline-primary btn-block  mt-2" href="{{route('HRhome.index')}}"><i class="fas fa-home"></i>Home</a></li>
                         <span style="padding-right:7px;"></span>
@@ -45,58 +46,51 @@
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRLeave.leaveList')}}">Leave Request List</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="route('HRexpense.report')}}">Expense Report</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRexpenseList.list')}}"> Expense  Report List</a></li>
-                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRExStatistic.statistic')}}">Expense Statistic</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRExStatistic.statistic')}}">Expense Statistic</a></li>                        
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRpayroll.show')}}">Payroll</a></li>
                     </ul>
                 </nav>
             </div>
             <div class="col-10">
-                <h3 class="text-center"><i class="fas fa-list-alt"></i>Employee List</h3>
-                @if(session('msg'))
-                <div class="alert alert-success w-25">
-                    <strong>{{session('msg')}}</strong> 
-                </div>
-                 @endif
-                <hr class="mb-4">
-                    <div class="input-group">
-                        <input class="form-control" type="text" placeholder="Find By Name...">
-                        <div class="input-group-append">
-                            <button type="button" class="btn btn-outline-secondary">Search &nbsp <i class="fas fa-search"></i></button>
+                <h4 class="text-center"><i class="fas fa-sync-alt"></i>Update Expense Report</h4>
+                <div class="border border-primary w-75  m-auto">
+                    <form   method="post" class="w-50 m-auto  " >
+                    @csrf
+                        <div class="from-group">
+                            <label>Name</label></td>
+                            <input type="text" class="form-control" name="name" id="user" Value="{{$expense['name']}}">
+                            <span class="text-danger">{{$errors->first('name')}}</span>
                         </div>
-                    </div>
-                    <br>
-                    <table  class="table table-hover ">
-                        <th>Employee Id</th>
-                        <th>Employee Name</th>
-                        <th>Gender</th>
-                        <th>Supervisor</th>
-                        <th>Address</th>
-                        <th>Phone</th>
-                        <th>Job Position</th>
-                        <th>Group</th>
-                        <th>Action</th>
-                        @foreach ($employeeList as $employee)
-                        <tr>
-                            <td>{{$employee['employee_id']}}</td>
-                            <td>{{$employee['employee_name']}}</td>
-                            <td>{{$employee['gender']}}</td>
-                            <td>{{$employee['supervisor']}}</td>
-                            <td>{{$employee['present_address']}}</td>
-                            <td>{{$employee['phone']}}</td>
-                            <td>{{$employee['job_position']}}</td>
-                            <td>{{$employee['employee_group']}}</td>
-                            
-                            <td>
-                                <a href="/HR/employee/edit/{{$employee['employee_id']}}" class="btn btn-success m-1"> Update </a>
-                                <a href="/HR/employee/delete/{{$employee['employee_id']}}" class="btn btn-danger m-1"> Delete </a>
                            
-                            </td>
-                        </tr>
-                        @endforeach
-                    </table>
+                        <div class="form-group">
+                            <label>Catagory</label> 
+                            <input type="txt" class="form-control" id="catagory" name="catagory" Value="{{$expense['catagory']}}">
+                            <span class="text-danger">{{$errors->first('catagory')}}</span>
+                        </div>
+                        <div class="form-group">
+                            <label >Amount</label> 
+                            <input type="number" class="form-control" id="amount" name="amount" Value="{{$expense['amount']}}">
+                            <span class="text-danger">{{$errors->first('amount')}}</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Descreption</label>
+                            <textarea type="text" class="form-control" name="description" id="description">{{$expense['description']}}</textarea>
+                            <span class="text-danger">{{$errors->first('description')}}</span>
+                        </div>
+                        <div class="from-group">
+                            <label>Expense Date</label>
+                            <input type="date" class="form-control" id="expense_date" name="expense_date" Value="{{$expense['expense_date']}}">
+                            <span class="text-danger">{{$errors->first('expense_date')}}</span>
+                        </div>
+                        <div class="from-group">
+                            <center><input class="btn btn-outline-primary btn-block w-50 mt-3" type="submit" value="Update" ></center>
+                        </div>
+                    </form>
+                </div>
+                
         
            </div>
-          
             
         </div>
         <footer id="main-footer" class="bg-primary text-white mt-5 p-2">
@@ -112,7 +106,7 @@
                 </div>
             </div>
         </footer>
-    <!-- Footer Ends -->    
+    <!-- Footer Ends -->  
        
     
     
