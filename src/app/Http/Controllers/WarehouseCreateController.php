@@ -28,6 +28,7 @@ class WarehouseCreateController extends Controller
         $warehouse->phone = $req->warehouse_phone;
         $warehouse->status = $req->warehouse_status;
         $warehouse->quantity = $req->warehouse_quantity;
+        $warehouse->remaining_quantity = $req->warehouse_quantity;
         $warehouse->save();
 
         return redirect()->route('warehouseList.index');
