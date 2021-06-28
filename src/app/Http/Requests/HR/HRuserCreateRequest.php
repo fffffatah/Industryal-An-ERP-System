@@ -25,12 +25,13 @@ class HRuserCreateRequest extends FormRequest
     {
         return [
             "first_name" => "required|min:2",
-            "last_name" => "required|min:3|max:100|alpha",
+            "last_name" => "required|min:3|max:200|alpha",
             "user_name" => "required|string|min:3|max:100",
             "password" => "required||min:8|max:15|alpha_num",
+            "confirm_password" => "required||min:8|max:15|alpha_num|same:password",
             "gender" => "required",
-            "supervisor" => "required|max:100",
-            "present_address" => "required|string|max:100",
+            "user_type" => "required|max:100",
+            "present_address" => "required|string|max:300",
             "phone" => "required|min:10",
             "email" => "required|string|email",
             "job_position" => "required",

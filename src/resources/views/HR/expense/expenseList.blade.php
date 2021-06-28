@@ -52,13 +52,36 @@
                 </nav>
             </div>
             <div class="col-10">
-                <h1 class="text-center">Expense List</h1>
+                <h3 class="text-center"><i class="fas fa-list-alt"></i>Expense List</h3>
+                @if(session('msg'))
+                <div class="alert alert-success w-25">
+                    <strong>{{session('msg')}}</strong> 
+                </div>
+                 @endif
                 <table  class="table table-hover ">
+                    <th> Name</th>
                     <th>Catagory</th>
                     <th>Amount</th>
-                    <th> Name</th>
                     <th>Description</th>
                     <th>Expense Date</th>
+                    <th>Action</th>
+
+                    @foreach ($expenseList as $expense)
+                    <tr>
+                        <td>{{$expense['name']}}</td>
+                        <td>{{$expense['catagory']}}</td>
+                        <td>{{$expense['amount']}}</td>
+                        <td>{{$expense['description']}}</td>
+                        <td>{{$expense['expense_date']}}</td>
+                            
+                            
+                        <td>
+                            <a href="/HR/expense/edit/{{$expense['id']}}" class="btn btn-success m-1"> Update </a>
+                            <a href="/HR/expense/delete/{{$expense['id']}}" class="btn btn-danger m-1"> Delete </a>
+                           
+                        </td>
+                    </tr>
+                    @endforeach
                   
                 </table>
         

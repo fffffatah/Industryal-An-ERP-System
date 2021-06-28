@@ -52,10 +52,15 @@
                 </nav>
             </div>
             <div class="col-10">
-                <h1 class="text-center">Expense Report</h1>
+                <h3 class="text-center"><i class="fas fa-plus-square"></i>Expense Report</h3>
                 <div class="border border-primary w-75  m-auto">
                     <form   method="post" class="w-50 m-auto  " >
                     @csrf
+                        <div class="from-group">
+                            <label>Name</label></td>
+                            <input type="text" class="form-control" name="name" id="user" Value="{{old('name')}}">
+                            <span class="text-danger">{{$errors->first('name')}}</span>
+                        </div>
                            
                         <div class="form-group">
                             <label>Catagory</label> 
@@ -67,14 +72,10 @@
                             <input type="number" class="form-control" id="amount" name="amount" Value="{{old('amount')}}">
                             <span class="text-danger">{{$errors->first('amount')}}</span>
                         </div>
-                        <div class="from-group">
-                            <label>Name</label></td>
-                            <input type="text" class="form-control" name="name" id="user" Value="{{old('name')}}">
-                            <span class="text-danger">{{$errors->first('name')}}</span>
-                        </div>
+                        
                         <div class="form-group">
                             <label>Descreption</label>
-                            <textarea type="text" name="description" id="leave_description" class="form-control" Value="{{old('description')}}"></textarea>
+                            <textarea type="text" class="form-control" name="description" id="description"  Value="{{old('description')}}"></textarea>
                             <span class="text-danger">{{$errors->first('description')}}</span>
                         </div>
                         <div class="from-group">
@@ -83,7 +84,7 @@
                             <span class="text-danger">{{$errors->first('expense_date')}}</span>
                         </div>
                         <div class="from-group">
-                            <center><input class="btn btn-outline-primary btn-block w-50 mt-3" type="submit" value="Save" ></center>
+                            <center><input class="btn btn-outline-primary btn-block w-50 mt-3" type="submit" value="Create" ></center>
                         </div>
                     </form>
                 </div>
