@@ -116,7 +116,7 @@
                                         </td>
                                         <td>{{$product['product_condition']}}</td>
                                         <td>
-                                        <a href="/product/edit/{{$product['product_id']}}" class="btn btn-success mb-2">Update</a>
+                                        <a href="/product/edit/{{$product['product_id']}}" class="btn btn-warning mb-2">Update</a>
                                         <a href="/product/delete/{{$product['product_id']}}" class="btn btn-danger">Delete</a>
                                         </td>
                                     </tr>
