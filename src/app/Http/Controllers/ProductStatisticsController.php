@@ -72,7 +72,31 @@ class ProductStatisticsController extends Controller
         $warehouseChartData = rtrim($warehouseChartData,",");
 
 
+
+        // Column chart
+        $productPrice = []; // product wise price
+        foreach($allProducts as $currProduct)
+        {
+            $cnt = 0;
+            foreach($products as $item)
+            {
+                if($item->product_name == $currProduct)
+                {
+                    $cnt += $item->selling_price;
+                }
+            }
+            $productPrice += [$currProduct => $cnt];
+        }
+        asort($productPrice);
+        $productPriceChartData = ""; // for rendering in chart
+        foreach($productPrice as $x => $x_value)
+        {
+            $productPriceChartData .= "['".$x."',".$x_value."],";
+        }
+        $productPriceChartData = rtrim($productPriceChartData,",");
+
         return view('product.statistics.index')->with('chartData',$chartData)
-                                               ->with('warehouseChartData', $warehouseChartData);
+                                               ->with('warehouseChartData', $warehouseChartData)
+                                               ->with('productPriceChartData', $productPriceChartData);
     }
 }
