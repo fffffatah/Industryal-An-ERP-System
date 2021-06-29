@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product\product_table;
 use App\Models\Product\warehouse_table;
-use Dompdf\Dompdf;
 
 class ProductStatisticsController extends Controller
 {
