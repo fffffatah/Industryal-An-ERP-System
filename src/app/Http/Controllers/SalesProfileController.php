@@ -17,6 +17,4 @@ class SalesProfileController extends Controller
     public function updatePassword(){
         return view('sales.profile.edit.password');
     }
-
-    
 }

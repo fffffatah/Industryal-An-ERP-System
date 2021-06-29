@@ -5,6 +5,7 @@ use App\Http\Controllers\SalesStatsController;
 use App\Http\Controllers\SalesCustomerController;
 use App\Http\Controllers\SalesProfileController;
 use App\Http\Controllers\SalesController;
+use App\Http\Controllers\SalesMailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,12 +51,12 @@ Route::get('/sales/profile/change/password',[SalesProfileController::class, 'upd
 
 Route::get('/sales/customers/',[SalesCustomerController::class, 'showCustomersList'])->name('sales.customers.list');
 
-Route::get('/sales/customers/mail/send',[SalesCustomerController::class, 'sendEmail'])->name('sales.customers.mail.send');
+Route::get('/sales/mail/send',[SalesMailController::class, 'sendEmail'])->name('sales.mail.send');
 
-Route::get('/sales/customers/mail/all',[SalesCustomerController::class, 'allMail'])->name('sales.customers.mail.all');
-Route::get('/sales/customers/mail/sent',[SalesCustomerController::class, 'sentMail'])->name('sales.customers.mail.sent');
-Route::get('/sales/customers/mail/received',[SalesCustomerController::class, 'receivedMail'])->name('sales.customers.mail.received');
-Route::get('/sales/customers/mail/spam',[SalesCustomerController::class, 'spamMail'])->name('sales.customers.mail.spam');
+Route::get('/sales/mail/all',[SalesMailController::class, 'allMail'])->name('sales.mail.all');
+Route::get('/sales/mail/sent',[SalesMailController::class, 'sentMail'])->name('sales.mail.sent');
+Route::get('/sales/mail/received',[SalesMailController::class, 'receivedMail'])->name('sales.mail.received');
+Route::get('/sales/mail/spam',[SalesMailController::class, 'spamMail'])->name('sales.mail.spam');
 
 Route::get('/sales/stats/analytics/status',[SalesStatsController::class, 'viewStatus'])->name('sales.stats.analytics.status');
 
