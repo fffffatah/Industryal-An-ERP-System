@@ -76,8 +76,15 @@
                     </div>
                 <div class="col-12 col-lg-9 border border-dark rounded p-3">
                         <div class="container">
-                            <div class="row justify-content-center">
-                                <h3><i class="fas fa-chart-line"></i> &nbsp &nbsp Product Statistics</h3>
+                            <div class="row align-items-start">
+                                <div class="col">
+                                </div>
+                                <div class="col-6">
+                                    <h3><i class="fas fa-chart-line"></i> &nbsp &nbsp Product Statistics</h3> 
+                                </div>
+                                <div class="col-2">
+                                     <a href="" class="btn btn-primary rounded p-1 text-right">Download</a>
+                                </div>
                             </div>
                             <hr class="mb-4">
                             <div class="row">
