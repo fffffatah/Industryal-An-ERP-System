@@ -65,8 +65,8 @@ Route::get('/warehouse/list',[WarehouseListController::class, 'index'])->name('w
 Route::post('/warehouse/list',[WarehouseListController::class, 'index']);
 
 // Edit
-Route::get('/warehouse/edit/{warehouse_id}',[WarehouseListController::class, 'editWarehouse'])->name('warehouseList.edit');
-Route::post('/warehouse/edit/{warehouse_id}',[WarehouseListController::class, 'updateWarehouse']);
+Route::get('/warehouse/edit/{id}',[WarehouseListController::class, 'editWarehouse'])->name('warehouseList.edit');
+Route::post('/warehouse/edit/{id}',[WarehouseListController::class, 'updateWarehouse']);
 
 Route::get('/warehouse/statistics',[WarehouseStatisticsController::class, 'index'])->name('warehouseStatistics.index');
 

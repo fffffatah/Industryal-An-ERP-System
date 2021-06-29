@@ -132,7 +132,7 @@
                                             @endif
                                         </td>
                                         <td>
-                                        <a href="/warehouse/edit/{{$warehouse['warehouse_id']}}" class="btn btn-warning">Update</a>
+                                        <a href="/warehouse/edit/{{$warehouse['id']}}" class="btn btn-warning">Update</a>
                                         </td>
                                     </tr>
                                 @endforeach

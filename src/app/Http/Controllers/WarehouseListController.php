@@ -27,15 +27,15 @@ class WarehouseListController extends Controller
         }
     }
 
-    public function editWarehouse($warehouse_id)
+    public function editWarehouse($id)
     {
-        $warehouse = warehouse_table::where('warehouse_id', $warehouse_id)->first();
+        $warehouse = warehouse_table::where('id', $id)->first();
         return view('product.warehouse.list.edit')->with('warehouse', $warehouse);
     }
 
-    public function updateWarehouse(WarehouseCreateRequest $req, $warehouse_id)
+    public function updateWarehouse(WarehouseCreateRequest $req, $id)
     {
-        $warehouse = warehouse_table::where('warehouse_id', $warehouse_id)->first();
+        $warehouse = warehouse_table::where('id', $id)->first();
         $warehouse->warehouse_id = $req->warehouse_id;
         $warehouse->name = $req->warehouse_name;
         $warehouse->description = $req->warehouse_description;
@@ -52,7 +52,7 @@ class WarehouseListController extends Controller
         // activity
         $activity = new activities_table;
         $activity->type = "Update Warehouse";
-        $activity->description = "Warehouse Id: ".$req->warehouse_id.", "."Warehouse Name: ".$req->warehouse_name;
+        $activity->description = "Id: ".$id.", "."Warehouse Name: ".$req->warehouse_name;
         $activity->activity_time = date("Y-m-d H:i:s");
         $activity->save();
 
