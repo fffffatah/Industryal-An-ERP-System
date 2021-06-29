@@ -83,7 +83,7 @@
                             <div class="input-group">
                                 <input class="form-control" type="text" placeholder="Find By Name..." name="searchProduct">
                                 <div class="input-group-append">
-                                    <input type="submit" class="btn btn-outline-secondary fas fa-search" value="Search &nbsp">
+                                    <button type="submit" class="btn btn-outline-secondary">Search &nbsp <i class="fa fa-search"></i></button>
                                 </div>
                             </div>
                         </form>
