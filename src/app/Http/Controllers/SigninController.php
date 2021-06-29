@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class SigninController extends Controller
 {
@@ -11,20 +12,29 @@ class SigninController extends Controller
     }
     //Dummy Verifcation
     public function verify(Request $req){
-        if($req->email == 'admin'){
-            //admin
+
+        $user = User::where('email',$req->email)->where('pass',$req->pass)->first();
+        if($user)
+        {
+            if($user->type == 'admin'){
+                //admin
+            }
+            elseif ($user->type == 'sales') {
+                //Redirect to Sales Dashboard
+            }
+            elseif ($user->type == 'product') {
+                return redirect()->route('productHome.index');
+            }
+            elseif ($user->type == 'hr') {
+                //Redirect to HR Dashboard
+            }
+            elseif ($user->type == 'finance') {
+                return redirect()->route('finance.dashboard.index');
+            }
         }
-        elseif ($req->email == 'sales') {
-            //Redirect to Sales Dashboard
-        }
-        elseif ($req->email == 'product') {
-            //Redirect to Product Dashboard
-        }
-        elseif ($req->email == 'hr') {
-            //Redirect to HR Dashboard
-        }
-        elseif ($req->email == 'finance') {
-            return redirect()->route('finance.dashboard.index');
+        else
+        {
+            return back();
         }
     }
 }

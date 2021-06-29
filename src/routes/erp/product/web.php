@@ -26,7 +26,6 @@ use App\Http\Controllers\WarehouseCreateController;
 Route::get('/', function () {
     return redirect() -> route('signin.index');  
 });
-
 Route::get('/',[ProductUserController::class, 'logout'])->name('user.logout');
 
 
