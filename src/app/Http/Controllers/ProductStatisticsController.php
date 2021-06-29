@@ -11,6 +11,18 @@ class ProductStatisticsController extends Controller
 {
     public function index()
     {
+        $allData = $this->chartInformation();
+        $chartData = $allData['chartData'];
+        $warehouseChartData = $allData['warehouseChartData'];
+        $productPriceChartData = $allData['productPriceChartData'];
+        
+        return view('product.statistics.index')->with('chartData',$chartData)
+                                               ->with('warehouseChartData', $warehouseChartData)
+                                               ->with('productPriceChartData', $productPriceChartData);
+    }
+
+    public function chartInformation()
+    {
         // Product chart
         $products = product_table::all();
         $allProducts = array(); // all types of products
@@ -28,7 +40,7 @@ class ProductStatisticsController extends Controller
             }
             if(!$check)
             {
-              array_push($allProducts,$currProduct);  
+                array_push($allProducts,$currProduct);  
             }
         }
 
@@ -93,9 +105,7 @@ class ProductStatisticsController extends Controller
             $productPriceChartData .= "['".$x."',".$x_value."],";
         }
         $productPriceChartData = rtrim($productPriceChartData,",");
-
-        return view('product.statistics.index')->with('chartData',$chartData)
-                                               ->with('warehouseChartData', $warehouseChartData)
-                                               ->with('productPriceChartData', $productPriceChartData);
+        
+        return ["chartData" => $chartData, "warehouseChartData" => $warehouseChartData,  "productPriceChartData" => $productPriceChartData]; 
     }
 }
