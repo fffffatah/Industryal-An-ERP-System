@@ -13,10 +13,18 @@ use App\Models\Product\activities_table;
 
 class WarehouseListController extends Controller
 {
-    public function index()
+    public function index(Request $req)
     {
-        $warehouse_list = warehouse_table::all();
-        return view('product.warehouse.list.index')->with('warehouseList', $warehouse_list);
+        if($req->searchProduct)
+        {
+            $searchProduct = warehouse_table::where('name', $req->searchProduct)->get();
+            return view('product.warehouse.list.index')->with('warehouseList', $searchProduct);
+        }
+        else
+        {
+            $warehouse_list = warehouse_table::all();
+            return view('product.warehouse.list.index')->with('warehouseList', $warehouse_list);
+        }
     }
 
     public function editWarehouse($warehouse_id)
