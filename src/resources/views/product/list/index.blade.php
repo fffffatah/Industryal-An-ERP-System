@@ -91,7 +91,7 @@
                             <div class="col-10"> 
                             </div>
                             <div class="col">
-                                    <a href="" class="btn btn-primary rounded p-1 text-right">Download</a>
+                                    <a href="{{route('productList.exportGoodProduct')}}" class="btn btn-primary rounded p-1 text-right">Download</a>
                             </div>
                         </div>
                         <table class="table table-striped table-bordered">
