@@ -43,8 +43,8 @@ Route::post('/product/list',[ProductListController::class, 'index']);
 Route::get('/product/list/faulty',[ProductListController::class, 'faulty'])->name('productListFaulty.index');
 
 // Update
-Route::get('/product/edit/{product_id}',[ProductListController::class, 'editProduct'])->name('productList.editProduct');
-Route::post('/product/edit/{product_id}',[ProductListController::class, 'updateProduct']);
+Route::get('/product/edit/{id}',[ProductListController::class, 'editProduct'])->name('productList.editProduct');
+Route::post('/product/edit/{id}',[ProductListController::class, 'updateProduct']);
 
 Route::get('/product/delete/{product_id}',[ProductListController::class, 'deleteProduct'])->name('productList.deleteProduct');
 Route::post('/product/delete/{product_id}',[ProductListController::class, 'destroyProduct']);

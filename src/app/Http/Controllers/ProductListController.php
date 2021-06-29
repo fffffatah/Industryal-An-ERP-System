@@ -55,16 +55,16 @@ class ProductListController extends Controller
         return redirect()->route('productList.index');
     }
 
-    public function editProduct($product_id)
+    public function editProduct($id)
     {
-        $product = product_table::where('product_id', $product_id)->first();
+        $product = product_table::where('id', $id)->first();
         $warehouseList = warehouse_table::pluck('name');
         return view('product.list.edit')->with('product', $product)->with('warehouseList',$warehouseList);
     }
 
-    public function updateProduct(ProductCreateRequest $req,$product_id)
+    public function updateProduct(ProductCreateRequest $req,$id)
     {
-         $product = product_table::where('product_id', $product_id)->first();
+         $product = product_table::where('id', $id)->first();
          $product->product_id = $req->product_id;
          $product->product_name = $req->product_name;
          $product->status_sell = $req->product_sell_status;
