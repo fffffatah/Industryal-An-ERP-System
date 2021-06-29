@@ -78,6 +78,15 @@
                                 <h3><i class="fas fa-box-open"></i>&nbsp &nbsp Faulty Products</h3>
                             </div>
                             <hr class="mb-4">
+                            <div class="row align-items-start mb-2">
+                                <div class="col">
+                                </div>
+                                <div class="col-10"> 
+                                </div>
+                                <div class="col">
+                                        <a href="{{route('productList.exportFaultyProduct')}}" class="btn btn-primary rounded p-1 text-right">Download</a>
+                                </div>
+                            </div>
                             <table class="table table-striped table-bordered">
                                 <tr>
                                     <th>ID</th>
