@@ -15,23 +15,23 @@ class SalesCustomerController extends Controller
 
     public function sendEmail()
     {
-        return view('sales.customers.mail.send');
+        return view('sales.mail.send');
     }
 
     public function allMail()
     {
-        return view('sales.customers.mail.all');
+        return view('sales.mail.all');
     }
     public function sentMail()
     {
-        return view('sales.customers.mail.sent');
+        return view('sales.mail.sent');
     }
     public function receivedMail()
     {
-        return view('sales.customers.mail.received');
+        return view('sales.mail.received');
     }
     public function spamMail()
     {
-        return view('sales.customers.mail.spam');
+        return view('sales.mail.spam');
     }
 }
