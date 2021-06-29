@@ -29,42 +29,42 @@ class ProductListController extends Controller
         }
     }
 
-    public function deleteProduct($product_id)
+    public function deleteProduct($id)
     {
-        $product = product_table::where('product_id', $product_id)->first();
+        $product = product_table::where('id', $id)->first();
         return view('product.list.details')->with('product', $product);
     }
 
-    public function destroyProduct($product_id)
+    public function destroyProduct($id)
     {
-        $product = product_table::where('product_id', $product_id)->first();
+        $product = product_table::where('id', $id)->first();
         $img_path = "upload/Product/".$product['image'];
         if(File::exists($img_path)) 
         {
             File::delete($img_path);
         }
-        product_table::where('product_id', $product_id)->delete();
+        product_table::where('id', $id)->delete();
 
         // activity
         $activity = new activities_table;
         $activity->type = "Delete Product";
-        $activity->description = "Product Id: ".$product_id."\r\n"."Product Name: ".$product->product_name;
+        $activity->description = "Id: ".$id."\r\n"."Product Name: ".$product->product_name;
         $activity->activity_time = date("Y-m-d H:i:s");
         $activity->save();
 
         return redirect()->route('productList.index');
     }
 
-    public function editProduct($product_id)
+    public function editProduct($id)
     {
-        $product = product_table::where('product_id', $product_id)->first();
+        $product = product_table::where('id', $id)->first();
         $warehouseList = warehouse_table::pluck('name');
         return view('product.list.edit')->with('product', $product)->with('warehouseList',$warehouseList);
     }
 
-    public function updateProduct(ProductCreateRequest $req,$product_id)
+    public function updateProduct(ProductCreateRequest $req,$id)
     {
-         $product = product_table::where('product_id', $product_id)->first();
+         $product = product_table::where('id', $id)->first();
          $product->product_id = $req->product_id;
          $product->product_name = $req->product_name;
          $product->status_sell = $req->product_sell_status;

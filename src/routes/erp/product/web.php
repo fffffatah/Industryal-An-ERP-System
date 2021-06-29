@@ -35,7 +35,7 @@ Route::get('/',[ProductUserController::class, 'logout'])->name('user.logout');
 Route::get('/product/home',[ProductHomeController::class, 'index'])->name('productHome.index');
 
 Route::get('/product/create',[ProductCreateController::class, 'index'])->name('productCreate.index');
-Route::post('/product/create',[ProductCreateController::class, 'index']);
+Route::post('/product/create',[ProductCreateController::class, 'create']);
 
 Route::get('/product/list',[ProductListController::class, 'index'])->name('productList.index');
 Route::post('/product/list',[ProductListController::class, 'index']);
@@ -43,11 +43,11 @@ Route::post('/product/list',[ProductListController::class, 'index']);
 Route::get('/product/list/faulty',[ProductListController::class, 'faulty'])->name('productListFaulty.index');
 
 // Update
-Route::get('/product/edit/{product_id}',[ProductListController::class, 'editProduct'])->name('productList.editProduct');
-Route::post('/product/edit/{product_id}',[ProductListController::class, 'updateProduct']);
+Route::get('/product/edit/{id}',[ProductListController::class, 'editProduct'])->name('productList.editProduct');
+Route::post('/product/edit/{id}',[ProductListController::class, 'updateProduct']);
 
-Route::get('/product/delete/{product_id}',[ProductListController::class, 'deleteProduct'])->name('productList.deleteProduct');
-Route::post('/product/delete/{product_id}',[ProductListController::class, 'destroyProduct']);
+Route::get('/product/delete/{id}',[ProductListController::class, 'deleteProduct'])->name('productList.deleteProduct');
+Route::post('/product/delete/{id}',[ProductListController::class, 'destroyProduct']);
 
 Route::get('/product/stocks',[ProductStockController::class, 'index'])->name('productStocks.index');
 Route::post('/product/stocks',[ProductStockController::class, 'index']);
@@ -65,8 +65,8 @@ Route::get('/warehouse/list',[WarehouseListController::class, 'index'])->name('w
 Route::post('/warehouse/list',[WarehouseListController::class, 'index']);
 
 // Edit
-Route::get('/warehouse/edit/{warehouse_id}',[WarehouseListController::class, 'editWarehouse'])->name('warehouseList.edit');
-Route::post('/warehouse/edit/{warehouse_id}',[WarehouseListController::class, 'updateWarehouse']);
+Route::get('/warehouse/edit/{id}',[WarehouseListController::class, 'editWarehouse'])->name('warehouseList.edit');
+Route::post('/warehouse/edit/{id}',[WarehouseListController::class, 'updateWarehouse']);
 
 Route::get('/warehouse/statistics',[WarehouseStatisticsController::class, 'index'])->name('warehouseStatistics.index');
 

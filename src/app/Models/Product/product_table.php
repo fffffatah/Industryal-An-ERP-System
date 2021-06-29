@@ -10,7 +10,4 @@ class product_table extends Model
     protected $table = 'product_table';
     protected $primaryKey = 'id';
     public $timestamps = false;
-
-    const CREATED_AT = 'date_added';
-    const UPDATED_AT = 'last_updated';
 }
