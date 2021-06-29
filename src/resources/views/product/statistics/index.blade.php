@@ -94,6 +94,14 @@
                                         </div>
                                 </div>
                             </div>
+                            <div class="row justify-content-center mt-3">
+                                <div class="card w-100 bg-light text-dark border border-primary">
+                                    <div class="card-header" align="center"><b>Product wise Price</b></div>
+                                        <div class="card-body">
+                                        <center><div id="product_column_chart" style="width: 500px; height: 400px;"></div></center>
+                                        </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
             </div>
@@ -153,6 +161,27 @@
           legend : { position : 'bottom' }
         };
         var chart = new google.visualization.PieChart(document.getElementById('warehouse_piechart_3d'));
+        chart.draw(data, options);
+      }
+    </script>
+
+
+    <!-- product price chart -->
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Product', 'Price'],
+            <?php echo $productPriceChartData; ?>
+        ]);
+        var options = {
+          title: 'Product - Price',
+          backgroundColor: 'transparent',
+          is3D: true,
+          legend : { position : 'bottom' }
+        };
+        var chart = new google.visualization.ColumnChart(document.getElementById('product_column_chart'));
         chart.draw(data, options);
       }
     </script>
