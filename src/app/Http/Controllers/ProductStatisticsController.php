@@ -72,8 +72,7 @@ class ProductStatisticsController extends Controller
         $warehouseChartData = rtrim($warehouseChartData,",");
 
 
-
-        // Column chart
+        // Column Chart, Product - Price
         $productPrice = []; // product wise price
         foreach($allProducts as $currProduct)
         {
