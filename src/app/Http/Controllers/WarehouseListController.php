@@ -9,6 +9,7 @@ use App\Models\Product\product_table;
 use App\Http\Requests\Product\WarehouseCreateRequest;
 use App\Exports\WarehouseExport;
 use Maatwebsite\Excel\Facades\Excel;
+use App\Models\Product\activities_table;
 
 class WarehouseListController extends Controller
 {
@@ -39,6 +40,13 @@ class WarehouseListController extends Controller
         $warehouse->quantity = $req->warehouse_quantity;
         $warehouse->last_updated = date('Y-m-d');
         $warehouse->save();
+
+        // activity
+        $activity = new activities_table;
+        $activity->type = "Update Warehouse";
+        $activity->description = "Warehouse Id: ".$req->warehouse_id."\r\n"."Warehouse Name: ".$req->warehouse_name;
+        $activity->activity_time = date("Y-m-d H:i:s");
+        $activity->save();
 
         return redirect()->route('warehouseList.index');
     }
