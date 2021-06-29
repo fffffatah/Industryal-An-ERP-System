@@ -91,6 +91,13 @@
                                     <th>Description</th>
                                     <th>Time</th>
                                 </tr>
+                                @foreach($allActivities as $activity)
+                                    <tr>
+                                        <td>{{$activity->type}}</td>
+                                        <td>{{$activity->description}}</td>
+                                        <td>{{$activity->activity_time}}</td>
+                                    </tr>
+                                @endforeach
                             </table>
                         </div>
                     </div>
