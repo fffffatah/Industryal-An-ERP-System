@@ -81,12 +81,18 @@
                     </div>
                     <hr class="mb-4"> 
                     <div class="row justify-content-center">
-                        <div class="card col-10 bg-light text-dark border border-primary">
-                            <div class="card-header" align="center"><b>Warehouse wise Count</b></div>
+                        <div class="card bg-light text-dark border border-primary mr-3">
+                            <div class="card-header" align="center"><b>Warehouse wise Qunatity</b></div>
                                 <div class="card-body">
                                   <center><div id="warehouse_piechart_3d" style="width: 500px; height: 400px;"></div></center>
                                 </div>
-                            </div>
+                        </div>
+                        <div class="card bg-light text-dark border border-primary">
+                            <div class="card-header" align="center"><b>Country wise Warehouse</b></div>
+                                <div class="card-body">
+                                  <center><div id="warehouse_country_3d" style="width: 500px; height: 400px;"></div></center>
+                                </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -126,6 +132,26 @@
           legend : { position : 'bottom' }
         };
         var chart = new google.visualization.PieChart(document.getElementById('warehouse_piechart_3d'));
+        chart.draw(data, options);
+      }
+    </script>
+
+    <!-- warehouse country data -->
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Warehouse', 'Quantity'],
+            <?php echo $warehouseCountryData; ?>
+        ]);
+        var options = {
+          title: 'Warehouse - Country',
+          backgroundColor: 'transparent',
+          legend : { position : 'bottom' },
+          pieHole: 0.4,
+        };
+        var chart = new google.visualization.PieChart(document.getElementById('warehouse_country_3d'));
         chart.draw(data, options);
       }
     </script>
