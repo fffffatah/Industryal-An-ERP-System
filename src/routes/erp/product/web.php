@@ -89,3 +89,4 @@ Route::post('/product/user/edit/changePassword/verify',[ProductUserController::c
 // Export
 Route::get('/product/list/good/export',[ProductListController::class, 'exportGoodProduct'])->name('productList.exportGoodProduct');
 Route::get('/product/list/faulty/export',[ProductListController::class, 'exportFaultyProduct'])->name('productList.exportFaultyProduct');
+Route::get('/warehouse/list/export',[WarehouseListController::class, 'exportWarehouseList'])->name('warehouseList.exportWarehouseList');
