@@ -12,7 +12,8 @@ class WarehouseStatisticsController extends Controller
     {
         $allData = $this->chartInformation();
         $warehouseData = $allData['warehouseChartData'];
-        return view('product.warehouse.statistics.index')->with('warehouseData',$warehouseData);
+        $warehouseCountryData = $allData['warehouseCountryData'];
+        return view('product.warehouse.statistics.index')->with('warehouseData',$warehouseData)->with('warehouseCountryData', $warehouseCountryData);
     }
 
     public function chartInformation()
@@ -34,6 +35,47 @@ class WarehouseStatisticsController extends Controller
         }
         $warehouseChartData = rtrim($warehouseChartData,",");
 
-        return ["warehouseChartData" => $warehouseChartData]; 
+
+        // Warehouse country chart
+        $allWarehouses = array(); // all warehouse array
+        foreach($warehouses as $item)
+        {
+            $currWarehouses = $item->name;
+            $check = FALSE; 
+            foreach($allWarehouses as $warehouse)
+            {
+                if($warehouse == $currWarehouses)
+                {
+                    $check = TRUE;
+                    break;
+                }
+            }
+            if(!$check)
+            {
+                array_push($allWarehouses,$currWarehouses);  
+            }
+        }
+
+        $warehouseCountryCnt = []; // country wise warehouse count
+        foreach($allWarehouses as $currWarehouses)
+        {
+            $cnt = 0;
+            foreach($warehouses as $item)
+            {
+                if($item->name == $currWarehouses)
+                {
+                    $cnt++;
+                }
+            }
+            $warehouseCountryCnt += [$currWarehouses => $cnt];
+        }
+        $warehouseCountryData = ""; // for rendering in chart
+        foreach($warehouseCountryCnt as $x => $x_value)
+        {
+            $warehouseCountryData .= "['".$x."',".$x_value."],";
+        }
+        $warehouseCountryData = rtrim($warehouseCountryData,",");
+
+        return ["warehouseChartData" => $warehouseChartData, "warehouseCountryData" => $warehouseCountryData]; 
     }
 }
