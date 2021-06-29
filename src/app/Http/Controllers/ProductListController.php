@@ -15,10 +15,18 @@ use App\Models\Product\activities_table;
 
 class ProductListController extends Controller
 {
-    public function index()
+    public function index(Request $req)
     {
-        $list = product_table::all();
-        return view('product.list.index')->with('productList', $list);
+        if($req->searchProduct)
+        {
+            $searchProduct = product_table::where('product_name', $req->searchProduct)->get();
+            return view('product.list.index')->with('productList', $searchProduct);
+        }
+        else
+        {
+            $list = product_table::all();
+            return view('product.list.index')->with('productList', $list);
+        }
     }
 
     public function deleteProduct($product_id)
@@ -99,5 +107,11 @@ class ProductListController extends Controller
     public function exportFaultyProduct()
     {
         return Excel::download(new FaultyProductExport, 'faultyProduct_details.xlsx');
+    }
+
+    public function search(Request $req)
+    {
+        $searchProduct = product_table::where('product_name', $req->searchProduct)->get();
+        print_r($searchProduct);
     }
 }

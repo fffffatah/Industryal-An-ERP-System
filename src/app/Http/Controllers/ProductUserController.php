@@ -11,10 +11,18 @@ use App\Models\Product\activities_table;
 
 class ProductUserController extends Controller
 {
-    public function activities()
+    public function activities(Request $req)
     {
-        $allActivities = activities_table::all();
-        return view('product.user.activities.index')->with('allActivities', $allActivities);
+        if($req->searchActivity)
+        {
+            $allActivities = activities_table::where('type', $req->searchActivity)->get();
+            return view('product.user.activities.index')->with('allActivities', $allActivities);
+        }
+        else
+        {
+            $allActivities = activities_table::all();
+            return view('product.user.activities.index')->with('allActivities', $allActivities);
+        }
     }
     public function leave()
     {
