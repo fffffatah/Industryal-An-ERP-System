@@ -36,7 +36,7 @@
                     <td scope="row">abc@gmail.com</td>
                     <td scope="row">Hello, my name is</td>
                     <td align="center">
-                    <a class="btn btn-info text-left" href="{{route('sales.customers.mail.send')}}">Read E-mail</a>
+                    <a class="btn btn-info text-left" href="{{route('sales.mail.send')}}">Read E-mail</a>
                     </td>
                 </tr>
                 @endfor
