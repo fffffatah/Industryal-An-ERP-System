@@ -8,6 +8,8 @@ use App\Models\Product\product_table;
 use App\Models\Product\warehouse_table;
 use Illuminate\Support\Facades\File;
 use App\Http\Requests\Product\ProductCreateRequest;
+use App\Exports\GoodProductExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ProductListController extends Controller
 {
@@ -70,5 +72,10 @@ class ProductListController extends Controller
     {
         $list = product_table::all();
         return view('product.list.faulty')->with('productList', $list);
+    }
+
+    public function exportGoodProduct()
+    {
+        return Excel::download(new GoodProductExport, 'goodProduct_details.xlsx');
     }
 }
