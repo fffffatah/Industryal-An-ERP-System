@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Sales\Customer;
+
 
 class SalesMailController extends Controller
 {   
