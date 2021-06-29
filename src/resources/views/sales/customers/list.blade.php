@@ -18,7 +18,10 @@
         <td>{{$customer->phone}}</td>
         <td>{{$customer->first_purchase}}</td>
         <td align="center">
-          <a class="btn btn-info text-left" href="{{route('sales.mail.send')}}">Mail Customer</a>
+          <a class="btn btn-info text-left" href="./mail/send/{{$customer['id']}}">Mail Customer</a>
+        </td>
+        <td align="center">
+          <a class="btn btn-info text-left" href="./customers/update/{{$customer['id']}}">Update</a>
         </td>
       </tr>
       @endforeach

@@ -1,10 +1,10 @@
 @include('sales.layouts.header')
-<div class="float-left>
+<div style="justify-content: center; align-content:center; width:90%;">
   <div class="container">
     <div class="content" style="margin:auto">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-md-8">
+          <div class="col-md-10">
             <div class="card">
               <div class="card-header card-header-primary bg-info">
                 <h4 class="card-title">Edit Profile</h4>
