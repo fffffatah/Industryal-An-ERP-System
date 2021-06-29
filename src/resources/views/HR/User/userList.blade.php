@@ -24,7 +24,7 @@
                         <span style="padding-right:7px;"></span>
                         <li class="nav-item"><a class="nav-link text-white btn btn-outline-primary btn-block  mt-2" href="{{route('HRuserProfile.details')}}"><i class="fas fa-user"></i>Profile</a></li>
                         <span style="padding-right:7px;"></span>
-                        <li class="nav-item"><a class="nav-link text-white btn btn-outline-primary btn-block mt-2" href="#"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+                        <li class="nav-item"><a class="nav-link text-white btn btn-outline-primary btn-block mt-2" href="{{route('HRuserProfile.logout')}}"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
                     </ul>
                 </div>
             </div>

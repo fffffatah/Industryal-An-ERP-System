@@ -10,7 +10,7 @@
     crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous"> <!-- for fontawesome -->
 
-    <title>Product | Home</title>
+    <title>Warehouse | List</title>
 </head>
 <body>
     <!-- Header Starts -->
@@ -33,7 +33,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="{{route('user.logout')}}" class="nav-link">
                     <i class="fas fa-user-times"></i> Logout
                     </a>
                 </li>
@@ -78,13 +78,25 @@
                                 <h3><i class="fas fa-warehouse"></i>&nbsp &nbsp Warehouse List</h3>
                             </div>
                             <hr class="mb-4">
-                            <div class="input-group">
-                                <input class="form-control" type="text" placeholder="Find By Name...">
-                                <div class="input-group-append">
-                                    <button type="button" class="btn btn-outline-secondary">Search &nbsp <i class="fas fa-search"></i></button>
+                            <form method="POST">
+                                @csrf
+                                <div class="input-group">
+                                    <input class="form-control" type="text" placeholder="Find By Name..." name="searchProduct">
+                                    <div class="input-group-append">
+                                        <button type="submit" class="btn btn-outline-secondary">Search &nbsp <i class="fa fa-search"></i></button>
+                                    </div>
+                                </div>
+                            </form>
+                            <br>
+                            <div class="row align-items-start mb-2">
+                                <div class="col">
+                                </div>
+                                <div class="col-10"> 
+                                </div>
+                                <div class="col">
+                                        <a href="{{route('warehouseList.exportWarehouseList')}}" class="btn btn-primary rounded p-1 text-right">Download</a>
                                 </div>
                             </div>
-                            <br>
                             <table class="table table-striped table-bordered">
                                 <tr>
                                     <th>ID</th>
@@ -105,30 +117,22 @@
                                         <td>{{$warehouse['address']}}</td>
                                         <td>{{$warehouse['quantity']}}</td>
                                         <td>
-                                            @foreach($productList as $product)
-                                                @if($product['warehouse_name'] == $warehouse['name'])
-                                                    @if($warehouse['quantity']-$product['stock'] < 1)
-                                                        {{0}}
-                                                    @else
-                                                        {{$warehouse['quantity']-$product['stock']}}
-                                                    @endif
-                                                @endif
-                                            @endforeach
+                                            @if($warehouse['remaining_quantity'] < 1)
+                                                {{0}}
+                                            @else
+                                                {{$warehouse['remaining_quantity']}}
+                                            @endif
                                         </td>
                                         <td>{{$warehouse['status']}}</td>
                                         <td>
-                                            @foreach($productList as $product)
-                                                @if($product['warehouse_name'] == $warehouse['name'])
-                                                    @if($warehouse['quantity']-$product['stock'] < 1)
-                                                        <b class="text-danger">Out of Stock</b>
-                                                    @else
-                                                        <b class="text-success">In Stock</b>
-                                                    @endif
-                                                @endif
-                                            @endforeach
+                                            @if($warehouse['remaining_quantity'] < 1)
+                                                <b class="text-danger">Out of Stock</b>
+                                            @else
+                                                <b class="text-success">In Stock</b>
+                                            @endif
                                         </td>
                                         <td>
-                                        <a href="/warehouse/edit/{{$warehouse['warehouse_id']}}" class="btn btn-warning">Update</a>
+                                        <a href="/warehouse/edit/{{$warehouse['id']}}" class="btn btn-warning">Update</a>
                                         </td>
                                     </tr>
                                 @endforeach

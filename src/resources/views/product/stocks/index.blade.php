@@ -10,7 +10,7 @@
     crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous"> <!-- for fontawesome -->
 
-    <title>Product | Home</title>
+    <title>Product | Stock</title>
 </head>
 <body>
     <!-- Header Starts -->
@@ -33,7 +33,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="{{route('user.logout')}}" class="nav-link">
                     <i class="fas fa-user-times"></i> Logout
                     </a>
                 </li>
@@ -78,22 +78,39 @@
                                 <h3><i class="fas fa-shopping-basket"></i>&nbsp &nbsp Stocks</h3>
                             </div>
                             <hr class="mb-4">
-                            <div class="input-group">
-                                <input class="form-control" type="text" placeholder="Find By Name...">
-                                <div class="input-group-append">
-                                    <button type="button" class="btn btn-outline-secondary">Search &nbsp <i class="fas fa-search"></i></button>
+                            <form method="POST">
+                                @csrf
+                                <div class="input-group">
+                                    <input class="form-control" type="text" placeholder="Find By Name..." name="searchProduct">
+                                    <div class="input-group-append">
+                                        <button type="submit" class="btn btn-outline-secondary">Search &nbsp <i class="fa fa-search"></i></button>
+                                    </div>
                                 </div>
-                            </div>
+                            </form>
                             <br>
                             <table class="table table-striped table-bordered">
                                 <tr>
                                     <th>Product ID</th>
                                     <th>Product Name</th>
-                                    <th>Warehouse Id</th>
                                     <th>Warehouse Name</th>
                                     <th>Quantity</th>
                                     <th>Alert Status</th>
                                 </tr>
+                                @foreach($productList as $product)
+                                    <tr>
+                                        <td>{{$product['product_id']}}</td>
+                                        <td>{{$product['product_name']}}</td>
+                                        <td>{{$product['warehouse_name']}}</td>
+                                        <td>{{$product['stock']}}</td>
+                                        <td>
+                                            @if($product['stock'] > 0)
+                                                <b class="text-success">In Stock</b>
+                                            @else
+                                            <b class="text-danger">Out of Stock</b>
+                                            @endif
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </table>
                     </div>
                 </div>

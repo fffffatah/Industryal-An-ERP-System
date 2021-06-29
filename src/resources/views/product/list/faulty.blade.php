@@ -10,7 +10,7 @@
     crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous"> <!-- for fontawesome -->
 
-    <title>Product | Home</title>
+    <title>Product | Faulty Products</title>
 </head>
 <body>
     <!-- Header Starts -->
@@ -33,7 +33,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="{{route('user.logout')}}" class="nav-link">
                     <i class="fas fa-user-times"></i> Logout
                     </a>
                 </li>
@@ -78,18 +78,55 @@
                                 <h3><i class="fas fa-box-open"></i>&nbsp &nbsp Faulty Products</h3>
                             </div>
                             <hr class="mb-4">
+                            <div class="row align-items-start mb-2">
+                                <div class="col">
+                                </div>
+                                <div class="col-10"> 
+                                </div>
+                                <div class="col">
+                                        <a href="{{route('productList.exportFaultyProduct')}}" class="btn btn-primary rounded p-1 text-right">Download</a>
+                                </div>
+                            </div>
                             <table class="table table-striped table-bordered">
                                 <tr>
                                     <th>ID</th>
                                     <th>Name</th>
                                     <th>Status</th>
                                     <th>Warehouse</th>
-                                    <th>Number of Faulty Products</th>
                                     <th>Stock</th>
                                     <th>Product Nature</th>
                                     <th>Selling Price</th>
                                     <th>Description</th>
+                                    <th>Image</th>
+                                    <th>Condition</th>
+                                    <th>Action</th>
                                 </tr>
+                                @foreach($productList as $product)
+                                    @if($product['product_condition'] == "Faulty")
+                                        <tr>
+                                            <td>{{$product['product_id']}}</td>
+                                            <td>{{$product['product_name']}}</td>
+                                            <td>
+                                                {{$product['status_sell']}}
+                                                <br>
+                                                {{$product['status_purchase']}}
+                                            </td>
+                                            <td>{{$product['warehouse_name']}}</td>
+                                            <td>{{$product['stock']}}</td>
+                                            <td>{{$product['nature']}}</td>
+                                            <td>{{$product['selling_price']}}</td>
+                                            <td>{{$product['product_description']}}</td>
+                                            <td>
+                                            <img src="/upload/Product/{{$product['image']}}" alt="Potato" width="200" height="200"> 
+                                            </td>
+                                            <td>{{$product['product_condition']}}</td>
+                                            <td>
+                                            <a href="/product/edit/{{$product['id']}}" class="btn btn-warning mb-2">Update</a>
+                                            <a href="/product/delete/{{$product['id']}}" class="btn btn-danger">Delete</a>
+                                            </td>
+                                        </tr>
+                                    @endif
+                                @endforeach
                             </table>
                         </div>
                     </div>

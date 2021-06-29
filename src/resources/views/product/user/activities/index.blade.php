@@ -10,7 +10,7 @@
     crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous"> <!-- for fontawesome -->
 
-    <title>Product | Home</title>
+    <title>User | Activities</title>
 </head>
 <body>
     <!-- Header Starts -->
@@ -33,7 +33,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="{{route('user.logout')}}" class="nav-link">
                     <i class="fas fa-user-times"></i> Logout
                     </a>
                 </li>
@@ -78,12 +78,15 @@
                                 <h3><i class="fas fa-tasks"></i></i>&nbsp &nbsp Activities</h3>
                             </div>
                             <hr class="mb-4">
-                            <div class="input-group">
-                                <input class="form-control" type="text" placeholder="Find By Type...">
-                                <div class="input-group-append">
-                                    <button type="button" class="btn btn-outline-secondary">Search &nbsp <i class="fas fa-search"></i></button>
+                            <form method="POST">
+                                @csrf
+                                <div class="input-group">
+                                    <input class="form-control" type="text" placeholder="Find By Name..." name="searchActivity">
+                                    <div class="input-group-append">
+                                        <button type="submit" class="btn btn-outline-secondary">Search &nbsp <i class="fa fa-search"></i></button>
+                                    </div>
                                 </div>
-                            </div>
+                            </form>
                             <br>
                             <table class="table table-striped table-bordered">
                                 <tr>
@@ -91,6 +94,13 @@
                                     <th>Description</th>
                                     <th>Time</th>
                                 </tr>
+                                @foreach($allActivities as $activity)
+                                    <tr>
+                                        <td>{{$activity->type}}</td>
+                                        <td>{{$activity->description}}</td>
+                                        <td>{{$activity->activity_time}}</td>
+                                    </tr>
+                                @endforeach
                             </table>
                         </div>
                     </div>

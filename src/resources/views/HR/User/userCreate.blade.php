@@ -26,7 +26,7 @@
                         <span style="padding-right:7px;"></span>
                         <li class="nav-item"><a class="nav-link text-white btn btn-outline-primary btn-block  mt-2" href="{{route('HRuserProfile.details')}}"><i class="fas fa-user"></i>Profile</a></li>
                         <span style="padding-right:7px;"></span>
-                        <li class="nav-item"><a class="nav-link text-white btn btn-outline-primary btn-block mt-2" href="#"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+                        <li class="nav-item"><a class="nav-link text-white btn btn-outline-primary btn-block mt-2" href="{{route('HRuserProfile.logout')}}"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
                     </ul>
                 </div>
             </div>
@@ -57,7 +57,7 @@
             <div class="col-10">
                 <div class="info-section p-3 text-black my-5">
                     <div class="title text-center mb-3">
-                        <h3 class="font-width-border"><i class="fal fa-person-sign"></i>User information</h3>
+                        <h3 class="font-width-border"><i class="far fa-plus-square"></i>User Information</h3>
                     </div>
                     <div class="border border-primary w-75  m-auto">
                         <form method="post" class="w-50 m-auto  " >
@@ -83,6 +83,11 @@
                                 <input type="password" class="form-control"  name="password" id="password" Value="{{old('password')}}">
                                 <span class="text-danger">{{$errors->first('password')}}</span>
                             </div>
+                            <div class="form-group">
+                                 <label>Confirm password</label>
+                                <input type="password" class="form-control"  name="confirm_password" id="password" Value="{{old('confirm_password')}}">
+                                <span class="text-danger">{{$errors->first('confirm_password')}}</span>
+                            </div>
                             <div class="from-group">
                                 <label>Gender</label>
                                 <input type="radio" name="gender" 
@@ -98,12 +103,14 @@
                                 <span class="text-danger">{{$errors->first('gender')}}</span>
                             </div>
                             <div class="form-group">
-                                <label>Supervisor</label>
-                                <select name="supervisor" id="super" class="form-control" Value="{{old('supervisor')}}">
-                                    <option value="Superadmin">Super admin</option>
-                                    <option value="HRmanager">HR manager</option>
+                                <label>User Type</label>
+                                <select name="user_type" id="super" class="form-control" Value="{{old('user_type')}}">
+                                    <option value="Product_manager">Product manager</option>
+                                    <option value="HR_manager">HR manager</option>
+                                    <option value="Finance_manager">Finance manager</option>
+                                    <option value="Sales_manager">Sales manager</option>
                                 </select>
-                                <span class="text-danger">{{$errors->first('supervisor')}}</span>
+                                <span class="text-danger">{{$errors->first('user_type')}}</span>
                             </div>
                             <div class="foem-group">
                                 <label>Present address</label></td>

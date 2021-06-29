@@ -7,12 +7,22 @@ use Illuminate\Http\Request;
 use App\Http\Requests\Product\UserChangePasswordRequest;
 use App\Http\Requests\Product\UserEditProfileRequest;
 use App\Http\Requests\Product\UserCodeRequest;
+use App\Models\Product\activities_table;
 
 class ProductUserController extends Controller
 {
-    public function activities()
+    public function activities(Request $req)
     {
-        return view('product.user.activities.index');
+        if($req->searchActivity)
+        {
+            $allActivities = activities_table::where('type', $req->searchActivity)->get();
+            return view('product.user.activities.index')->with('allActivities', $allActivities);
+        }
+        else
+        {
+            $allActivities = activities_table::all();
+            return view('product.user.activities.index')->with('allActivities', $allActivities);
+        }
     }
     public function leave()
     {
@@ -57,5 +67,11 @@ class ProductUserController extends Controller
     public function verificationVerify(UserCodeRequest $req)
     {
         return redirect()->route('userProfile.index');
+    }
+
+    public function logout()
+    {
+        session()->flush();
+        return redirect()->route('signin.index');
     }
 }

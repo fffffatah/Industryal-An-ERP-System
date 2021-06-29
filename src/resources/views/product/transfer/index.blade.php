@@ -10,7 +10,7 @@
     crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous"> <!-- for fontawesome -->
 
-    <title>Product | Home</title>
+    <title>Product | Transfer</title>
 </head>
 <body>
     <!-- Header Starts -->
@@ -33,7 +33,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="{{route('user.logout')}}" class="nav-link">
                     <i class="fas fa-user-times"></i> Logout
                     </a>
                 </li>
@@ -80,6 +80,13 @@
                         </div>
                         <hr class="mb-4">
                         <div class="container">
+                            <div class="row justify-content-center mb-2">
+                                @if(session('transfer_success'))
+                                <span class="alert alert-success">{{session('transfer_success')}}</span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="container">
                             <div class="text-left">
                                 <form method="POST">
                                     @csrf
@@ -89,15 +96,25 @@
                                             <td >
                                                 <input type="text" class="form-control" name="product_id" value="{{old('product_id')}}">
                                                 <span class="text-danger">{{$errors->first('product_id')}}</span>
+                                                @if(session('msg'))
+                                                    <span class="text text-danger">{{session('msg')}}</span>
+                                                @endif
                                             </td>
                                         </tr>
                                         <tr>
                                             <td clospan="3"> New Warehouse</td>
                                             <td clospan="3">
-                                                <select class="form-control" id="warehouse">
-                                                    <option>Dummy 1</option>
-                                                    <option>Dummy 2</option>
+                                                <select class="form-control" name="warehouse">
+                                                    @foreach($warehouseList as $warehouse)
+                                                        <option>{{$warehouse['name']}}</option>
+                                                    @endforeach
                                                 </select>  
+                                                @if(session('curr_msg'))
+                                                    <span class="text text-danger">{{session('curr_msg')}}</span>
+                                                @endif
+                                                @if(session('wmsg'))
+                                                    <span class="text text-danger">{{session('wmsg')}}</span>
+                                                @endif
                                             </td>
                                         </tr>
                                         <tr>
@@ -105,6 +122,9 @@
                                             <td clospan="3">
                                                 <input type="text" class="form-control" name="product_quantity" value="{{old('product_quantity')}}">
                                                 <span class="text-danger">{{$errors->first('product_quantity')}}</span>
+                                                @if(session('qmsg'))
+                                                    <span class="text text-danger">{{session('qmsg')}}</span>
+                                                @endif
                                             </td>
                                         </tr>
                                         <tr>

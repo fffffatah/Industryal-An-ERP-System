@@ -27,6 +27,8 @@ Route::get('/', function () {
     return redirect() -> route('signin.index');  
 });
 
+Route::get('/',[ProductUserController::class, 'logout'])->name('user.logout');
+
 
                                     // Products
 //Product
@@ -36,16 +38,20 @@ Route::get('/product/create',[ProductCreateController::class, 'index'])->name('p
 Route::post('/product/create',[ProductCreateController::class, 'create']);
 
 Route::get('/product/list',[ProductListController::class, 'index'])->name('productList.index');
+Route::post('/product/list',[ProductListController::class, 'index']);
+
 Route::get('/product/list/faulty',[ProductListController::class, 'faulty'])->name('productListFaulty.index');
 
 // Update
-Route::get('/product/edit/{product_id}',[ProductListController::class, 'editProduct'])->name('productList.editProduct');
-Route::post('/product/edit/{product_id}',[ProductListController::class, 'updateProduct']);
+Route::get('/product/edit/{id}',[ProductListController::class, 'editProduct'])->name('productList.editProduct');
+Route::post('/product/edit/{id}',[ProductListController::class, 'updateProduct']);
 
-Route::get('/product/delete/{product_id}',[ProductListController::class, 'deleteProduct'])->name('productList.deleteProduct');
-Route::post('/product/delete/{product_id}',[ProductListController::class, 'destroyProduct']);
+Route::get('/product/delete/{id}',[ProductListController::class, 'deleteProduct'])->name('productList.deleteProduct');
+Route::post('/product/delete/{id}',[ProductListController::class, 'destroyProduct']);
 
 Route::get('/product/stocks',[ProductStockController::class, 'index'])->name('productStocks.index');
+Route::post('/product/stocks',[ProductStockController::class, 'index']);
+
 Route::get('/product/statistics',[ProductStatisticsController::class, 'index'])->name('productStatistics.index');
 
 Route::get('/product/transfer',[ProductTransferController::class, 'index'])->name('productTransfer.index');
@@ -56,15 +62,18 @@ Route::get('/warehouse/create',[WarehouseCreateController::class, 'index'])->nam
 Route::post('/warehouse/create',[WarehouseCreateController::class, 'create']);
 
 Route::get('/warehouse/list',[WarehouseListController::class, 'index'])->name('warehouseList.index');
+Route::post('/warehouse/list',[WarehouseListController::class, 'index']);
 
 // Edit
-Route::get('/warehouse/edit/{warehouse_id}',[WarehouseListController::class, 'editWarehouse'])->name('warehouseList.edit');
-Route::post('/warehouse/edit/{warehouse_id}',[WarehouseListController::class, 'updateWarehouse']);
+Route::get('/warehouse/edit/{id}',[WarehouseListController::class, 'editWarehouse'])->name('warehouseList.edit');
+Route::post('/warehouse/edit/{id}',[WarehouseListController::class, 'updateWarehouse']);
 
 Route::get('/warehouse/statistics',[WarehouseStatisticsController::class, 'index'])->name('warehouseStatistics.index');
 
 //Others
 Route::get('/product/user/activities',[ProductUserController::class, 'activities'])->name('userActivities.index');
+Route::post('/product/user/activities',[ProductUserController::class, 'activities']);
+
 Route::get('/product/user/leave',[ProductUserController::class, 'leave'])->name('userLeave.index');
 Route::get('/product/user/administration',[ProductUserController::class, 'administration'])->name('userAdministration.index');
 
@@ -82,3 +91,9 @@ Route::post('/product/user/edit/changePassword',[ProductUserController::class, '
 
 Route::get('/product/user/edit/changePassword/verify',[ProductUserController::class, 'verification'])->name('userChangeProfileVerication.index');
 Route::post('/product/user/edit/changePassword/verify',[ProductUserController::class, 'verificationVerify']);
+
+
+// Export
+Route::get('/product/list/good/export',[ProductListController::class, 'exportGoodProduct'])->name('productList.exportGoodProduct');
+Route::get('/product/list/faulty/export',[ProductListController::class, 'exportFaultyProduct'])->name('productList.exportFaultyProduct');
+Route::get('/warehouse/list/export',[WarehouseListController::class, 'exportWarehouseList'])->name('warehouseList.exportWarehouseList');

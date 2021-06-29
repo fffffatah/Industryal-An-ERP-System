@@ -9,7 +9,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top dropshadow">
             <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
                 <div class="navbar-brand">
-                    <img src="{{asset('assets/industryal-favicon.png')}}" height="50px" width="60px">
+                    <h1 class="text-white"><i>Industryal</i></h1>
                 </div>
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li class="nav-item"><a class="nav-link" href="{{route('finance.dashboard.index')}}">Dashboard</a></li>

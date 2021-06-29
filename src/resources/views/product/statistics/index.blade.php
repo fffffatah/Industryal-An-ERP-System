@@ -5,12 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Google Chart API -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <!-- for bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
     crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous"> <!-- for fontawesome -->
 
-    <title>Product | Home</title>
+    <title>Product | Statistics</title>
 </head>
 <body>
     <!-- Header Starts -->
@@ -33,7 +35,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="{{route('user.logout')}}" class="nav-link">
                     <i class="fas fa-user-times"></i> Logout
                     </a>
                 </li>
@@ -74,10 +76,33 @@
                     </div>
                 <div class="col-12 col-lg-9 border border-dark rounded p-3">
                         <div class="container">
-                            <div class="row justify-content-center">
-                                <h3><i class="fas fa-chart-line"></i> &nbsp &nbsp Product Statistics</h3>
+                            <div class="row align-items-start">
+                                <div class="col">
+                                </div>
+                                <div class="col-6">
+                                    <h3><i class="fas fa-chart-line"></i> &nbsp &nbsp Product Statistics</h3> 
+                                </div>
+                                <div class="col-2">
+                                     <a href="" class="btn btn-primary rounded p-1 text-right">Download</a>
+                                </div>
                             </div>
                             <hr class="mb-4">
+                            <div class="row justify-content-center mt-3">
+                                <div class="card w-100 bg-light text-dark border border-primary">
+                                    <div class="card-header" align="center"><b>Product wise Count</b></div>
+                                        <div class="card-body">
+                                        <center><div id="piechart_3d" style="width: 500px; height: 400px;"></div></center>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center mt-3">
+                                <div class="card w-100 bg-light text-dark border border-primary">
+                                    <div class="card-header" align="center"><b>Product wise Price</b></div>
+                                        <div class="card-body">
+                                        <center><div id="product_column_chart" style="width: 500px; height: 400px;"></div></center>
+                                        </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
             </div>
@@ -100,6 +125,47 @@
         </div>
     </footer>
     <!-- Footer Ends -->
+
+    <!-- product chart -->
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['User', 'Count'],
+            <?php echo $chartData; ?>
+        ]);
+        var options = {
+          title: 'Product - Current Stock',
+          is3D: true,
+          backgroundColor: 'transparent',
+          legend : { position : 'bottom' }
+        };
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+      }
+    </script>
+
+
+    <!-- product price chart -->
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Product', 'Price'],
+            <?php echo $productPriceChartData; ?>
+        ]);
+        var options = {
+          title: 'Product - Price',
+          backgroundColor: 'transparent',
+          is3D: true,
+          legend : { position : 'bottom' }
+        };
+        var chart = new google.visualization.ColumnChart(document.getElementById('product_column_chart'));
+        chart.draw(data, options);
+      }
+    </script>
 
 
   <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="

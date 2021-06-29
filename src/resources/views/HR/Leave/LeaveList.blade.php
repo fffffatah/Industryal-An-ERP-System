@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expense List</title>
+    <title>Leave Request List</title>
    <!--  Bootstrap cdn -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
     crossorigin="anonymous">
@@ -25,7 +25,7 @@
                         <span style="padding-right:7px;"></span>
                         <li class="nav-item"><a class="nav-link text-white btn btn-outline-primary btn-block  mt-2" href="{{route('HRuserProfile.details')}}"><i class="fas fa-user"></i>Profile</a></li>
                         <span style="padding-right:7px;"></span>
-                        <li class="nav-item"><a class="nav-link text-white btn btn-outline-primary btn-block mt-2" href="#"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+                        <li class="nav-item"><a class="nav-link text-white btn btn-outline-primary btn-block mt-2" href="{{route('HRuserProfile.logout')}}"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
                     </ul>
                 </div>
             </div>
@@ -52,7 +52,7 @@
                 </nav>
             </div>
             <div class="col-10">
-                <h1 class="text-center">Leave Request List</h1>
+                <h3 class="text-center"><i class="far fa-list-alt"></i>Leave Request List</h3>
                 <table  class="table table-hover ">
                 <tr>
                     <th>Type</th>
@@ -70,8 +70,8 @@
                     <td>pending</td>
 
                     <td>
-                        <a class="btn btn-outline-primary" href="#" > Approve </a> 
-                        <a class="btn btn-outline-primary" href="#"> Reject</a> 
+                        <a class="btn btn-primary" href="#" > Approve </a> 
+                        <a class="btn btn-denger" href="#"> Reject</a> 
                         
                     </td>
                 </tr>

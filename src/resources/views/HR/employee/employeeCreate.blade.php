@@ -25,7 +25,7 @@
                         <span style="padding-right:7px;"></span>
                         <li class="nav-item"><a class="nav-link text-white btn btn-outline-primary btn-block  mt-2 "href="{{route('HRuserProfile.details')}}"><i class="fas fa-user"></i>Profile</a></li>
                         <span style="padding-right:7px;"></span>
-                        <li class="nav-item"><a class="nav-link text-white btn btn-outline-primary btn-block mt-2" href="#"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+                        <li class="nav-item"><a class="nav-link text-white btn btn-outline-primary btn-block mt-2" href="{{route('HRuserProfile.logout')}}"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
                     </ul>
                 </div>
             </div>
@@ -54,7 +54,7 @@
             <div class="col-10">
                 <div class="info-section p-3 text-black my-5">
                     <div class="title text-center mb-3">
-                        <h3 class="font-width-border"><i class="fal fa-person-sign"></i>Employee information</h3>
+                        <h3 class="font-width-border"><i class="far fa-plus-square"></i>Employee Information</h3>
                     </div>
                     <hr>
                     <div class="border border-primary w-75  m-auto">
@@ -89,11 +89,11 @@
                             <div class="form-group">
                                 <label>Supervisor</label>
                                 <select name="supervisor" id="super" class="form-control" Value="{{old('supervisor')}}">
-                                    <option value="superadmin">Super admin</option>
-                                    <option value="HRmanager">HR manager</option>
-                                    <option value="productMgr">Product manager</option>
-                                    <option value="financeMgr">Finance manager</option>
-                                    <option value="salemgr">Sales manager</option>
+                                    <option value="Super admin">Super admin</option>
+                                    <option value="HR manager">HR manager</option>
+                                    <option value="Product Manager">Product manager</option>
+                                    <option value="Finance Manger">Finance manager</option>
+                                    <option value="Sales Manger">Sales manager</option>
                                 </select>
                                 <span class="text-danger">{{$errors->first('supervisor')}}</span>
                             </div>
