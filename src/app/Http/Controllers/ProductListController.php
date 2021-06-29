@@ -8,13 +8,25 @@ use App\Models\Product\product_table;
 use App\Models\Product\warehouse_table;
 use Illuminate\Support\Facades\File;
 use App\Http\Requests\Product\ProductCreateRequest;
+use App\Exports\GoodProductExport;
+use App\Exports\FaultyProductExport;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Models\Product\activities_table;
 
 class ProductListController extends Controller
 {
-    public function index()
+    public function index(Request $req)
     {
-        $list = product_table::all();
-        return view('product.list.index')->with('productList', $list);
+        if($req->searchProduct)
+        {
+            $searchProduct = product_table::where('product_name', $req->searchProduct)->get();
+            return view('product.list.index')->with('productList', $searchProduct);
+        }
+        else
+        {
+            $list = product_table::all();
+            return view('product.list.index')->with('productList', $list);
+        }
     }
 
     public function deleteProduct($product_id)
@@ -32,6 +44,14 @@ class ProductListController extends Controller
             File::delete($img_path);
         }
         product_table::where('product_id', $product_id)->delete();
+
+        // activity
+        $activity = new activities_table;
+        $activity->type = "Delete Product";
+        $activity->description = "Product Id: ".$product_id."\r\n"."Product Name: ".$product->product_name;
+        $activity->activity_time = date("Y-m-d H:i:s");
+        $activity->save();
+
         return redirect()->route('productList.index');
     }
 
@@ -63,6 +83,13 @@ class ProductListController extends Controller
          $product->last_updated = date('Y-m-d');
          $product->save();
 
+         // activity
+        $activity = new activities_table;
+        $activity->type = "Update Product";
+        $activity->description = "Product Id: ".$req->product_id.", "."Product Name: ".$req->product_name;
+        $activity->activity_time = date("Y-m-d H:i:s");
+        $activity->save();
+
         return redirect()->route('productList.index');
     }
 
@@ -70,5 +97,21 @@ class ProductListController extends Controller
     {
         $list = product_table::all();
         return view('product.list.faulty')->with('productList', $list);
+    }
+
+    public function exportGoodProduct()
+    {
+        return Excel::download(new GoodProductExport, 'goodProduct_details.xlsx');
+    }
+
+    public function exportFaultyProduct()
+    {
+        return Excel::download(new FaultyProductExport, 'faultyProduct_details.xlsx');
+    }
+
+    public function search(Request $req)
+    {
+        $searchProduct = product_table::where('product_name', $req->searchProduct)->get();
+        print_r($searchProduct);
     }
 }

@@ -10,7 +10,7 @@
     crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous"> <!-- for fontawesome -->
 
-    <title>Product | Home</title>
+    <title>Product | Stock</title>
 </head>
 <body>
     <!-- Header Starts -->
@@ -78,12 +78,15 @@
                                 <h3><i class="fas fa-shopping-basket"></i>&nbsp &nbsp Stocks</h3>
                             </div>
                             <hr class="mb-4">
-                            <div class="input-group">
-                                <input class="form-control" type="text" placeholder="Find By Name...">
-                                <div class="input-group-append">
-                                    <button type="button" class="btn btn-outline-secondary">Search &nbsp <i class="fas fa-search"></i></button>
+                            <form method="POST">
+                                @csrf
+                                <div class="input-group">
+                                    <input class="form-control" type="text" placeholder="Find By Name..." name="searchProduct">
+                                    <div class="input-group-append">
+                                        <button type="submit" class="btn btn-outline-secondary">Search &nbsp <i class="fa fa-search"></i></button>
+                                    </div>
                                 </div>
-                            </div>
+                            </form>
                             <br>
                             <table class="table table-striped table-bordered">
                                 <tr>

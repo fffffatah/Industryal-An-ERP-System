@@ -12,7 +12,7 @@
     crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous"> <!-- for fontawesome -->
 
-    <title>Product | Home</title>
+    <title>Product | Statistics</title>
 </head>
 <body>
     <!-- Header Starts -->
@@ -76,21 +76,30 @@
                     </div>
                 <div class="col-12 col-lg-9 border border-dark rounded p-3">
                         <div class="container">
-                            <div class="row justify-content-center">
-                                <h3><i class="fas fa-chart-line"></i> &nbsp &nbsp Product Statistics</h3>
+                            <div class="row align-items-start">
+                                <div class="col">
+                                </div>
+                                <div class="col-6">
+                                    <h3><i class="fas fa-chart-line"></i> &nbsp &nbsp Product Statistics</h3> 
+                                </div>
+                                <div class="col-2">
+                                     <a href="" class="btn btn-primary rounded p-1 text-right">Download</a>
+                                </div>
                             </div>
                             <hr class="mb-4">
-                            <div class="row">
-                                <div class="card bg-light text-dark border border-primary mr-3">
+                            <div class="row justify-content-center mt-3">
+                                <div class="card w-100 bg-light text-dark border border-primary">
                                     <div class="card-header" align="center"><b>Product wise Count</b></div>
                                         <div class="card-body">
-                                            <div id="piechart_3d" style="width: 500px; height: 400px;"></div>  
+                                        <center><div id="piechart_3d" style="width: 500px; height: 400px;"></div></center>
                                         </div>
                                 </div>
-                                <div class="card bg-light text-dark border border-primary">
-                                    <div class="card-header" align="center"><b>Warehouse wise Count</b></div>
+                            </div>
+                            <div class="row justify-content-center mt-3">
+                                <div class="card w-100 bg-light text-dark border border-primary">
+                                    <div class="card-header" align="center"><b>Product wise Price</b></div>
                                         <div class="card-body">
-                                        <div id="warehouse_piechart_3d" style="width: 500px; height: 400px;"></div>
+                                        <center><div id="product_column_chart" style="width: 500px; height: 400px;"></div></center>
                                         </div>
                                 </div>
                             </div>
@@ -129,26 +138,31 @@
         var options = {
           title: 'Product - Current Stock',
           is3D: true,
+          backgroundColor: 'transparent',
+          legend : { position : 'bottom' }
         };
         var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
         chart.draw(data, options);
       }
     </script>
 
-    <!-- warehouse chart -->
+
+    <!-- product price chart -->
     <script type="text/javascript">
       google.charts.load("current", {packages:["corechart"]});
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Warehouse', 'Quantity'],
-            <?php echo $warehouseChartData; ?>
+          ['Product', 'Price'],
+            <?php echo $productPriceChartData; ?>
         ]);
         var options = {
-          title: 'Warehouse - Remaining Quantity',
+          title: 'Product - Price',
+          backgroundColor: 'transparent',
           is3D: true,
+          legend : { position : 'bottom' }
         };
-        var chart = new google.visualization.PieChart(document.getElementById('warehouse_piechart_3d'));
+        var chart = new google.visualization.ColumnChart(document.getElementById('product_column_chart'));
         chart.draw(data, options);
       }
     </script>

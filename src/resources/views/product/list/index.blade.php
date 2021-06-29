@@ -78,13 +78,25 @@
                             <h3><i class="fas fa-box-open"></i>&nbsp &nbsp All Products</h3>
                         </div>
                         <hr class="mb-4">
-                        <div class="input-group">
-                            <input class="form-control" type="text" placeholder="Find By Name...">
-                            <div class="input-group-append">
-                                <button type="button" class="btn btn-outline-secondary">Search &nbsp <i class="fas fa-search"></i></button>
+                        <form method="POST">
+                            @csrf
+                            <div class="input-group">
+                                <input class="form-control" type="text" placeholder="Find By Name..." name="searchProduct">
+                                <div class="input-group-append">
+                                    <button type="submit" class="btn btn-outline-secondary">Search &nbsp <i class="fa fa-search"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                        <br>
+                        <div class="row align-items-start mb-2">
+                            <div class="col">
+                            </div>
+                            <div class="col-10"> 
+                            </div>
+                            <div class="col">
+                                    <a href="{{route('productList.exportGoodProduct')}}" class="btn btn-primary rounded p-1 text-right">Download</a>
                             </div>
                         </div>
-                        <br>
                         <table class="table table-striped table-bordered">
                             <tr>
                                 <th>ID</th>

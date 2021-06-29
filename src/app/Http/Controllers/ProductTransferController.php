@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\Product\TransferProductRequest;
 use App\Models\Product\warehouse_table;
 use App\Models\Product\product_table;
+use App\Models\Product\activities_table;
 
 class ProductTransferController extends Controller
 {
@@ -69,6 +70,8 @@ class ProductTransferController extends Controller
             $newProduct->tax = $product->tax;
             $newProduct->image = $product->image;
             $newProduct->product_condition = "Good";
+            $newProduct->date_added = date("Y-m-d");
+            $newProduct->last_updated = date("Y-m-d");
             $newProduct->save();
 
             // Increase previous warehouse quantity
@@ -80,6 +83,13 @@ class ProductTransferController extends Controller
             $new_warehouse = warehouse_table::where('name', $req->warehouse)->first();
             $new_warehouse->remaining_quantity -= $req->product_quantity;
             $new_warehouse->save();
+
+            // activity
+            $activity = new activities_table;
+            $activity->type = "Transfer Product";
+            $activity->description = "Product Id: ".$product->product_id.", "."Product Name: ".$product->product_name.", "."From Warehouse: ".$product->warehouse_name.", "."To Warehouse: ".$req->warehouse.", "."Quantity: ".$req->product_quantity;
+            $activity->activity_time = date("Y-m-d H:i:s");
+            $activity->save();
 
             $req->session()->flash('transfer_success', "Prodcut Successfully Transfered!");
             return redirect()->route('productTransfer.index');

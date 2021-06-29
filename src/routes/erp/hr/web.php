@@ -24,10 +24,14 @@ use App\Http\Controllers\HRuserProfileController;
 |
 */
 
+Route::get('/', function () {
+    return redirect() -> route('signin.index');  
+});
+Route::get('/logout',[HRuserProfileController::class,'logout'])->name('HRuserProfile.logout');
+
+
 //Hr home
 Route::get('/HR/home',[HRhomeController::class,'index'])->name('HRhome.index');
-
-
 //HR user create
 Route::get('/HR/user/create',[HRuserController::class,'create'])->name('HRuser.create');
 Route::post('/HR/user/create',[HRuserController::class,'userCreate']);

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\Product\WarehouseCreateRequest;
 use App\Models\Product\warehouse_table;
+use App\Models\Product\activities_table;
 
 class WarehouseCreateController extends Controller
 {
@@ -32,6 +33,13 @@ class WarehouseCreateController extends Controller
         $warehouse->date_added = date('Y-m-d');
         $warehouse->last_updated = date('Y-m-d');
         $warehouse->save();
+
+        // activity
+        $activity = new activities_table;
+        $activity->type = "Create Warehouse";
+        $activity->description = "Warehouse Id: ".$req->warehouse_id.", "."Warehouse Name: ".$req->warehouse_name;
+        $activity->activity_time = date("Y-m-d H:i:s");
+        $activity->save();
 
         return redirect()->route('warehouseList.index');
     }

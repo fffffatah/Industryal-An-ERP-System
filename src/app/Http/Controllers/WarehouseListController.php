@@ -7,13 +7,24 @@ use Illuminate\Http\Request;
 use App\Models\Product\warehouse_table;
 use App\Models\Product\product_table;
 use App\Http\Requests\Product\WarehouseCreateRequest;
+use App\Exports\WarehouseExport;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Models\Product\activities_table;
 
 class WarehouseListController extends Controller
 {
-    public function index()
+    public function index(Request $req)
     {
-        $warehouse_list = warehouse_table::all();
-        return view('product.warehouse.list.index')->with('warehouseList', $warehouse_list);
+        if($req->searchProduct)
+        {
+            $searchProduct = warehouse_table::where('name', $req->searchProduct)->get();
+            return view('product.warehouse.list.index')->with('warehouseList', $searchProduct);
+        }
+        else
+        {
+            $warehouse_list = warehouse_table::all();
+            return view('product.warehouse.list.index')->with('warehouseList', $warehouse_list);
+        }
     }
 
     public function editWarehouse($warehouse_id)
@@ -38,6 +49,18 @@ class WarehouseListController extends Controller
         $warehouse->last_updated = date('Y-m-d');
         $warehouse->save();
 
+        // activity
+        $activity = new activities_table;
+        $activity->type = "Update Warehouse";
+        $activity->description = "Warehouse Id: ".$req->warehouse_id.", "."Warehouse Name: ".$req->warehouse_name;
+        $activity->activity_time = date("Y-m-d H:i:s");
+        $activity->save();
+
         return redirect()->route('warehouseList.index');
+    }
+
+    public function exportWarehouseList()
+    {
+        return Excel::download(new WarehouseExport, 'warehouse_details.xlsx');
     }
 }
