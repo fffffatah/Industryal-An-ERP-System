@@ -129,6 +129,8 @@
         var options = {
           title: 'Product - Current Stock',
           is3D: true,
+          backgroundColor: 'transparent',
+          legend : { position : 'bottom' }
         };
         var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
         chart.draw(data, options);
@@ -146,7 +148,9 @@
         ]);
         var options = {
           title: 'Warehouse - Remaining Quantity',
+          backgroundColor: 'transparent',
           is3D: true,
+          legend : { position : 'bottom' }
         };
         var chart = new google.visualization.PieChart(document.getElementById('warehouse_piechart_3d'));
         chart.draw(data, options);
