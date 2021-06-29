@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Product\warehouse_table;
 use App\Models\Product\product_table;
 use App\Http\Requests\Product\WarehouseCreateRequest;
+use App\Exports\WarehouseExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class WarehouseListController extends Controller
 {
@@ -39,5 +41,10 @@ class WarehouseListController extends Controller
         $warehouse->save();
 
         return redirect()->route('warehouseList.index');
+    }
+
+    public function exportWarehouseList()
+    {
+        return Excel::download(new WarehouseExport, 'warehouse_details.xlsx');
     }
 }
