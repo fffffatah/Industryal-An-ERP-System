@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product\product_table;
 use App\Models\Product\warehouse_table;
+use Dompdf\Dompdf;
 
 class ProductStatisticsController extends Controller
 {
@@ -19,6 +20,30 @@ class ProductStatisticsController extends Controller
         return view('product.statistics.index')->with('chartData',$chartData)
                                                ->with('warehouseChartData', $warehouseChartData)
                                                ->with('productPriceChartData', $productPriceChartData);
+    }
+
+    public function downloadStatisticsPDF()
+    {
+        $allData = $this->chartInformation();
+        $chartData = $allData['chartData'];
+        $warehouseChartData = $allData['warehouseChartData'];
+        $productPriceChartData = $allData['productPriceChartData'];
+        
+        // instantiate and use the dompdf class
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml(view('product.statistics.pdf')->with('chartData',$chartData)
+                                                        ->with('warehouseChartData', $warehouseChartData)
+                                                        ->with('productPriceChartData', $productPriceChartData));
+
+        //(Optional) Setup the paper size and orientation
+        $dompdf->setPaper('A4', 'landscape');
+
+        // Render the HTML as PDF
+        $dompdf->render();
+
+        // Output the generated PDF to Browser
+        $dompdf->stream('product_statistics.pdf');
+
     }
 
     public function chartInformation()
@@ -105,7 +130,7 @@ class ProductStatisticsController extends Controller
             $productPriceChartData .= "['".$x."',".$x_value."],";
         }
         $productPriceChartData = rtrim($productPriceChartData,",");
-        
+
         return ["chartData" => $chartData, "warehouseChartData" => $warehouseChartData,  "productPriceChartData" => $productPriceChartData]; 
     }
 }
