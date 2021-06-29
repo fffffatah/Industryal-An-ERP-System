@@ -29,21 +29,21 @@ class ProductListController extends Controller
         }
     }
 
-    public function deleteProduct($product_id)
+    public function deleteProduct($id)
     {
-        $product = product_table::where('product_id', $product_id)->first();
+        $product = product_table::where('id', $id)->first();
         return view('product.list.details')->with('product', $product);
     }
 
-    public function destroyProduct($product_id)
+    public function destroyProduct($id)
     {
-        $product = product_table::where('product_id', $product_id)->first();
+        $product = product_table::where('id', $id)->first();
         $img_path = "upload/Product/".$product['image'];
         if(File::exists($img_path)) 
         {
             File::delete($img_path);
         }
-        product_table::where('product_id', $product_id)->delete();
+        product_table::where('id', $id)->delete();
 
         // activity
         $activity = new activities_table;
