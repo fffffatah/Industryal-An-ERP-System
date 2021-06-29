@@ -35,9 +35,11 @@ Route::get('/',[ProductUserController::class, 'logout'])->name('user.logout');
 Route::get('/product/home',[ProductHomeController::class, 'index'])->name('productHome.index');
 
 Route::get('/product/create',[ProductCreateController::class, 'index'])->name('productCreate.index');
-Route::post('/product/create',[ProductCreateController::class, 'create']);
+Route::post('/product/create',[ProductCreateController::class, 'index']);
 
 Route::get('/product/list',[ProductListController::class, 'index'])->name('productList.index');
+Route::post('/product/list',[ProductListController::class, 'index']);
+
 Route::get('/product/list/faulty',[ProductListController::class, 'faulty'])->name('productListFaulty.index');
 
 // Update
