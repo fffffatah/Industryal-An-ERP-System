@@ -72,6 +72,8 @@ Route::get('/warehouse/statistics',[WarehouseStatisticsController::class, 'index
 
 //Others
 Route::get('/product/user/activities',[ProductUserController::class, 'activities'])->name('userActivities.index');
+Route::post('/product/user/activities',[ProductUserController::class, 'activities']);
+
 Route::get('/product/user/leave',[ProductUserController::class, 'leave'])->name('userLeave.index');
 Route::get('/product/user/administration',[ProductUserController::class, 'administration'])->name('userAdministration.index');
 
