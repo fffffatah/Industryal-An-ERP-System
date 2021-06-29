@@ -86,8 +86,8 @@ class ProductTransferController extends Controller
 
             // activity
             $activity = new activities_table;
-            $activity->type = "Tansfer Product";
-            $activity->description = "Product Id: ".$product->product_id."\r\n"."Product Name: ".$product->product_name."\r\n"."From Warehouse: ".$product->warehouse_name."\r\n"."To Warehouse: ".$req->warehouse."\r\n"."Quantity: ".$req->product_quantity;
+            $activity->type = "Transfer Product";
+            $activity->description = "Product Id: ".$product->product_id.", "."Product Name: ".$product->product_name.", "."From Warehouse: ".$product->warehouse_name.", "."To Warehouse: ".$req->warehouse.", "."Quantity: ".$req->product_quantity;
             $activity->activity_time = date("Y-m-d H:i:s");
             $activity->save();
 

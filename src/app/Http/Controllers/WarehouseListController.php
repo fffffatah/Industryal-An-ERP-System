@@ -44,7 +44,7 @@ class WarehouseListController extends Controller
         // activity
         $activity = new activities_table;
         $activity->type = "Update Warehouse";
-        $activity->description = "Warehouse Id: ".$req->warehouse_id."\r\n"."Warehouse Name: ".$req->warehouse_name;
+        $activity->description = "Warehouse Id: ".$req->warehouse_id.", "."Warehouse Name: ".$req->warehouse_name;
         $activity->activity_time = date("Y-m-d H:i:s");
         $activity->save();
 

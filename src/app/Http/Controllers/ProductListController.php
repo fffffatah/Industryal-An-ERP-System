@@ -78,7 +78,7 @@ class ProductListController extends Controller
          // activity
         $activity = new activities_table;
         $activity->type = "Update Product";
-        $activity->description = "Product Id: ".$req->product_id."\r\n"."Product Name: ".$req->product_name;
+        $activity->description = "Product Id: ".$req->product_id.", "."Product Name: ".$req->product_name;
         $activity->activity_time = date("Y-m-d H:i:s");
         $activity->save();
 
