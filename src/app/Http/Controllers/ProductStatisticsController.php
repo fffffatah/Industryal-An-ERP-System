@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product\product_table;
-use App\Models\Product\warehouse_table;
 
 class ProductStatisticsController extends Controller
 {
@@ -13,11 +12,9 @@ class ProductStatisticsController extends Controller
     {
         $allData = $this->chartInformation();
         $chartData = $allData['chartData'];
-        $warehouseChartData = $allData['warehouseChartData'];
         $productPriceChartData = $allData['productPriceChartData'];
         
         return view('product.statistics.index')->with('chartData',$chartData)
-                                               ->with('warehouseChartData', $warehouseChartData)
                                                ->with('productPriceChartData', $productPriceChartData);
     }
 
@@ -90,24 +87,6 @@ class ProductStatisticsController extends Controller
         $chartData = rtrim($chartData,",");
 
 
-        // Warehouse chart
-        $warehouses = warehouse_table::all();
-        $warehouseCnt = []; // warehouse wise remaining quantity
-        foreach($warehouses as $item)
-        {
-            $currWarehouse = $item->name;
-            $currWarehouseQuantity = $item->remaining_quantity;
-            $warehouseCnt += [$currWarehouse => $currWarehouseQuantity];
-        }
-
-        $warehouseChartData = ""; // for rendering in chart
-        foreach($warehouseCnt as $x => $x_value)
-        {
-            $warehouseChartData .= "['".$x."',".$x_value."],";
-        }
-        $warehouseChartData = rtrim($warehouseChartData,",");
-
-
         // Column Chart, Product - Price
         $productPrice = []; // product wise price
         foreach($allProducts as $currProduct)
@@ -130,6 +109,6 @@ class ProductStatisticsController extends Controller
         }
         $productPriceChartData = rtrim($productPriceChartData,",");
 
-        return ["chartData" => $chartData, "warehouseChartData" => $warehouseChartData,  "productPriceChartData" => $productPriceChartData]; 
+        return ["chartData" => $chartData, "productPriceChartData" => $productPriceChartData]; 
     }
 }

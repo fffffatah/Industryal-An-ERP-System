@@ -87,17 +87,11 @@
                                 </div>
                             </div>
                             <hr class="mb-4">
-                            <div class="row">
-                                <div class="card bg-light text-dark border border-primary mr-3">
+                            <div class="row justify-content-center mt-3">
+                                <div class="card w-100 bg-light text-dark border border-primary">
                                     <div class="card-header" align="center"><b>Product wise Count</b></div>
                                         <div class="card-body">
-                                            <div id="piechart_3d" style="width: 500px; height: 400px;"></div>  
-                                        </div>
-                                </div>
-                                <div class="card bg-light text-dark border border-primary">
-                                    <div class="card-header" align="center"><b>Warehouse wise Count</b></div>
-                                        <div class="card-body">
-                                        <div id="warehouse_piechart_3d" style="width: 500px; height: 400px;"></div>
+                                        <center><div id="piechart_3d" style="width: 500px; height: 400px;"></div></center>
                                         </div>
                                 </div>
                             </div>
@@ -148,26 +142,6 @@
           legend : { position : 'bottom' }
         };
         var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
-        chart.draw(data, options);
-      }
-    </script>
-
-    <!-- warehouse chart -->
-    <script type="text/javascript">
-      google.charts.load("current", {packages:["corechart"]});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Warehouse', 'Quantity'],
-            <?php echo $warehouseChartData; ?>
-        ]);
-        var options = {
-          title: 'Warehouse - Remaining Quantity',
-          backgroundColor: 'transparent',
-          is3D: true,
-          legend : { position : 'bottom' }
-        };
-        var chart = new google.visualization.PieChart(document.getElementById('warehouse_piechart_3d'));
         chart.draw(data, options);
       }
     </script>
