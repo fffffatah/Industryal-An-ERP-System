@@ -50,6 +50,8 @@ Route::get('/product/delete/{product_id}',[ProductListController::class, 'delete
 Route::post('/product/delete/{product_id}',[ProductListController::class, 'destroyProduct']);
 
 Route::get('/product/stocks',[ProductStockController::class, 'index'])->name('productStocks.index');
+Route::post('/product/stocks',[ProductStockController::class, 'index']);
+
 Route::get('/product/statistics',[ProductStatisticsController::class, 'index'])->name('productStatistics.index');
 
 Route::get('/product/transfer',[ProductTransferController::class, 'index'])->name('productTransfer.index');
@@ -60,6 +62,7 @@ Route::get('/warehouse/create',[WarehouseCreateController::class, 'index'])->nam
 Route::post('/warehouse/create',[WarehouseCreateController::class, 'create']);
 
 Route::get('/warehouse/list',[WarehouseListController::class, 'index'])->name('warehouseList.index');
+Route::post('/warehouse/list',[WarehouseListController::class, 'index']);
 
 // Edit
 Route::get('/warehouse/edit/{warehouse_id}',[WarehouseListController::class, 'editWarehouse'])->name('warehouseList.edit');
