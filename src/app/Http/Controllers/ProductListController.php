@@ -11,6 +11,7 @@ use App\Http\Requests\Product\ProductCreateRequest;
 use App\Exports\GoodProductExport;
 use App\Exports\FaultyProductExport;
 use Maatwebsite\Excel\Facades\Excel;
+use App\Models\Product\activities_table;
 
 class ProductListController extends Controller
 {
@@ -35,6 +36,14 @@ class ProductListController extends Controller
             File::delete($img_path);
         }
         product_table::where('product_id', $product_id)->delete();
+
+        // activity
+        $activity = new activities_table;
+        $activity->type = "Delete Product";
+        $activity->description = "Product Id: ".$product_id."\r\n"."Product Name: ".$product->product_name;
+        $activity->activity_time = date("Y-m-d H:i:s");
+        $activity->save();
+
         return redirect()->route('productList.index');
     }
 
@@ -65,6 +74,13 @@ class ProductListController extends Controller
          $product->product_condition = $req->product_condition;
          $product->last_updated = date('Y-m-d');
          $product->save();
+
+         // activity
+        $activity = new activities_table;
+        $activity->type = "Update Product";
+        $activity->description = "Product Id: ".$req->product_id."\r\n"."Product Name: ".$req->product_name;
+        $activity->activity_time = date("Y-m-d H:i:s");
+        $activity->save();
 
         return redirect()->route('productList.index');
     }
