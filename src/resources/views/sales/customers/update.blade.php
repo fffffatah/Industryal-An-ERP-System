@@ -98,6 +98,4 @@
     </div>
   </div>
 </div>
-
-
 @include('sales.layouts.footer')

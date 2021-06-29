@@ -35,7 +35,7 @@
                           </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{route('sales.customers.list')}}">Check Customers</a>
-                        <a class="dropdown-item" href="{{route('sales.customers.mail.all')}}">Emails</a>
+                        <a class="dropdown-item" href="{{route('sales.mail.all')}}">Emails</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Something else here</a>
                         </div>

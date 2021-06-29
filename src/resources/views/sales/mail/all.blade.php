@@ -6,11 +6,11 @@
                 <div class="card-header"><b>Customer E-mail</b></div>
                     <div class="card-body">
                         <div class="btn-group-vertical w-75">
-                            <a class="btn btn-info text-left" href="{{route('sales.customers.mail.all')}}">All</a>
-                            <a class="btn btn-info active text-left" href="{{route('sales.customers.mail.sent')}}">Sent</a>
-                            <a class="btn btn-info text-left" href="{{route('sales.customers.mail.received')}}">Received</a>
-                            <a class="btn btn-info text-left" href="{{route('sales.customers.mail.spam')}}">Spam</a>
-                            <a class="btn btn-info text-left" href="{{route('sales.customers.mail.send')}}">Compose</a>
+                            <a class="btn btn-info active text-left" href="{{route('sales.mail.all')}}">All</a>
+                            <a class="btn btn-info text-left" href="{{route('sales.mail.sent')}}">Sent</a>
+                            <a class="btn btn-info text-left" href="{{route('sales.mail.received')}}">Received</a>
+                            <a class="btn btn-info text-left" href="{{route('sales.mail.spam')}}">Spam</a>
+                            <a class="btn btn-info text-left" href="{{route('sales.mail.send')}}">Compose</a>
                         </div>
                     </div>
                 </div>
@@ -20,7 +20,7 @@
             <div class="container" style="padding:10px;"></div>
         </td>
         <td style="width:800px;padding-left:20px;padding-right:20px">
-        <table class="table table-hover table-bordered" style="width: 100%" align="center">
+            <table class="table table-hover table-bordered" style="width: 100%" align="center">
                 <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -36,7 +36,7 @@
                     <td scope="row">abc@gmail.com</td>
                     <td scope="row">Hello, my name is</td>
                     <td align="center">
-                    <a class="btn btn-info text-left" href="{{route('sales.customers.mail.send')}}">Read E-mail</a>
+                    <a class="btn btn-info text-left" href="{{route('sales.mail.send')}}">Read E-mail</a>
                     </td>
                 </tr>
                 @endfor

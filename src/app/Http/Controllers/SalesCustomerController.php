@@ -3,33 +3,30 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Sales\Customer;
 
 class SalesCustomerController extends Controller
 {
     public function showCustomersList()
     {
-        return view('sales.customers.list');
+        $customers = Customer::all();
+        return view('sales.customers.list')->with('customers', $customers);
     }
 
-    public function sendEmail()
+    public function sendEmail($id)
     {
-        return view('sales.customers.mail.send');
+        return view('sales.mail.send');
     }
 
-    public function allMail()
+    public function editCustomer($id)
     {
-        return view('sales.customers.mail.all');
+        $customer = Customer::where('id', $id)->first();
+        return view('sales.customers.update')->with('customer', $customer);
     }
-    public function sentMail()
-    {
-        return view('sales.customers.mail.sent');
-    }
-    public function receivedMail()
-    {
-        return view('sales.customers.mail.received');
-    }
-    public function spamMail()
-    {
-        return view('sales.customers.mail.spam');
-    }
+    // public function editProduct($id)
+    // {
+    //     $product = product_table::where('id', $id)->first();
+    //     $warehouseList = warehouse_table::pluck('name');
+    //     return view('product.list.edit')->with('product', $product)->with('warehouseList',$warehouseList);
+    // }
 }
