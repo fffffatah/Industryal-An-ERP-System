@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\Product\ProductCreateRequest;
 use App\Models\Product\product_table;
 use App\Models\Product\warehouse_table;
+use App\Models\Product\activities_table;
 
 class ProductCreateController extends Controller
 {
@@ -48,6 +49,14 @@ class ProductCreateController extends Controller
         $warehouse->quantity = $warehouse->quantity - doubleval($req->product_stock);
         $warehouse->save();
 
+
+        // activity
+        $activity = new activities_table;
+        $activity->type = "Create Product";
+        $activity->description = "Product Id: ".$req->product_id.", "."Product Name: ".$req->product_name;
+        $activity->activity_time = date("Y-m-d H:i:s");
+        $activity->save();
+        
         return redirect()->route('productList.index');
     }
 }

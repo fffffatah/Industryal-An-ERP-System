@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Models\Product\warehouse_table;
 use App\Models\Product\product_table;
 use App\Http\Requests\Product\WarehouseCreateRequest;
+use App\Exports\WarehouseExport;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Models\Product\activities_table;
 
 class WarehouseListController extends Controller
 {
@@ -38,6 +41,18 @@ class WarehouseListController extends Controller
         $warehouse->last_updated = date('Y-m-d');
         $warehouse->save();
 
+        // activity
+        $activity = new activities_table;
+        $activity->type = "Update Warehouse";
+        $activity->description = "Warehouse Id: ".$req->warehouse_id.", "."Warehouse Name: ".$req->warehouse_name;
+        $activity->activity_time = date("Y-m-d H:i:s");
+        $activity->save();
+
         return redirect()->route('warehouseList.index');
+    }
+
+    public function exportWarehouseList()
+    {
+        return Excel::download(new WarehouseExport, 'warehouse_details.xlsx');
     }
 }

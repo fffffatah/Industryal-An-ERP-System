@@ -5,11 +5,44 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product\product_table;
-use App\Models\Product\warehouse_table;
 
 class ProductStatisticsController extends Controller
 {
     public function index()
+    {
+        $allData = $this->chartInformation();
+        $chartData = $allData['chartData'];
+        $productPriceChartData = $allData['productPriceChartData'];
+        
+        return view('product.statistics.index')->with('chartData',$chartData)
+                                               ->with('productPriceChartData', $productPriceChartData);
+    }
+
+    public function downloadStatisticsPDF()
+    {
+        $allData = $this->chartInformation();
+        $chartData = $allData['chartData'];
+        $warehouseChartData = $allData['warehouseChartData'];
+        $productPriceChartData = $allData['productPriceChartData'];
+        
+        // instantiate and use the dompdf class
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml(view('product.statistics.pdf')->with('chartData',$chartData)
+                                                        ->with('warehouseChartData', $warehouseChartData)
+                                                        ->with('productPriceChartData', $productPriceChartData));
+
+        //(Optional) Setup the paper size and orientation
+        $dompdf->setPaper('A4', 'landscape');
+
+        // Render the HTML as PDF
+        $dompdf->render();
+
+        // Output the generated PDF to Browser
+        $dompdf->stream('product_statistics.pdf');
+
+    }
+
+    public function chartInformation()
     {
         // Product chart
         $products = product_table::all();
@@ -28,7 +61,7 @@ class ProductStatisticsController extends Controller
             }
             if(!$check)
             {
-              array_push($allProducts,$currProduct);  
+                array_push($allProducts,$currProduct);  
             }
         }
 
@@ -54,25 +87,28 @@ class ProductStatisticsController extends Controller
         $chartData = rtrim($chartData,",");
 
 
-        // Warehouse chart
-        $warehouses = warehouse_table::all();
-        $warehouseCnt = []; // warehouse wise remaining quantity
-        foreach($warehouses as $item)
+        // Column Chart, Product - Price
+        $productPrice = []; // product wise price
+        foreach($allProducts as $currProduct)
         {
-            $currWarehouse = $item->name;
-            $currWarehouseQuantity = $item->remaining_quantity;
-            $warehouseCnt += [$currWarehouse => $currWarehouseQuantity];
+            $cnt = 0;
+            foreach($products as $item)
+            {
+                if($item->product_name == $currProduct)
+                {
+                    $cnt += $item->selling_price;
+                }
+            }
+            $productPrice += [$currProduct => $cnt];
         }
-
-        $warehouseChartData = ""; // for rendering in chart
-        foreach($warehouseCnt as $x => $x_value)
+        asort($productPrice);
+        $productPriceChartData = ""; // for rendering in chart
+        foreach($productPrice as $x => $x_value)
         {
-            $warehouseChartData .= "['".$x."',".$x_value."],";
+            $productPriceChartData .= "['".$x."',".$x_value."],";
         }
-        $warehouseChartData = rtrim($warehouseChartData,",");
+        $productPriceChartData = rtrim($productPriceChartData,",");
 
-
-        return view('product.statistics.index')->with('chartData',$chartData)
-                                               ->with('warehouseChartData', $warehouseChartData);
+        return ["chartData" => $chartData, "productPriceChartData" => $productPriceChartData]; 
     }
 }

@@ -7,12 +7,14 @@ use Illuminate\Http\Request;
 use App\Http\Requests\Product\UserChangePasswordRequest;
 use App\Http\Requests\Product\UserEditProfileRequest;
 use App\Http\Requests\Product\UserCodeRequest;
+use App\Models\Product\activities_table;
 
 class ProductUserController extends Controller
 {
     public function activities()
     {
-        return view('product.user.activities.index');
+        $allActivities = activities_table::all();
+        return view('product.user.activities.index')->with('allActivities', $allActivities);
     }
     public function leave()
     {

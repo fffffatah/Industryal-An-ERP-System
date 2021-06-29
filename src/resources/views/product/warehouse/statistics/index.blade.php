@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Google Chart API -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <!-- for bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
     crossorigin="anonymous">
@@ -74,12 +76,25 @@
                     </div>
                 <div class="col-12 col-lg-9 border border-dark rounded p-3">
                 <div class="container">
-                            <div class="row justify-content-center">
-                                <h3><i class="fas fa-chart-line"></i> &nbsp &nbsp Warehouse Statistics</h3>
-                            </div>
-                            <hr class="mb-4">
+                    <div class="row justify-content-center">
+                        <h3><i class="fas fa-chart-line"></i> &nbsp &nbsp Warehouse Statistics</h3>
+                    </div>
+                    <hr class="mb-4"> 
+                    <div class="row justify-content-center">
+                        <div class="card bg-light text-dark border border-primary mr-3">
+                            <div class="card-header" align="center"><b>Warehouse wise Qunatity</b></div>
+                                <div class="card-body">
+                                  <center><div id="warehouse_piechart_3d" style="width: 500px; height: 400px;"></div></center>
+                                </div>
+                        </div>
+                        <div class="card bg-light text-dark border border-primary">
+                            <div class="card-header" align="center"><b>Country wise Warehouse</b></div>
+                                <div class="card-body">
+                                  <center><div id="warehouse_country_3d" style="width: 500px; height: 400px;"></div></center>
+                                </div>
                         </div>
                     </div>
+                </div>
             </div>
         </div>
     </main>
@@ -101,6 +116,45 @@
     </footer>
     <!-- Footer Ends -->
 
+    <!-- warehouse chart -->
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Warehouse', 'Quantity'],
+            <?php echo $warehouseData; ?>
+        ]);
+        var options = {
+          title: 'Warehouse - Remaining Quantity',
+          backgroundColor: 'transparent',
+          is3D: true,
+          legend : { position : 'bottom' }
+        };
+        var chart = new google.visualization.PieChart(document.getElementById('warehouse_piechart_3d'));
+        chart.draw(data, options);
+      }
+    </script>
+
+    <!-- warehouse country data -->
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Warehouse', 'Quantity'],
+            <?php echo $warehouseCountryData; ?>
+        ]);
+        var options = {
+          title: 'Warehouse - Country',
+          backgroundColor: 'transparent',
+          legend : { position : 'bottom' },
+          pieHole: 0.4,
+        };
+        var chart = new google.visualization.PieChart(document.getElementById('warehouse_country_3d'));
+        chart.draw(data, options);
+      }
+    </script>
 
   <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>

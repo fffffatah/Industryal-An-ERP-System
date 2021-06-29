@@ -84,3 +84,9 @@ Route::post('/product/user/edit/changePassword',[ProductUserController::class, '
 
 Route::get('/product/user/edit/changePassword/verify',[ProductUserController::class, 'verification'])->name('userChangeProfileVerication.index');
 Route::post('/product/user/edit/changePassword/verify',[ProductUserController::class, 'verificationVerify']);
+
+
+// Export
+Route::get('/product/list/good/export',[ProductListController::class, 'exportGoodProduct'])->name('productList.exportGoodProduct');
+Route::get('/product/list/faulty/export',[ProductListController::class, 'exportFaultyProduct'])->name('productList.exportFaultyProduct');
+Route::get('/warehouse/list/export',[WarehouseListController::class, 'exportWarehouseList'])->name('warehouseList.exportWarehouseList');
