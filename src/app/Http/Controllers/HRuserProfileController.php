@@ -34,5 +34,10 @@ class HRuserProfileController extends Controller
     {
         return view('HR.User.profile.upload');
     }
+    public function logout()
+    {
+        session()->flush();
+        return redirect()->route('signin.index');
+    }
 
 }
