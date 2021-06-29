@@ -30,7 +30,7 @@
                         <span style="padding-right:7px;"></span>
                         <li class="nav-item"><a class="nav-link text-white btn btn-outline-primary btn-block  mt-2" href="{{route('HRuserProfile.details')}}"><i class="fas fa-user"></i>Profile</a></li>
                         <span style="padding-right:7px;"></span>
-                        <li class="nav-item"><a class="nav-link text-white btn btn-outline-primary btn-block mt-2" href="#"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+                        <li class="nav-item"><a class="nav-link text-white btn btn-outline-primary btn-block mt-2" href="{{route('HRuserProfile.logout')}}"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
                     </ul>
                 </div>
             </div>
@@ -61,7 +61,7 @@
             </div>
             <div class="col-10">
                 <h3 class="text-center"><i class="fas fa-chart-pie"></i>Expense Statistic</h3>
-                <div class="panel-body ">
+                <div class="border border-dark mr-5 ">
                    <center> <div id="piechart" style="width:800px;height:500px"></div></center>
                 </div>
                 
@@ -98,7 +98,8 @@
          
 
         var options = {
-          title: 'Monthly Expense report'
+          title: 'Monthly Expense report',
+         
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
