@@ -48,7 +48,7 @@ class ProductListController extends Controller
         // activity
         $activity = new activities_table;
         $activity->type = "Delete Product";
-        $activity->description = "Product Id: ".$product_id."\r\n"."Product Name: ".$product->product_name;
+        $activity->description = "Id: ".$id."\r\n"."Product Name: ".$product->product_name;
         $activity->activity_time = date("Y-m-d H:i:s");
         $activity->save();
 
