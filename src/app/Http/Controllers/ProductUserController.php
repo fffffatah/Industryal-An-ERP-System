@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\Product\UserChangePasswordRequest;
 use App\Http\Requests\Product\UserEditProfileRequest;
 use App\Http\Requests\Product\UserCodeRequest;
+use App\Http\Requests\Product\LeaveRequest;
 use App\Models\Product\activities_table;
 
 class ProductUserController extends Controller
@@ -27,6 +28,10 @@ class ProductUserController extends Controller
     public function leave()
     {
         return view('product.user.leave.index');
+    }
+    public function verifyLeave(LeaveRequest $req)
+    {
+        
     }
     public function administration()
     {
