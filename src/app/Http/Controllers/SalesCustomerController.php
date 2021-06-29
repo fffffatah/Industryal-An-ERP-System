@@ -18,20 +18,5 @@ class SalesCustomerController extends Controller
         return view('sales.mail.send');
     }
 
-    public function allMail()
-    {
-        return view('sales.mail.all');
-    }
-    public function sentMail()
-    {
-        return view('sales.mail.sent');
-    }
-    public function receivedMail()
-    {
-        return view('sales.mail.received');
-    }
-    public function spamMail()
-    {
-        return view('sales.mail.spam');
-    }
+    
 }
