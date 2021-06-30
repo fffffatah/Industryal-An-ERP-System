@@ -6,6 +6,7 @@ use App\Http\Controllers\SalesCustomerController;
 use App\Http\Controllers\SalesProfileController;
 use App\Http\Controllers\SalesController;
 use App\Http\Controllers\SalesMailController;
+use App\Http\Controllers\SalesOrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +36,13 @@ Route::get('/sales/profile/change/password',[SalesProfileController::class, 'upd
 Route::get('/sales/customers/',[SalesCustomerController::class, 'showCustomersList'])->name('sales.customers.list');
 Route::get('/sales/customers/update/{id}',[SalesCustomerController::class, 'editCustomer'])->name('sales.customers.update');
 Route::post('/sales/customers/update/{id}',[SalesCustomerController::class, 'updateCustomer']);
+
+//Orders
+Route::get('/sales/orders/',[SalesOrderController::class, 'ordersList'])->name('sales.orders.list');
+Route::get('/sales/orders/create',[SalesOrderController::class, 'showCustomersList'])->name('sales.orders.create');
+Route::get('/sales/orders/list',[SalesOrderController::class, 'ordersList'])->name('sales.orders.list');
+Route::get('/sales/orders/transactions',[SalesOrderController::class, 'ordersList'])->name('orders.transactions');
+
 
 //Customer Mails
 Route::get('/sales/mail/send',[SalesMailController::class, 'sendEmail'])->name('sales.mail.send');
