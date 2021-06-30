@@ -51,7 +51,8 @@
             <div class="row mt-2 justify-content-around">
                 <div class="col-12 col-lg-2 border border-dark bg-light rounded p-3">
                         <div class="text-left mt-2 rounded">
-                            <h4>Username</h4>
+                            <img src="/upload/Users/{{$userDetails['profile_pic']}}" alt="{{$userDetails['profile_pic']}}" width="200" height="200">
+                            <h4>{{$userDetails['username']}}</h4>
                             <a href="{{route('userEditProfile.index')}}" class="btn btn-primary btn-sm mb-2">Edit Profile</a> <br>
                             <a href="{{route('userEditProfilePicture.index')}}" class="btn btn-warning btn-sm mb-2">Update Profile Picture</a> <br>
                             <a href="{{route('userChangePassword.index')}}" class="btn btn-danger btn-sm mb-2">Change Password</a> <br>
@@ -70,31 +71,31 @@
                                     <table class="table table-striped table-bordered">
                                         <tr>
                                             <td >First Name</td>
-                                            <td > Gennady</td>
+                                            <td > {{$userDetails['firstname']}}</td>
                                         </tr>
                                         <tr>
                                             <td >Last Name</td>
-                                            <td > Korotkevich </td>
+                                            <td > {{$userDetails['lastname']}} </td>
                                         </tr>
                                         <tr>
                                             <td >Email</td>
-                                            <td >Gennady@industryal.com</td>
+                                            <td >{{$userDetails['email']}}</td>
                                         </tr>
                                         <tr>
                                             <td >Phone Number</td>
-                                            <td >+8968745132</td>
+                                            <td >{{$userDetails['phone']}}</td>
                                         </tr>
                                         <tr>
                                             <td >Supervisor</td>
-                                            <td >Null</td>
+                                            <td >HR Manager</td>
                                         </tr>
                                         <tr>
                                             <td >Job Postion</td>
-                                            <td >Product Manager</td>
+                                            <td >{{$userDetails['position']}}</td>
                                         </tr>
                                         <tr>
                                             <td >Address</td>
-                                            <td > Russia </td>
+                                            <td > {{$userDetails['address']}} </td>
                                         </tr>
                                     </table>
                                 </form>
