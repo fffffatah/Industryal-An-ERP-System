@@ -28,7 +28,8 @@ class SigninController extends Controller
             }
             elseif ($user->type == 'product') {
                 $req->session()->put('login','1');
-                $req->session()->put('email',$req->email);
+                $username = $user->username;
+                $req->session()->put('username',$username);
                 return redirect()->route('productHome.index');
             }
             elseif ($user->type == 'hr') {
