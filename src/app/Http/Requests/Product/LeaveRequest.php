@@ -25,7 +25,7 @@ class LeaveRequest extends FormRequest
     {
         return [
             "leave_type" => "required",
-            "leave_start_date" => "required",
+            "leave_start_date" => "required|before_or_equal:leave_end_date|after_or_equal:now",
             "leave_end_date" => "required",
             "leave_description" => "required",
         ];
