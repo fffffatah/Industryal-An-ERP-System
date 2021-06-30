@@ -4,13 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\Sales\SalesCustomerUpdateRequest;
 use Illuminate\Http\Request;
-use App\Models\Sales\Customer;
+use App\Models\Sales\CustomerModel;
 
 class SalesCustomerController extends Controller
 {
     public function showCustomersList()
     {
-        $customers = Customer::all();
+        $customers = CustomerModel::all();
         return view('sales.customers.list')->with('customers', $customers);
     }
 
@@ -21,13 +21,13 @@ class SalesCustomerController extends Controller
 
     public function editCustomer($id)
     {
-        $customer = Customer::where('id', $id)->first();
+        $customer = CustomerModel::where('id', $id)->first();
         return view('sales.customers.update')->with('customer', $customer);
     }
 
     public function updateCustomer(SalesCustomerUpdateRequest $req,$id) 
     {
-        $customer = Customer::where('id', $id)->first();
+        $customer = CustomerModel::where('id', $id)->first();
         $customer->name = $req->cus_name;
         $customer->email = $req->cus_email;
         $customer->phone = $req->cus_phone;

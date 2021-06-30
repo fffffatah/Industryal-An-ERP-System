@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Models\Sales;
+namespace App\Models\sales;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Customer extends Model
+class MailModel extends Model
 {
-    protected $table = 'customers';
+    protected $table = 'customer_emails';
     protected $primaryKey = 'id';
     public $timestamps = false;
 }

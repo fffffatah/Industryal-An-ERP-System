@@ -27,7 +27,7 @@
                         </div>
                         
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="lawyer_clients.php">Orders</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Orders</a></li>
                     <li class="nav-item dropdown">
                         {{-- <a class="nav-link" href="lawyer_meetings.php">Customers</a> --}}
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -40,9 +40,9 @@
                         <a class="dropdown-item" href="#">Something else here</a>
                         </div>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="lawyer_payments.php">Leave Request</a></li>
-                    <li class="nav-item"><a class="nav-link" href="lawyer_chats.php">Chats</a></li>
-                    <li class="nav-item"><a class="nav-link" href="lawyer_reviews.php">Import/Export</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Leave Request</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Chats</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Import/Export</a></li>
                 </ul>
             <div class="navbar-nav ml-auto">
                 
