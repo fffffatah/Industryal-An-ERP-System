@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New User</title>
+    <title> User-Edit</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
     crossorigin="anonymous">
@@ -57,7 +57,7 @@
             <div class="col-10">
                 <div class="info-section p-3 text-black my-5">
                     <div class="title text-center mb-3">
-                        <h3 class="font-width-border"><i class="far fa-plus-square"></i>User Information</h3>
+                        <h3 class="font-width-border"><i class="fas fa-user-edit"></i>Update User Information</h3>
                     </div>
                     <div class="border border-primary w-75  m-auto">
                         <form method="post" class="w-50 m-auto"  enctype="multipart/form-data" >
@@ -65,33 +65,33 @@
                            
                             <div class="form-group">
                                 <label>First Name</label> 
-                                <input type="txt" class="form-control" id="firstname" name="first_name" Value="{{old('first_name')}}" >
+                                <input type="txt" class="form-control" id="firstname" name="first_name" Value="{{$user['firstname']}}" >
                                 <span class="text-danger">{{$errors->first('first_name')}}</span>
                             </div>
                             <div class="form-group">
                                 <label >Last Name</label> 
-                                <input type="txt" class="form-control" id="lastname" name="last_name" Value="{{old('last_name')}}">
+                                <input type="txt" class="form-control" id="lastname" name="last_name" Value="{{$user['lastname']}}">
                                 <span class="text-danger">{{$errors->first('last_name')}}</span>
                             </div>
                             <div class="from-group">
                                 <label>User Name</label></td>
-                                <input type="text" class="form-control" name="user_name" id="uname" Value="{{old('user_name')}}">
+                                <input type="text" class="form-control" name="user_name" id="uname" Value="{{$user['username']}}">
                                 <span class="text-danger">{{$errors->first('user_name')}}</span>
                             </div>
                             <div class="from-group">
                                 <label>Organization Id</label></td>
-                                <input type="number" class="form-control" name="organization_id" id="organization_id" Value="{{old('organization_id')}}">
+                                <input type="number" class="form-control" name="organization_id" id="organization_id" Value="{{$user['organization_id']}}">
                                 <span class="text-danger">{{$errors->first('organization_id')}}</span>
                             </div>
                             
                             <div class="form-group">
                                  <label>password</label>
-                                <input type="password" class="form-control"  name="password" id="password" Value="{{old('password')}}">
+                                <input type="password" class="form-control"  name="password" id="password" Value="{{$user['password']}}">
                                 <span class="text-danger">{{$errors->first('password')}}</span>
                             </div>
                             <div class="form-group">
                                  <label>Confirm password</label>
-                                <input type="password" class="form-control"  name="confirm_password" id="password" Value="{{old('confirm_password')}}">
+                                <input type="password" class="form-control"  name="confirm_password" id="password" Value="{{$user['confirm_password']}}">
                                 <span class="text-danger">{{$errors->first('confirm_password')}}</span>
                             </div>
                             <div class="from-group">
@@ -110,51 +110,43 @@
                             </div>
                             <div class="form-group">
                                 <label>User Type</label>
-                                <select name="user_type" id="super" class="form-control" Value="{{old('user_type')}}">
-                                    <option value="product">Product manager</option>
-                                    <option value="hr">HR manager</option>
-                                    <option value="finance">Finance manager</option>
-                                    <option value="sales">Sales manager</option>
+                                <select name="user_type" id="super" class="form-control" Value="{{$user['type']}}">
+                                    <option value="Product">Product manager</option>
+                                    <option value="HR">HR manager</option>
+                                    <option value="Finance">Finance manager</option>
+                                    <option value="Sales">Sales manager</option>
                                 </select>
                                 <span class="text-danger">{{$errors->first('user_type')}}</span>
                             </div>
                             <div class="foem-group">
                                 <label>Present address</label></td>
-                                <input type="text" class="form-control" id="presentaddress" name="present_address" Value="{{old('present_address')}}">
+                                <input type="text" class="form-control" id="presentaddress" name="present_address" Value="{{$user['address']}}">
                                 <span class="text-danger">{{$errors->first('present_address')}}</span>
                             </div>
                             <div class="from-group">
                                  <label>Phone</label></td>
-                                <input type="number" class="form-control" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" Value="{{old('phone')}}">
+                                <input type="number" class="form-control" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" Value="{{$user['phone']}}">
                                 <span class="text-danger">{{$errors->first('phone')}}</span>
                             </div>
                             <div class="from-group">
                                 <label for="email">Email</label>
-                                <input type="email" class="form-control" id="EmailId" name="email" Value="{{old('email')}}">
+                                <input type="email" class="form-control" id="EmailId" name="email" Value="{{$user['email']}}">
                                 <span class="text-danger">{{$errors->first('email')}}</span>
                             </div>
                             <div class="from-group">
                                 <label>Job Position</label> 
-                                <input type="txt" class="form-control" id="position" name="job_position" Value="{{old('job_position')}}">
+                                <input type="txt" class="form-control" id="position" name="job_position" Value="{{$user['position']}}">
                                 <span class="text-danger">{{$errors->first('job_position')}}</span>
                             </div>
                             <div class="form-group">
                                 <label>Hour Worked(Per week)</label> 
-                                <input type="txt" class="form-control" id="worked" name="hour_worked" Value="{{old('hour_worked')}}" >
+                                <input type="txt" class="form-control" id="worked" name="hour_worked" Value="{{$user['work_hour']}}" >
                                 <span class="text-danger">{{$errors->first('hour_worked')}}</span>
                             </div>
                             
                             <br>
                             <div class="from-group">
-                            <td>Upload Image: </td>
-                                <td colspan='2'>
-                                    <input type="file" name="profile_image" Value="{{old('profile_image')}}">
-                                    <span class="text-danger">{{$errors->first('profile_image')}}</span>
-                                </td>
-                                    
-                            </div>
-                            <div class="from-group">
-                                <center><input class="btn btn-outline-primary btn-block w-50 mt-3" type="submit" value="Create User"></center>
+                                <center><input class="btn btn-outline-success btn-block w-50 mt-3" type="submit" value="update"></center>
                             </div>
                               
                         </form>

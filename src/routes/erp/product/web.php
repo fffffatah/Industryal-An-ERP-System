@@ -26,10 +26,9 @@ use App\Http\Controllers\WarehouseCreateController;
 Route::get('/', function () {
     return redirect() -> route('signin.index');  
 });
-
 Route::get('/',[ProductUserController::class, 'logout'])->name('user.logout');
 
-
+Route::group(["middleware" => "peroduct_session"],function () {
                                     // Products
 //Product
 Route::get('/product/home',[ProductHomeController::class, 'index'])->name('productHome.index');
@@ -75,7 +74,10 @@ Route::get('/product/user/activities',[ProductUserController::class, 'activities
 Route::post('/product/user/activities',[ProductUserController::class, 'activities']);
 
 Route::get('/product/user/leave',[ProductUserController::class, 'leave'])->name('userLeave.index');
+Route::post('/product/user/leave',[ProductUserController::class, 'verifyLeave']);
+
 Route::get('/product/user/administration',[ProductUserController::class, 'administration'])->name('userAdministration.index');
+Route::post('/product/user/administration',[ProductUserController::class, 'verifyAdministration']);
 
 //User
 Route::get('/product/user/profile',[ProductUserController::class, 'profile'])->name('userProfile.index');
@@ -97,3 +99,5 @@ Route::post('/product/user/edit/changePassword/verify',[ProductUserController::c
 Route::get('/product/list/good/export',[ProductListController::class, 'exportGoodProduct'])->name('productList.exportGoodProduct');
 Route::get('/product/list/faulty/export',[ProductListController::class, 'exportFaultyProduct'])->name('productList.exportFaultyProduct');
 Route::get('/warehouse/list/export',[WarehouseListController::class, 'exportWarehouseList'])->name('warehouseList.exportWarehouseList');
+
+});

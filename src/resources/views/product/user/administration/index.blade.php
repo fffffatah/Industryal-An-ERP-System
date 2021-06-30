@@ -25,7 +25,7 @@
                 <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown mr-3">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                    <i class="fas fa-user"></i> Welcome Username
+                    <i class="fas fa-user"></i> &nbsp {{session('username')}}
                     </a>
                     <div class="dropdown-menu mt-2 ml-3 bg-light">
                     <a href="{{route('userProfile.index')}}" class="dropdown-item">
@@ -81,12 +81,14 @@
                         <hr class="mb-4">
                         <div class="container">
                             <div class="text-left">
-                                <form action="">
+                                <form method="POST">
+                                    @csrf
                                     <table class="table table-striped table-bordered">
                                         <tr>
                                             <td>Message</td>
                                             <td>
-                                                <textarea type="text" name="" id="" class="form-control"> </textarea>  
+                                                <textarea type="text" name="message" id="" class="form-control"> </textarea>
+                                                <span class="text-danger">{{$errors->first('message')}}</span>  
                                             </td>
                                         </tr>
                                         <tr>

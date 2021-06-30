@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee group</title>
-   <!--  Bootstrap cdn -->
+    <title>User List</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
     crossorigin="anonymous">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
@@ -19,11 +18,11 @@
                     <h1 class="text-white"><i>Industryal</i></h1>
                 </div>
                 
-                <div class=" col-lg-3  ">
+                <div class="col-lg-3 ">
                     <ul class="nav justify-content-center ">
                         <li class="nav-item"><a class="nav-link text-white btn btn-outline-primary btn-block  mt-2" href="{{route('HRhome.index')}}"><i class="fas fa-home"></i>Home</a></li>
                         <span style="padding-right:7px;"></span>
-                        <li class="nav-item"><a class="nav-link text-white btn btn-outline-primary btn-block  mt-2 "href="{{route('HRuserProfile.details')}}"><i class="fas fa-user"></i>Profile</a></li>
+                        <li class="nav-item"><a class="nav-link text-white btn btn-outline-primary btn-block  mt-2" href="{{route('HRuserProfile.details')}}"><i class="fas fa-user"></i>Profile</a></li>
                         <span style="padding-right:7px;"></span>
                         <li class="nav-item"><a class="nav-link text-white btn btn-outline-primary btn-block mt-2" href="{{route('HRuserProfile.logout')}}"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
                     </ul>
@@ -45,67 +44,83 @@
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRLeave.leave')}}">Leave Request</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRLeave.leaveList')}}">Leave Request List</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRexpense.report')}}">Expense Report</a></li>
-                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRexpenseList.list')}}"> Expense Report List</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRexpenseList.list')}}"> Expense  Report List</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRExStatistic.statistic')}}">Expense Statistic</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRpayroll.show')}}">Payroll</a></li>
-                        
-
-
                     </ul>
                 </nav>
             </div>
             <div class="col-10">
-                <div class="info-section p-3 text-black my-5">
-                    <div class="title text-center mb-3">
-                        <h3 class="font-width-border"><i class="fas fa-users"></i>Employee Group</h3>
+                <h1 class="text-center"><i class="fas fa-user"></i>User </h1>
+                @if(session('msg'))
+                <div class="alert alert-success w-25">
+                    <strong>{{session('msg')}}</strong> 
+                </div>
+                 @endif
+                    <br>
+                    <table  class="table table-hover ">
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>User Name</th>
+                        <th>Gender</th>
+                        <th>User Type</th>
+                        <th>Address</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Job Position</th>
+                        <th>profile Pic</th>
+                        <th>Employment Start date</th>
+                     
+                      
+                        <tr>
+                            <td>{{$user['firstname']}}</td>
+                            <td>{{$user['lastname']}}</td>
+                            <td>{{$user['username']}}</td>
+                            <td>{{$user['gender']}}</td>
+                            <td>{{$user['type']}}</td>
+                            <td>{{$user['address']}}</td>
+                            <td>{{$user['phone']}}</td>
+                            <td>{{$user['email']}}</td>
+                            <td>{{$user['position']}}</td>
+                            <td>
+                                <img src="/upload/HR/{{$user['profile_pic']}}" alt="Profile" width="100" height="100"> 
+                                </td>
+                            <td>{{$user['created_at']}}</td>
+                        </tr>
+                       
+                    </table>
+                    <br>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <h3 class="text-dark">Are you sure to delete <i>{{$user['username']}}</i>?</h3>
+                        </div>
+                        <div class="row justify-content-center">
+                            <form method="POST">
+                             @csrf
+                                <input type="submit" value="Delete" class="btn btn-danger">
+                            </form> 
+                            <a href="{{route('HRuser.index')}}" class="btn btn-success ml-2">Back</a>
+                        </div>
                     </div>
-                    <div class="border border-primary w-75  m-auto">
-                        <form method="post" class="w-50 m-auto  " >
-                         @csrf  
-                            
-                            <div class="form-group">
-                                <label >Employee ID</label> 
-                                <input type="number" class="form-control" id="lastname" name="employee_id" Value="{{old('employee_id')}}">
-                                <span class="text-danger">{{$errors->first('employee_id')}}</span>
-                            </div>
-                            <div class="form-group">
-                                <label>Group</label>
-                                    <select name="employee_group" id="group" class="form-control" Value="{{old('employee_group')}}">
-                                    <option value="HR">Human Resource Department</option>
-                                        <option value="product">Product Department</option>
-                                        <option value="finance">Finance Department</option>
-                                        <option value="sales">Sales Department </option>
-                                    </select>
-                                    <span class="text-danger">{{$errors->first('employee_group')}}</span>
-                            </div>
-                            </div>
                     
-                                <center> <input class="btn btn-outline-success btn-block w-25 mt-3 "  type="submit" value="Add"></center>
-                            </div>
-                           
-                             
-                        </form>
-                        
-                   
+        
+           </div>
+            
+        </div>
+        <footer id="main-footer" class="bg-primary text-white mt-5 p-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <p class="lead text-center">
+                            Copyright &copy;
+                            <span >2021</span>
+                            Industryal
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-
-         <!-- Footer Starts-->
-    <footer id="main-footer" class="bg-primary text-white mt-5 p-2">
-        <div class="container">
-        <div class="row">
-            <div class="col">
-            <p class="lead text-center">
-                Copyright &copy;
-                <span >2021</span>
-                Industryal
-            </p>
-            </div>
-        </div>
-        </div>
-    </footer>
-    <!-- Footer Ends -->
+        </footer>
+    <!-- Footer Ends -->    
        
     
     

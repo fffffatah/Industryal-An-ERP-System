@@ -4,7 +4,7 @@ namespace App\Http\Requests\Product;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UserChangePasswordRequest extends FormRequest
+class UserProfilePicUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,8 +25,7 @@ class UserChangePasswordRequest extends FormRequest
     {
         return [
             "current_password" => "required",
-            "new_password" => "required|same:confirm_new_password|min:8",
-            "confirm_new_password" => "required|min:8",
+            "profile_pic" => "required",
         ];
     }
 }
