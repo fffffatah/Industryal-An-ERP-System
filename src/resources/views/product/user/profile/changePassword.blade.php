@@ -72,7 +72,11 @@
                                     <table class="table table-striped table-bordered">
                                         <tr>
                                             <td >Current Password: </td>
-                                            <td > <input type="password" class="form-control" name="current_password"> <span class="text-danger">{{$errors->first('current_password')}}</span></td>
+                                            <td > <input type="password" class="form-control" name="current_password"> <span class="text-danger">{{$errors->first('current_password')}}</span>
+                                            @if(session('msg'))
+                                                <span class="text-danger">{{session('msg')}}</span>
+                                            @endif
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td >New Password: </td>

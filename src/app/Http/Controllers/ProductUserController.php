@@ -148,7 +148,18 @@ class ProductUserController extends Controller
     }
     public function changePasswordVerify(UserChangePasswordRequest $req)
     {
-        return redirect()->route('userChangeProfileVerication.index');
+        $curr_pass = $req->current_password;
+        $username = session()->get('username');
+        $user = User::where('username', $username)->first();
+        if($curr_pass == $user->pass)
+        {
+            return redirect()->route('userChangeProfileVerication.index');
+        }
+        else
+        {
+            $req->session()->flash('msg','Wrong Current Password!');
+            return back();
+        }
     }
 
     // verfication code
