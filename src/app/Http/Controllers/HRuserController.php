@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\HR\HRuserCreateRequest;
+use Illuminate\Support\Facades\File;
 use App\Models\User;
 
 class HRuserController extends Controller
@@ -69,6 +70,23 @@ class HRuserController extends Controller
         $req->session()->flash('msg','User update successfully');
         return redirect()->route('HRuser.index');
 
+    }
+    public function userDelete($id)
+    {
+        $user=User::find($id);
+        return view('HR.User.userDelete')->with('user',$user);
+    }
+    public function userDestroy(Request $req,$id)
+    {
+        $user=User::where('id', $id)->first();
+        $imgpath = "upload/HR/".$user['profile_pic'];
+        if(File::exists($imgpath)) 
+        {
+            File::delete($imgpath);
+        }
+        User::where('id', $id)->delete();
+        $req->session()->flash('msg','Delete successfully');
+        return redirect()->route('HRuser.index');
     }
 
 }

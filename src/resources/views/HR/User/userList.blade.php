@@ -96,7 +96,7 @@
                             
                             <td>
                                 <a href="/HR/user/edit/{{$user['id']}}" class="btn btn-success m-1"> Update </a>
-                                <a href="#" class="btn btn-danger m-1"> Delete </a>
+                                <a href="/HR/user/delete/{{$user['id']}}" class="btn btn-danger m-1"> Delete </a>
                            
                             </td>
                         </tr>

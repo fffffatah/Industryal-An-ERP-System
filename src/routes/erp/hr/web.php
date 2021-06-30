@@ -37,6 +37,8 @@ Route::get('/HR/user/create',[HRuserController::class,'create'])->name('HRuser.c
 Route::post('/HR/user/create',[HRuserController::class,'verify']);
 Route::get('/HR/user/edit/{id}',[HRuserController::class,'userEdit'])->name('HRuser.userEdit');
 Route::post('/HR/user/edit/{id}',[HRuserController::class,'userUpdate']);
+Route::get('/HR/user/delete/{id}',[HRuserController::class,'userDelete'])->name('HRuser.userDelete');
+Route::post('/HR/user/delete/{id}',[HRuserController::class,'userDestroy']);
 
 
 Route::get('/HR/user/list',[HRuserController::class,'index'])->name('HRuser.index');
