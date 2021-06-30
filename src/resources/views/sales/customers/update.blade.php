@@ -63,6 +63,7 @@
                   </div>
                   <button type="submit" class="btn btn-info">Update Profile</button>
                   <button type="button" class="btn btn-info" onclick="document.location='{{route('sales.profile.edit.password')}}'">Change Password</button>
+                  {{-- <span style="font-weight: bold" class="text-danger">{{session('msg')}}</span> --}}
                   <div class="clearfix"></div>
                 </form>
               </div>

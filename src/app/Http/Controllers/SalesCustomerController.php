@@ -34,7 +34,9 @@ class SalesCustomerController extends Controller
         $customer->delivery_point = $req->cus_del;
         $customer->updated_at = date('Y-m-d');
         $customer->save();
-        return view('sales.mail.send')->flash('status', 'Task was successful!');
+        $req->session()->flash('successful', 'Successfully updated!');
+        // return view('sales/customers/update/');
+        return redirect()->route('sales.customers.list');
     }
 
     // public function updateProduct(ProductCreateRequest $req,$id)

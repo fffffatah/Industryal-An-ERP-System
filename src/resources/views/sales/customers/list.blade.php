@@ -1,4 +1,5 @@
 @include('sales.layouts.header')
+<span align="center" style="font-weight: bold;padding-left:150px;" class="text-success">{{session('successful')}}</span>
 <table class="table table-hover table-bordered" style="width: 80%" align="center">
     <thead>
       <tr>
@@ -7,6 +8,8 @@
         <th scope="col">Email</th>
         <th scope="col">Contact Number</th>
         <th scope="col">First Purchase</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
