@@ -1,18 +1,22 @@
 <?php
- 
+
 namespace App\Http\Controllers;
- 
+
 use Illuminate\Http\Request;
 use App\Models\User;
- 
+
 class SigninController extends Controller
 {
     public function index(){
+        if(session()->has('login'))
+        {
+            return back();
+        }
         return view('common.signin.index');
     }
     //Dummy Verifcation
     public function verify(Request $req){
- 
+
         $user = User::where('email',$req->email)->where('pass',$req->pass)->first();
         if($user)
         {
@@ -23,19 +27,25 @@ class SigninController extends Controller
                 //Redirect to Sales Dashboard
             }
             elseif ($user->type == 'product') {
+                $req->session()->put('login','1');
+                $req->session()->put('email',$req->email);
                 return redirect()->route('productHome.index');
             }
-            elseif ($user->type == 'HR') {
+            elseif ($user->type == 'hr') {
+                //Redirect to HR Dashboard
                 return redirect()->route('HRhome.index');
             }
             elseif ($user->type == 'finance') {
+                $req->session()->put('id', $user->id);
+                $req->session()->put('email', $user->email);
+                $req->session()->put('type', $user->type);
                 return redirect()->route('finance.dashboard.index');
             }
         }
         else
         {
-            return back();
+            $req->session()->flash('msg', 'Invaild Username or Password');
+            return redirect()->route('login.index');
         }
     }
 }
- 

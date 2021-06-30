@@ -111,10 +111,10 @@
                             <div class="form-group">
                                 <label>User Type</label>
                                 <select name="user_type" id="super" class="form-control" Value="{{old('user_type')}}">
-                                    <option value="Product">Product manager</option>
-                                    <option value="HR">HR manager</option>
-                                    <option value="Finance">Finance manager</option>
-                                    <option value="Sales">Sales manager</option>
+                                    <option value="product">Product manager</option>
+                                    <option value="hr">HR manager</option>
+                                    <option value="finance">Finance manager</option>
+                                    <option value="sales">Sales manager</option>
                                 </select>
                                 <span class="text-danger">{{$errors->first('user_type')}}</span>
                             </div>

@@ -35,7 +35,7 @@ class HRuserController extends Controller
         $user->work_hour=$req->hour_worked;
         //$user->organization_id=$req->organization_id;
         $user->profile_pic = $req->user_name.'.'.$img->getClientOriginalExtension();
-        $img->move('upload/HR', $req->user_name.'.'.$img->getClientOriginalExtension());
+        $img->move('upload/User', $req->user_name.'.'.$img->getClientOriginalExtension());
 
        
         $user->save();
@@ -79,7 +79,7 @@ class HRuserController extends Controller
     public function userDestroy(Request $req,$id)
     {
         $user=User::where('id', $id)->first();
-        $imgpath = "upload/HR/".$user['profile_pic'];
+        $imgpath = "upload/User/".$user['profile_pic'];
         if(File::exists($imgpath)) 
         {
             File::delete($imgpath);
