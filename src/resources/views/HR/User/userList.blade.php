@@ -52,6 +52,11 @@
             </div>
             <div class="col-10">
                 <h1 class="text-center"><i class="fas fa-address-book"></i>User List</h1>
+                @if(session('msg'))
+                <div class="alert alert-success w-25">
+                    <strong>{{session('msg')}}</strong> 
+                </div>
+                 @endif
                 <hr class="mb-4">
                 <div class="input-group">
                     <input class="form-control" type="text" placeholder="Find By Name...">
@@ -64,15 +69,40 @@
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>User Name</th>
-                        <th>Password</th>
                         <th>Gender</th>
-                        <th>Supervisor</th>
+                        <th>User Type</th>
                         <th>Address</th>
                         <th>Phone</th>
                         <th>Email</th>
                         <th>Job Position</th>
+                        <th>profile Pic</th>
                         <th>Employment Start date</th>
+                        <th>Action</th>
+                        @foreach($userList as $user)
+                        <tr>
+                            <td>{{$user['firstname']}}</td>
+                            <td>{{$user['lastname']}}</td>
+                            <td>{{$user['username']}}</td>
+                            <td>{{$user['gender']}}</td>
+                            <td>{{$user['type']}}</td>
+                            <td>{{$user['address']}}</td>
+                            <td>{{$user['phone']}}</td>
+                            <td>{{$user['email']}}</td>
+                            <td>{{$user['position']}}</td>
+                            <td>
+                                <img src="/upload/HR/{{$user['profile_pic']}}" alt="Profile" width="100" height="100"> 
+                                </td>
+                            <td>{{$user['created_at']}}</td>
+                            
+                            <td>
+                                <a href="/HR/user/edit/{{$user['id']}}" class="btn btn-success m-1"> Update </a>
+                                <a href="/HR/user/delete/{{$user['id']}}" class="btn btn-danger m-1"> Delete </a>
+                           
+                            </td>
+                        </tr>
+                        @endforeach
                     </table>
+                    
         
            </div>
             

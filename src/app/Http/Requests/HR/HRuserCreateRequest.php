@@ -36,8 +36,7 @@ class HRuserCreateRequest extends FormRequest
             "email" => "required|string|email",
             "job_position" => "required",
             "hour_worked" => "required|numeric",
-            "employment_start_date" =>"required|date",
-            "image"=>"required|mimes:jpeg,bmp,png"
+            "profile_pic"=>"mimes:jpeg,bmp,png"
         ];
     }
 }
