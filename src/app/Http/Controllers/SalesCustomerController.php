@@ -27,8 +27,14 @@ class SalesCustomerController extends Controller
 
     public function updateCustomer(SalesCustomerUpdateRequest $req,$id) 
     {
-        $customer = Customer::where('id');
-        return view('sales.mail.send');
+        $customer = Customer::where('id', $id)->first();
+        $customer->name = $req->cus_name;
+        $customer->email = $req->cus_email;
+        $customer->phone = $req->cus_phone;
+        $customer->delivery_point = $req->cus_del;
+        $customer->updated_at = date('Y-m-d');
+        $customer->save();
+        return view('sales.mail.send')->flash('status', 'Task was successful!');
     }
 
     // public function updateProduct(ProductCreateRequest $req,$id)

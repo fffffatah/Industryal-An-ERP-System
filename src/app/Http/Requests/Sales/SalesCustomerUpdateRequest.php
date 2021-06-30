@@ -24,7 +24,8 @@ class SalesCustomerUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            "cus_name" => "required|alpha",
+            "cus_name" => "required",
+            "cus_name" => "regex:/^[a-zA-Z ]*$/",
             "cus_email" => "required",
             "cus_phone" => "required",
             "cus_del" => "required|max:10000",
@@ -35,7 +36,7 @@ class SalesCustomerUpdateRequest extends FormRequest
     {
         return [
             "cus_name.required" => "Please enter a name",
-            "cus_name.alpha" => "Please enter only alphabets",
+            "cus_name.regex" => "Please enter only alphabets",
             "cus_email.required" => "Please enter an email",
             "cus_phone.required" => "Please enter a phone number",
             "cus_del.required" => "Please enter a delivery point",
