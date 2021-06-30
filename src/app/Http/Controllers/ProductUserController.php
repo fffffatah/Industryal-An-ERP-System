@@ -15,6 +15,7 @@ use App\Models\Leave;
 
 class ProductUserController extends Controller
 {
+    // show activities
     public function activities(Request $req)
     {
         if($req->searchActivity)
@@ -28,6 +29,8 @@ class ProductUserController extends Controller
             return view('product.user.activities.index')->with('allActivities', $allActivities);
         }
     }
+
+    // leave request
     public function leave()
     {
         return view('product.user.leave.index');
@@ -58,6 +61,8 @@ class ProductUserController extends Controller
         $req->session()->flash('msg', 'Leave request sent to HR');
         return back();
     }
+
+    // contact administration
     public function administration()
     {
         return view('product.user.administration.index');
@@ -66,45 +71,82 @@ class ProductUserController extends Controller
     {
         
     }
+
+    // show profile
     public function profile()
     {
         $username = session()->get('username');
         $user = User::where('username', $username)->first();
         return view('product.user.profile.index')->with('userDetails', $user);
     }
+
+    // edit profile
     public function editProfile()
     {
-        return view('product.user.profile.edit');
+        $username = session()->get('username');
+        $user = User::where('username', $username)->first();
+        return view('product.user.profile.edit')->with('userDetails', $user);
     }
     public function editProfileVerify(UserEditProfileRequest $req)
     {
-        return redirect()->route('userProfile.index');
+        $curr_pass = $req->current_password;
+        $username = session()->get('username');
+        $user = User::where('username', $username)->first();
+        if($curr_pass == $user->pass)
+        {
+            $user->firstname = $req->firstname;
+            $user->lastname = $req->lastname;
+            $user->phone = $req->phone;
+            $user->email = $req->email;
+            $user->address = $req->address;
+            $user->save();
+            $req->session()->flash('msg','Profile Updated!');
+            return redirect()->route('userProfile.index');
+        }
+        else
+        {
+            $req->session()->flash('msg','Wrong Current Password!');
+            return back();
+        }
     }
+
+    // edit profile picture
     public function editProfilePicture()
     {
-        return view('product.user.profile.editProfilePicture');
+        $username = session()->get('username');
+        $user = User::where('username', $username)->first();
+        return view('product.user.profile.editProfilePicture')->with('userDetails', $user);
     }
     public function editProfilePictureVerify(UserEditProfileRequest $req)
     {
-        return redirect()->route('userProfile.index');
+        
     }
+
+    // change password
     public function changePassword()
     {
-        return view('product.user.profile.changePassword');
+        $username = session()->get('username');
+        $user = User::where('username', $username)->first();
+        return view('product.user.profile.changePassword')->with('userDetails', $user);
     }
     public function changePasswordVerify(UserChangePasswordRequest $req)
     {
         return redirect()->route('userChangeProfileVerication.index');
     }
+
+    // verfication code
     public function verification()
     {
-        return view('product.user.profile.verificationCode');
+        $username = session()->get('username');
+        $user = User::where('username', $username)->first();
+        return view('product.user.profile.verificationCode')->with('userDetails', $user);
     }
     public function verificationVerify(UserCodeRequest $req)
     {
         return redirect()->route('userProfile.index');
     }
 
+    // logout
     public function logout()
     {
         session()->flush();
