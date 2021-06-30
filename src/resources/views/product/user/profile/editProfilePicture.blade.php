@@ -51,7 +51,8 @@
             <div class="row mt-2 justify-content-around">
                 <div class="col-12 col-lg-2 border border-dark bg-light rounded p-3">
                         <div class="text-left mt-2 rounded">
-                            <h4>Username</h4>
+                            <img src="/upload/Users/{{$userDetails['profile_pic']}}" alt="{{$userDetails['profile_pic']}}" width="200" height="200">
+                            <h4>{{$userDetails['username']}}</h4>
                             <a href="{{route('userEditProfile.index')}}" class="btn btn-primary btn-sm mb-2">Edit Profile</a> <br>
                             <a href="{{route('userEditProfilePicture.index')}}" class="btn btn-warning btn-sm mb-2">Update Profile Picture</a> <br>
                             <a href="{{route('userChangePassword.index')}}" class="btn btn-danger btn-sm mb-2">Change Password</a> <br>
@@ -66,20 +67,24 @@
                         <hr class="mb-4">
                         <div class="container">
                             <div class="text-left">
-                                <form method="POST">
+                                <form method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <table class="table table-striped table-bordered">
                                         <tr>
                                             <td>Upload Image: </td>
                                             <td colspan='2'>
-                                                <input class="form-control" type="file" id="myfile">
+                                                <input class="form-control" type="file" id="myfile" name="profile_pic">
+                                                <span class="text-danger">{{$errors->first('profile_pic')}}</span>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>Current Password</td>
                                             <td>
-                                                <input type="text" class="form-control" name="current_password">
+                                                <input type="password" class="form-control" name="current_password">
                                                 <span class="text-danger">{{$errors->first('current_password')}}</span>
+                                                @if(session('msg'))
+                                                    <span class="text-danger">{{session('msg')}}</span>
+                                                @endif
                                             </td>
                                         </tr>
                                         <tr>

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\Product\UserChangePasswordRequest;
 use App\Http\Requests\Product\UserEditProfileRequest;
+use App\Http\Requests\Product\UserProfilePicUpdateRequest;
 use App\Http\Requests\Product\UserCodeRequest;
 use App\Http\Requests\Product\LeaveRequest;
 use App\Http\Requests\Product\ContactRequest;
@@ -117,9 +118,25 @@ class ProductUserController extends Controller
         $user = User::where('username', $username)->first();
         return view('product.user.profile.editProfilePicture')->with('userDetails', $user);
     }
-    public function editProfilePictureVerify(UserEditProfileRequest $req)
+    public function editProfilePictureVerify(UserProfilePicUpdateRequest $req)
     {
-        
+        $curr_pass = $req->current_password;
+        $username = session()->get('username');
+        $user = User::where('username', $username)->first();
+        if($curr_pass == $user->pass)
+        {
+            $img = $req->file('profile_pic');
+            $user->profile_pic = $username.'.'.$img->getClientOriginalExtension();
+            $user->save();
+            $img->move('upload/Users', $username.'.'.$img->getClientOriginalExtension());
+            $req->session()->flash('msg','Profile Updated!');
+            return redirect()->route('userProfile.index');
+        }
+        else
+        {
+            $req->session()->flash('msg','Wrong Current Password!');
+            return back();
+        }
     }
 
     // change password
