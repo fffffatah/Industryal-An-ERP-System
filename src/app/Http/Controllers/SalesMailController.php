@@ -18,7 +18,7 @@ class SalesMailController extends Controller
     public function allMail()
     {
         $mails = MailModel::all();
-        $customers = CustomerModel::all();
+        // $customers = CustomerModel::all();
         return view('sales.mail.all')->with('mails', $mails);//->with('customers', $customers);
         //return view('sales.mail.all');
     }

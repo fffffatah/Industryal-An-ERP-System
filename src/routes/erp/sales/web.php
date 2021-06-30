@@ -39,9 +39,9 @@ Route::post('/sales/customers/update/{id}',[SalesCustomerController::class, 'upd
 
 //Orders
 Route::get('/sales/orders/',[SalesOrderController::class, 'ordersList'])->name('sales.orders.list');
-Route::get('/sales/orders/create',[SalesOrderController::class, 'showCustomersList'])->name('sales.orders.create');
+Route::get('/sales/orders/create',[SalesOrderController::class, 'createOrder'])->name('sales.orders.create');
 Route::get('/sales/orders/list',[SalesOrderController::class, 'ordersList'])->name('sales.orders.list');
-Route::get('/sales/orders/transactions',[SalesOrderController::class, 'ordersList'])->name('orders.transactions');
+Route::get('/sales/orders/transactions',[SalesOrderController::class, 'transactionsList'])->name('sales.orders.transactions');
 
 
 //Customer Mails
