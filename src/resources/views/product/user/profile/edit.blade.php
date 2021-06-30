@@ -25,7 +25,7 @@
                 <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown mr-3">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                    <i class="fas fa-user"></i> Welcome Username
+                    <i class="fas fa-user"></i> &nbsp {{session('username')}}
                     </a>
                     <div class="dropdown-menu mt-2 ml-3 bg-light">
                     <a href="{{route('userProfile.index')}}" class="dropdown-item">
@@ -51,7 +51,8 @@
             <div class="row mt-2 justify-content-around">
                 <div class="col-12 col-lg-2 border border-dark bg-light rounded p-3">
                         <div class="text-left mt-2 rounded">
-                            <h4>Username</h4>
+                            <img src="/upload/Users/{{$userDetails['profile_pic']}}" alt="{{$userDetails['profile_pic']}}" width="200" height="200">
+                            <h4>{{$userDetails['username']}}</h4>
                             <a href="{{route('userEditProfile.index')}}" class="btn btn-primary btn-sm mb-2">Edit Profile</a> <br>
                             <a href="{{route('userEditProfilePicture.index')}}" class="btn btn-warning btn-sm mb-2">Update Profile Picture</a> <br>
                             <a href="{{route('userChangePassword.index')}}" class="btn btn-danger btn-sm mb-2">Change Password</a> <br>
@@ -72,32 +73,35 @@
                                         <tr>
                                             <td >First Name: </td>
                                             <td>
-                                                <input type="text" value="Gennady" class="form-control">
+                                                <input type="text" value="{{$userDetails['firstname']}}" class="form-control" name="firstname">
                                             </td>
                                         </tr>
                                         <tr>
                                             <td >Last Name: </td>
                                             <td > <input type="text" value
-                                            ="Korotkevich" class="form-control"> </td>
+                                            ="{{$userDetails['lastname']}}" class="form-control" name="lastname"> </td>
                                         </tr>
                                         <tr>
                                             <td >Phone Number: </td>
-                                            <td > <input type="number" value
-                                            ="+8968745132" class="form-control"> </td>
+                                            <td > <input type="text" value
+                                            ="{{$userDetails['phone']}}" class="form-control" name="phone"> </td>
                                         </tr>
                                         <tr>
                                             <td >Email: </td>
                                             <td > <input type="email" value
-                                            ="Gennady@industryal.com" class="form-control"> </td>
+                                            ="{{$userDetails['email']}}" class="form-control" name="email"> </td>
                                         </tr>
                                         <tr>
                                             <td >Address: </td>
-                                            <td > <textarea name="address" id="" cols="30" rows="2" class="form-control">Russia</textarea> </td>
+                                            <td > <textarea name="address" id="" cols="30" rows="2" class="form-control">{{$userDetails['address']}}</textarea> </td>
                                         </tr>
                                         <tr>
                                             <td >Current Password: </td>
                                             <td > <input type="password" class="form-control" name="current_password">
                                             <span class="text-danger">{{$errors->first('current_password')}}</span>
+                                            @if(session('msg'))
+                                                <span class="text-danger">{{session('msg')}}</span>
+                                            @endif
                                             </td>
                                         </tr>
                                         <tr>

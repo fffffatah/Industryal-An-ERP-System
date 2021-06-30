@@ -25,7 +25,7 @@
                 <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown mr-3">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                    <i class="fas fa-user"></i> Welcome Username
+                    <i class="fas fa-user"></i> &nbsp {{session('username')}}
                     </a>
                     <div class="dropdown-menu mt-2 ml-3 bg-light">
                     <a href="{{route('userProfile.index')}}" class="dropdown-item">
@@ -79,6 +79,13 @@
                             </div>
                         </div>
                         <hr class="mb-4">
+                        <div class="container">
+                            <div class="row justify-content-center mb-2">
+                                @if(session('msg'))
+                                <span class="alert alert-success">{{session('msg')}}</span>
+                                @endif
+                            </div>
+                        </div>
                         <div class="container">
                             <div class="text-left">
                                 <form method="POST">
