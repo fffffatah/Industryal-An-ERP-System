@@ -52,6 +52,11 @@
             </div>
             <div class="col-10">
                 <h1 class="text-center"><i class="fas fa-address-book"></i>User List</h1>
+                @if(session('msg'))
+                <div class="alert alert-success w-25">
+                    <strong>{{session('msg')}}</strong> 
+                </div>
+                 @endif
                 <hr class="mb-4">
                 <div class="input-group">
                     <input class="form-control" type="text" placeholder="Find By Name...">
@@ -90,7 +95,7 @@
                             <td>{{$user['created_at']}}</td>
                             
                             <td>
-                                <a href="#" class="btn btn-success m-1"> Update </a>
+                                <a href="/HR/user/edit/{{$user['id']}}" class="btn btn-success m-1"> Update </a>
                                 <a href="#" class="btn btn-danger m-1"> Delete </a>
                            
                             </td>

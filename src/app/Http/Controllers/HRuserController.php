@@ -38,10 +38,37 @@ class HRuserController extends Controller
 
        
         $user->save();
-        //$req->session()->flash('msg','Employee create successfully');
-
-
+        $req->session()->flash('msg','User create successfully');
         return redirect()->route('HRuser.index');
+    }
+    public function userEdit($id)
+    {
+        $user = User::find($id);
+        return view('HR.User.userEdit')->with('user',$user);
+    }
+    public function userUpdate(Request $req,$id)
+    {
+       
+        $user=User::find($id);
+        $user->firstname=$req->first_name;
+        $user->lastname=$req->last_name;
+        $user->username=$req->user_name;
+        $user->email=$req->email;
+        $user->phone=$req->phone;
+        $user->address=$req->present_address;
+        $user->gender=$req->gender;
+        $user->position=$req->job_position;
+        $user->type=$req->user_type;
+        $user->pass=$req->password;
+        $user->work_hour=$req->hour_worked;
+        //$user->organization_id=$req->organization_id;
+        
+
+       
+        $user->save();
+        $req->session()->flash('msg','User update successfully');
+        return redirect()->route('HRuser.index');
+
     }
 
 }

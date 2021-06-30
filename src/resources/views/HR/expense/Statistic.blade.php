@@ -99,6 +99,7 @@
 
         var options = {
           title: 'Monthly Expense report',
+          is3D:true,
          
         };
 
