@@ -33,7 +33,6 @@ class SigninController extends Controller
             }
             elseif ($user->type == 'hr') {
                 //Redirect to HR Dashboard
-                return redirect()->route('HRhome.index');
             }
             elseif ($user->type == 'finance') {
                 $req->session()->put('id', $user->id);
