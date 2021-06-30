@@ -12,24 +12,27 @@
                 <p class="card-category">Update Customer's Profile</p>
               </div>
               <div class="card-body" style="width:100%">
-                <form>
+                <form method="POST">
+                    @csrf
+
                   <div class="row">
                     <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating">ID</label>
-                          <input type="text" class="form-control" value={{$customer['id']}} disabled>
+                          <input type="text" class="form-control" name="cus_id" value={{$customer['id']}} disabled>
                         </div>
                       </div>
                     <div class="col-md-5">
                       <div class="form-group">
                         <label class="bmd-label-floating">Full Name</label>
-                        <input type="text" class="form-control" value="{{$customer['name']}}">
+                        <input type="text" class="form-control" name="cus_name" value="{{$customer['name']}}">
+                        <span style="font-weight: bold" class="text-danger">{{$errors->first('cus_name')}}</span>
                       </div>
                     </div>
                     <div class="col-md-4">
                       <div class="form-group">
                         <label class="bmd-label-floating">First Purchase</label>
-                        <input type="email" class="form-control" value="{{$customer['first_purchase']}}">
+                        <input type="text" class="form-control" value="{{$customer['first_purchase']}}" disabled>
                       </div>
                     </div>
                   </div>
@@ -37,13 +40,15 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label class="bmd-label-floating">Phone Number</label>
-                        <input type="text" class="form-control" value="{{$customer['phone']}}">
+                        <input type="text" class="form-control" name="cus_phone" value="{{$customer['phone']}}">
+                        <span style="font-weight: bold" class="text-danger">{{$errors->first('cus_phone')}}</span>
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
                         <label class="bmd-label-floating">Email address</label>
-                        <input type="text" class="form-control" value="{{$customer['email']}}">
+                        <input type="text" class="form-control" name="cus_email" value="{{$customer['email']}}">
+                        <span style="font-weight: bold" class="text-danger">{{$errors->first('cus_email')}}</span>
                       </div>
                     </div>
                   </div>
@@ -51,7 +56,8 @@
                     <div class="col-md-12">
                       <div class="form-group">
                         <label class="bmd-label-floating">Delivery To</label>
-                        <textarea rows="3" class="form-control">{{$customer['delivery_point']}}</textarea>
+                        <textarea rows="3"name="cus_del"  class="form-control">{{$customer['delivery_point']}}</textarea>
+                        <span style="font-weight: bold" class="text-danger">{{$errors->first('cus_del')}}</span>
                       </div>
                     </div>
                   </div>
