@@ -71,7 +71,7 @@
                             <div class="form-group">
                                 <label>Group</label>
                                     <select name="employee_group" id="group" class="form-control" Value="{{old('employee_group')}}">
-                                    <option value="Huamn">Human Resource Department</option>
+                                    <option value="HR">Human Resource Department</option>
                                         <option value="product">Product Department</option>
                                         <option value="finance">Finance Department</option>
                                         <option value="sales">Sales Department </option>

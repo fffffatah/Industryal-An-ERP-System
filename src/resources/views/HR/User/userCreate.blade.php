@@ -60,7 +60,7 @@
                         <h3 class="font-width-border"><i class="far fa-plus-square"></i>User Information</h3>
                     </div>
                     <div class="border border-primary w-75  m-auto">
-                        <form method="post" class="w-50 m-auto  " >
+                        <form method="post" class="w-50 m-auto"  enctype="multipart/form-data" >
                         @csrf
                            
                             <div class="form-group">
@@ -78,6 +78,12 @@
                                 <input type="text" class="form-control" name="user_name" id="uname" Value="{{old('user_name')}}">
                                 <span class="text-danger">{{$errors->first('user_name')}}</span>
                             </div>
+                            <div class="from-group">
+                                <label>Organization Id</label></td>
+                                <input type="number" class="form-control" name="organization_id" id="organization_id" Value="{{old('organization_id')}}">
+                                <span class="text-danger">{{$errors->first('organization_id')}}</span>
+                            </div>
+                            
                             <div class="form-group">
                                  <label>password</label>
                                 <input type="password" class="form-control"  name="password" id="password" Value="{{old('password')}}">
@@ -105,10 +111,10 @@
                             <div class="form-group">
                                 <label>User Type</label>
                                 <select name="user_type" id="super" class="form-control" Value="{{old('user_type')}}">
-                                    <option value="Product_manager">Product manager</option>
-                                    <option value="HR_manager">HR manager</option>
-                                    <option value="Finance_manager">Finance manager</option>
-                                    <option value="Sales_manager">Sales manager</option>
+                                    <option value="Product">Product manager</option>
+                                    <option value="HR">HR manager</option>
+                                    <option value="Finance">Finance manager</option>
+                                    <option value="Sales">Sales manager</option>
                                 </select>
                                 <span class="text-danger">{{$errors->first('user_type')}}</span>
                             </div>
@@ -137,16 +143,14 @@
                                 <input type="txt" class="form-control" id="worked" name="hour_worked" Value="{{old('hour_worked')}}" >
                                 <span class="text-danger">{{$errors->first('hour_worked')}}</span>
                             </div>
-                            <div class="from-group">
-                                <label>Employment start date</label>
-                                <input type="date" class="form-control" id="hiredate" name="employment_start_date" Value="{{old('employment_start_date')}}">
-                                <span class="text-danger">{{$errors->first('employment_start_date')}}</span>
-                            </div>
+                            
                             <br>
                             <div class="from-group">
-                                <label for="myfile">Choose Image</label>
-                                <input type="file" id="myfile" name="image" class="form-controll" Value="{{old('image')}}">
-                                <span class="text-danger">{{$errors->first('image')}}</span>
+                            <td>Upload Image: </td>
+                                <td colspan='2'>
+                                    <input type="file" name="profile_image" Value="{{old('profile_image')}}">
+                                    <span class="text-danger">{{$errors->first('profile_image')}}</span>
+                                </td>
                                     
                             </div>
                             <div class="from-group">
