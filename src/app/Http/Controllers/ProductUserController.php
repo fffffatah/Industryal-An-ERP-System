@@ -68,7 +68,9 @@ class ProductUserController extends Controller
     }
     public function profile()
     {
-        return view('product.user.profile.index');
+        $username = session()->get('username');
+        $user = User::where('username', $username)->first();
+        return view('product.user.profile.index')->with('userDetails', $user);
     }
     public function editProfile()
     {
