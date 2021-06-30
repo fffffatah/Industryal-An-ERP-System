@@ -43,7 +43,8 @@ class SigninController extends Controller
         }
         else
         {
-            return back();
+            $req->session()->flash('msg', 'Invaild Username or Password');
+            return redirect()->route('login.index');
         }
     }
 }

@@ -12,7 +12,6 @@
             @csrf
                 <table>
                     <tr>
-                        <td style="padding:20px;"><img src="{{ asset('assets/industryal-logo.png') }}"; width="300" height="400"></td>
                         <td align="center" style="padding:20px;">
                             <div class="card border-success mb3 dropshadow" style="height:350px;width:250px">
                                 <div class="card-header">Login</div>
@@ -36,7 +35,6 @@
                                 <div class="card-body">
                                     <div class="btn-group-vertical">
                                         <a class="btn btn-info text-left" href="{{route('signup.admin')}}"><i class="fas fa-user"></i> As Admin</a>
-                                        <a class="btn btn-info text-left" href="{{route('signup.employee')}}"><i class="fas fa-users"></i> As Employee</a><!--ADD YOUR HYPERLINK-->
                                     </div>
                                 </div>
                             </div>
@@ -44,6 +42,7 @@
                     </tr>
                 </table>
             </form>
+            {{session('msg')}}
         </center>
     </body>
 </html>
