@@ -35,9 +35,9 @@ class SigninController extends Controller
                 //Redirect to HR Dashboard
             }
             elseif ($user->type == 'finance') {
-                $req->session()->put('id',$req->id);
-                $req->session()->put('email',$req->email);
-                $req->session()->put('type',$user->type);
+                $req->session()->put('id', $user->id);
+                $req->session()->put('email', $user->email);
+                $req->session()->put('type', $user->type);
                 return redirect()->route('finance.dashboard.index');
             }
         }
