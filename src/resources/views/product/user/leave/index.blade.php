@@ -80,6 +80,13 @@
                         </div>
                         <hr class="mb-4">
                         <div class="container">
+                            <div class="row justify-content-center mb-2">
+                                @if(session('msg'))
+                                <span class="alert alert-success">{{session('msg')}}</span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="container">
                             <div class="text-left">
                                 <form method="POST">
                                     @csrf
