@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use App\Http\Requests\Sales\SalesCustomerUpdateRequest;
 use Illuminate\Http\Request;
 use App\Models\Sales\CustomerModel;
@@ -37,6 +37,15 @@ class SalesCustomerController extends Controller
         $req->session()->flash('successful', 'Successfully updated!');
         // return view('sales/customers/update/');
         return redirect()->route('sales.customers.list');
+    }
+
+    public function createCustomer() 
+    {
+        // $customers = CustomerModel::all();
+        $lastCustomer = DB::table('customers')->latest('id')->first();
+        // $customers->save();
+        // $id = $customers->id;
+        return view('sales.customers.create')->with('id', strval(intval($lastCustomer->id)+1));
     }
 
     // public function updateProduct(ProductCreateRequest $req,$id)
