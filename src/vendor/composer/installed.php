@@ -5,11 +5,20 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'feb400f6b7e4a04b1aa6c0ee4475d76e3b01a572',
+        'reference' => 'd93eb4751d41a34249cf803a0542256e59ff32b9',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
     'versions' => array(
+        'anhskohbo/no-captcha' => array(
+            'pretty_version' => '3.3.0',
+            'version' => '3.3.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../anhskohbo/no-captcha',
+            'aliases' => array(),
+            'reference' => 'f654a4093bd2e9ddbdfad3297bb7aa142a55e611',
+            'dev_requirement' => false,
+        ),
         'asm89/stack-cors' => array(
             'pretty_version' => 'v2.0.3',
             'version' => '2.0.3.0',
@@ -409,7 +418,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'feb400f6b7e4a04b1aa6c0ee4475d76e3b01a572',
+            'reference' => 'd93eb4751d41a34249cf803a0542256e59ff32b9',
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(

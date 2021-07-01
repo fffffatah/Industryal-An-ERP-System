@@ -77,6 +77,9 @@
                                         <tr>
                                             <td > <input type="password" class="form-control" placeholder="Verification Code" name="verification_code">
                                             <span class="text-danger">{{$errors->first('verification_code')}}</span>
+                                            @if(session('msg'))
+                                                <span class="text-danger">{{session('msg')}}</span>
+                                            @endif
                                             </td>
                                         </tr>
                                         <tr>

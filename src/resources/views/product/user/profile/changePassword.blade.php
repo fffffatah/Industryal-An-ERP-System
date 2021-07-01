@@ -91,6 +91,19 @@
                                             </td>
                                         </tr>
                                         <tr>
+                                            <td colspan="2" align="center">
+                                                {!! NoCaptcha::renderJs() !!}
+                                                @if ($errors->has('g-recaptcha-response'))
+                                                <span class="help-block">
+                                                    <strong class="text-danger">{{ $errors->first('g-recaptcha-response') }}</strong>
+                                                    <br>
+                                                </span>
+                                                @endif
+                                                {!! NoCaptcha::display() !!}
+                                                {{ csrf_field() }}
+                                            </td>
+                                        </tr>
+                                        <tr>
                                             <td colspan='2' align='center'>
                                             <input type="submit" value="Proceed &nbsp  &#8594;" class="btn btn-success" style="width:400px">
                                             </td>
