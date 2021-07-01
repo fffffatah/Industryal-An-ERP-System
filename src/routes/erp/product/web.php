@@ -75,6 +75,7 @@ Route::post('/product/user/activities',[ProductUserController::class, 'activitie
 
 Route::get('/product/user/leave',[ProductUserController::class, 'leave'])->name('userLeave.index');
 Route::post('/product/user/leave',[ProductUserController::class, 'verifyLeave']);
+Route::get('/product/user/leave/myrequest',[ProductUserController::class, 'myLeave'])->name('myLeave.index');
 
 Route::get('/product/user/administration',[ProductUserController::class, 'administration'])->name('userAdministration.index');
 Route::post('/product/user/administration',[ProductUserController::class, 'verifyAdministration']);
