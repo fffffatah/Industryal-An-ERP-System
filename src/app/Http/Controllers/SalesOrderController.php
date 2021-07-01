@@ -11,14 +11,14 @@ class SalesOrderController extends Controller
     public function ordersList()
     {
         $orders = OrderModel::all();
-
         return view('sales.orders.list')->with('orders', $orders);
     }
     
     public function createOrder()
     {
-
+        return view('sales.orders.create');
     }
+
     public function transactionList()
     {
 
