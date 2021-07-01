@@ -15,5 +15,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/common/signin', ['as'=>'signin.index', 'uses'=>'SigninController@index']);
 Route::post('/common/signin', ['as'=>'signin.verify', 'uses'=>'SigninController@verify']);
-Route::get('/common/signup/admin', ['as'=>'signup.admin', 'uses'=>'SignupController@admin']);
-Route::get('/common/signup/employee', ['as'=>'signup.employee', 'uses'=>'SignupController@employee']);
+Route::get('/common/signup', ['as'=>'signup.index', 'uses'=>'SignupController@index']);
+Route::post('/common/signup', ['as'=>'signup.verify', 'uses'=>'SignupController@verify']);
