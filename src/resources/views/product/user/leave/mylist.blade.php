@@ -97,7 +97,11 @@
                                         <td>{{$list['request_made']}}</td>
                                         <td>
                                             @if($list['status'] == "Pending")
-                                                <span class="text-primary">{{$list['status']}}</span>
+                                                <span class="text-primary font-weight-bold">{{$list['status']}}</span>
+                                            @elseif($list['status'] == "Approved")
+                                                <span class="text-success font-weight-bold">{{$list['status']}}</span>
+                                            @elseif($list['status'] == "Declined")
+                                                <span class="text-danger font-weight-bold">{{$list['status']}}</span>
                                             @endif
                                         </td>
                                     </tr>
