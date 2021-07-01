@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Http\Requests\Common\LoginRequest;
 
 class SigninController extends Controller
 {
@@ -15,7 +16,7 @@ class SigninController extends Controller
         return view('common.signin.index');
     }
     //Dummy Verifcation
-    public function verify(Request $req){
+    public function verify(LoginRequest $req){
 
         $user = User::where('email',$req->email)->where('pass',$req->pass)->first();
         if($user)
@@ -45,7 +46,7 @@ class SigninController extends Controller
         else
         {
             $req->session()->flash('msg', 'Invaild Username or Password');
-            return redirect()->route('login.index');
+            return redirect()->route('signin.index');
         }
     }
 }

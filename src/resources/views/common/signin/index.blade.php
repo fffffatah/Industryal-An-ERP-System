@@ -14,18 +14,18 @@
                     <tr>
                         <td align="center" style="padding:20px;">
                             <div class="card border-success mb3 dropshadow" style="height:350px;width:250px">
-                                <div class="card-header">Login</div>
+                                <div class="card-header">Signin</div>
                                 <div class="card-body">
                                     <table>
                                         <tr>
-                                            <td style="padding-bottom:10px;"><input class="form-control" type="text" name="email" id="email" placeholder="Email" value=""><span id="err-login-email" style="color:red;"></span></td>
+                                            <td style="padding-bottom:10px;"><input class="form-control" type="text" name="email" id="email" placeholder="Email" value="{{old('email')}}"><span id="err_signin_email" style="color:red;">{{$errors->first('email')}}</span></td>
                                         </tr>
                                         <tr>
-                                            <td style="padding-bottom:20px;"><input class="form-control" type="password" name="pass" id="pass" placeholder="Password"><span id="err-login-pass" style="color:red;"></span></td>
+                                            <td style="padding-bottom:20px;"><input class="form-control" type="password" name="pass" id="pass" placeholder="Password"><span id="err_signin_pass" style="color:red;">{{$errors->first('pass')}}</span></td>
                                         </tr>
                                     </table>
                                     <a href="forgot_pass.php">Forgot password?</a><br><br>
-                                    <input class="btn btn-success" type="submit" name="login-button" value="Login">
+                                    <input class="btn btn-success" type="submit" name="login-button" value="Signin">
                                 </div>
                             </div>
                         </td>
@@ -42,7 +42,7 @@
                     </tr>
                 </table>
             </form>
-            {{session('msg')}}
+            <span id="err_signin" style="color:red;"><b>{{session('msg')}}</b></span>
         </center>
     </body>
 </html>
