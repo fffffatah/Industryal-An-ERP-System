@@ -53,7 +53,8 @@ Route::post('/HR/employee/delete/{employee_id}',[HRemployeeController::class,'em
 Route::get('/HR/employee/group',[HRgroupController::class,'index'])->name('HRgroup.index');
 Route::post('/HR/employee/group',[HRgroupController::class,'CreateGroup']);;
 Route::get('/HR/employee/schedule',[HREmpScheduleController::class,'schedule'])->name('HREmpSchedule.schedule');
-
+//Export
+Route::get('/HR/employee/list/export',[HRemployeeController::class,'EmpListExport'])->name('HRemployee.EmpListExport');
 //leave request
 Route::get('/HR/leave/request',[HRLeaveController::class,'leave'])->name('HRLeave.leave');
 Route::post('/HR/leave/request',[HRLeaveController::class,'VerifyLeave']);

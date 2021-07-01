@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\HR\HRempCreateRequest;
 use App\Models\Employee;
+use App\Exports\EmployeesExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class HRemployeeController extends Controller
 {
@@ -77,6 +79,10 @@ class HRemployeeController extends Controller
         return redirect()->route('HRemployee.emplist');
 
 
+    }
+    public function EmpListExport()
+    {
+        return Excel::download(new EmployeesExport, 'employees.xlsx');
     }
     
 }

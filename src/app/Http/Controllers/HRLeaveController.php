@@ -59,8 +59,9 @@ class HRLeaveController extends Controller
             return redirect()->route('HRLeave.leaveList');
             
         }
-        
+        else
         {
+            $req->session()->flash('msg', 'Failed!!!');
             return redirect()->route('HRLeave.leaveList');
         }
         
@@ -77,12 +78,14 @@ class HRLeaveController extends Controller
         $leave = Leave::where('employee_id', $employee_id)->first();
         if($leave->status=="Pending")
         {
-            $leave->status="Disapprove";
+            $leave->status="Declined";
             $leave->save();
             $req->session()->flash('msg', 'Reject Leave request');
             return redirect()->route('HRLeave.leaveList');
         }
+        else
         {
+            $req->session()->flash('msg', 'Failed!!!');
             return redirect()->route('HRLeave.leaveList');
         }
        

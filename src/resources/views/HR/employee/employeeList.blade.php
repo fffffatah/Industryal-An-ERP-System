@@ -65,6 +65,15 @@
                         </div>
                     </div>
                     <br>
+                    <div class="row align-items-start mb-2">
+                            <div class="col">
+                            </div>
+                            <div class="col-10"> 
+                            </div>
+                            <div class="col">
+                                <a href="{{route('HRemployee.EmpListExport')}}" class="btn btn-primary rounded p-1 mr-3 text-right">Download</a>
+                            </div>
+                        </div>
                     <table  class="table table-hover ">
                         <th>Employee Id</th>
                         <th>Employee Name</th>

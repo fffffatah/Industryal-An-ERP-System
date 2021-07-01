@@ -83,7 +83,7 @@
                 </table>
                 <div class="container">
                         <div class="row justify-content-center">
-                            <h3 class="text-dark">Are you sure to approve leave request ?</h3>
+                            <h3 class="text-dark">Are you sure to Reject leave request ?</h3>
                         </div>
                         <div class="row justify-content-center">
                             <form method="POST">
