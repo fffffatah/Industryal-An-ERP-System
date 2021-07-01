@@ -48,12 +48,11 @@ class ProductUserController extends Controller
         $username = $req->session()->get('username');
         $user = User::where('username', $username)->first();
         $emp_id = $user->id;
-        $emp_type = $user->type;
         
         $leave = new Leave;
 
         $leave->employee_id = $emp_id;
-        $leave->type = $emp_type;
+        $leave->type = $leave_type;
         $leave->request_description = $leave_description;
         $leave->start_time = $leave_start_date;
         $leave->end_time = $leave_end_date;
@@ -63,6 +62,16 @@ class ProductUserController extends Controller
         $leave->save();
         $req->session()->flash('msg', 'Leave request sent to HR');
         return back();
+    }
+
+    public function myLeave()
+    {
+        $username = session()->get('username');
+        $user = User::where('username', $username)->first();
+        $emp_id = $user->id;
+        $listLeave = Leave::where('employee_id', $user->id)->get();
+        //print_r($listLeave);
+        return view('product.user.leave.mylist')->with('myList',$listLeave);
     }
 
     // contact administration
