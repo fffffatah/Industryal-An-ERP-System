@@ -16,11 +16,11 @@ class FinanceUserVerify
      */
     public function handle(Request $request, Closure $next)
     {
-        if($request->session()->get('type') == 'finance'){
+        if($request->session()->get('type') == 'finance' || $request->session()->get('type') == 'admin'){
             return $next($request);
         }else{
             $request->session()->flash('msg', 'Invalid Request');
-            return redirect()->route('login.index');
+            return redirect()->route('signin.index');
         }
     }
 }
