@@ -4,6 +4,9 @@
   <a class="btn btn-info text-left" href="customers/export">Download as Excel</a>
 </div>
 <table class="table table-hover table-bordered" style="width: 80%" align="center">
+  {{-- <script>
+    var something = {{$customers}};
+  </script> --}}
     <thead>
       <tr>
         <th scope="col">#</th>
@@ -16,13 +19,14 @@
       </tr>
     </thead>
     <tbody>
+      {{-- <?php print_r(gettype($customers)); ?> --}}
       @foreach($customers as $customer)
       <tr>
-        <th scope="row">{{$customer->id}}</th>
-        <td scope="row">{{$customer->name}}</td>
-        <td>{{$customer->email}}</td>
-        <td>{{$customer->phone}}</td>
-        <td>{{$customer->first_purchase}}</td>
+        <th scope="row">{{$customer['id']}}</th>
+        <td scope="row">{{$customer['name']}}</td>
+        <td>{{$customer['email']}}</td>
+        <td>{{$customer['phone']}}</td>
+        <td>{{$customer['first_purchase']}}</td>
         <td align="center">
           <a class="btn btn-info text-left" href="../mail/send/{{$customer['id']}}">Mail Customer</a>
         </td>

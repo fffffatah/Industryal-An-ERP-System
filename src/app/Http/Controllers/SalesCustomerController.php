@@ -14,7 +14,7 @@ class SalesCustomerController extends Controller
     public function showCustomersList()
     {
         $customers = CustomerModel::all();
-        return view('sales.customers.list')->with('customers', $customers);
+        return view('sales.customers.list')->with('customers', json_decode($customers, true));
     }
 
     public function sendEmail($id)
