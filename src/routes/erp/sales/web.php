@@ -36,6 +36,8 @@ Route::get('/sales/profile/change/password',[SalesProfileController::class, 'upd
 Route::get('/sales/customers/',[SalesCustomerController::class, 'showCustomersList'])->name('sales.customers.list');
 Route::get('/sales/customers/update/{id}',[SalesCustomerController::class, 'editCustomer'])->name('sales.customers.update');
 Route::post('/sales/customers/update/{id}',[SalesCustomerController::class, 'updateCustomer']);
+Route::get('/sales/customers/create/',[SalesCustomerController::class, 'createCustomer'])->name('sales.customers.create');
+Route::post('/sales/customers/create/',[SalesCustomerController::class, 'createCustomer']);
 
 //Orders
 Route::get('/sales/orders/',[SalesOrderController::class, 'ordersList'])->name('sales.orders.list');
