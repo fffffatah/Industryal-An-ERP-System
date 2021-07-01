@@ -48,12 +48,11 @@ class ProductUserController extends Controller
         $username = $req->session()->get('username');
         $user = User::where('username', $username)->first();
         $emp_id = $user->id;
-        $emp_type = $user->type;
         
         $leave = new Leave;
 
         $leave->employee_id = $emp_id;
-        $leave->type = $emp_type;
+        $leave->type = $leave_type;
         $leave->request_description = $leave_description;
         $leave->start_time = $leave_start_date;
         $leave->end_time = $leave_end_date;
