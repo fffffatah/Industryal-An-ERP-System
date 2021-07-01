@@ -1,6 +1,5 @@
 @include('sales.layouts.header')
 <div style="justify-content: center; align-content:center; width:90%;">
-    {{-- <p>{{$customer['name']}}</p> --}}
   <div class="container">
     <div class="content" style="margin:auto">
       <div class="container-fluid">
@@ -69,7 +68,6 @@
               </div>
             </div>
           </div>
-          
         </div>
       </div>
     </div>
