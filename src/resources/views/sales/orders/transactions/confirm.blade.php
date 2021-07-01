@@ -1,11 +1,33 @@
 @include('sales.layouts.header')
-<table>
+<div style="padding-top:100px;"></div>
+<table width="80%" align="center">
   <tr>
-    <td style="width:800px;">
-      
+    <td colspan="2" align="center">
+      <div>
+        <div class = "panel-heading">
+          <h3 class = "panel-title">Would you like to create an Order for an existing Customer?</h3>
+        </div>
+      </div>
     </td>
-    <td>
-      abc
+  </tr>
+  <tr>
+    <td style="width:50%;padding:15px;padding-left:115px;" align="center">
+      <a class="btn btn-info text-left" style="font-size:25px;padding-left:20px;padding-right:20px;border-radius:18px;" href="../create" href="../../customers/create">Yes</a>
+      <div style="padding-top:20px;">
+        <label for="">Please enter the Customer's ID:</label>
+        <form action="" method="POST">
+          <input type="text">
+        </form>
+      </div>
+    </td>
+    <td style="width:50%;padding:15px;padding-right:115px;" align="center">
+      <a class="btn btn-info text-left" style="font-size:25px;padding-left:20px;padding-right:20px;border-radius:18px;"  href="../../customers/create">No</a>
+      <div style="padding-top:84px;">
+        {{-- <label for="">Please enter the Customer's ID:</label>
+        <form action="" method="POST">
+          <input type="text">
+        </form> --}}
+      </div>
     </td>
   </tr>
 </table>
