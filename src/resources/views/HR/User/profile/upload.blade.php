@@ -45,23 +45,36 @@
             <div class="col-10">
                 
                 <h3 class="text-center"><i class="fas fa-edit"></i>Upload Profile Picture </h3>
+                @if(session('msg'))
+                <center>
+                <div class="alert alert-success w-25">
+                    <strong>{{session('msg')}}</strong> 
+                </div>
+                </center>
+                @endif
                 <hr>
                 <div class=" w-100 m-auto">
-                    <form action="" class="w-50 m-auto" >
+                    <form method="post" class="w-50 m-auto" enctype="multipart/form-data" >
+                    @csrf
                         <table class="table table-hover">
-                            <tr>
-                                <td> 
-                                <div >
-                                    <label for="myfile">Choose Image</label>
-                                    <input type="file" id="myfile" name="myfile" class="form-controll">
+                            
+                                 
+                                <div class="from-group">
+                                     <td>Upload Image: </td>
+                                    <td colspan='2'>
+                                        <input type="file" name="profile_image" >
+                                         <span class="text-danger">{{$errors->first('profile_image')}}</span>
+                                    </td>
+                                </div>
+                                <div class="from-group">    
+                                    <tr>
+                                        <td >Current Password: </td>
+                                        <td > <input type="password" class="form-control" name="current_password" > <span class="text-danger">{{$errors->first('curr_password')}}</span> </td>
+                                    </tr>
                                     
                                 </div>
                                 
-                                </td>
-                            </tr>
-                            
-                            
-                            <tr>
+                              <tr>
                                 <td colspan='2' align='center'>
                                 <input type="submit" value="Upload" class="btn btn-dark" style="width:400px">
                                 </td>

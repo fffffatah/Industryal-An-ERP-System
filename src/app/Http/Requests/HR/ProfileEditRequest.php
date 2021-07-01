@@ -24,12 +24,11 @@ class ProfileEditRequest extends FormRequest
     public function rules()
     {
         return [
-            "first_name" => "required|min:2",
-            "last_name" => "required|min:3|max:100|alpha",
-            "job_position" => "required",
+            "firstname" => "required|min:2",
+            "lastname" => "required|min:3|max:100|alpha",
             "phone" => "required|min:11",
             "email" => "required|string|email",
-            "present_address" => "required|string|max:100",
+            "address" => "required|string|max:100",
         ];
     }
 }

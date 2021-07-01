@@ -81,6 +81,7 @@ Route::post('/HR/user/profile/edit',[HRuserProfileController::class,'profileUpda
 Route::get('/HR/user/profile/edit/changePassword',[HRuserProfileController::class,'changePassword'])->name('HRuserProfile.changePassword');
 Route::post('/HR/user/profile/edit/changePassword',[HRuserProfileController::class,'PasswordUpdate']);
 Route::get('/HR/user/profile/edit/uploadImage',[HRuserProfileController::class,'uploadImage'])->name('HRuserProfile.uploadImage');
+Route::post('/HR/user/profile/edit/uploadImage',[HRuserProfileController::class,'VerifyUploadImage']);
 
 });
 

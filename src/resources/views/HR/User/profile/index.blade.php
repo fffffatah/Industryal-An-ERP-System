@@ -45,10 +45,17 @@
             <div class="col-10 ">
                 
                 <h1 class="text-center"><i class="fas fa-user"></i>Profile</h1>
+                @if(session('msg'))
+               <center> <div class="alert alert-success w-25">
+                    <strong>{{session('msg')}}</strong> 
+                </div>
+                </center>
+                @endif
              
-               <center>
-                <img src="/upload/Users/{{$userinfo['profile_pic']}}" alt="{{$userinfo['profile_pic']}}" width="200" height="200">
+                <center>
+                <img src="/upload/Users/{{$userinfo['profile_pic']}}"  alt="{{$userinfo['profile_pic']}}" width="200" height="200">
                 <br>
+               
                     <table class="table table-hover w-75">
                         <tr>
                             <td>First Name</td>
@@ -77,8 +84,6 @@
                         </tr>
                     </table>
                 </center>    
-                    
-                
             </div>
         </div>
 
