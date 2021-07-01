@@ -14,6 +14,7 @@ use App\Models\Product\activities_table;
 use App\Models\User;
 use App\Models\Leave;
 use Illuminate\Support\Facades\Validator;
+use Mail;
 
 class ProductUserController extends Controller
 {
@@ -165,12 +166,22 @@ class ProductUserController extends Controller
                         ->withInput();
         }
 
-
         $curr_pass = $req->current_password;
         $username = session()->get('username');
         $user = User::where('username', $username)->first();
         if($curr_pass == $user->pass)
         {
+            // email verification
+            $v_code = $this->gen_verify_code();
+            $data = ['username'=>$username, 'code' => $v_code];
+            $curr_user['to'] = $user->email;
+            Mail::send('product.user.profile.mail',$data,function($messages) use ($curr_user){
+                $messages->to($curr_user['to']);
+                $messages->subject('Change Password - Industryal');
+            });
+
+            $req->session()->put('v_code', $v_code);
+            $req->session()->put('pass', $req->new_password);
             return redirect()->route('userChangeProfileVerication.index');
         }
         else
@@ -189,7 +200,26 @@ class ProductUserController extends Controller
     }
     public function verificationVerify(UserCodeRequest $req)
     {
-        return redirect()->route('userProfile.index');
+        $v_code_form = strval($req->verification_code);
+        $v_code_send = strval(session()->get('v_code'));
+
+        if($v_code_form == $v_code_send)
+        {
+            // change password
+            $req->session()->forget('v_code');
+            $username = session()->get('username');
+            $user = User::where('username', $username)->first();
+            $user->pass = session()->get('pass');
+            $user->save();
+            $req->session()->forget('pass');
+            $req->session()->flash('msg','Profile Updated!');
+            return redirect()->route('userProfile.index');
+        }
+        else
+        {
+            $req->session()->flash('msg','Wrong Verification Code!');
+            return back();
+        }
     }
 
     // logout
@@ -197,5 +227,11 @@ class ProductUserController extends Controller
     {
         session()->flush();
         return redirect()->route('signin.index');
+    }
+
+    public function gen_verify_code()
+    {
+        $verifucation_code = random_int(100000, 999999);
+        return $verifucation_code;
     }
 }
