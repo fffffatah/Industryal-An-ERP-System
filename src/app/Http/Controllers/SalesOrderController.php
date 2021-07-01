@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Sales\OrderModel;
+use App\Models\Sales\CustomerModel;
 use Illuminate\Http\Request;
 
 class SalesOrderController extends Controller
@@ -27,9 +28,18 @@ class SalesOrderController extends Controller
     {
         return view('sales.orders.transactions.list');
     }
-    // public function orderList()
-    // {
-
-    // }
+    
+    public function createExistingCusOrder(Request $req, $id)
+    {
+        $customer = CustomerModel::where('id', $req->cus_id)->first();
+        if($customer)
+        {
+            return view("sales.orders.create");
+        }
+        else
+        {
+            return view("sales.orders.transactions.existing");
+        }
+    }
 
 }
