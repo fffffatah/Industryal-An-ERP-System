@@ -13,6 +13,7 @@ use App\Http\Requests\Product\ContactRequest;
 use App\Models\Product\activities_table;
 use App\Models\User;
 use App\Models\Leave;
+use Illuminate\Support\Facades\Validator;
 
 class ProductUserController extends Controller
 {
@@ -148,6 +149,23 @@ class ProductUserController extends Controller
     }
     public function changePasswordVerify(UserChangePasswordRequest $req)
     {
+        // reCAPTCHA validation
+        $messages = [
+            'g-recaptcha-response.required' => 'You must check the reCAPTCHA.',
+            'g-recaptcha-response.captcha' => 'Captcha error! try again later or contact site admin.',
+        ];
+ 
+        $validator = Validator::make($req->all(), [
+            'g-recaptcha-response' => 'required|captcha'
+        ], $messages);
+        
+        if ($validator->fails()) {
+            return redirect()->route('userChangePassword.index')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+
+
         $curr_pass = $req->current_password;
         $username = session()->get('username');
         $user = User::where('username', $username)->first();
