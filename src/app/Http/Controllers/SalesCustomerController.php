@@ -65,5 +65,16 @@ class SalesCustomerController extends Controller
         return redirect()->route('sales.customers.list');
     }
 
-    
+    public function createExistingCusOrder(Request $req, $id)
+    {
+        $customer = CustomerModel::where('id', $id)->first();
+        if($customer)
+        {
+            return view("success");
+        }
+        else
+        {
+            return view("failed");
+        }
+    }
 }

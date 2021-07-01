@@ -12,21 +12,21 @@
   </tr>
   <tr>
     <td style="width:50%;padding:15px;padding-left:115px;" align="center">
-      <a class="btn btn-info text-left" style="font-size:25px;padding-left:20px;padding-right:20px;border-radius:18px;" href="../create" href="../../customers/create">Yes</a>
-      <div style="padding-top:20px;">
-        <label for="">Please enter the Customer's ID:</label>
-        <form action="" method="POST">
-          <input type="text">
+      <form action="" method="GET">
+        <button class="btn btn-info text-left" style="font-size:25px;padding-left:20px;padding-right:20px;border-radius:18px;" href="../create" href="#">Yes</button>
+        <div style="padding-top:20px;">
+        <label>Please enter the Customer's ID:</label>
+          <input type="text" name="cus_id">
         </form>
       </div>
     </td>
     <td style="width:50%;padding:15px;padding-right:115px;" align="center">
       <a class="btn btn-info text-left" style="font-size:25px;padding-left:20px;padding-right:20px;border-radius:18px;"  href="../../customers/create">No</a>
-      <div style="padding-top:84px;">
-        {{-- <label for="">Please enter the Customer's ID:</label>
+      <div style="padding-top:40px;">
+        <label for="">Create a New Customer</label>
         <form action="" method="POST">
-          <input type="text">
-        </form> --}}
+          <input type="text" hidden>
+        </form>
       </div>
     </td>
   </tr>

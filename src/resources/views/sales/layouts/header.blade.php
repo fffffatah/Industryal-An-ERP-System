@@ -33,7 +33,7 @@
                             Orders
                           </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{route('sales.orders.create')}}">Place an Order</a>
+                        <a class="dropdown-item" href="{{route('sales.orders.transactions.confirm')}}">Place an Order</a>
                         <a class="dropdown-item" href="{{route('sales.orders.list')}}">Check Orders</a>
                         <a class="dropdown-item" href="{{route('sales.orders.list')}}">Check Transactions</a>
                         <div class="dropdown-divider"></div>
