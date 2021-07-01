@@ -7,6 +7,8 @@ use App\Http\Requests\Common\SignupRequest;
 use App\Models\Finance\User;
 use App\Models\Organization;
 
+require_once 'Common/MailSender.php';
+
 class SignupController extends Controller
 {
     //Admin View

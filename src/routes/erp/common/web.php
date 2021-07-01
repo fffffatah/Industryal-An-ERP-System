@@ -12,8 +12,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+//Signin, Signup, Forgot Password
 Route::get('/common/signin', ['as'=>'signin.index', 'uses'=>'SigninController@index']);
 Route::post('/common/signin', ['as'=>'signin.verify', 'uses'=>'SigninController@verify']);
 Route::get('/common/signup', ['as'=>'signup.index', 'uses'=>'SignupController@index']);
 Route::post('/common/signup', ['as'=>'signup.verify', 'uses'=>'SignupController@verify']);
+
+Route::get('/common/forgotpass', ['as'=>'forgotpass.index', 'uses'=>'ForgotpassController@index']);
+Route::post('/common/forgotpass', ['as'=>'forgotpass.verify', 'uses'=>'ForgotpassController@verify']);
+
+Route::get('/common/forgotpass/confirm', ['as'=>'forgotpass.confirm', 'uses'=>'ForgotpassController@confirm']);
+Route::post('/common/forgotpass/confirm', ['as'=>'forgotpass.confirm_verify', 'uses'=>'ForgotpassController@confirm_verify']);
+
+//Admin
