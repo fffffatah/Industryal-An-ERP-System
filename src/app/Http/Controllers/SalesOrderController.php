@@ -18,10 +18,14 @@ class SalesOrderController extends Controller
     {
         return view('sales.orders.create');
     }
-
-    public function transactionList()
+    public function existingOrNew()
     {
+        return view('sales.orders.transactions.confirm');
+    }
 
+    public function transactionsList()
+    {
+        return view('sales.orders.transactions.list');
     }
     // public function orderList()
     // {

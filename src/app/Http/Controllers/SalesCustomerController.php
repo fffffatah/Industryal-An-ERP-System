@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Exports\Sales\CustomersExport;
+
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\Sales\SalesCustomerUpdateRequest;
 use App\Http\Requests\Sales\SalesCustomerInsertRequest;
 use Illuminate\Http\Request;
 use App\Models\Sales\CustomerModel;
-use Maatwebsite\Excel\Facades\Excel;
 
 class SalesCustomerController extends Controller
 {
@@ -66,8 +65,5 @@ class SalesCustomerController extends Controller
         return redirect()->route('sales.customers.list');
     }
 
-    public function exportCustomer()
-    {
-        return Excel::download(new CustomersExport, 'customers.xlsx');
-    }
+    
 }

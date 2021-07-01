@@ -5,6 +5,7 @@ use App\Http\Controllers\SalesStatsController;
 use App\Http\Controllers\SalesCustomerController;
 use App\Http\Controllers\SalesProfileController;
 use App\Http\Controllers\SalesController;
+use App\Http\Controllers\SalesImportExportController;
 use App\Http\Controllers\SalesMailController;
 use App\Http\Controllers\SalesOrderController;
 
@@ -38,13 +39,16 @@ Route::get('/sales/customers/update/{id}',[SalesCustomerController::class, 'edit
 Route::post('/sales/customers/update/{id}',[SalesCustomerController::class, 'updateCustomer']);
 Route::get('/sales/customers/create/',[SalesCustomerController::class, 'createCustomer'])->name('sales.customers.create');
 Route::post('/sales/customers/create/',[SalesCustomerController::class, 'insertCustomer']);
-Route::get('/sales/customers/export/',[SalesCustomerController::class, 'exportCustomer']);
+
+//Import/Export
+Route::get('/sales/customers/export/',[SalesImportExportController::class, 'exportCustomer']);
 
 //Orders
 Route::get('/sales/orders/',[SalesOrderController::class, 'ordersList'])->name('sales.orders.list');
 Route::get('/sales/orders/create',[SalesOrderController::class, 'createOrder'])->name('sales.orders.create');
 Route::get('/sales/orders/list',[SalesOrderController::class, 'ordersList'])->name('sales.orders.list');
-Route::get('/sales/orders/transactions',[SalesOrderController::class, 'transactionsList'])->name('sales.orders.transactions');
+Route::get('/sales/orders/transactions',[SalesOrderController::class, 'transactionsList'])->name('sales.orders.list');
+Route::get('/sales/orders/transactions/confirm',[SalesOrderController::class, 'existingOrNew'])->name('sales.orders.transactions.confirm');
 
 
 //Customer Mails
