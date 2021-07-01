@@ -38,6 +38,7 @@ Route::get('/sales/customers/update/{id}',[SalesCustomerController::class, 'edit
 Route::post('/sales/customers/update/{id}',[SalesCustomerController::class, 'updateCustomer']);
 Route::get('/sales/customers/create/',[SalesCustomerController::class, 'createCustomer'])->name('sales.customers.create');
 Route::post('/sales/customers/create/',[SalesCustomerController::class, 'insertCustomer']);
+Route::get('/sales/customers/export/',[SalesCustomerController::class, 'exportCustomer']);
 
 //Orders
 Route::get('/sales/orders/',[SalesOrderController::class, 'ordersList'])->name('sales.orders.list');
