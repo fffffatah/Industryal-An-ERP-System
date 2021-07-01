@@ -45,32 +45,35 @@
             <div class="col-10 ">
                 
                 <h1 class="text-center"><i class="fas fa-user"></i>Profile</h1>
-               
+             
                <center>
+                <img src="/upload/Users/{{$userinfo['profile_pic']}}" alt="{{$userinfo['profile_pic']}}" width="200" height="200">
+                <br>
                     <table class="table table-hover w-75">
                         <tr>
                             <td>First Name</td>
-                            <td>Md.</td>
+                            <td>{{$userinfo['firstname']}}</td>
                         </tr>
                         <tr>
                             <td>Last Name</td>
-                            <td>Rasel</td>
+                            <td>{{$userinfo['lastname']}}</td>
                         </tr>
                         <tr>
                             <td>Job position</td>
-                            <td>HR manager</td>
+                            <td>{{$userinfo['position']}}</td>
                         </tr>
+                        
                         <tr>
                             <td>Phone No</td>
-                            <td>01767227082</td>
+                            <td>{{$userinfo['phone']}}</td>
                         </tr>
                         <tr>
                             <td>Email</td>
-                            <td>rasel@gamil.com</td>
+                            <td>{{$userinfo['email']}}</td>
                         </tr>
                         <tr>
                             <td>Address</td>
-                            <td>Dhaka</td>
+                            <td>{{$userinfo['address']}}</td>
                         </tr>
                     </table>
                 </center>    

@@ -6,12 +6,15 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\HR\ProfileEditRequest;
 use App\Http\Requests\HR\ChangePassRequest;
+use App\Models\User;
 
 class HRuserProfileController extends Controller
 {
     public function details()
     {
-        return view('HR.User.profile.index');
+        $user_name= session()->get('username');
+        $user = User::where('username', $user_name)->first();
+        return view('HR.User.profile.index')->with('userinfo', $user);;
     }
 
     public function profileEdit()
