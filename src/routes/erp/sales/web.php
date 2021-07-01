@@ -37,7 +37,7 @@ Route::get('/sales/customers/',[SalesCustomerController::class, 'showCustomersLi
 Route::get('/sales/customers/update/{id}',[SalesCustomerController::class, 'editCustomer'])->name('sales.customers.update');
 Route::post('/sales/customers/update/{id}',[SalesCustomerController::class, 'updateCustomer']);
 Route::get('/sales/customers/create/',[SalesCustomerController::class, 'createCustomer'])->name('sales.customers.create');
-Route::post('/sales/customers/create/',[SalesCustomerController::class, 'createCustomer']);
+Route::post('/sales/customers/create/',[SalesCustomerController::class, 'insertCustomer']);
 
 //Orders
 Route::get('/sales/orders/',[SalesOrderController::class, 'ordersList'])->name('sales.orders.list');
