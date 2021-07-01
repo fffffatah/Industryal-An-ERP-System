@@ -25,3 +25,8 @@ Route::get('/common/forgotpass/confirm', ['as'=>'forgotpass.confirm', 'uses'=>'F
 Route::post('/common/forgotpass/confirm', ['as'=>'forgotpass.confirm_verify', 'uses'=>'ForgotpassController@confirm_verify']);
 
 //Admin
+Route::group(['middleware'=>['sess','admin_type']], function(){
+    Route::get('/common/admin/index', ['as'=>'admin.index', 'uses'=>'AdminDashboardController@index']);
+    Route::get('/common/admin/profile', ['as'=>'admin.profile', 'uses'=>'AdminProfileController@index']);
+    Route::get('/common/admin/leaverequests', ['as'=>'admin.leaverequests', 'uses'=>'AdminLeaverequestController@index']);
+});

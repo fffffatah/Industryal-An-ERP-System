@@ -22,7 +22,10 @@ class SigninController extends Controller
         if($user)
         {
             if($user->type == 'admin'){
-                //admin
+                $req->session()->put('id', $user->id);
+                $req->session()->put('email', $user->email);
+                $req->session()->put('type', $user->type);
+                return redirect()->route('admin.index');
             }
             elseif ($user->type == 'sales') {
                 //Redirect to Sales Dashboard
