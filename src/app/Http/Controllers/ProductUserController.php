@@ -65,6 +65,16 @@ class ProductUserController extends Controller
         return back();
     }
 
+    public function myLeave()
+    {
+        $username = session()->get('username');
+        $user = User::where('username', $username)->first();
+        $emp_id = $user->id;
+        $listLeave = Leave::where('employee_id', $user->id)->get();
+        //print_r($listLeave);
+        return view('product.user.leave.mylist')->with('myList',$listLeave);
+    }
+
     // contact administration
     public function administration()
     {
