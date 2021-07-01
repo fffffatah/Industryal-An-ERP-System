@@ -1,5 +1,9 @@
 @include('sales.layouts.header')
 <span align="center" style="font-weight: bold;padding-left:150px;" class="text-success">{{session('successful')}}</span>
+<div style="border:1px solid black;float:right;width: 80%;">
+  {{-- <a href="customers/export">Download as Excel</a> --}}
+  <a class="btn btn-info text-left" href="customers/export">Download as Excel</a>
+</div>
 <table class="table table-hover table-bordered" style="width: 80%" align="center">
     <thead>
       <tr>
