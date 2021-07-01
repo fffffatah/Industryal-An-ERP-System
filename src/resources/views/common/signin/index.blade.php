@@ -24,7 +24,7 @@
                                             <td style="padding-bottom:20px;"><input class="form-control" type="password" name="pass" id="pass" placeholder="Password"><span id="err_signin_pass" style="color:red;">{{$errors->first('pass')}}</span></td>
                                         </tr>
                                     </table>
-                                    <a href="forgot_pass.php">Forgot password?</a><br><br>
+                                    <a href="{{route('forgotpass.index')}}">Forgot password?</a><br><br>
                                     <input class="btn btn-success" type="submit" name="login-button" value="Signin">
                                 </div>
                             </div>
