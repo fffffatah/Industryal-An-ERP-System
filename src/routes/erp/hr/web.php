@@ -29,7 +29,7 @@ Route::get('/', function () {
 });
 Route::get('/logout',[HRuserProfileController::class,'logout'])->name('HRuserProfile.logout');
 
-
+Route::group(["middleware" => "hr_session"],function () {
 //Hr home
 Route::get('/HR/home',[HRhomeController::class,'index'])->name('HRhome.index');
 //HR user create
@@ -56,6 +56,11 @@ Route::get('/HR/employee/schedule',[HREmpScheduleController::class,'schedule'])-
 
 //leave request
 Route::get('/HR/leave/request',[HRLeaveController::class,'leave'])->name('HRLeave.leave');
+Route::post('/HR/leave/request',[HRLeaveController::class,'VerifyLeave']);
+Route::get('/HR/leave/approve/{employee_id}',[HRLeaveController::class,'approve'])->name('HRLeave.approve');
+Route::post('/HR/leave/approve/{employee_id}',[HRLeaveController::class,'VerifyApprove']);
+Route::get('/HR/leave/reject/{employee_id}',[HRLeaveController::class,'reject'])->name('HRLeave.approve');
+Route::post('/HR/leave/reject/{employee_id}',[HRLeaveController::class,'VerifyReject']);
 Route::get('/HR/leave/request/list',[HRLeaveController::class,'leaveList'])->name('HRLeave.leaveList');
 //payroll
 Route::get('/HR/payroll/show',[HRpayrollController::class,'show'])->name('HRpayroll.show');
@@ -77,7 +82,7 @@ Route::get('/HR/user/profile/edit/changePassword',[HRuserProfileController::clas
 Route::post('/HR/user/profile/edit/changePassword',[HRuserProfileController::class,'PasswordUpdate']);
 Route::get('/HR/user/profile/edit/uploadImage',[HRuserProfileController::class,'uploadImage'])->name('HRuserProfile.uploadImage');
 
-
+});
 
 
 

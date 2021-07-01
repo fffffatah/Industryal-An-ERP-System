@@ -52,7 +52,7 @@
                 </nav>
             </div>
             <div class="col-10">
-                <h3 class="text-center"><i class="far fa-list-alt"></i>Leave Request List</h3>
+                <h3 class="text-center">Leave Request approve</h3>
                 @if(session('msg'))
                 <div class="alert alert-success w-25">
                     <strong>{{session('msg')}}</strong> 
@@ -67,8 +67,8 @@
                     <th>Description</th>
                     <th>RequestMade</th>
                     <th>Status</th>
-                    <th>Action</th>
-                @foreach($leaveList as $leave)
+                   
+               
                 <tr>
                     <td>{{$leave['employee_id']}}</td>
                     <td>{{$leave['type']}}</td>
@@ -77,14 +77,22 @@
                     <td>{{$leave['request_description']}}</td>
                     <td>{{$leave['request_made']}}</td>
                     <td>{{$leave['status']}}</td>
-                    <td>
-                        <a  href="/HR/leave/approve/{{$leave['employee_id']}}" class="btn btn-primary"> Approve </a> 
-                        <a href="/HR/leave/reject/{{$leave['employee_id']}}" class="btn btn-danger" > Reject</a> 
-                        
-                    </td>
+                    
                 </tr>
-                @endforeach  
+                
                 </table>
+                <div class="container">
+                        <div class="row justify-content-center">
+                            <h3 class="text-dark">Are you sure to approve leave request ?</h3>
+                        </div>
+                        <div class="row justify-content-center">
+                            <form method="POST">
+                             @csrf
+                                <input type="submit" value="Reject" class="btn btn-primary">
+                            </form> 
+                            <a href="{{route('HRLeave.leaveList')}}" class="btn btn-success ml-2">Back</a>
+                        </div>
+                </div>
         
            </div>
             
