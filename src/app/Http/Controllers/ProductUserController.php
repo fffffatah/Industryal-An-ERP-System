@@ -13,6 +13,7 @@ use App\Http\Requests\Product\ContactRequest;
 use App\Models\Product\activities_table;
 use App\Models\User;
 use App\Models\Leave;
+use App\Models\Contact;
 use Illuminate\Support\Facades\Validator;
 use Mail;
 
@@ -73,7 +74,21 @@ class ProductUserController extends Controller
     }
     public function verifyAdministration(ContactRequest $req)
     {
-        
+        $contact = new Contact();
+        $contact->issue_name = $req->issue_name;
+        $contact->description = $req->message;
+        $contact->issued_by = $req->session()->get('username');
+        $contact->issue_time = date('Y-m-d H:i:s');
+        $contact->status = "Pending";
+        $contact->save();
+        $req->session()->flash('msg', "Issue sent to Administration Panel");
+        return back();
+    }
+
+    public function myIssue()
+    {
+        $issues = Contact::where('issued_by', session()->get('username'))->get();
+        return view('product.user.administration.list')->with('issueList', $issues);
     }
 
     // show profile
