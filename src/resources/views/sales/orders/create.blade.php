@@ -1,7 +1,7 @@
 @include('sales.layouts.header')
 {{-- <table border="1px">
   <tr> --}}
-    <div class="row">
+    <div class="row" style="max-width: 100%; overflow-x: hidden;">
       <div class="col-md-6 sticky-top">
         <div class="container">
           <div class="content" style="margin:auto">
@@ -11,7 +11,7 @@
                   <div class="card">
                     <div class="card-header card-header-primary bg-info">
                       <h4 class="card-title"></h4>
-                      <p class="card-category" style="font-size: 20px;font-weight:bold;color:rgb(5, 26, 83)">Create a New Order</p>
+                      <p class="card-category" style="font-size: 15px;font-weight:bold;color:rgb(5, 26, 83)">Create a New Order</p>
                     </div>
                     <div class="card-body" style="width:100%">
                       <form method="POST">
@@ -57,7 +57,7 @@
                           <div class="col-md-12">
                             <div class="form-group">
                               <label class="bmd-label-floating">Delivery To</label>
-                              <textarea rows="3"name="order_description" class="form-control"></textarea>
+                              <input class="form-control"></input>
                               <span style="font-weight: bold" class="text-danger">{{$errors->first('cus_del')}}</span>
                             </div>
                           </div>
@@ -68,19 +68,44 @@
                       </form>
                     </div>
                   </div>
+                  <div style=" height:200px; overflow-y:scroll">
+                    <table id="productTable" class="table table-hover table-bordered">
+                      <tr>
+                        <th>
+                          #
+                        </th>
+                        <th>
+                          Product
+                        </th>
+                        <th>
+                          Price
+                        </th>
+                      </tr>
+                      <tr>
+                        <td>
+                          Dummy
+                        </td>
+                        <td>
+                          Dummy
+                        </td>
+                        <td>
+                          Dummy
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-md-6" style="width:500px;">
+      <div class="col-md-6" style="width:500px; height:545px; overflow-y:scroll ">
         <table class="table table-hover table-bordered" style="width: 100%" align="center">
           <thead>
             <tr>
               <th scope="col">#</th>
               <th scope="col">Product</th>
-              <th scope="col">Description</th>
               <th scope="col">Price(BDT)</th>
               <th scope="col">Status</th>
               <th scope="col">Delivered On</th>
@@ -90,26 +115,47 @@
             @foreach($products as $key => $product)
             <tr>
               <tr>
-                <th scope="row">{{$product->product_id}}</th>
-                <td scope="row">{{$product->product_name}}</td>
-                <td>{{$product->selling_price}}</td>
+                <th class="pid">{{$product->product_id}}</th>
+                <td class="pname">{{$product->product_name}}</td>
+                <td class="price">{{$product->selling_price}}</td>
                 <td>{{$product->stock}}</td>
                 <td>{{$product->warehouse_name}}</td>
                 <td align="center">
-                  <a class="btn btn-info text-left" href="#">Update</a>
+                  <button class="btn btn-info text-left add" type="button" value="{{$product->product_id}}">Add to Cart</button>
                 </td>
               </tr>
             </tr>
             @endforeach
             @for($i = 0; $i < 100; $i++)
-              <tr>
-                <td>x</td>
-              </td>
+                <tr>
+                  <td>x</td>
+                </tr>
             @endfor
           </tbody>
         </table>
       </div>
     </div>
+    <script>
+      let priceList = [];
+      $(".add").click(function(){
+        var $id = $(this).closest("tr").find(".pid").text();
+        var $name = $(this).closest("tr").find(".pname").text();
+        var $price = $(this).closest("tr").find(".price").text();
+
+        priceList.push(parseInt($price));
+        console.log(priceList);
+
+        var table = document.getElementById('productTable');
+        var row = table.insertRow(1);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        cell1.innerHTML = $id;
+        cell2.innerHTML = $name;
+        cell3.innerHTML = $price;
+        // $("#resultas").append($item);       // Outputs the answer
+      });
+    </script>
   {{-- </tr>
 </table> --}}
 @include('sales.layouts.footer')
