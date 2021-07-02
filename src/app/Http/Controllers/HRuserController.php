@@ -13,9 +13,17 @@ class HRuserController extends Controller
     public function create(){
         return view('HR.User.userCreate');
     }
-    public function index(){
-        $users=User::all();
-        return view('HR.User.userList')->with('userList',$users);
+    public function index(Request $req){
+        if($req->searchUser)
+        {
+            $searchUser=User::where('username',$req->searchUser)->get();
+            return view('HR.User.userList')->with('userList',$searchUser);
+        }
+        else{
+            $users=User::all();
+            return view('HR.User.userList')->with('userList',$users);
+        }
+        
     }
     public function verify(HRuserCreateRequest $req)
     {
