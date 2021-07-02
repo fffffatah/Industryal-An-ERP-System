@@ -7,6 +7,7 @@ use App\Models\Sales\OrderModel;
 use App\Models\Sales\CustomerModel;
 use App\Models\Product\activities_table;
 use App\Models\Product\product_table;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class SalesOrderController extends Controller
@@ -64,7 +65,15 @@ class SalesOrderController extends Controller
 
     public function insertNewOrder(Request $req)
     {
-
+        $order = new OrderModel;
+        $order->customer_id = $req->cus_id;
+        $order->order_description = $req->order_des;
+        $order->order_made = Carbon::now()->toDateTimeString();
+        $order->total_amount = 0;
+        $order->status = "processing";
+        $order->save();
+        $req->session()->flash('successful', 'Successfully added!');
+        return redirect()->route('sales.orders.list');
         // return view('ok');
     }
 }
