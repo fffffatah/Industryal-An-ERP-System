@@ -15,16 +15,24 @@
                         <table class="table table-striped">
                             <tr>
                                 <th scope="col">#SR</th>
-                                <th scope="col">Date</th>
-                                <th scope="col">Title</th>
+                                <th scope="col">Type</th>
+                                <th scope="col">Start Date</th>
+                                <th scope="col">End Date</th>
+                                <th scope="col">Requested At</th>
                                 <th scope="col">Status</th>
+                                <th scope="col">Delete</th>
                             </tr>
+                            @foreach ($leaves as $leave)
                             <tr>
-                                <td>1</td>
-                                <td>12/12/2047</td>
-                                <td>abcd</td>
-                                <td>Approved</td>
+                                <td>{{ $loop->iteration }}</td>
+                                <td>{{$leave->type}}</td>
+                                <td>{{$leave->start_time}}</td>
+                                <td>{{$leave->end_time}}</td>
+                                <td>{{$leave->request_made}}</td>
+                                <td>{{$leave->status}}</td>
+                                <td><a  class="btn btn-outline-danger" href="/finance/leaverequest/new/{{$leave->id}}"> Delete </a></td>
                             </tr>
+                            @endforeach
                         </table>
                     </div>
                     </div>

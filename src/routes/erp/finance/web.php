@@ -17,6 +17,7 @@ Route::group(['middleware'=>['sess', 'finance_type']], function(){
 
     #Profile Routes
     Route::get('/finance/profile', ['as'=>'finance.profile.index', 'uses'=>'FinanceProfileController@index']);
+    Route::post('/finance/profile', ['as'=>'finance.profile.update', 'uses'=>'FinanceProfileController@update']);
 
     #Routes for Invoice
     Route::get('/finance/invoice', ['as'=>'finance.invoice.index', 'uses'=>'FinanceInvoiceController@index_invoice']);
@@ -29,6 +30,8 @@ Route::group(['middleware'=>['sess', 'finance_type']], function(){
     Route::get('/finance/leaverequest', ['as'=>'finance.leaverequest.index', 'uses'=>'FinanceLeaveRequestController@index']);
     Route::get('/finance/leaverequest/list', ['as'=>'finance.leaverequest.list', 'uses'=>'FinanceLeaveRequestController@index_list']);
     Route::get('/finance/leaverequest/new', ['as'=>'finance.leaverequest.new', 'uses'=>'FinanceLeaveRequestController@index_new']);
+    Route::post('/finance/leaverequest/new', ['as'=>'finance.leaverequest.apply', 'uses'=>'FinanceLeaveRequestController@apply']);
+    Route::get('/finance/leaverequest/new/{id}', ['as'=>'finance.leaverequest.delete', 'uses'=>'FinanceLeaveRequestController@delete']);
 
     #Routes for Reports
     Route::get('/finance/reports', ['as'=>'finance.reports.index', 'uses'=>'FinanceReportController@index']);
@@ -39,7 +42,9 @@ Route::group(['middleware'=>['sess', 'finance_type']], function(){
     Route::get('/finance/importexport', ['as'=>'finance.importexport.index', 'uses'=>'FinanceImportExportController@index']);
     Route::get('/finance/importexport/history', ['as'=>'finance.importexport.history', 'uses'=>'FinanceImportExportController@index_history']);
     Route::get('/finance/importexport/import', ['as'=>'finance.importexport.import', 'uses'=>'FinanceImportExportController@index_import']);
+    Route::post('/finance/importexport/import', ['as'=>'finance.importexport.importdata', 'uses'=>'FinanceImportExportController@import']);
     Route::get('/finance/importexport/export', ['as'=>'finance.importexport.export', 'uses'=>'FinanceImportExportController@index_export']);
+    Route::post('/finance/importexport/export', ['as'=>'finance.importexport.exportdata', 'uses'=>'FinanceImportExportController@export']);
 
     #Routes for Budgeting
     Route::get('/finance/budgeting', ['as'=>'finance.budgeting.index', 'uses'=>'FinanceBudgetingController@index']);

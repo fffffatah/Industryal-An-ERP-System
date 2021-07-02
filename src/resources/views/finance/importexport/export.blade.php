@@ -8,33 +8,36 @@
             <td align="center" style="padding:20px;">
             </td>
             <td align="center">
+            <form action="" method="post">
+            @csrf
             <div class="card border-warning mb3" style="height:600px;width:1100px">
                 <div class="card-header">Export</div>
                     <div class="card-body">
-                        <h1 align="center" style="color:green; font-size:20px;">Select data that you want to export</h1><br><br>
+                        <h1 align="center" style="color:green; font-size:20px;">These Data Will be Exported</h1><br><br>
                         <table class="table table-striped">
-                            <tr>
-                                <th><input type="checkbox" id="invoiceexport" name="invoiceexport" value=""><label for="invoiceexport">  Invoice</label></th>
-                            </tr>
-                            <tr>
-                                <th><input type="checkbox" id="paymentexport" name="paymentexport" value=""><label for="paymentexport"> Payments</label></th>
-                            </tr>
-                            <tr>
-                                <th><input type="checkbox" id="reporthistoryexport" name="reporthistoryexport" value=""><label for="reporthistoryexport"> Report Generation History</label></th>
-                            </tr>
-                            <tr>
-                                <th><input type="checkbox" id="budgetingexport" name="budgetingexport" value=""><label for="budgetingexport"> Budgeting</label></th>
-                            </tr>
-                            <tr>
-                                <th><input type="checkbox" id="myleavereqexport" name="myleavereqexport" value=""><label for="myleavereqexport"> My Leave-Request</label></th>
-                            </tr>
-                            <tr>
-                                <th><input type="checkbox" id="historyexport" name="historyexport" value=""><label for="historyexport"> Import/Export History</label></th>
-                            </tr>
+                           <tr>
+                                <th>Assets</th>
+                           </tr>
+                           <tr>
+                                <th>Liabilities</th>
+                           </tr>
+                           <tr>
+                                <th>Expenses</th>
+                           </tr>
+                           <tr>
+                                <th>Import/Export History</th>
+                           </tr>
+                           <tr>
+                                <th>Invoices</th>
+                           </tr>
+                           <tr>
+                                <th>Leave Requests</th>
+                           </tr>
                         </table>
                     </div>
-                <div class="card-footer"><a class="btn btn-info text-left" href="#"><i class="fas fa-download"></i> Export as CSV</a> <a class="btn btn-info text-left" href="#"><i class="fas fa-download"></i> Export as XML</a></div>
+                <div class="card-footer"><input type="submit" name="submit-button" class="btn btn-success" value="Export"></div>
                 </div>
+                </form>
             </td>
         </tr>
     </table>

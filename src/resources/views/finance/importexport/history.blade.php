@@ -17,17 +17,18 @@
                                 <th scope="col">#SR</th>
                                 <th scope="col">Date</th>
                                 <th scope="col">Action</th>
+                                <th scope="col">Download</th>
                             </tr>
+                            @foreach ($import_history as $import)
                             <tr>
-                                <td>1</td>
-                                <td>12/12/2047</td>
-                                <td>Import</td>
+                                <td>{{ $loop->iteration }}</td>
+                                <td>{{$import->date}}</td>
+                                <td>{{$import->action}}</td>
+                                @if($import->action=='Export')
+                                <td><a class="btn btn-primary" href="{{ url('upload/Finance/Export/'.$import->file) }}" download>Download</a></td>
+                                @endif
                             </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>12/12/2047</td>
-                                <td>Export</td>
-                            </tr>
+                            @endforeach
                         </table>
                     </div>
                     </div>
