@@ -81,7 +81,7 @@
 
                 <li class="nav-item">
                     {{-- <a class="btn btn-outline-info" href="{{route('signin.index')}}" style="color:#5bc0de;padding-top:5px">Logout</a> --}}
-                    <div style="padding-right: 5px; padding-top:5px">
+                    <div style="padding-right: 5px; padding-top:5px" onclick="document.location='{{route('signin.index')}}'">
                     <button type="button" class="btn btn-outline-info" style="padding-top: 5px">Log Out</button>
                     </div>
                 </li>
