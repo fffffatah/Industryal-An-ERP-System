@@ -26,7 +26,7 @@ class ChangePassRequest extends FormRequest
         return [
             "old_password" => "required||min:8|max:15|alpha_num",
             "new_password" => "required||min:8|max:15|alpha_num",
-            "confirm_new_password" => "required||min:8|max:15|alpha_num",
+            "confirm_new_password" => "required||min:8|max:15|alpha_num|same:new_password",
         ];
     }
 }

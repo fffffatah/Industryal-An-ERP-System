@@ -51,33 +51,29 @@
                            
                         <div class="form-group">
                             <label>First Name</label> 
-                            <input type="txt" class="form-control" id="firstname" name="first_name" value="Md.">
-                            <span class="text-danger">{{$errors->first('first_name')}}</span>
+                            <input type="txt" class="form-control" id="firstname" name="firstname" value="{{$userinfo['firstname']}}">
+                            <span class="text-danger">{{$errors->first('firstname')}}</span>
                         </div>
                         <div class="form-group">
                             <label >Last Name</label> 
-                            <input type="txt" class="form-control" id="lastname" name="last_name" value="Rasel">
-                            <span class="text-danger">{{$errors->first('last_name')}}</span>
+                            <input type="txt" class="form-control" id="lastname" name="lastname" value="{{$userinfo['lastname']}}">
+                            <span class="text-danger">{{$errors->first('lastname')}}</span>
                         </div>
-                        <div class="from-group">
-                            <label>Job Position</label></td>
-                            <input type="text" class="form-control" name="job_position" id="position" value="HR Manager">
-                            <span class="text-danger">{{$errors->first('job_position')}}</span>
-                        </div>
+                        
                         <div class="form-group">
                             <label>Phone</label>
-                            <input type="number" class="form-control"  name="phone" id="phone" value="01767227082">
+                            <input type="number" class="form-control"  name="phone" id="phone" value="{{$userinfo['phone']}}">
                             <span class="text-danger">{{$errors->first('phone')}}</span>
                         </div>
                         <div class="from-group">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control" id="EmailId" name="email" value="rasel@gmail.com">
+                            <input type="email" class="form-control" id="EmailId" name="email" value="{{$userinfo['email']}}">
                             <span class="text-danger">{{$errors->first('email')}}</span>
                         </div>
                         <div class="foem-group">
                             <label>Present address</label></td>
-                            <input type="text" class="form-control" id="presentaddress" name="present_address" Value="Dhaka">
-                            <span class="text-danger">{{$errors->first('present_address')}}</span>
+                            <input type="text" class="form-control" id="presentaddress" name="address" Value="{{$userinfo['address']}}">
+                            <span class="text-danger">{{$errors->first('address')}}</span>
                         </div>
                         <div class="from-group">
                             <center><input class="btn btn-outline-primary btn-block w-50 mt-3" type="submit" value="Update" style="color:tomato"></center>
