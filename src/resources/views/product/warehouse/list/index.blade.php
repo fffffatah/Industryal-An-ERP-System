@@ -94,8 +94,8 @@
                                         <a href="{{route('warehouseList.exportWarehouseList')}}" class="btn btn-primary rounded p-1 text-right">Download</a>
                                 </div>
                             </div>
-                            <table class="table table-striped table-bordered">
-                            <thead>
+                            <table class="table table-bordered table-hover">
+                            <thead class="thead-light">
                                 <tr>
                                     <th>ID</th>
                                     <th>Name</th>

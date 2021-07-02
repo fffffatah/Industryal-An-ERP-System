@@ -85,8 +85,8 @@
                             </div>
                         </form>
                         <br>
-                        <table class="table table-striped table-bordered">
-                            <thead>
+                        <table class="table table-bordered table-hover">
+                            <thead class="thead-light">
                                 <tr>
                                     <th>Product ID</th>
                                     <th>Product Name</th>
