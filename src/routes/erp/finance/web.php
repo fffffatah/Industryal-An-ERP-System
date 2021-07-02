@@ -55,7 +55,12 @@ Route::group(['middleware'=>['sess', 'finance_type']], function(){
     Route::get('/finance/budgeting/connectedbanks/{id}', ['as'=>'finance.budgeting.disconnect', 'uses'=>'FinanceBudgetingController@disconnect']);
     Route::get('/finance/budgeting/newbank', ['as'=>'finance.budgeting.newbank', 'uses'=>'FinanceBudgetingController@index_newbank']);
     Route::post('/finance/budgeting/newbank', ['as'=>'finance.budgeting.addnewbank', 'uses'=>'FinanceBudgetingController@newbank']);
-
+    Route::get('/finance/budgeting/expense', ['as'=>'finance.budgeting.expense', 'uses'=>'FinanceBudgetingController@index_expense']);
+    Route::post('/finance/budgeting/expense', ['as'=>'finance.budgeting.addexpense', 'uses'=>'FinanceBudgetingController@expense']);
+    Route::get('/finance/budgeting/asset', ['as'=>'finance.budgeting.asset', 'uses'=>'FinanceBudgetingController@index_asset']);
+    Route::post('/finance/budgeting/asset', ['as'=>'finance.budgeting.addasset', 'uses'=>'FinanceBudgetingController@asset']);
+    Route::get('/finance/budgeting/liability', ['as'=>'finance.budgeting.liability', 'uses'=>'FinanceBudgetingController@index_liability']);
+    Route::post('/finance/budgeting/liability', ['as'=>'finance.budgeting.addliability', 'uses'=>'FinanceBudgetingController@liability']);
 
     #Routes for Payments
     Route::get('/finance/payments', ['as'=>'finance.payments.index', 'uses'=>'FinancePaymentController@index']);
