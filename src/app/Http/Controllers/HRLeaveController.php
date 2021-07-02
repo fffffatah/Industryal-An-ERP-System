@@ -83,11 +83,11 @@ class HRLeaveController extends Controller
             $req->session()->flash('msg', 'Reject Leave request');
             return redirect()->route('HRLeave.leaveList');
         }
-        else
+         else
         {
             $req->session()->flash('msg', 'Failed!!!');
             return redirect()->route('HRLeave.leaveList');
-        }
+        } 
        
         
         
