@@ -83,7 +83,6 @@
                                     <h3><i class="fas fa-chart-line"></i> &nbsp &nbsp Product Statistics</h3> 
                                 </div>
                                 <div class="col-2">
-                                     <a href="" class="btn btn-primary rounded p-1 text-right">Download</a>
                                 </div>
                             </div>
                             <hr class="mb-4">

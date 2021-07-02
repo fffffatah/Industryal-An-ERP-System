@@ -10,15 +10,13 @@ class ProductStockController extends Controller
 {
     public function index(Request $req)
     {
-        if($req->searchProduct)
-        {
-            $searchProduct = product_table::where('product_name', $req->searchProduct)->get();
-            return view('product.stocks.index')->with('productList', $searchProduct);
-        }
-        else
-        {
-            $productList = product_table::all();
-            return view('product.stocks.index')->with('productList', $productList);
-        }
+        $productList = product_table::where('product_condition',"Good")->get();
+        return view('product.stocks.index')->with('productList', $productList);
+    }
+
+    public function search(Request $req)
+    {
+        $product = product_table::where('product_name','like','%'.$req->get('searchQuery').'%')->where('product_condition',"Good")->get();
+        return json_encode($product);
     }
 }

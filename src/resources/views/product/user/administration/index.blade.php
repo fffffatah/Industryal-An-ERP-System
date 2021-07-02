@@ -80,10 +80,33 @@
                         </div>
                         <hr class="mb-4">
                         <div class="container">
+                            <div class="row justify-content-center mb-2">
+                                @if(session('msg'))
+                                    <span class="alert alert-success">{{session('msg')}}</span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="row align-items-start mb-2">
+                            <div class="col">
+                            </div>
+                            <div class="col-8"> 
+                            </div>
+                            <div class="col">
+                                    <a href="{{route('userAdministration.myIssue')}}" class="btn btn-secondary rounded p-1 text-right">My Issue List</a>
+                            </div>
+                        </div>
+                        <div class="container">
                             <div class="text-left">
                                 <form method="POST">
                                     @csrf
                                     <table class="table table-striped table-bordered">
+                                        <tr>
+                                            <td>Issue Name</td>
+                                            <td>
+                                                <input type="text" name="issue_name" class="form-control">
+                                                <span class="text-danger">{{$errors->first('issue_name')}}</span>  
+                                            </td>
+                                        </tr>
                                         <tr>
                                             <td>Message</td>
                                             <td>

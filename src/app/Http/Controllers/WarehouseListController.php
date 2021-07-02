@@ -15,16 +15,8 @@ class WarehouseListController extends Controller
 {
     public function index(Request $req)
     {
-        if($req->searchProduct)
-        {
-            $searchProduct = warehouse_table::where('name', $req->searchProduct)->get();
-            return view('product.warehouse.list.index')->with('warehouseList', $searchProduct);
-        }
-        else
-        {
-            $warehouse_list = warehouse_table::all();
-            return view('product.warehouse.list.index')->with('warehouseList', $warehouse_list);
-        }
+        $warehouse_list = warehouse_table::all();
+        return view('product.warehouse.list.index')->with('warehouseList', $warehouse_list);
     }
 
     public function editWarehouse($id)
@@ -62,5 +54,11 @@ class WarehouseListController extends Controller
     public function exportWarehouseList()
     {
         return Excel::download(new WarehouseExport, 'warehouse_details.xlsx');
+    }
+
+    public function search(Request $req)
+    {
+        $product = warehouse_table::where('name','like','%'.$req->get('searchQuery').'%')->get();
+        return json_encode($product);
     }
 }
