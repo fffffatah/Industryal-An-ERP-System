@@ -30,6 +30,8 @@ Route::group(['middleware'=>['sess', 'finance_type']], function(){
     Route::get('/finance/leaverequest', ['as'=>'finance.leaverequest.index', 'uses'=>'FinanceLeaveRequestController@index']);
     Route::get('/finance/leaverequest/list', ['as'=>'finance.leaverequest.list', 'uses'=>'FinanceLeaveRequestController@index_list']);
     Route::get('/finance/leaverequest/new', ['as'=>'finance.leaverequest.new', 'uses'=>'FinanceLeaveRequestController@index_new']);
+    Route::post('/finance/leaverequest/new', ['as'=>'finance.leaverequest.apply', 'uses'=>'FinanceLeaveRequestController@apply']);
+    Route::get('/finance/leaverequest/new/{id}', ['as'=>'finance.leaverequest.delete', 'uses'=>'FinanceLeaveRequestController@delete']);
 
     #Routes for Reports
     Route::get('/finance/reports', ['as'=>'finance.reports.index', 'uses'=>'FinanceReportController@index']);
