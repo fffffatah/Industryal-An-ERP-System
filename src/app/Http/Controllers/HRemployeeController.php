@@ -16,10 +16,19 @@ class HRemployeeController extends Controller
         return view('HR.employee.employeeCreate');
     }
 
-    public function emplist()
+    public function emplist(Request $req)
     {
-        $employees=Employee::all();
-        return view('HR.employee.employeeList')->with('employeeList', $employees);
+        if($req->searchEmployee)
+        {
+            $searchEmp=Employee::where('employee_name',$req->searchEmployee)->get();
+            return view('HR.employee.employeeList')->with('employeeList', $searchEmp);
+        }
+        else
+        {
+            $employees=Employee::all();
+            return view('HR.employee.employeeList')->with('employeeList', $employees);
+        }
+        
     }
     public function index(HRempCreateRequest $req)
     {

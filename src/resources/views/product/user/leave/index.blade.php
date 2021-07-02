@@ -92,7 +92,7 @@
                             <div class="col-8"> 
                             </div>
                             <div class="col">
-                                    <a href="{{route('myLeave.index')}}" class="btn btn-secondary rounded p-1 text-right">My Request List</a>
+                                    <a href="{{route('myLeave.index')}}" class="btn btn-secondary rounded p-1 text-right">My Leave List</a>
                             </div>
                         </div>
                         <div class="container">

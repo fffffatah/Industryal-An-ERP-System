@@ -58,12 +58,15 @@
                 </div>
                  @endif
                 <hr class="mb-4">
+                <form method="POST">
+                 @csrf
                     <div class="input-group">
-                        <input class="form-control" type="text" placeholder="Find By Name...">
-                        <div class="input-group-append">
-                            <button type="button" class="btn btn-outline-secondary">Search &nbsp <i class="fas fa-search"></i></button>
-                        </div>
+                        <input class="form-control" type="text" placeholder="Find By Employee Name..." name="searchEmployee">
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-outline-secondary">Search &nbsp <i class="fa fa-search"></i></button>
+                            </div>
                     </div>
+                </form>
                     <br>
                     <div class="row align-items-start mb-2">
                             <div class="col">

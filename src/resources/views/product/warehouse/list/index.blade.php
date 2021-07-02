@@ -81,10 +81,7 @@
                             <form method="POST">
                                 @csrf
                                 <div class="input-group">
-                                    <input class="form-control" type="text" placeholder="Find By Name..." name="searchProduct">
-                                    <div class="input-group-append">
-                                        <button type="submit" class="btn btn-outline-secondary">Search &nbsp <i class="fa fa-search"></i></button>
-                                    </div>
+                                    <input class="form-control" type="text" placeholder="Search Product By Name..." name="searchWarehouse" id="search-warehouse">
                                 </div>
                             </form>
                             <br>
@@ -97,7 +94,8 @@
                                         <a href="{{route('warehouseList.exportWarehouseList')}}" class="btn btn-primary rounded p-1 text-right">Download</a>
                                 </div>
                             </div>
-                            <table class="table table-striped table-bordered">
+                            <table class="table table-bordered table-hover">
+                            <thead class="thead-light">
                                 <tr>
                                     <th>ID</th>
                                     <th>Name</th>
@@ -109,6 +107,8 @@
                                     <th>Condition</th>
                                     <th>Action</th>
                                 </tr>
+                            </thead>
+                            <tbody id = "dynamic-row">
                                 @foreach($warehouseList as $warehouse)
                                     <tr>
                                         <td>{{$warehouse['warehouse_id']}}</td>
@@ -136,6 +136,7 @@
                                         </td>
                                     </tr>
                                 @endforeach
+                            </tbody>
                             </table>
                         </div>
                     </div>
@@ -167,5 +168,48 @@
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
     crossorigin="anonymous"></script>
+
+
+    <script type="text/javascript">
+        $('body').on('keyup', '#search-warehouse', function(){
+            var searchQuery = $(this).val();
+
+            $.ajax({
+                method:"POST",
+                url:'{{route("warehouseList.search")}}',
+                dataType:'json',
+                data:{
+                    '_token': '{{ csrf_token()}}',
+                    searchQuery : searchQuery
+                },
+                success: function(response){
+                    var tableRow = '';
+                    $('#dynamic-row').html('');
+                    $.each(response, function(index, value){
+                        tableRow = '<tr><td>'+value.warehouse_id+'</td><td>'+value.name+'</td><td>'+value.description+'</td><td>'+value.address+'</td><td>'+value.quantity+'</td><td>';
+                        if(value.remaining_quantity < 1)
+                        { tableRow += '0'; }
+                        else
+                        { tableRow += value.remaining_quantity; }   
+
+                        tableRow += '</td><td>'+value.status+'</td><td>';
+
+                        if(value.remaining_quantity < 1)
+                        {
+                            tableRow += '<b class="text-danger">Out of Stock</b>';
+                        }
+                        else
+                        {
+                            tableRow += '<b class="text-success">In Stock</b>';
+                        }
+                        tableRow += '</td><td><a href="/warehouse/edit/'+value.id+'}}" class="btn btn-warning">Update</a></td></tr>';
+
+                        $('#dynamic-row').append(tableRow);
+                    });
+                }
+            });
+        });
+    </script>
+
 </body>
 </html>
