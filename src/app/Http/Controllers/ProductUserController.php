@@ -21,16 +21,8 @@ class ProductUserController extends Controller
     // show activities
     public function activities(Request $req)
     {
-        if($req->searchActivity)
-        {
-            $allActivities = activities_table::where('type', $req->searchActivity)->get();
-            return view('product.user.activities.index')->with('allActivities', $allActivities);
-        }
-        else
-        {
-            $allActivities = activities_table::all();
-            return view('product.user.activities.index')->with('allActivities', $allActivities);
-        }
+        $allActivities = activities_table::all();
+        return view('product.user.activities.index')->with('allActivities', $allActivities);
     }
 
     // leave request
@@ -242,5 +234,11 @@ class ProductUserController extends Controller
     {
         $verifucation_code = random_int(100000, 999999);
         return $verifucation_code;
+    }
+
+    public function searchActivity(Request $req)
+    {
+        $activity = activities_table::where('type','like','%'.$req->get('searchQuery').'%')->get();
+        return json_encode($activity);
     }
 }
