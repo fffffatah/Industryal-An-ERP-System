@@ -56,8 +56,8 @@
                         <div class="row">
                           <div class="col-md-12">
                             <div class="form-group">
-                              <label class="bmd-label-floating">Delivery To</label>
-                              <input class="form-control"></input>
+                              <label class="bmd-label-floating">Order Description</label>
+                              <input name="order_des" class="form-control"></input>
                               <span style="font-weight: bold" class="text-danger">{{$errors->first('cus_del')}}</span>
                             </div>
                           </div>
