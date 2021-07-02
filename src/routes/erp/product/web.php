@@ -59,6 +59,8 @@ Route::post('/product/delete/{id}',[ProductListController::class, 'destroyProduc
 Route::get('/product/stocks',[ProductStockController::class, 'index'])->name('productStocks.index');
 Route::post('/product/stocks',[ProductStockController::class, 'index']);
 
+Route::post('/product/stocks/search',[ProductStockController::class, 'search'])->name('productStocks.search');
+
 // product statistics
 Route::get('/product/statistics',[ProductStatisticsController::class, 'index'])->name('productStatistics.index');
 
