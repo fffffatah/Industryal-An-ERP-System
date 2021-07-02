@@ -16,21 +16,11 @@ class SalesSessionVerify
      */
     public function handle(Request $request, Closure $next)
     {
-        $check = $request->session()->has('login');
-        if($check)
-        {
+        if($request->session()->get('type') == 'sales' ){
             return $next($request);
-        }
-        else
-        {
+        }else{
+            $request->session()->flash('msg', 'Invalid Request');
             return redirect()->route('signin.index');
         }
-
-        // if($request->session()->get('type') == 'finance' || $request->session()->get('type') == 'admin'){
-        //     return $next($request);
-        // }else{
-        //     $request->session()->flash('msg', 'Invalid Request');
-        //     return redirect()->route('signin.index');
-        // }
     }
 }

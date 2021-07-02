@@ -22,11 +22,13 @@ use App\Http\Controllers\SalesOrderController;
 // Route::get('/sales', function () {
 //     return view('sales.index');
 // });
+Route::get('/', function () {
+    return redirect() -> route('signin.index');  
+});
+Route::get('/',[SalesController::class, 'logout'])->name('user.logout');
+  
 Route::group(["middleware" => "sales_session"],function () {
 Route::get('/sales',[SalesController::class, 'dashboardIndex'])->name('sales.dashboard');
-
-
-
 Route::get('/sales/dashboard',[SalesController::class, 'dashboardIndex'])->name('sales.dashboard.index');
 
 //User Profile
