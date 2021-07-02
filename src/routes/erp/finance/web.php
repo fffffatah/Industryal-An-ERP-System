@@ -52,10 +52,23 @@ Route::group(['middleware'=>['sess', 'finance_type']], function(){
     #Routes for Budgeting
     Route::get('/finance/budgeting', ['as'=>'finance.budgeting.index', 'uses'=>'FinanceBudgetingController@index']);
     Route::get('/finance/budgeting/connectedbanks', ['as'=>'finance.budgeting.connectedbanks', 'uses'=>'FinanceBudgetingController@index_connectedbanks']);
+    Route::get('/finance/budgeting/connectedbanks/{id}', ['as'=>'finance.budgeting.disconnect', 'uses'=>'FinanceBudgetingController@disconnect']);
     Route::get('/finance/budgeting/newbank', ['as'=>'finance.budgeting.newbank', 'uses'=>'FinanceBudgetingController@index_newbank']);
+    Route::post('/finance/budgeting/newbank', ['as'=>'finance.budgeting.addnewbank', 'uses'=>'FinanceBudgetingController@newbank']);
+    Route::get('/finance/budgeting/expense', ['as'=>'finance.budgeting.expense', 'uses'=>'FinanceBudgetingController@index_expense']);
+    Route::post('/finance/budgeting/expense', ['as'=>'finance.budgeting.addexpense', 'uses'=>'FinanceBudgetingController@expense']);
+    Route::get('/finance/budgeting/asset', ['as'=>'finance.budgeting.asset', 'uses'=>'FinanceBudgetingController@index_asset']);
+    Route::post('/finance/budgeting/asset', ['as'=>'finance.budgeting.addasset', 'uses'=>'FinanceBudgetingController@asset']);
+    Route::get('/finance/budgeting/liability', ['as'=>'finance.budgeting.liability', 'uses'=>'FinanceBudgetingController@index_liability']);
+    Route::post('/finance/budgeting/liability', ['as'=>'finance.budgeting.addliability', 'uses'=>'FinanceBudgetingController@liability']);
 
     #Routes for Payments
     Route::get('/finance/payments', ['as'=>'finance.payments.index', 'uses'=>'FinancePaymentController@index']);
+    Route::get('/finance/payments/history', ['as'=>'finance.payments.history', 'uses'=>'FinancePaymentController@history']);
+    Route::get('/finance/payments/customer', ['as'=>'finance.payments.customer', 'uses'=>'FinancePaymentController@customer']);
+    Route::get('/finance/payments/supplier', ['as'=>'finance.payments.supplier', 'uses'=>'FinancePaymentController@supplier']);
+    Route::get('/finance/payments/customer/{id}', ['as'=>'finance.payments.customer_adjust', 'uses'=>'FinancePaymentController@customer_adjust']);
+    Route::get('/finance/payments/supplier/{id}', ['as'=>'finance.payments.supplier_adjust', 'uses'=>'FinancePaymentController@supplier_adjust']);
 
     #Routes for Chat
     Route::get('/finance/chat', ['as'=>'finance.chat.index', 'uses'=>'FinanceChatController@index']);

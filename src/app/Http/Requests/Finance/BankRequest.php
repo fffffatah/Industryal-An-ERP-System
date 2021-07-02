@@ -4,9 +4,7 @@ namespace App\Http\Requests\Finance;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-use App\Rules\Common\IsBankConnected;
-
-class InvoiceRequest extends FormRequest
+class BankRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,17 +24,19 @@ class InvoiceRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required',
             'name' => 'required',
-            'order' => ['required', new IsBankConnected()],
+            'holder_name' => 'required',
+            'balance' => 'required',
+            'account_no' => 'required',
         ];
     }
     public function messages()
     {
         return [
-            'title.required' => '* Title Required',
             'name.required' => '* Name Required',
-            'order.required' => '* Sales Order Required',
+            'holder_name.required' => '* Account Holder Name Required',
+            'balance.required' => '* Balance Required',
+            'account_no.required' => '* Account No Required',
         ];
     }
 }
