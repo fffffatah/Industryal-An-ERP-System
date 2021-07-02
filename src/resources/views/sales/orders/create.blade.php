@@ -41,6 +41,7 @@
                         </div>
                         <button type="submit" class="btn btn-info">Add Order</button>
                         <div class="clearfix"></div>
+                        <input type="number" name="sum_total" id="sum_total" hidden/>
                       </form>
                     </div>
                   </div>
@@ -119,7 +120,7 @@
         var $price = $(this).closest("tr").find(".price").text();
 
         priceList.push(parseInt($price));
-        console.log(priceList);
+        //console.log(priceList);
 
         var table = document.getElementById('productTable');
         var row = table.insertRow(1);
@@ -129,8 +130,13 @@
         cell1.innerHTML = $id;
         cell2.innerHTML = $name;
         cell3.innerHTML = $price;
-        // $("#resultas").append($item);       // Outputs the answer
+        var total = priceList.reduce(myFunc);
+        document.getElementById('sum_total').value = total;
       });
+
+      function myFunc(total, num){
+        return total+num;
+      }
     </script>
   {{-- </tr>
 </table> --}}

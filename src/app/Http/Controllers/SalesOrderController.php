@@ -69,7 +69,7 @@ class SalesOrderController extends Controller
         $order->customer_id = $req->cus_id;
         $order->order_description = $req->order_des;
         $order->order_made = Carbon::now()->toDateTimeString();
-        $order->total_amount = 0;
+        $order->total_amount = $req->sum_total;
         $order->status = "processing";
         $order->save();
         $req->session()->flash('successful', 'Successfully added!');
