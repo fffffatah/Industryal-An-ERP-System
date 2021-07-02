@@ -53,29 +53,37 @@
             </div>
             <div class="col-10">
                 <h3 class="text-center"><i class="far fa-list-alt"></i>Leave Request List</h3>
+                @if(session('msg'))
+                <div class="alert alert-success w-25">
+                    <strong>{{session('msg')}}</strong> 
+                </div>
+                 @endif
                 <table  class="table table-hover ">
-                <tr>
-                    <th>Type</th>
+                
+                    <th>employee ID</th>
+                    <th>Leave Type</th>
                     <th>Start Date</th>
                     <th>End Date</th>
                     <th>Description</th>
+                    <th>RequestMade</th>
                     <th>Status</th>
                     <th>Action</th>
-                </tr>
+                @foreach($leaveList as $leave)
                 <tr>
-                    <td>Seck</td>
-                    <td>24-JUL-21</td>
-                    <td>27-JUL-21</td>
-                    <td>Very Seck</td>
-                    <td>pending</td>
-
+                    <td>{{$leave['employee_id']}}</td>
+                    <td>{{$leave['type']}}</td>
+                    <td>{{$leave['start_time']}}</td>
+                    <td>{{$leave['end_time']}}</td>
+                    <td>{{$leave['request_description']}}</td>
+                    <td>{{$leave['request_made']}}</td>
+                    <td>{{$leave['status']}}</td>
                     <td>
-                        <a class="btn btn-primary" href="#" > Approve </a> 
-                        <a class="btn btn-denger" href="#"> Reject</a> 
+                        <a  href="/HR/leave/approve/{{$leave['employee_id']}}" class="btn btn-primary"> Approve </a> 
+                        <a href="/HR/leave/reject/{{$leave['employee_id']}}" class="btn btn-danger" > Reject</a> 
                         
                     </td>
                 </tr>
-                  
+                @endforeach  
                 </table>
         
            </div>

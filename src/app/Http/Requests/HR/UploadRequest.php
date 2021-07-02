@@ -4,7 +4,7 @@ namespace App\Http\Requests\HR;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ProfileEditRequest extends FormRequest
+class UploadRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,11 +24,9 @@ class ProfileEditRequest extends FormRequest
     public function rules()
     {
         return [
-            "firstname" => "required|min:2",
-            "lastname" => "required|min:3|max:100|alpha",
-            "phone" => "required|min:11",
-            "email" => "required|string|email",
-            "address" => "required|string|max:100",
+            "current_password" => "required||min:8|max:15|alpha_num",
+           
+
         ];
     }
 }

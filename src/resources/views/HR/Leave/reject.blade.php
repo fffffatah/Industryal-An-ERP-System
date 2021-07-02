@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User List</title>
+    <title>Leave Request Reject</title>
+   <!--  Bootstrap cdn -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
     crossorigin="anonymous">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
@@ -18,7 +19,7 @@
                     <h1 class="text-white"><i>Industryal</i></h1>
                 </div>
                 
-                <div class="col-lg-3 ">
+                <div class=" col-lg-3  ">
                     <ul class="nav justify-content-center ">
                         <li class="nav-item"><a class="nav-link text-white btn btn-outline-primary btn-block  mt-2" href="{{route('HRhome.index')}}"><i class="fas fa-home"></i>Home</a></li>
                         <span style="padding-right:7px;"></span>
@@ -45,64 +46,53 @@
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRLeave.leaveList')}}">Leave Request List</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRexpense.report')}}">Expense Report</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRexpenseList.list')}}"> Expense  Report List</a></li>
-                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRExStatistic.statistic')}}">Expense Statistic</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRExStatistic.statistic')}}">Expense Statistic</a></li>                        
                         <li class="nav-item"><a class="nav-link btn btn-outline-primary btn-block mt-2" href="{{route('HRpayroll.show')}}">Payroll</a></li>
                     </ul>
                 </nav>
             </div>
             <div class="col-10">
-                <h1 class="text-center"><i class="fas fa-user"></i>User </h1>
+                <h3 class="text-center">Leave Request Reject</h3>
                 @if(session('msg'))
                 <div class="alert alert-success w-25">
                     <strong>{{session('msg')}}</strong> 
                 </div>
                  @endif
-                    <br>
-                    <table  class="table table-hover ">
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>User Name</th>
-                        <th>Gender</th>
-                        <th>User Type</th>
-                        <th>Address</th>
-                        <th>Phone</th>
-                        <th>Email</th>
-                        <th>Job Position</th>
-                        <th>profile Pic</th>
-                        <th>Employment Start date</th>
-                     
-                      
-                        <tr>
-                            <td>{{$user['firstname']}}</td>
-                            <td>{{$user['lastname']}}</td>
-                            <td>{{$user['username']}}</td>
-                            <td>{{$user['gender']}}</td>
-                            <td>{{$user['type']}}</td>
-                            <td>{{$user['address']}}</td>
-                            <td>{{$user['phone']}}</td>
-                            <td>{{$user['email']}}</td>
-                            <td>{{$user['position']}}</td>
-                            <td>
-                                <img src="/upload/Users/{{$user['profile_pic']}}" alt="Profile" width="100" height="100"> 
-                                </td>
-                            <td>{{$user['created_at']}}</td>
-                        </tr>
-                       
-                    </table>
-                    <br>
-                    <div class="container">
+                <table  class="table table-hover ">
+                
+                    <th>employee ID</th>
+                    <th>Leave Type</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Description</th>
+                    <th>RequestMade</th>
+                    <th>Status</th>
+                   
+               
+                <tr>
+                    <td>{{$leave['employee_id']}}</td>
+                    <td>{{$leave['type']}}</td>
+                    <td>{{$leave['start_time']}}</td>
+                    <td>{{$leave['end_time']}}</td>
+                    <td>{{$leave['request_description']}}</td>
+                    <td>{{$leave['request_made']}}</td>
+                    <td>{{$leave['status']}}</td>
+                    
+                </tr>
+                
+                </table>
+                <div class="container">
                         <div class="row justify-content-center">
-                            <h3 class="text-dark">Are you sure to delete <i>{{$user['username']}}</i>?</h3>
+                            <h3 class="text-dark">Are you sure to Reject leave request ?</h3>
                         </div>
                         <div class="row justify-content-center">
                             <form method="POST">
                              @csrf
-                                <input type="submit" value="Delete" class="btn btn-danger">
+                                <input type="submit" value="Reject" class="btn btn-primary">
                             </form> 
-                            <a href="{{route('HRuser.index')}}" class="btn btn-success ml-2">Back</a>
+                            <a href="{{route('HRLeave.leaveList')}}" class="btn btn-success ml-2">Back</a>
                         </div>
-                    </div>
-                    
+                </div>
         
            </div>
             
@@ -111,16 +101,16 @@
             <div class="container">
                 <div class="row">
                     <div class="col">
-                        <p class="lead text-center">
+                        <p class="lead text-center"><b>
                             Copyright &copy;
                             <span >2021</span>
-                            Industryal
+                            Industryal</b>
                         </p>
                     </div>
                 </div>
             </div>
         </footer>
-    <!-- Footer Ends -->    
+    <!-- Footer Ends -->  
        
     
     

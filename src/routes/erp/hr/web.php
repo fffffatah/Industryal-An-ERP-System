@@ -29,7 +29,7 @@ Route::get('/', function () {
 });
 Route::get('/logout',[HRuserProfileController::class,'logout'])->name('HRuserProfile.logout');
 
-
+Route::group(["middleware" => "hr_session"],function () {
 //Hr home
 Route::get('/HR/home',[HRhomeController::class,'index'])->name('HRhome.index');
 //HR user create
@@ -53,9 +53,15 @@ Route::post('/HR/employee/delete/{employee_id}',[HRemployeeController::class,'em
 Route::get('/HR/employee/group',[HRgroupController::class,'index'])->name('HRgroup.index');
 Route::post('/HR/employee/group',[HRgroupController::class,'CreateGroup']);;
 Route::get('/HR/employee/schedule',[HREmpScheduleController::class,'schedule'])->name('HREmpSchedule.schedule');
-
+//Export
+Route::get('/HR/employee/list/export',[HRemployeeController::class,'EmpListExport'])->name('HRemployee.EmpListExport');
 //leave request
 Route::get('/HR/leave/request',[HRLeaveController::class,'leave'])->name('HRLeave.leave');
+Route::post('/HR/leave/request',[HRLeaveController::class,'VerifyLeave']);
+Route::get('/HR/leave/approve/{employee_id}',[HRLeaveController::class,'approve'])->name('HRLeave.approve');
+Route::post('/HR/leave/approve/{employee_id}',[HRLeaveController::class,'VerifyApprove']);
+Route::get('/HR/leave/reject/{employee_id}',[HRLeaveController::class,'reject'])->name('HRLeave.approve');
+Route::post('/HR/leave/reject/{employee_id}',[HRLeaveController::class,'VerifyReject']);
 Route::get('/HR/leave/request/list',[HRLeaveController::class,'leaveList'])->name('HRLeave.leaveList');
 //payroll
 Route::get('/HR/payroll/show',[HRpayrollController::class,'show'])->name('HRpayroll.show');
@@ -76,8 +82,9 @@ Route::post('/HR/user/profile/edit',[HRuserProfileController::class,'profileUpda
 Route::get('/HR/user/profile/edit/changePassword',[HRuserProfileController::class,'changePassword'])->name('HRuserProfile.changePassword');
 Route::post('/HR/user/profile/edit/changePassword',[HRuserProfileController::class,'PasswordUpdate']);
 Route::get('/HR/user/profile/edit/uploadImage',[HRuserProfileController::class,'uploadImage'])->name('HRuserProfile.uploadImage');
+Route::post('/HR/user/profile/edit/uploadImage',[HRuserProfileController::class,'VerifyUploadImage']);
 
-
+});
 
 
 
