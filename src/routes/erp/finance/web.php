@@ -42,7 +42,9 @@ Route::group(['middleware'=>['sess', 'finance_type']], function(){
     Route::get('/finance/importexport', ['as'=>'finance.importexport.index', 'uses'=>'FinanceImportExportController@index']);
     Route::get('/finance/importexport/history', ['as'=>'finance.importexport.history', 'uses'=>'FinanceImportExportController@index_history']);
     Route::get('/finance/importexport/import', ['as'=>'finance.importexport.import', 'uses'=>'FinanceImportExportController@index_import']);
+    Route::post('/finance/importexport/import', ['as'=>'finance.importexport.importdata', 'uses'=>'FinanceImportExportController@import']);
     Route::get('/finance/importexport/export', ['as'=>'finance.importexport.export', 'uses'=>'FinanceImportExportController@index_export']);
+    Route::post('/finance/importexport/export', ['as'=>'finance.importexport.exportdata', 'uses'=>'FinanceImportExportController@export']);
 
     #Routes for Budgeting
     Route::get('/finance/budgeting', ['as'=>'finance.budgeting.index', 'uses'=>'FinanceBudgetingController@index']);
