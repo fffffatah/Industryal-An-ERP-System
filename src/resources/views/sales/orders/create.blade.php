@@ -1,6 +1,4 @@
 @include('sales.layouts.header')
-{{-- <table border="1px">
-  <tr> --}}
     <div class="row" style="max-width: 100%; overflow-x: hidden;">
       <div class="col-md-6 sticky-top">
         <div class="container">
@@ -19,17 +17,10 @@
                         <div class="row">
                           <div class="col-md-3">
                               <div class="form-group">
-                                <label class="bmd-label-floating">ID</label>
+                                <label class="bmd-label-floating">Customer ID</label>
                                 <input type="text" class="form-control" name="cus_id" value={{$id}} disabled>
                               </div>
                             </div>
-                          <div class="col-md-5">
-                            <div class="form-group">
-                              <label class="bmd-label-floating">Full Name</label>
-                              <input type="text" class="form-control" name="cus_name" value="">
-                              <span style="font-weight: bold" class="text-danger">{{$errors->first('cus_name')}}</span>
-                            </div>
-                          </div>
                           <div class="col-md-4">
                             <div class="form-group">
                               <label class="bmd-label-floating">First Purchase</label>
@@ -38,32 +29,17 @@
                           </div>
                         </div>
                         <div class="row">
-                          <div class="col-md-6">
-                            <div class="form-group">
-                              <label class="bmd-label-floating">Phone Number</label>
-                              <input type="text" class="form-control" name="cus_phone" value="">
-                              <span style="font-weight: bold" class="text-danger">{{$errors->first('cus_phone')}}</span>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-group">
-                              <label class="bmd-label-floating">Email address</label>
-                              <input type="text" class="form-control" name="cus_email" value="">
-                              <span style="font-weight: bold" class="text-danger">{{$errors->first('cus_email')}}</span>
-                            </div>
-                          </div>
                         </div>
                         <div class="row">
                           <div class="col-md-12">
                             <div class="form-group">
                               <label class="bmd-label-floating">Order Description</label>
                               <input name="order_des" class="form-control"></input>
-                              <span style="font-weight: bold" class="text-danger">{{$errors->first('cus_del')}}</span>
+                              <span style="font-weight: bold" class="text-danger">{{$errors->first('order_des')}}</span>
                             </div>
                           </div>
                         </div>
-                        <button type="submit" class="btn btn-info">Update Profile</button>
-                        <button type="button" class="btn btn-info" onclick="document.location='{{route('sales.profile.edit.password')}}'">Change Password</button>
+                        <button type="submit" class="btn btn-info">Add Order</button>
                         <div class="clearfix"></div>
                       </form>
                     </div>
