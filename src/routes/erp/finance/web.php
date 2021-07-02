@@ -40,6 +40,8 @@ Route::group(['middleware'=>['sess', 'finance_type']], function(){
     Route::get('/finance/reports', ['as'=>'finance.reports.index', 'uses'=>'FinanceReportController@index']);
     Route::get('/finance/reports/financial', ['as'=>'finance.reports.financial', 'uses'=>'FinanceReportController@index_financial']);
     Route::get('/finance/reports/invoice', ['as'=>'finance.reports.invoice', 'uses'=>'FinanceReportController@index_invoice']);
+    Route::post('/finance/reports/financial', ['as'=>'finance.reports.genfinancial', 'uses'=>'FinanceReportController@financial']);
+    Route::post('/finance/reports/invoice', ['as'=>'finance.reports.geninvoice', 'uses'=>'FinanceReportController@invoice']);
 
     #Routes for Import/Export
     Route::get('/finance/importexport', ['as'=>'finance.importexport.index', 'uses'=>'FinanceImportExportController@index']);
