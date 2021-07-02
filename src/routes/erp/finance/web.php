@@ -25,6 +25,9 @@ Route::group(['middleware'=>['sess', 'finance_type']], function(){
     Route::get('/finance/invoice/listsupplier', ['as'=>'finance.invoice.listsupplier', 'uses'=>'FinanceInvoiceController@index_invoice_listsupplier']);
     Route::get('/finance/invoice/customer', ['as'=>'finance.invoice.customer', 'uses'=>'FinanceInvoiceController@index_invoice_newcustomer']);
     Route::get('/finance/invoice/supplier', ['as'=>'finance.invoice.supplier', 'uses'=>'FinanceInvoiceController@index_invoice_newsupplier']);
+    Route::post('/finance/invoice/customer', ['as'=>'finance.invoice.customer_create', 'uses'=>'FinanceInvoiceController@invoice_newcustomer']);
+    Route::post('/finance/invoice/supplier', ['as'=>'finance.invoice.supplier_create', 'uses'=>'FinanceInvoiceController@invoice_newsupplier']);
+    Route::get('/finance/invoice/{id}', ['as'=>'finance.invoice.delete', 'uses'=>'FinanceInvoiceController@delete']);
 
     #Routes for Leave-Request
     Route::get('/finance/leaverequest', ['as'=>'finance.leaverequest.index', 'uses'=>'FinanceLeaveRequestController@index']);

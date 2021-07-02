@@ -19,30 +19,20 @@
                                 <th scope="col">Title</th>
                                 <th scope="col">Customer</th>
                                 <th scope="col">Status</th>
-                                <th scope="col">Details</th>
-                                <th scope="col">Mail</th>
+                                <th scope="col">Download</th>
                                 <th scope="col">Delete</th>
                             </tr>
+                            @foreach ($invoices as $invoice)
                             <tr>
-                                <td>1</td>
-                                <td>12/12/2047</td>
-                                <td>abcd</td>
-                                <td>John</td>
-                                <td>Adjusted</td>
-                                <td><a class="btn btn-outline-primary" href="">Details</a></td>
-                                <td><a class="btn btn-outline-info" href="">Mail</a></td>
-                                <td><a class="btn btn-outline-danger" href="">Delete</a></td>
+                                <td>{{ $loop->iteration }}</td>
+                                <td>{{$invoice->created_at}}</td>
+                                <td>{{$invoice->title}}</td>
+                                <td>{{$invoice->for_name}}</td>
+                                <td>{{$invoice->status}}</td>
+                                <td><a class="btn btn-primary" href="{{ url('upload/Finance/Invoices/'.$invoice->file) }}" download>Download</a></td>
+                                <td><a  class="btn btn-outline-danger" href="/finance/invoice/{{$invoice->id}}"> Delete </a></td>
                             </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>12/12/2047</td>
-                                <td>abcd</td>
-                                <td>John</td>
-                                <td>Adjusted</td>
-                                <td><a class="btn btn-outline-primary" href="">Details</a></td>
-                                <td><a class="btn btn-outline-info" href="">Mail</a></td>
-                                <td><a class="btn btn-outline-danger" href="">Delete</a></td>
-                            </tr>
+                            @endforeach
                         </table>
                     </div>
                     </div>
