@@ -59,6 +59,7 @@ Route::post('/product/delete/{id}',[ProductListController::class, 'destroyProduc
 Route::get('/product/stocks',[ProductStockController::class, 'index'])->name('productStocks.index');
 Route::post('/product/stocks',[ProductStockController::class, 'index']);
 
+// autocomplete search product stock
 Route::post('/product/stocks/search',[ProductStockController::class, 'search'])->name('productStocks.search');
 
 // product statistics
@@ -77,6 +78,9 @@ Route::post('/warehouse/create',[WarehouseCreateController::class, 'create']);
 // list of warehouse
 Route::get('/warehouse/list',[WarehouseListController::class, 'index'])->name('warehouseList.index');
 Route::post('/warehouse/list',[WarehouseListController::class, 'index']);
+
+// autocomplete search warehouse
+Route::post('/warehouse/list/search',[WarehouseListController::class, 'search'])->name('warehouseList.search');
 
 // Edit warehouse
 Route::get('/warehouse/edit/{id}',[WarehouseListController::class, 'editWarehouse'])->name('warehouseList.edit');
