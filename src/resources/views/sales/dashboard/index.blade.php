@@ -4,8 +4,9 @@
 <div class="container">
     <div class="container">
         <div class="row">
+            {{$amountsByMonth}}
             <div class="col-md-4 col-xl-3">
-                <div class="card bg-c-blue order-card">
+                <div class="card bg-info order-card">
                     <div class="card-block">
                         <h6 class="m-b-20">Orders Received</h6>
                         <h2 class="text-right"><i class="fa fa-cart-plus f-left"></i><span>486</span></h2>
@@ -15,7 +16,7 @@
             </div>
             
             <div class="col-md-4 col-xl-3">
-                <div class="card bg-c-green order-card">
+                <div class="card bg-info order-card">
                     <div class="card-block">
                         <h6 class="m-b-20">Orders Received</h6>
                         <h2 class="text-right"><i class="fa fa-rocket f-left"></i><span>486</span></h2>
@@ -25,7 +26,7 @@
             </div>
             
             <div class="col-md-4 col-xl-3">
-                <div class="card bg-c-yellow order-card">
+                <div class="card bg-info order-card">
                     <div class="card-block">
                         <h6 class="m-b-20">Orders Received</h6>
                         <h2 class="text-right"><i class="fa fa-refresh f-left"></i><span>486</span></h2>
@@ -35,7 +36,7 @@
             </div>
             
             <div class="col-md-4 col-xl-3">
-                <div class="card bg-c-pink order-card">
+                <div class="card bg-info order-card">
                     <div class="card-block">
                         <h6 class="m-b-20">Orders Received</h6>
                         <h2 class="text-right"><i class="fa fa-credit-card f-left"></i><span>486</span></h2>
@@ -44,6 +45,9 @@
                 </div>
             </div>
         </div>
+        @foreach ($amountsByMonth as $item)
+            {{$item->total}}
+        @endforeach
     </div>
 </div>
 <div style="margin:auto;height:500px; width:800px;padding-left:100px">
@@ -55,7 +59,7 @@
     let massPopChart = new Chart(myChart,{
       type:'bar',
       data:{
-        labels:['Boston', 'Worcester', 'Springfield', 'Lowell', 'Cambridge', 'New Bedford'],
+        labels:['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
         datasets:[{
           label:'Population',
           data:[
