@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Sales\OrderModel;
 use App\Models\Sales\CustomerModel;
+use App\Models\Product\activities_table;
+use App\Models\Product\product_table;
 use Illuminate\Http\Request;
 
 class SalesOrderController extends Controller
@@ -30,23 +32,17 @@ class SalesOrderController extends Controller
         else
         {
             $customer = CustomerModel::where('id', $req->cus_id)->first();
+            $products = product_table::all();
             if($customer)
             {
-                return view('sales.orders.create')->with('id', $id);
+                return view('sales.orders.create')->with('id', $customer['id'])->with('first_purchase', $customer['first_purchase'])->with('products', $products);
             }
             else
             {
                 return view('sales.orders.transactions.confirm');
             }
-            // return redirect('/sales/orders/create/confirm/'.$id);
-            // return redirect('sales.orders.createExisting');
         }
     }
-
-    // public function existingCusOrder(Request $req, $id)
-    // {
-    //     return view('sales.orders.create');
-    // }
 
     public function transactionsList()
     {
