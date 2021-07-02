@@ -52,7 +52,7 @@ class FinancePaymentController extends Controller
         $invoice->status = 'Adjusted';
         $invoice->save();
         $bank = Bank::where('manager_id',session('id'))->first();
-        $update_bank = Bank::find(session('id'));
+        $update_bank = Bank::find($bank->id);
         $update_bank->balance += $payment_history->amount;
         $update_bank->save();
         return redirect()->route('finance.payments.history');
@@ -79,7 +79,7 @@ class FinancePaymentController extends Controller
         $liability->manager_id = session('id');
         $liability->save();
         $bank = Bank::where('manager_id',session('id'))->first();
-        $update_bank = Bank::find(session('id'));
+        $update_bank = Bank::find($bank->id);
         $update_bank->balance -= $payment_history->amount;
         $update_bank->save();
         return redirect()->route('finance.payments.history');
