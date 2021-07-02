@@ -782,12 +782,9 @@ class ComposerStaticInit155832e25257a877561d28753da04fae
         'App\\Http\\Requests\\Product\\UserEditProfileRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Product/UserEditProfileRequest.php',
         'App\\Http\\Requests\\Product\\UserProfilePicUpdateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Product/UserProfilePicUpdateRequest.php',
         'App\\Http\\Requests\\Product\\WarehouseCreateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Product/WarehouseCreateRequest.php',
-<<<<<<< HEAD
         'App\\Http\\Requests\\Sales\\SalesCustomerInsertRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Sales/SalesCustomerInsertRequest.php',
         'App\\Http\\Requests\\Sales\\SalesCustomerUpdateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Sales/SalesCustomerUpdateRequest.php',
-=======
         'App\\Models\\Contact' => __DIR__ . '/../..' . '/app/Models/Contact.php',
->>>>>>> main
         'App\\Models\\Employee' => __DIR__ . '/../..' . '/app/Models/Employee.php',
         'App\\Models\\Expense' => __DIR__ . '/../..' . '/app/Models/Expense.php',
         'App\\Models\\Finance\\Asset' => __DIR__ . '/../..' . '/app/Models/Finance/Asset.php',
