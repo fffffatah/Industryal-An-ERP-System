@@ -66,6 +66,6 @@ class Kernel extends HttpKernel
         'sess' => \App\Http\Middleware\SessionVerify::class,
         'admin_type' => \App\Http\Middleware\AdminUserVerify::class,
         'finance_type' => \App\Http\Middleware\FinanceUserVerify::class,
-        'hr_session' => \App\Http\Middleware\HrSessionVerify::class,
+        
     ];
 }
