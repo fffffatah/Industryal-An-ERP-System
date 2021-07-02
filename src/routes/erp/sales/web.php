@@ -36,6 +36,11 @@ Route::group(["middleware" => "sales_session"],function () {
     Route::get('/sales/profile/edit',[SalesProfileController::class, 'editProfile'])->name('sales.profile.edit');
     Route::get('/sales/profile/change/password',[SalesProfileController::class, 'updatePassword'])->name('sales.profile.edit.password');
 
+    //Leave
+    Route::get('/sales/user/leave',[SalesProfileController::class, 'leave'])->name('userLeave.index');
+    Route::post('/sales/user/leave',[SalesProfileController::class, 'verifyLeave']);
+    Route::get('/sales/user/leave/myrequest',[SalesProfileController::class, 'myLeave'])->name('myLeave.index');
+    
     //Customers
     Route::get('/sales/customers/',[SalesCustomerController::class, 'showCustomersList'])->name('sales.customers.list');
     Route::get('/sales/customers/update/{id}',[SalesCustomerController::class, 'editCustomer'])->name('sales.customers.update');
@@ -54,8 +59,6 @@ Route::group(["middleware" => "sales_session"],function () {
     Route::get('/sales/orders/create/confirm',[SalesOrderController::class, 'existingOrNew'])->name('sales.orders.transactions.confirm');
     Route::get('/sales/orders/create/{cus_id}',[SalesOrderController::class, 'existingCusOrder'])->name('sales.orders.createExisting');
     Route::post('/sales/orders/create/{cus_id}',[SalesOrderController::class, 'insertNewOrder']);
-
-
 
     //Customer Mails
     Route::get('/sales/mail/send',[SalesMailController::class, 'sendEmail'])->name('sales.mail.send');
