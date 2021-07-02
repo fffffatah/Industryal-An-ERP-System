@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Sales\OrderModel;
 use App\Models\Sales\CustomerModel;
-use App\Models\Product\activities_table;
+use App\Http\Requests\Sales\SalesCustomerInsertRequest;
 use App\Models\Product\product_table;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
