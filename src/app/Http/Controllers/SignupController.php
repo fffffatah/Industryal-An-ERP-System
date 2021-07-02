@@ -29,7 +29,7 @@ class SignupController extends Controller
         $user->type = 'admin';
         $user->pass = $req->pass;
         $user->work_hour = '0';
-        $user->profile_pic = uniqid();
+        $user->profile_pic = uniqid().".".$img->getClientOriginalExtension();
         //Organization
         $organization = new Organization;
         $organization->name = $req->org_name;
@@ -45,7 +45,7 @@ class SignupController extends Controller
         $organization = Organization::where('email',$req->email)->first();
         if($organization){
             $user->organization_id = $organization->id;
-            $img->move('upload/Users', $user->profile_pic.'.'.$img->getClientOriginalExtension());
+            $img->move('upload/Users', $user->profile_pic);
             if($user->save()){
                 $req->session()->flash('msg', 'Registration Successfull, Please Login.');
                 return redirect()->route('signin.index');

@@ -17,6 +17,7 @@ Route::group(['middleware'=>['sess', 'finance_type']], function(){
 
     #Profile Routes
     Route::get('/finance/profile', ['as'=>'finance.profile.index', 'uses'=>'FinanceProfileController@index']);
+    Route::post('/finance/profile', ['as'=>'finance.profile.update', 'uses'=>'FinanceProfileController@update']);
 
     #Routes for Invoice
     Route::get('/finance/invoice', ['as'=>'finance.invoice.index', 'uses'=>'FinanceInvoiceController@index_invoice']);
