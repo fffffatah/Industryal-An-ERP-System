@@ -29,7 +29,7 @@ Route::get('/', function () {
 Route::get('/',[ProductUserController::class, 'logout'])->name('user.logout');
 
 Route::group(["middleware" => "peroduct_session"],function () {
-    
+
                                     // Products
 //Product
 Route::get('/product/home',[ProductHomeController::class, 'index'])->name('productHome.index');
