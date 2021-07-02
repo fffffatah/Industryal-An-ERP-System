@@ -18,7 +18,7 @@ class CreateAdministrationTable extends Migration
             $table->string('issue_name');
             $table->string('description');
             $table->string('issued_by');
-            $table->date('issue_time');
+            $table->dateTime('issue_time');
             $table->string('status');
         });
     }
