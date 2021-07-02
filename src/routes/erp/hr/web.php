@@ -42,10 +42,13 @@ Route::post('/HR/user/delete/{id}',[HRuserController::class,'userDestroy']);
 
 
 Route::get('/HR/user/list',[HRuserController::class,'index'])->name('HRuser.index');
+Route::post('/HR/user/list',[HRuserController::class,'index']);
+
 //Employee Create
 Route::get('/HR/employee/create',[HRemployeeController::class,'create'])->name('HRemployee.create');
 Route::post('/HR/employee/create',[HRemployeeController::class,'index']);
 Route::get('/HR/employee/list',[HRemployeeController::class,'emplist'])->name('HRemployee.emplist');
+Route::post('/HR/employee/list',[HRemployeeController::class,'emplist']);
 Route::get('/HR/employee/edit/{employee_id}',[HRemployeeController::class,'empEdit'])->name('HRemployee.empEdit');
 Route::post('/HR/employee/edit/{employee_id}',[HRemployeeController::class,'empUpdate']);
 Route::get('/HR/employee/delete/{employee_id}',[HRemployeeController::class,'empDelete'])->name('HRemployee.empDelete');
