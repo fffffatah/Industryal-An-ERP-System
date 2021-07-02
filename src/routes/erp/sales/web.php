@@ -49,7 +49,8 @@ Route::get('/sales/orders/',[SalesOrderController::class, 'ordersList'])->name('
 Route::get('/sales/orders/list',[SalesOrderController::class, 'ordersList'])->name('sales.orders.list');
 Route::get('/sales/orders/transactions',[SalesOrderController::class, 'transactionsList'])->name('sales.orders.list');
 Route::get('/sales/orders/create/confirm',[SalesOrderController::class, 'existingOrNew'])->name('sales.orders.transactions.confirm');
-Route::get('/sales/orders/create/confirm/{cus_id}',[SalesOrderController::class, 'existingCusOrder'])->name('sales.orders.createExisting');
+Route::get('/sales/orders/create/{cus_id}',[SalesOrderController::class, 'existingCusOrder'])->name('sales.orders.createExisting');
+Route::post('/sales/orders/create/{cus_id}',[SalesOrderController::class, 'insertNewOrder']);
 
 
 

@@ -49,17 +49,22 @@ class SalesOrderController extends Controller
         return view('sales.orders.transactions.list');
     }
     
-    public function createExistingCusOrder(Request $req)
-    {
-        $customer = CustomerModel::where('id', $req->cus_id)->first();
-        if($customer)
-        {
-            return view("sales.orders.createjjjj");
-        }
-        else
-        {
-            return view("sales.orders.transactions.existing");
-        }
-    }
+    // public function createExistingCusOrder(Request $req)
+    // {
+    //     $customer = CustomerModel::where('id', $req->cus_id)->first();
+    //     if($customer)
+    //     {
+    //         return view("sales.orders.createjjjj");
+    //     }
+    //     else
+    //     {
+    //         return view("sales.orders.transactions.existing");
+    //     }
+    // }
 
+    public function insertNewOrder(Request $req)
+    {
+
+        // return view('ok');
+    }
 }
