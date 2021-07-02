@@ -55,7 +55,7 @@
             <div class="col-10">
                 <div class="info-section p-3 text-black my-5">
                     <div class="title text-center mb-3">
-                        <h1 class="font-width-border"><i class="far fa-house-leave"></i>Leave Request</h1>
+                        <h1 class="font-width-border"><i class="fad fa-house-leave"></i>Leave Request</h1>
                     </div>
                     <div class="border border-primary w-75   m-auto">
                         <form method="post" class="w-50 m-auto  " >

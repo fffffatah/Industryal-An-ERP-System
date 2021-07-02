@@ -52,7 +52,7 @@
                 </nav>
             </div>
             <div class="col-10">
-                <h3 class="text-center">Leave Request Reject</h3>
+                <h3 class="text-center"><i class="fas fa-times-circle"></i>Leave Request Reject</h3>
                 @if(session('msg'))
                 <div class="alert alert-success w-25">
                     <strong>{{session('msg')}}</strong> 
@@ -88,7 +88,7 @@
                         <div class="row justify-content-center">
                             <form method="POST">
                              @csrf
-                                <input type="submit" value="Reject" class="btn btn-primary">
+                                <input type="submit" value="Reject" class="btn btn-primary btn-block">
                             </form> 
                             <a href="{{route('HRLeave.leaveList')}}" class="btn btn-success ml-2">Back</a>
                         </div>

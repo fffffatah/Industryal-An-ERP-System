@@ -86,8 +86,8 @@
                             
                             
                         <td>
-                            <a href="/HR/expense/edit/{{$expense['id']}}" class="btn btn-success m-1"> Update </a>
-                            <a href="/HR/expense/delete/{{$expense['id']}}" class="btn btn-danger m-1"> Delete </a>
+                            <a href="/HR/expense/edit/{{$expense['id']}}" class="btn btn-success btn-block"> Update </a>
+                            <a href="/HR/expense/delete/{{$expense['id']}}" class="btn btn-danger btn-block"> Delete </a>
                            
                         </td>
                     </tr>
