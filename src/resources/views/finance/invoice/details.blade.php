@@ -11,7 +11,7 @@
     <p>Date Created: {{ $date }}</p>
     <table border="2">
         <tr>
-            <th>{{$type}}: </th>
+            <th>{{$type}}: {{$for_name}}</th>
             <td></td>
         </tr>
         <tr>

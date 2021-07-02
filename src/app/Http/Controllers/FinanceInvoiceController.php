@@ -48,7 +48,7 @@ class FinanceInvoiceController extends Controller
         $invoice->file = uniqid() . '_INVOICE.pdf';
         $salesorder = SalesOrder::where('id',$req->order)->first();
         $invoice->total_amount = $salesorder->total_amount;
-        $pdf = PDF::loadView('finance.invoice.details', array('title' => $invoice->title,'date'=>Carbon::now(),'desc'=>$salesorder->order_description,'amount'=>$salesorder->total_amount,'type'=>$invoice->type));
+        $pdf = PDF::loadView('finance.invoice.details', array('for_name' => $invoice->for_name,'title' => $invoice->title,'date'=>Carbon::now(),'desc'=>$salesorder->order_description,'amount'=>$salesorder->total_amount,'type'=>$invoice->type));
         File::put(public_path('upload/Finance/Invoices/'.$invoice->file), $pdf->output());
         $invoice->save();
         return redirect()->route('finance.invoice.customer');
@@ -64,7 +64,7 @@ class FinanceInvoiceController extends Controller
         $invoice->file = uniqid() . '_INVOICE.pdf';
         $salesorder = SalesOrder::where('id',$req->order)->first();
         $invoice->total_amount = $salesorder->total_amount;
-        $pdf = PDF::loadView('finance.invoice.details', array('title' => $invoice->title,'date'=>Carbon::now(),'desc'=>$salesorder->order_description,'amount'=>$salesorder->total_amount,'type'=>$invoice->type));
+        $pdf = PDF::loadView('finance.invoice.details', array('for_name' => $invoice->for_name,'title' => $invoice->title,'date'=>Carbon::now(),'desc'=>$salesorder->order_description,'amount'=>$salesorder->total_amount,'type'=>$invoice->type));
         File::put(public_path('upload/Finance/Invoices/'.$invoice->file), $pdf->output());
         $invoice->save();
         return redirect()->route('finance.invoice.supplier');

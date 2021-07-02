@@ -8,6 +8,8 @@
             <td align="center" style="padding:20px;">
             </td>
             <td align="center">
+            <form action="" method="post">
+            @csrf
             <div class="card border-warning mb3" style="height:600px;width:1100px">
                 <div class="card-header">Budgeting - Asset</div>
                 <div class="card-body scroll-box">
@@ -32,6 +34,7 @@
                     </div>
                 <div class="card-footer"><input type="submit" name="submit-button" class="btn btn-success" value="Add"></div>
                 </div>
+                </form>
             </td>
         </tr>
     </table>
