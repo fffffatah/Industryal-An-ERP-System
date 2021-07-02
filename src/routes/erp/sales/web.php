@@ -22,6 +22,7 @@ use App\Http\Controllers\SalesOrderController;
 // Route::get('/sales', function () {
 //     return view('sales.index');
 // });
+Route::group(["middleware" => "sales_session"],function () {
 Route::get('/sales',[SalesController::class, 'dashboardIndex'])->name('sales.dashboard');
 
 
@@ -66,3 +67,4 @@ Route::get('/sales/stats',[SalesStatsController::class, 'statsIndex'])->name('sa
 Route::get('/sales/stats/analytics/status',[SalesStatsController::class, 'viewStatus'])->name('sales.stats.analytics.status');
 Route::get('/sales/stats/analytics/revenue',[SalesStatsController::class, 'viewRevenue'])->name('sales.stats.analytics.revenue');
 Route::get('/sales/stats/analytics/forecast',[SalesStatsController::class, 'viewForecast'])->name('sales.stats.analytics.forecast');
+});

@@ -717,6 +717,7 @@ class ComposerStaticInit155832e25257a877561d28753da04fae
         'App\\Http\\Middleware\\FinanceUserVerify' => __DIR__ . '/../..' . '/app/Http/Middleware/FinanceUserVerify.php',
         'App\\Http\\Middleware\\PreventRequestsDuringMaintenance' => __DIR__ . '/../..' . '/app/Http/Middleware/PreventRequestsDuringMaintenance.php',
         'App\\Http\\Middleware\\ProductSessionVerify' => __DIR__ . '/../..' . '/app/Http/Middleware/ProductSessionVerify.php',
+        'App\\Http\\Middleware\\SalesSessionVerify' => __DIR__ . '/../..' . '/app/Http/Middleware/SalesSessionVerify.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
         'App\\Http\\Middleware\\SessionVerify' => __DIR__ . '/../..' . '/app/Http/Middleware/SessionVerify.php',
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',

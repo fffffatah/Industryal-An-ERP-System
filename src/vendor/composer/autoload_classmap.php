@@ -62,6 +62,7 @@ return array(
     'App\\Http\\Middleware\\FinanceUserVerify' => $baseDir . '/app/Http/Middleware/FinanceUserVerify.php',
     'App\\Http\\Middleware\\PreventRequestsDuringMaintenance' => $baseDir . '/app/Http/Middleware/PreventRequestsDuringMaintenance.php',
     'App\\Http\\Middleware\\ProductSessionVerify' => $baseDir . '/app/Http/Middleware/ProductSessionVerify.php',
+    'App\\Http\\Middleware\\SalesSessionVerify' => $baseDir . '/app/Http/Middleware/SalesSessionVerify.php',
     'App\\Http\\Middleware\\RedirectIfAuthenticated' => $baseDir . '/app/Http/Middleware/RedirectIfAuthenticated.php',
     'App\\Http\\Middleware\\SessionVerify' => $baseDir . '/app/Http/Middleware/SessionVerify.php',
     'App\\Http\\Middleware\\TrimStrings' => $baseDir . '/app/Http/Middleware/TrimStrings.php',
