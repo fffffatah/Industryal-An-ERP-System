@@ -75,7 +75,7 @@
                 <div class="col-12 col-lg-9 border border-dark rounded p-3">
                         <div class="container">
                             <div class="row justify-content-center">
-                                <h3> <i class="fas fa-warehouse"></i> &nbsp New Warehouse</h3>
+                                <h3> <i class="fas fa-warehouse"></i> &nbsp Update Warehouse</h3>
                             </div>
                         </div>
                         <hr class="mb-4">
