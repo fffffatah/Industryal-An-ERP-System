@@ -190,8 +190,10 @@
                         if(value.remaining_quantity < 1)
                         { tableRow += '0'; }
                         else
-                        { tableRow += value.remaining_quantity; }                       
-                        tableRow += '</td><td>'+value.status</td>+'<td>';
+                        { tableRow += value.remaining_quantity; }   
+
+                        tableRow += '</td><td>'+value.status+'</td><td>';
+
                         if(value.remaining_quantity < 1)
                         {
                             tableRow += '<b class="text-danger">Out of Stock</b>';
