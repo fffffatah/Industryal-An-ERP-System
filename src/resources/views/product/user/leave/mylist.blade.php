@@ -10,7 +10,7 @@
     crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous"> <!-- for fontawesome -->
 
-    <title>User | Leave</title>
+    <title>Product | Stock</title>
 </head>
 <body>
     <!-- Header Starts -->
@@ -73,73 +73,42 @@
                         </div>
                     </div>
                 <div class="col-12 col-lg-9 border border-dark rounded p-3">
-                        <div class="container">
+                <div class="container">
                             <div class="row justify-content-center">
-                                <h3> <i class="fas fa-walking"></i> &nbsp New Leave Request</h3>
+                                <h3><i class="fas fa-shopping-basket"></i>&nbsp &nbsp My Requests</h3>
                             </div>
-                        </div>
-                        <hr class="mb-4">
-                        <div class="container">
-                            <div class="row justify-content-center mb-2">
-                                @if(session('msg'))
-                                <span class="alert alert-success">{{session('msg')}}</span>
-                                @endif
-                            </div>
-                        </div>
-                        <div class="row align-items-start mb-2">
-                            <div class="col">
-                            </div>
-                            <div class="col-8"> 
-                            </div>
-                            <div class="col">
-                                    <a href="{{route('myLeave.index')}}" class="btn btn-secondary rounded p-1 text-right">My Request List</a>
-                            </div>
-                        </div>
-                        <div class="container">
-                            <div class="text-left">
-                                <form method="POST">
-                                    @csrf
-                                    <table class="table table-striped table-bordered">
-                                        <tr>
-                                            <td clospan="3">Type</td>
-                                            <td clospan="3">
-                                                <select class="form-control" name="leave_type">
-                                                    <option>Sick leave</option>
-                                                    <option>Other leave</option>
-                                                </select> 
-                                                <span class="text-danger">{{$errors->first('leave_type')}}</span> 
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td clospan="3">Start date</td>
-                                            <td clospan="3">
-                                                <input type="date" class="form-control" name="leave_start_date" value="{{old('leave_start_date')}}">  
-                                                <span class="text-danger">{{$errors->first('leave_start_date')}}</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td clospan="3">End date</td>
-                                            <td clospan="3">
-                                                <input type="date" class="form-control" name="leave_end_date" value="{{old('leave_end_date')}}">
-                                                <span class="text-danger">{{$errors->first('leave_end_date')}}</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                        <tr>
-                                            <td clospan="3">Description</td>
-                                            <td colspan="3">
-                                                <textarea type="text" name="leave_description" id="" class="form-control">{{old('leave_description')}}</textarea>
-                                                <span class="text-danger">{{$errors->first('leave_description')}}</span>  
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="3" align="center" ><input type="submit" class="btn btn-success" value="Request" style="width:400px"></td>
-                                        </tr>
-                                    </table>
-                                </form>
-                            </div>
-                        </div>
+                            <hr class="mb-4">
+                            <br>
+                            <table class="table table-striped table-bordered">
+                                <tr>
+                                    <th>Request Type</th>
+                                    <th>Request Description</th>
+                                    <th>From</th>
+                                    <th>To</th>
+                                    <th>Created</th>
+                                    <th>Status</th>
+                                </tr>
+                                @foreach($myList as $list)
+                                    <tr>
+                                        <td>{{$list['type']}}</td>
+                                        <td>{{$list['request_description']}}</td>
+                                        <td>{{$list['start_time']}}</td>
+                                        <td>{{$list['end_time']}}</td>
+                                        <td>{{$list['request_made']}}</td>
+                                        <td>
+                                            @if($list['status'] == "Pending")
+                                                <span class="text-primary font-weight-bold">{{$list['status']}}</span>
+                                            @elseif($list['status'] == "Approved")
+                                                <span class="text-success font-weight-bold">{{$list['status']}}</span>
+                                            @elseif($list['status'] == "Declined")
+                                                <span class="text-danger font-weight-bold">{{$list['status']}}</span>
+                                            @endif
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </table>
                     </div>
+                </div>
             </div>
         </div>
     </main>
