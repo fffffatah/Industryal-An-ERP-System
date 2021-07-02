@@ -11,6 +11,5 @@ class AdminDashboardController extends Controller
 
         $productManager = User::where('type','product')->first();
         return view('common.admin.index')->with('productManegerDetails', $productManager);
-        
     }
 }
