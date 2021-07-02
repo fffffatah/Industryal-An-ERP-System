@@ -85,6 +85,12 @@
                                     @csrf
                                     <table class="table table-striped table-bordered">
                                         <tr>
+                                            <td>Issue Name</td>
+                                            <td>
+                                                <input type="text" name="message" class="form-control">
+                                            </td>
+                                        </tr>
+                                        <tr>
                                             <td>Message</td>
                                             <td>
                                                 <textarea type="text" name="message" id="" class="form-control"> </textarea>
