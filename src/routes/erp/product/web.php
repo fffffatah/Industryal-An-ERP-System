@@ -95,6 +95,9 @@ Route::get('/warehouse/statistics',[WarehouseStatisticsController::class, 'index
 Route::get('/product/user/activities',[ProductUserController::class, 'activities'])->name('userActivities.index');
 Route::post('/product/user/activities',[ProductUserController::class, 'activities']);
 
+// autocomplete activity search
+Route::post('/product/user/activities/search',[ProductUserController::class, 'searchActivity'])->name('userActivities.searchActivity');
+
 // user levae
 Route::get('/product/user/leave',[ProductUserController::class, 'leave'])->name('userLeave.index');
 Route::post('/product/user/leave',[ProductUserController::class, 'verifyLeave']);
