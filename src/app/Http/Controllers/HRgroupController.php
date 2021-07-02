@@ -22,6 +22,7 @@ class HRgroupController extends Controller
             $employee1->employee_group = $req->employee_group;
             $employee1->save();          
         }
+        $req->session()->flash('msg','Employee added to group Successfully');
         return redirect()->route('HRemployee.emplist');
 
     }
