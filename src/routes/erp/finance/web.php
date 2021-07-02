@@ -56,6 +56,11 @@ Route::group(['middleware'=>['sess', 'finance_type']], function(){
 
     #Routes for Payments
     Route::get('/finance/payments', ['as'=>'finance.payments.index', 'uses'=>'FinancePaymentController@index']);
+    Route::get('/finance/payments/history', ['as'=>'finance.payments.history', 'uses'=>'FinancePaymentController@history']);
+    Route::get('/finance/payments/customer', ['as'=>'finance.payments.customer', 'uses'=>'FinancePaymentController@customer']);
+    Route::get('/finance/payments/supplier', ['as'=>'finance.payments.supplier', 'uses'=>'FinancePaymentController@supplier']);
+    Route::get('/finance/payments/customer/{id}', ['as'=>'finance.payments.customer_adjust', 'uses'=>'FinancePaymentController@customer_adjust']);
+    Route::get('/finance/payments/supplier/{id}', ['as'=>'finance.payments.supplier_adjust', 'uses'=>'FinancePaymentController@supplier_adjust']);
 
     #Routes for Chat
     Route::get('/finance/chat', ['as'=>'finance.chat.index', 'uses'=>'FinanceChatController@index']);
