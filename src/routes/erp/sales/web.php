@@ -44,7 +44,7 @@ Route::post('/sales/customers/create/',[SalesCustomerController::class, 'insertC
 Route::get('/sales/customers/export/',[SalesImportExportController::class, 'exportCustomer']);
 
 //Orders
-Route::get('/sales/orders/',[SalesOrderController::class, 'ordersList'])->name('sales.orders.list');
+Route::get('/sales/orders/',[SalesOrderController::class, 'ordersList'])->name('sales.orders.index');
 // Route::get('/sales/orders/create',[SalesOrderController::class, 'createOrder'])->name('sales.orders.create');
 Route::get('/sales/orders/list',[SalesOrderController::class, 'ordersList'])->name('sales.orders.list');
 Route::get('/sales/orders/transactions',[SalesOrderController::class, 'transactionsList'])->name('sales.orders.list');
