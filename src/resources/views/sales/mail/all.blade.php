@@ -30,16 +30,16 @@
                 </tr>
                 </thead>
                 <tbody>
-                @for($i=0;$i<5;$i++)
+                @foreach($mails as $mail)
                 <tr>
-                    <th scope="row">{{$i}}</th>
-                    <td scope="row">abc@gmail.com</td>
-                    <td scope="row">Hello, my name is</td>
+                    <th scope="row">{{$mail['id']}}</th>
+                    <td scope="row">{{$mail['sent_from']}}</td>
+                    <td scope="row">{{$mail['content']}}</td>
                     <td align="center">
-                    <a class="btn btn-info text-left" href="{{route('sales.mail.send')}}">Read E-mail</a>
+                    <a class="btn btn-info text-left" href="send/{{$mail['id']}}">Read E-mail</a>
                     </td>
                 </tr>
-                @endfor
+                @endforeach
                 </tbody>
             </table>
         </td>
