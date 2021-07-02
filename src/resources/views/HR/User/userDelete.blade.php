@@ -83,7 +83,7 @@
                             <td>{{$user['email']}}</td>
                             <td>{{$user['position']}}</td>
                             <td>
-                                <img src="/upload/HR/{{$user['profile_pic']}}" alt="Profile" width="100" height="100"> 
+                                <img src="/upload/Users/{{$user['profile_pic']}}" alt="Profile" width="100" height="100"> 
                                 </td>
                             <td>{{$user['created_at']}}</td>
                         </tr>
