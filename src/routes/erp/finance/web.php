@@ -52,7 +52,10 @@ Route::group(['middleware'=>['sess', 'finance_type']], function(){
     #Routes for Budgeting
     Route::get('/finance/budgeting', ['as'=>'finance.budgeting.index', 'uses'=>'FinanceBudgetingController@index']);
     Route::get('/finance/budgeting/connectedbanks', ['as'=>'finance.budgeting.connectedbanks', 'uses'=>'FinanceBudgetingController@index_connectedbanks']);
+    Route::get('/finance/budgeting/connectedbanks/{id}', ['as'=>'finance.budgeting.disconnect', 'uses'=>'FinanceBudgetingController@disconnect']);
     Route::get('/finance/budgeting/newbank', ['as'=>'finance.budgeting.newbank', 'uses'=>'FinanceBudgetingController@index_newbank']);
+    Route::post('/finance/budgeting/newbank', ['as'=>'finance.budgeting.addnewbank', 'uses'=>'FinanceBudgetingController@newbank']);
+
 
     #Routes for Payments
     Route::get('/finance/payments', ['as'=>'finance.payments.index', 'uses'=>'FinancePaymentController@index']);

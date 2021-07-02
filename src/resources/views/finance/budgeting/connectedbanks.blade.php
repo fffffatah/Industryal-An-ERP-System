@@ -15,18 +15,20 @@
                         <table class="table table-striped">
                             <tr>
                                 <th scope="col">#SR</th>
-                                <th scope="col">Date Connected</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Details</th>
+                                <th scope="col">Bank Name</th>
+                                <th scope="col">Account Holder Name</th>
+                                <th scope="col">Balance</th>
                                 <th scope="col">Disconnect</th>
                             </tr>
+                            @foreach($banks as $bank)
                             <tr>
-                                <td>1</td>
-                                <td>12/12/2047</td>
-                                <td>abcd</td>
-                                <td><a class="btn btn-outline-primary" href="">Details</a></td>
-                                <td><a class="btn btn-outline-danger" href="">Disconnect</a></td>
+                                <td>{{$loop->iteration}}</td>
+                                <td>{{$bank->name}}</td>
+                                <td>{{$bank->holder_name}}</td>
+                                <td>{{$bank->balance}}</td>
+                                <td><a class="btn btn-outline-danger" href="/finance/budgeting/connectedbanks/{{$bank->id}}">Disconnect</a></td>
                             </tr>
+                            @endforeach
                         </table>
                     </div>
                     </div>
