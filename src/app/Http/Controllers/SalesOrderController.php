@@ -73,7 +73,7 @@ class SalesOrderController extends Controller
         $order->status = "processing";
         $order->save();
         $req->session()->flash('successful', 'Successfully added!');
-        return redirect()->route('sales.orders.list');
+        return redirect()->route('sales.orders.index');
         // return view('ok');
     }
 }
