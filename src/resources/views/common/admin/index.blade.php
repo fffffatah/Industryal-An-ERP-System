@@ -10,19 +10,19 @@
                         <table>
                             <tr>
                                 <th>Manager: </th>
-                                <td>John Doe</td>
+                                <td>{{$productManegerDetails['username']}}</td>
                             </tr>
                             <tr>
                                 <th>Email: </th>
-                                <td>abc@def.com</td>
+                                <td>{{$productManegerDetails['email']}}</td>
                             </tr>
                             <tr>
                                 <th>Phone: </th>
-                                <td>1234567</td>
+                                <td>{{$productManegerDetails['phone']}}</td>
                             </tr>
                         </table>
                     </div>
-                    <div class="card-footer"><a class="btn btn-info" href="#">Control Panel</a></div>
+                    <div class="card-footer"><a class="btn btn-info" href="{{route('productHome.index')}}">Control Panel</a></div>
                 </div>
             </td>
             <td align="center" style="padding:20px;">

@@ -17,7 +17,7 @@ class ProductSessionVerify
     public function handle(Request $request, Closure $next)
     {
         $check = $request->session()->has('login');
-        if($check)
+        if($check || $request->session()->get('type') == "admin")
         {
             return $next($request);
         }
