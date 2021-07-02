@@ -10,7 +10,7 @@
     crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous"> <!-- for fontawesome -->
 
-    <title>Warehouse | List</title>
+    <title>Product | Stock</title>
 </head>
 <body>
     <!-- Header Starts -->
@@ -73,73 +73,38 @@
                         </div>
                     </div>
                 <div class="col-12 col-lg-9 border border-dark rounded p-3">
-                        <div class="container">
-                        <div class="row justify-content-center">
-                                <h3><i class="fas fa-warehouse"></i>&nbsp &nbsp Warehouse List</h3>
+                <div class="container">
+                            <div class="row justify-content-center">
+                                <h3><i class="fas fa-shopping-basket"></i>&nbsp &nbsp My Issues</h3>
                             </div>
                             <hr class="mb-4">
-                            <form method="POST">
-                                @csrf
-                                <div class="input-group">
-                                    <input class="form-control" type="text" placeholder="Search Product By Name..." name="searchWarehouse" id="search-warehouse">
-                                </div>
-                            </form>
                             <br>
-                            <div class="row align-items-start mb-2">
-                                <div class="col">
-                                </div>
-                                <div class="col-10"> 
-                                </div>
-                                <div class="col">
-                                        <a href="{{route('warehouseList.exportWarehouseList')}}" class="btn btn-primary rounded p-1 text-right">Download</a>
-                                </div>
-                            </div>
-                            <table class="table table-bordered table-hover">
-                            <thead class="thead-light">
+                            <table class="table table-striped table-bordered">
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Name</th>
+                                    <th>Issues Name</th>
                                     <th>Description</th>
-                                    <th>Address</th>
-                                    <th>Total Quantity</th>
-                                    <th>Remaining Quantity</th>
+                                    <th>Issue Time</th>
                                     <th>Status</th>
-                                    <th>Condition</th>
-                                    <th>Action</th>
                                 </tr>
-                            </thead>
-                            <tbody id = "dynamic-row">
-                                @foreach($warehouseList as $warehouse)
+                                @foreach($issueList as $list)
                                     <tr>
-                                        <td>{{$warehouse['warehouse_id']}}</td>
-                                        <td>{{$warehouse['name']}}</td>
-                                        <td>{{$warehouse['description']}}</td>
-                                        <td>{{$warehouse['address']}}</td>
-                                        <td>{{$warehouse['quantity']}}</td>
+                                        <td>{{$list['issue_name']}}</td>
+                                        <td>{{$list['description']}}</td>
+                                        <td>{{$list['issue_time']}}</td>
                                         <td>
-                                            @if($warehouse['remaining_quantity'] < 1)
-                                                {{0}}
-                                            @else
-                                                {{$warehouse['remaining_quantity']}}
+                                            @if($list['status'] == "Pending")
+                                                <span class="text-primary font-weight-bold">{{$list['status']}}</span>
+                                            @elseif($list['status'] == "Approved")
+                                                <span class="text-success font-weight-bold">{{$list['status']}}</span>
+                                            @elseif($list['status'] == "Declined")
+                                                <span class="text-danger font-weight-bold">{{$list['status']}}</span>
                                             @endif
-                                        </td>
-                                        <td>{{$warehouse['status']}}</td>
-                                        <td>
-                                            @if($warehouse['remaining_quantity'] < 1)
-                                                <b class="text-danger">Out of Stock</b>
-                                            @else
-                                                <b class="text-success">In Stock</b>
-                                            @endif
-                                        </td>
-                                        <td>
-                                        <a href="/warehouse/edit/{{$warehouse['id']}}" class="btn btn-warning">Update</a>
                                         </td>
                                     </tr>
                                 @endforeach
-                            </tbody>
                             </table>
-                        </div>
                     </div>
+                </div>
             </div>
         </div>
     </main>
@@ -168,48 +133,5 @@
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
     crossorigin="anonymous"></script>
-
-
-    <script type="text/javascript">
-        $('body').on('keyup', '#search-warehouse', function(){
-            var searchQuery = $(this).val();
-
-            $.ajax({
-                method:"POST",
-                url:'{{route("warehouseList.search")}}',
-                dataType:'json',
-                data:{
-                    '_token': '{{ csrf_token()}}',
-                    searchQuery : searchQuery
-                },
-                success: function(response){
-                    var tableRow = '';
-                    $('#dynamic-row').html('');
-                    $.each(response, function(index, value){
-                        tableRow = '<tr><td>'+value.warehouse_id+'</td><td>'+value.name+'</td><td>'+value.description+'</td><td>'+value.address+'</td><td>'+value.quantity+'</td><td>';
-                        if(value.remaining_quantity < 1)
-                        { tableRow += '0'; }
-                        else
-                        { tableRow += value.remaining_quantity; }   
-
-                        tableRow += '</td><td>'+value.status+'</td><td>';
-
-                        if(value.remaining_quantity < 1)
-                        {
-                            tableRow += '<b class="text-danger">Out of Stock</b>';
-                        }
-                        else
-                        {
-                            tableRow += '<b class="text-success">In Stock</b>';
-                        }
-                        tableRow += '</td><td><a href="/warehouse/edit/'+value.id+'}}" class="btn btn-warning">Update</a></td></tr>';
-
-                        $('#dynamic-row').append(tableRow);
-                    });
-                }
-            });
-        });
-    </script>
-
 </body>
 </html>

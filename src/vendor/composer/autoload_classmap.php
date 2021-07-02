@@ -96,6 +96,7 @@ return array(
     'App\\Http\\Requests\\Product\\UserEditProfileRequest' => $baseDir . '/app/Http/Requests/Product/UserEditProfileRequest.php',
     'App\\Http\\Requests\\Product\\UserProfilePicUpdateRequest' => $baseDir . '/app/Http/Requests/Product/UserProfilePicUpdateRequest.php',
     'App\\Http\\Requests\\Product\\WarehouseCreateRequest' => $baseDir . '/app/Http/Requests/Product/WarehouseCreateRequest.php',
+    'App\\Models\\Contact' => $baseDir . '/app/Models/Contact.php',
     'App\\Models\\Employee' => $baseDir . '/app/Models/Employee.php',
     'App\\Models\\Expense' => $baseDir . '/app/Models/Expense.php',
     'App\\Models\\Finance\\Asset' => $baseDir . '/app/Models/Finance/Asset.php',

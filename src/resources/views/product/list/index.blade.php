@@ -81,10 +81,7 @@
                         <form method="POST">
                             @csrf
                             <div class="input-group">
-                                <input class="form-control" type="text" placeholder="Find By Name..." name="searchProduct">
-                                <div class="input-group-append">
-                                    <button type="submit" class="btn btn-outline-secondary">Search &nbsp <i class="fa fa-search"></i></button>
-                                </div>
+                                <input class="form-control" type="text" placeholder="Search Product By Name..." name="searchProduct" id="search-post">
                             </div>
                         </form>
                         <br>
@@ -97,43 +94,46 @@
                                     <a href="{{route('productList.exportGoodProduct')}}" class="btn btn-primary rounded p-1 text-right">Download</a>
                             </div>
                         </div>
-                        <table class="table table-striped table-bordered">
-                            <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>Status</th>
-                                <th>Product Nature</th>
-                                <th>Selling Price</th>
-                                <th>Description</th>
-                                <th>Image</th>
-                                <th>Condition</th>
-                                <th>Action</th>
-                            </tr>
-
-                            @foreach($productList as $product)
-                                @if($product['product_condition'] == "Good")
+                        <table class="table table-bordered table-hover">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Status</th>
+                                    <th>Product Nature</th>
+                                    <th>Selling Price</th>
+                                    <th>Description</th>
+                                    <th>Image</th>
+                                    <th>Condition</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="dynamic-row">    
+                                @foreach($productList as $product)
+                                    @if($product['product_condition'] == "Good")
                                     <tr>
-                                        <td>{{$product['product_id']}}</td>
-                                        <td>{{$product['product_name']}}</td>
-                                        <td>
-                                            {{$product['status_sell']}}
-                                            <br>
-                                            {{$product['status_purchase']}}
-                                        </td>
-                                        <td>{{$product['nature']}}</td>
-                                        <td>{{$product['selling_price']}}</td>
-                                        <td>{{$product['product_description']}}</td>
-                                        <td>
-                                        <img src="/upload/Product/{{$product['image']}}" alt="Potato" width="200" height="200"> 
-                                        </td>
-                                        <td>{{$product['product_condition']}}</td>
-                                        <td>
-                                        <a href="/product/edit/{{$product['id']}}" class="btn btn-warning mb-2">Update</a>
-                                        <a href="/product/delete/{{$product['id']}}" class="btn btn-danger">Delete</a>
-                                        </td>
-                                    </tr>
-                                @endif
-                            @endforeach
+                                            <td>{{$product['product_id']}}</td>
+                                            <td>{{$product['product_name']}}</td>
+                                            <td>
+                                                {{$product['status_sell']}}
+                                                <br>
+                                                {{$product['status_purchase']}}
+                                            </td>
+                                            <td>{{$product['nature']}}</td>
+                                            <td>{{$product['selling_price']}}</td>
+                                            <td>{{$product['product_description']}}</td>
+                                            <td>
+                                            <img src="/upload/Product/{{$product['image']}}" alt="Potato" width="200" height="200"> 
+                                            </td>
+                                            <td>{{$product['product_condition']}}</td>
+                                            <td>
+                                            <a href="/product/edit/{{$product['id']}}" class="btn btn-warning mb-2">Update</a>
+                                            <a href="/product/delete/{{$product['id']}}" class="btn btn-danger">Delete</a>
+                                            </td>
+                                        </tr>       
+                                    @endif
+                                @endforeach
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -165,5 +165,29 @@
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
     crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $('body').on('keyup', '#search-post', function(){
+            var searchQuery = $(this).val();
+
+            $.ajax({
+                method:"POST",
+                url:'{{route("productSearch.search")}}',
+                dataType:'json',
+                data:{
+                    '_token': '{{ csrf_token()}}',
+                    searchQuery : searchQuery
+                },
+                success: function(response){
+                    var tableRow = '';
+                    $('#dynamic-row').html('');
+                    $.each(response, function(index, value){
+                        tableRow = '<tr><td>'+value.product_id+'</td><td>'+value.product_name+'</td><td>'+value.status_sell+'<br>'+value.status_purchase+'</td><td>'+value.nature+'</td><td>'+value.selling_price+'</td><td>'+value.product_description+'</td><td><img src="/upload/Product/'+value.image+'" alt="Potato" width="200" height="200"> </td><td>'+value.product_condition+'</td><td><a href="/product/edit/'+value.id+'" class="btn btn-warning mb-2">Update</a><a href="/product/delete/'+value.id+'" class="btn btn-danger">Delete</a></td></tr>';
+                        $('#dynamic-row').append(tableRow);
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>

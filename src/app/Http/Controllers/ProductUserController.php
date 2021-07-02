@@ -13,6 +13,7 @@ use App\Http\Requests\Product\ContactRequest;
 use App\Models\Product\activities_table;
 use App\Models\User;
 use App\Models\Leave;
+use App\Models\Contact;
 use Illuminate\Support\Facades\Validator;
 use Mail;
 
@@ -21,16 +22,8 @@ class ProductUserController extends Controller
     // show activities
     public function activities(Request $req)
     {
-        if($req->searchActivity)
-        {
-            $allActivities = activities_table::where('type', $req->searchActivity)->get();
-            return view('product.user.activities.index')->with('allActivities', $allActivities);
-        }
-        else
-        {
-            $allActivities = activities_table::all();
-            return view('product.user.activities.index')->with('allActivities', $allActivities);
-        }
+        $allActivities = activities_table::all();
+        return view('product.user.activities.index')->with('allActivities', $allActivities);
     }
 
     // leave request
@@ -81,7 +74,21 @@ class ProductUserController extends Controller
     }
     public function verifyAdministration(ContactRequest $req)
     {
-        
+        $contact = new Contact();
+        $contact->issue_name = $req->issue_name;
+        $contact->description = $req->message;
+        $contact->issued_by = $req->session()->get('username');
+        $contact->issue_time = date('Y-m-d H:i:s');
+        $contact->status = "Pending";
+        $contact->save();
+        $req->session()->flash('msg', "Issue sent to Administration Panel");
+        return back();
+    }
+
+    public function myIssue()
+    {
+        $issues = Contact::where('issued_by', session()->get('username'))->get();
+        return view('product.user.administration.list')->with('issueList', $issues);
     }
 
     // show profile
@@ -242,5 +249,11 @@ class ProductUserController extends Controller
     {
         $verifucation_code = random_int(100000, 999999);
         return $verifucation_code;
+    }
+
+    public function searchActivity(Request $req)
+    {
+        $activity = activities_table::where('type','like','%'.$req->get('searchQuery').'%')->get();
+        return json_encode($activity);
     }
 }
