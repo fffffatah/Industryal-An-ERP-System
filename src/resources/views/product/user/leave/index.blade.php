@@ -86,6 +86,15 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="row align-items-start mb-2">
+                            <div class="col">
+                            </div>
+                            <div class="col-8"> 
+                            </div>
+                            <div class="col">
+                                    <a href="{{route('myLeave.index')}}" class="btn btn-secondary rounded p-1 text-right">My Request List</a>
+                            </div>
+                        </div>
                         <div class="container">
                             <div class="text-left">
                                 <form method="POST">

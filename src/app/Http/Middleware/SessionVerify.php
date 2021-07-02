@@ -20,7 +20,7 @@ class SessionVerify
             return $next($request);
         }else{
             $request->session()->flash('msg', 'Invalid Session');
-            return redirect()->route('login.index');
+            return redirect()->route('signin.index');
         }
     }
 }

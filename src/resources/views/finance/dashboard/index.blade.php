@@ -10,19 +10,19 @@
                     <table>
                             <tr>
                                 <th>Name: </th>
-                                <td>abc</td>
+                                <td>{{$organization->name}}</td>
                             </tr>
                             <tr>
                                 <th>Email: </th>
-                                <td>abc@def.com</td>
+                                <td>{{$organization->email}}</td>
                             </tr>
                             <tr>
                                 <th>Phone: </th>
-                                <td>1234567</td>
+                                <td>{{$organization->phone}}</td>
                             </tr>
                             <tr>
                                 <th>EST: </th>
-                                <td>12/12/1999</td>
+                                <td>{{$organization->established}}</td>
                             </tr>
                         </table>
                     </div>
@@ -37,18 +37,20 @@
                 <div class="card-header">Product</div>
                     <div class="card-body">
                         <table>
+                        @if($user_product)
                             <tr>
                                 <th>Manager: </th>
-                                <td>John Doe</td>
+                                <td>{{$user_product->firstname." ".$user_product->lastname}}</td>
                             </tr>
                             <tr>
                                 <th>Email: </th>
-                                <td>abc@def.com</td>
+                                <td>$user_product->email</td>
                             </tr>
                             <tr>
                                 <th>Phone: </th>
-                                <td>1234567</td>
+                                <td>$user_product->phone</td>
                             </tr>
+                            @endif
                         </table>
                     </div>
                 </div>
@@ -58,18 +60,20 @@
                 <div class="card-header">Sales & Marketing</div>
                     <div class="card-body">
                     <table>
+                    @if($user_sales)
                             <tr>
                                 <th>Manager: </th>
-                                <td>John Doe</td>
+                                <td>{{$user_sales->firstname." ".$user_sales->lastname}}</td>
                             </tr>
                             <tr>
                                 <th>Email: </th>
-                                <td>abc@def.com</td>
+                                <td>{{$user_sales->email}}</td>
                             </tr>
                             <tr>
                                 <th>Phone: </th>
-                                <td>1234567</td>
+                                <td>{{$user_sales->phone}}</td>
                             </tr>
+                            @endif
                         </table>
                     </div>
                 </div>
@@ -79,18 +83,20 @@
                 <div class="card-header">HR</div>
                     <div class="card-body">
                     <table>
+                    @if($user_hr)
                             <tr>
                                 <th>Manager: </th>
-                                <td>John Doe</td>
+                                <td>{{$user_hr->firstname." ".$user_hr->lastname}}</td>
                             </tr>
                             <tr>
                                 <th>Email: </th>
-                                <td>abc@def.com</td>
+                                <td>{{$user_hr->email}}</td>
                             </tr>
                             <tr>
                                 <th>Phone: </th>
-                                <td>1234567</td>
+                                <td>{{$user_hr->phone}}</td>
                             </tr>
+                            @endif
                         </table>
                     </div>
                 </div>
@@ -100,18 +106,20 @@
                 <div class="card-header">Finance</div>
                     <div class="card-body">
                     <table>
+                    @if($user_finance)
                             <tr>
                                 <th>Manager: </th>
-                                <td>John Doe</td>
+                                <td>{{$user_finance->firstname." ".$user_finance->lastname}}</td>
                             </tr>
                             <tr>
                                 <th>Email: </th>
-                                <td>abc@def.com</td>
+                                <td>{{$user_finance->email}}</td>
                             </tr>
                             <tr>
                                 <th>Phone: </th>
-                                <td>1234567</td>
+                                <td>{{$user_finance->phone}}</td>
                             </tr>
+                            @endif
                         </table>
                     </div>
                 </div>

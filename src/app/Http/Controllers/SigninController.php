@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Http\Requests\Common\LoginRequest;
 
 class SigninController extends Controller
 {
@@ -15,13 +16,16 @@ class SigninController extends Controller
         return view('common.signin.index');
     }
     //Dummy Verifcation
-    public function verify(Request $req){
+    public function verify(LoginRequest $req){
 
         $user = User::where('email',$req->email)->where('pass',$req->pass)->first();
         if($user)
         {
             if($user->type == 'admin'){
-                //admin
+                $req->session()->put('id', $user->id);
+                $req->session()->put('email', $user->email);
+                $req->session()->put('type', $user->type);
+                return redirect()->route('admin.index');
             }
             elseif ($user->type == 'sales') {
                 //Redirect to Sales Dashboard
@@ -34,6 +38,11 @@ class SigninController extends Controller
             }
             elseif ($user->type == 'hr') {
                 //Redirect to HR Dashboard
+                $req->session()->put('id', $user->id);
+                $req->session()->put('email', $user->email);
+                $req->session()->put('type', $user->type);
+                $req->session()->put('username',$user->username);
+                return redirect()->route('HRhome.index');
             }
             elseif ($user->type == 'finance') {
                 $req->session()->put('id', $user->id);
@@ -45,7 +54,7 @@ class SigninController extends Controller
         else
         {
             $req->session()->flash('msg', 'Invaild Username or Password');
-            return redirect()->route('login.index');
+            return redirect()->route('signin.index');
         }
     }
 }

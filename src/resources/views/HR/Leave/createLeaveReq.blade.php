@@ -58,7 +58,8 @@
                         <h1 class="font-width-border"><i class="far fa-house-leave"></i>Leave Request</h1>
                     </div>
                     <div class="border border-primary w-75   m-auto">
-                        <form action="" class="w-50 m-auto  " >
+                        <form method="post" class="w-50 m-auto  " >
+                        @csrf
                             
                             <div class="form-group">
                                 <label>Type</label>
@@ -87,14 +88,15 @@
                                 <textarea type="text" name="description" id="leave_description" class="form-control" Value="{{old('description')}}"></textarea>
                                 <span class="text-danger">{{$errors->first('description')}}</span>
                             </div>
+                            <div class="from-group">
+                                <center><input class="btn btn-outline-primary btn-block w-50 mt-3" type="submit" value="Create Leave Request" style="color:tomato"></center> 
+                            </div>
                               
                             
                              
                         </form>
                     </div>
-                    <div class="from-group">
-                        <center><input class="btn btn-outline-primary btn-block w-50 mt-3" type="submit" value="Create Leave Request" style="color:tomato"></center> 
-                    </div>
+                   
                 </div>
             </div>
         </div>
