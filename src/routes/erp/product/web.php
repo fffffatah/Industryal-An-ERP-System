@@ -106,6 +106,7 @@ Route::get('/product/user/leave/myrequest',[ProductUserController::class, 'myLea
 // contact administration
 Route::get('/product/user/administration',[ProductUserController::class, 'administration'])->name('userAdministration.index');
 Route::post('/product/user/administration',[ProductUserController::class, 'verifyAdministration']);
+Route::get('/product/user/administration/myissue',[ProductUserController::class, 'myIssue'])->name('userAdministration.myIssue');
 
 //User profile
 Route::get('/product/user/profile',[ProductUserController::class, 'profile'])->name('userProfile.index');
