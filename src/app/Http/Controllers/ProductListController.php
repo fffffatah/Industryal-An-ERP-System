@@ -56,6 +56,7 @@ class ProductListController extends Controller
 
     public function updateProduct(ProductCreateRequest $req,$id)
     {
+         $img = $req->file('product_image');
          $product = product_table::where('id', $id)->first();
          $product->product_id = $req->product_id;
          $product->product_name = $req->product_name;
@@ -73,6 +74,8 @@ class ProductListController extends Controller
          $product->tax = $req->product_selling_tax;
          $product->product_condition = $req->product_condition;
          $product->last_updated = date('Y-m-d');
+         $product->image = $req->product_id.'.'.$img->getClientOriginalExtension();
+         $img->move('upload/Product', $req->product_id.'.'.$img->getClientOriginalExtension());
          $product->save();
 
          // activity
