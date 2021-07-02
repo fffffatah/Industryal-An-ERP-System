@@ -16,6 +16,7 @@ class HrSessionVerify
      */
     public function handle(Request $request, Closure $next)
     {
+        
         if($request->session()->get('type') == 'hr' || $request->session()->get('type') == 'admin')
         {
             return $next($request);

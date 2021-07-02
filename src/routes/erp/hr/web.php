@@ -78,6 +78,7 @@ Route::post('/HR/expense/edit/{id}',[HRexpenseListController::class,'expUpdate']
 Route::get('/HR/expense/delete/{id}',[HRexpenseListController::class,'expDelete'])->name('HRexpenseList.expDelete');
 Route::post('/HR/expense/delete/{id}',[HRexpenseListController::class,'expDestroy']);
 Route::get('/HR/expense/statistic',[HRExStatisticController::class,'statistic'])->name('HRExStatistic.statistic');
+Route::get('/HR/expense/list/export',[HRexpenseListController::class,'ExplistExport'])->name('HRexpenseList.ExplistExport');
 //user profile
 Route::get('/HR/user/profile',[HRuserProfileController::class,'details'])->name('HRuserProfile.details');
 Route::get('/HR/user/profile/edit',[HRuserProfileController::class,'profileEdit'])->name('HRuserProfile.profileEdit');
