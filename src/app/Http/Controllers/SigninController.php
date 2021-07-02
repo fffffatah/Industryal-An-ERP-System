@@ -28,7 +28,11 @@ class SigninController extends Controller
                 return redirect()->route('admin.index');
             }
             elseif ($user->type == 'sales') {
-                //Redirect to Sales Dashboard
+                $req->session()->put('id', $user->id);
+                $req->session()->put('email', $user->email);
+                $req->session()->put('type', $user->type);
+                $req->session()->put('username', $user->username);
+                return redirect()->route('sales.dashboard.index');
             }
             elseif ($user->type == 'product') {
                 $req->session()->put('login','1');
