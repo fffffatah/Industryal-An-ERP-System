@@ -5,6 +5,7 @@
     <td colspan="2" align="center">
       <div>
         <div class = "panel-heading">
+          {{-- {{$id}} --}}
           <h3 class = "panel-title">Would you like to create an Order for an existing Customer?</h3>
         </div>
       </div>
@@ -13,7 +14,7 @@
   <tr>
     <td style="width:50%;padding:15px;padding-left:115px;" align="center">
       <form action="" method="GET">
-        <button class="btn btn-info text-left" style="font-size:25px;padding-left:20px;padding-right:20px;border-radius:18px;" href="../create" href="#">Yes</button>
+        <input type="submit" value="Yes" class="btn btn-info text-left" style="font-size:25px;padding-left:20px;padding-right:20px;border-radius:18px;">
         <div style="padding-top:20px;">
         <label>Please enter the Customer's ID:</label>
           <input type="text" name="cus_id">

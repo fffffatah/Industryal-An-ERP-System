@@ -20,7 +20,7 @@
                           <div class="col-md-3">
                               <div class="form-group">
                                 <label class="bmd-label-floating">ID</label>
-                                {{-- <input type="text" class="form-control" name="cus_id" value={{$customer['id']}} disabled> --}}
+                                <input type="text" class="form-control" name="cus_id" value={{$id}} disabled>
                               </div>
                             </div>
                           <div class="col-md-5">

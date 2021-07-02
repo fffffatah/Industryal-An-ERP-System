@@ -38,7 +38,6 @@ class SalesCustomerController extends Controller
         $customer->updated_at = date('Y-m-d');
         $customer->save();
         $req->session()->flash('successful', 'Successfully updated!');
-        // return view('sales/customers/update/');
         return redirect()->route('sales.customers.list');
     }
 
