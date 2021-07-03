@@ -22,7 +22,7 @@ class SalesProfileController extends Controller
     // leave request
     public function leave()
     {
-        return view('product.user.leave.index');
+        return view('sales.profile.leave.index');
     }
     public function verifyLeave(Request $req)
     {
@@ -57,7 +57,7 @@ class SalesProfileController extends Controller
         $emp_id = $user->id;
         $listLeave = Leave::where('employee_id', $user->id)->get();
         //print_r($listLeave);
-        return view('product.user.leave.mylist')->with('myList',$listLeave);
+        return view('sales.profile.leave.mylist')->with('myList',$listLeave);
 
     }
 }

@@ -9,16 +9,14 @@
                     <div class="card-block">
                         <h6 class="m-b-20">Orders Received</h6>
                         <h2 class="text-right"><i class="fa fa-cart-plus f-left"></i><span>486</span></h2>
-                        <p class="m-b-0">Completed Orders<span class="f-right">351</span></p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 col-xl-3">
                 <div class="card bg-info order-card">
                     <div class="card-block">
-                        <h6 class="m-b-20">Orders Received</h6>
+                        <h6 class="m-b-20">Orders Delivered</h6>
                         <h2 class="text-right"><i class="fa fa-rocket f-left"></i><span>486</span></h2>
-                        <p class="m-b-0">Completed Orders<span class="f-right">351</span></p>
                     </div>
                 </div>
             </div>
@@ -26,18 +24,17 @@
             <div class="col-md-4 col-xl-3">
                 <div class="card bg-info order-card">
                     <div class="card-block">
-                        <h6 class="m-b-20">Orders Received</h6>
-                        <h2 class="text-right"><i class="fa fa-refresh f-left"></i><span>486</span></h2>
-                        <p class="m-b-0">Completed Orders<span class="f-right">351</span></p>
+                        <h6 class="m-b-20">Profit Generated</h6>
+                        <h2 class="text-right"><i class="fa fa-refresh f-left"></i><span>{{$totalRev}}</span></h2>
+                        
                     </div>
                 </div>
             </div>
             <div class="col-md-4 col-xl-3">
                 <div class="card bg-info order-card">
                     <div class="card-block">
-                        <h6 class="m-b-20">Orders Received</h6>
+                        <h6 class="m-b-20">Forecasted Revenue for Next Year</h6>
                         <h2 class="text-right"><i class="fa fa-credit-card f-left"></i><span>486</span></h2>
-                        <p class="m-b-0">Completed Orders<span class="f-right">351</span></p>
                     </div>
                 </div>
             </div>
@@ -92,7 +89,7 @@
             sumData[10],
             sumData[11],
           ],
-          backgroundColor:'rgb(115, 50, 168)'
+          backgroundColor:'rgb(22,97,137)'
         }]
       },
       options:{}

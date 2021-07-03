@@ -53,7 +53,7 @@
                         <a class="dropdown-item" href="#">Something else here</a>
                         </div>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="{{route('finance.leaverequest.index')}}">Leave Request</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{route('sales.profile.leave.index')}}">Leave Request</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Chats</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Import/Export</a></li>
                 </ul>
