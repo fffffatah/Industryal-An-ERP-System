@@ -25,7 +25,7 @@
                 <div class="card bg-info order-card">
                     <div class="card-block">
                         <h6 class="m-b-20">Profit Generated</h6>
-                        <h2 class="text-right"><i class="fa fa-refresh f-left"></i><span>{{$totalRev}}</span></h2>
+                        <h2 class="text-right"><i class="fa fa-refresh f-left"></i><span><?php print_r(json_decode($totalRev,true)[0]['revenue']);?></span></h2>
                         
                     </div>
                 </div>
