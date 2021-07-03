@@ -18,7 +18,6 @@
                         <li class="nav-item"><a class="nav-link" href="{{route('finance.reports.index')}}">Reports</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{route('finance.budgeting.index')}}">Budgeting</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{route('finance.leaverequest.index')}}">Leave Request</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{route('finance.chat.index')}}">Chats</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{route('finance.importexport.index')}}">Import/Export</a></li>
                     </ul>
                 <div class="navbar-nav ml-auto">

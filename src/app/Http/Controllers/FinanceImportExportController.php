@@ -32,11 +32,11 @@ class FinanceImportExportController extends Controller
     public function export(){
         $data = [
             'finance_import_history' => DB::table('finance_import_history')->select('date','action','employee_id','file')->get()->toArray(),
-            'assets' => DB::table('assets')->select('title','type','amount','created_at','updated_at','manager_id')->get()->toArray(),
-            'liabilities' => DB::table('liabilities')->select('title','type','amount','created_at','updated_at','manager_id')->get()->toArray(),
+            'assets' => DB::table('assets')->select('type','amount','created_at','updated_at','manager_id')->get()->toArray(),
+            'liabilities' => DB::table('liabilities')->select('type','amount','created_at','updated_at','manager_id')->get()->toArray(),
             'invoices' => DB::table('invoices')->select('title','type','for_name','created_at','updated_at','status', 'sales_order_id','total_amount','manager_id')->get()->toArray(),
             'leave_request' => DB::table('leave_request')->select('request_description','type','start_time','end_time','request_made','employee_id','status')->get()->toArray(),
-            'expenses' => DB::table('expenses')->select('title','type','amount','created_at','updated_at','manager_id')->get()->toArray(),
+            'expenses' => DB::table('expenses')->select('type','amount','created_at','updated_at','manager_id')->get()->toArray(),
          ];
         $data = json_encode($data);
         $fileName = uniqid() . '_datafile.json';
