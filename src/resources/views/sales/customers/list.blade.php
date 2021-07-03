@@ -1,4 +1,20 @@
 @include('sales.layouts.header')
+<div style="width:100%;padding-left:120px;">
+  <div class="container">
+    <div class="row">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+        <h3>Search for Order:</h3>
+        </div>
+        <div class="panel-body">
+          <div class="form-group">
+            <input type="text" style="width:500px;" class="form-controller" id="search" name="search" placeholder="Enter order ID"></input>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <span align="center" style="font-weight: bold;padding-left:150px;" class="text-success">{{session('successful')}}</span>
 <div style="float:right;padding-right:138px;padding-bottom:15px">
   <a class="btn btn-info text-left" href="customers/export">Download as Excel</a>
@@ -37,4 +53,17 @@
       @endforeach
     </tbody>
   </table>
+  <script type="text/javascript">
+    $('#search').on('keyup',function(){
+      $value=$(this).val();
+      $.ajax({
+          type : 'get',
+          url : '{{URL::to('sales/customers/list/search')}}',
+          data:{'search':$value},
+          success:function(data){
+          $('tbody').html(data);
+        }
+      });
+    })
+    </script>
 @include('sales.layouts.footer')

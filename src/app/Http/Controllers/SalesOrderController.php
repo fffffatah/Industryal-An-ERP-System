@@ -25,8 +25,8 @@ class SalesOrderController extends Controller
 
     public function editOrder($id)
     {
-        $customer = OrderModel::where('id', $id)->first();
-        return view('sales.orders.edit')->with('order', $customer);
+        $order = OrderModel::where('id', $id)->first();
+        return view('sales.orders.edit')->with('order', $order);
     }
 
     public function existingOrNew(Request $req)

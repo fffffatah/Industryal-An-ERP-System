@@ -17,8 +17,8 @@
                         <div class="row">
                           <div class="col-md-3">
                               <div class="form-group">
-                                <label class="bmd-label-floating">Customer ID</label>
-                                <input type="text" class="form-control" name="cus_id" value="" disabled>
+                                <label class="bmd-label-floating">Order ID</label>
+                                <input type="text" class="form-control" name="cus_id" value="{{$order['id']}}" disabled>
                               </div>
                             </div>
                           <div class="col-md-4">

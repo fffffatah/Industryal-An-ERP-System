@@ -75,6 +75,6 @@ Route::group(["middleware" => "sales_session"],function () {
     Route::get('/sales/stats/analytics/forecast',[SalesStatsController::class, 'viewForecast'])->name('sales.stats.analytics.forecast');
 
     // Route::get('/','SearchController@index');
-    Route::get('sales/orders/list/search/','SalesSearchController@search');
-    Route::get('sales/customers/list/search/','SalesSearchController@search');
+    Route::get('sales/orders/list/search/','SalesSearchController@searchOrders');
+    Route::get('sales/customers/list/search/','SalesSearchController@searchCustomer');
 });

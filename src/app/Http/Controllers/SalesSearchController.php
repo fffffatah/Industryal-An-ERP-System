@@ -13,7 +13,7 @@ class SalesSearchController extends Controller
     {
         return view('search.search');
     }
-    public function search(Request $request)
+    public function searchOrders(Request $request)
     {
         if($request->ajax())
         {
@@ -31,13 +31,45 @@ class SalesSearchController extends Controller
                         '<td>'.$order->status.'</td>'.
                         '<td>'.$order->delivered_on.'</td>'.
                         '<td align="center">
-                            <a class="btn btn-info text-left" href="#">Update</a>
+                            <a class="btn btn-info text-left" href="./orders/edit/{{$order["id"]}}">Update</a>
                         </td>'.
                     '</tr>';
                 }
                 return Response($output);
             }
             elseif($orders->isEmpty())
+            {
+                return Response("<div style='margin:auto;width:100%;color:rgb(172, 4, 4);'>
+                <h4>Looks like the id you entered does not exist!</h4>
+              </div>");
+            }
+        }
+    }
+
+    public function searchCustomer(Request $request)
+    {
+        if($request->ajax())
+        {
+            $output="";
+            $customers=DB::table('customers')->where('id','LIKE','%'.$request->search."%")->get();
+            if(!($customers->isEmpty()))
+            {
+                foreach ($customers as $key => $customer) {
+                    $output.='<tr>'.
+                        '<th>'.$customer->id.'</th>'.
+                        '<td>'.$customer->name.'</td>'.
+                        '<td>'.$customer->email.'</td>'.
+                        '<td>'.$customer->phone.'</td>'.
+                        '<td>'.$customer->delivery_point.'</td>'.
+                        '<td>'.$customer->updated_at.'</td>'.
+                        '<td align="center">
+                            <a class="btn btn-info text-left" href="./customers/edit/{{$order["id"]}}">Update</a>
+                        </td>'.
+                    '</tr>';
+                }
+                return Response($output);
+            }
+            elseif($customers->isEmpty())
             {
                 return Response("<div style='margin:auto;width:100%;color:rgb(172, 4, 4);'>
                 <h4>Looks like the id you entered does not exist!</h4>
