@@ -10,8 +10,8 @@ class SalesController extends Controller
 {
     public function dashboardIndex(){
         $ordersByMonth = DB::table('orders')->select(DB::raw('sum(total_amount) as total'))->groupBy(DB::raw("MONTH(delivered_on)"))->get();
-        // $ordersByMonth = DB::table('orders')->select(DB::raw('sum(total_amount) group by month(delivered_on)'))->get();
-        return view('sales.dashboard.index')->with('amountsByMonth', $ordersByMonth);
+        $totalRevenue = DB::table('orders')->select(DB::raw("sum(total_amount) as revenue"))->where("type", "debit")->get();
+        return view('sales.dashboard.index')->with('amountsByMonth', $ordersByMonth)->with('totalRev', $totalRevenue);
     }
 
     public function logout()

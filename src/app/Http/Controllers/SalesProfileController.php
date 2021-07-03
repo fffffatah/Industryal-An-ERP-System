@@ -2,27 +2,44 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Sales\SalesProfileUpdateRequest;
 use App\Models\Finance\Leave;
-use App\Models\Finance\User;
+use App\Models\User;
 use Illuminate\Http\Request;
 class SalesProfileController extends Controller
 {
     public function profileIndex(){
-        return view('sales.profile.details.index');
+        $user = User::where('id', session('id'))->first();
+        return view('sales.profile.details.index')->with('user', $user);
     }
 
     public function editProfile(){
-        return view('sales.profile.edit.edit');
+        $user = User::where('id', session('id'))->first();
+        return view('sales.profile.edit.edit')->with('user', $user);
     }
 
-    public function updatePassword(){
+    public function updateProfile(SalesProfileUpdateRequest $req){
+        $user = User::where('id', session('id'))->first();
+        $user->firstname = $req->firstname;
+        $user->lastname = $req->lastname;
+        $user->email = $req->email;
+        $user->phone = $req->phone;
+        $user->username = $req->username;
+        $user->address = $req->address;
+        $user->updated_at = date('Y-m-d');
+        $user->save();
+        $req->session()->flash('successful', 'Successfully updated!');
+        return redirect()->route('sales.profile.details.index');
+    }
+
+    public function editPassword(){
         return view('sales.profile.edit.password');
     }
 
     // leave request
     public function leave()
     {
-        return view('product.user.leave.index');
+        return view('sales.profile.leave.index');
     }
     public function verifyLeave(Request $req)
     {
@@ -57,7 +74,7 @@ class SalesProfileController extends Controller
         $emp_id = $user->id;
         $listLeave = Leave::where('employee_id', $user->id)->get();
         //print_r($listLeave);
-        return view('product.user.leave.mylist')->with('myList',$listLeave);
+        return view('sales.profile.leave.mylist')->with('myList',$listLeave);
 
     }
 }
