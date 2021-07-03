@@ -22,6 +22,13 @@ class SalesOrderController extends Controller
     {
         return view('sales.orders.create');
     }
+
+    public function editOrder($id)
+    {
+        $customer = OrderModel::where('id', $id)->first();
+        return view('sales.orders.edit')->with('order', $customer);
+    }
+
     public function existingOrNew(Request $req)
     {
         $id = $req->cus_id;

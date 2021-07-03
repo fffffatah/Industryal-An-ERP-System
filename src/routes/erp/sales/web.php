@@ -42,7 +42,7 @@ Route::group(["middleware" => "sales_session"],function () {
     Route::get('/sales/user/leave/myrequest',[SalesProfileController::class, 'myLeave'])->name('myLeave.index');
     
     //Customers
-    Route::get('/sales/customers/',[SalesCustomerController::class, 'showCustomersList'])->name('sales.customers.list');
+    Route::get('/sales/customers/list',[SalesCustomerController::class, 'showCustomersList'])->name('sales.customers.list');
     Route::get('/sales/customers/update/{id}',[SalesCustomerController::class, 'editCustomer'])->name('sales.customers.update');
     Route::post('/sales/customers/update/{id}',[SalesCustomerController::class, 'updateCustomer']);
     Route::get('/sales/customers/create/',[SalesCustomerController::class, 'createCustomer'])->name('sales.customers.create');
@@ -59,6 +59,7 @@ Route::group(["middleware" => "sales_session"],function () {
     Route::get('/sales/orders/create/confirm',[SalesOrderController::class, 'existingOrNew'])->name('sales.orders.transactions.confirm');
     Route::get('/sales/orders/create/{cus_id}',[SalesOrderController::class, 'existingCusOrder'])->name('sales.orders.createExisting');
     Route::post('/sales/orders/create/{cus_id}',[SalesOrderController::class, 'insertNewOrder']);
+    Route::get('/sales/orders/edit/{cus_id}',[SalesOrderController::class, 'editOrder'])->name('sales.orders.edit');
 
     //Customer Mails
     Route::get('/sales/mail/send',[SalesMailController::class, 'sendEmail'])->name('sales.mail.send');
@@ -75,4 +76,5 @@ Route::group(["middleware" => "sales_session"],function () {
 
     // Route::get('/','SearchController@index');
     Route::get('sales/orders/list/search/','SalesSearchController@search');
+    Route::get('sales/customers/list/search/','SalesSearchController@search');
 });
