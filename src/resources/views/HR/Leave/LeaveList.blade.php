@@ -76,10 +76,18 @@
                     <td>{{$leave['end_time']}}</td>
                     <td>{{$leave['request_description']}}</td>
                     <td>{{$leave['request_made']}}</td>
-                    <td>{{$leave['status']}}</td>
                     <td>
-                        <a  href="/HR/leave/approve/{{$leave['employee_id']}}" class="btn btn-primary"> Approve </a> 
-                        <a href="/HR/leave/reject/{{$leave['employee_id']}}" class="btn btn-danger" > Reject</a> 
+                        @if($leave['status'] == "Pending")
+                            <span class="text-primary font-weight-bold">{{$leave['status']}}</span>
+                        @elseif($leave['status'] == "Approved")
+                            <span class="text-success font-weight-bold">{{$leave['status']}}</span>
+                        @elseif($leave['status'] == "Declined")
+                            <span class="text-danger font-weight-bold">{{$leave['status']}}</span>
+                        @endif
+                    </td>
+                    <td>
+                        <a  href="/HR/leave/approve/{{$leave['employee_id']}}" class="btn btn-primary btn-block"> Approve </a> 
+                        <a href="/HR/leave/reject/{{$leave['employee_id']}}" class="btn btn-danger btn-block" > Reject</a> 
                         
                     </td>
                 </tr>

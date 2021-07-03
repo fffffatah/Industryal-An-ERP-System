@@ -35,7 +35,7 @@
                           </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{route('sales.orders.transactions.confirm')}}">Place an Order</a>
-                        <a class="dropdown-item" href="{{route('sales.orders.list')}}">Check Orders</a>
+                        <a class="dropdown-item" href="{{route('sales.orders.index')}}">Check Orders</a>
                         <a class="dropdown-item" href="{{route('sales.orders.list')}}">Check Transactions</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Check Products</a>
@@ -53,7 +53,7 @@
                         <a class="dropdown-item" href="#">Something else here</a>
                         </div>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="{{route('finance.leaverequest.index')}}">Leave Request</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{route('sales.profile.leave.index')}}">Leave Request</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Chats</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Import/Export</a></li>
                 </ul>
@@ -70,7 +70,7 @@
                         </button>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="{{route('sales.profile.edit')}}">Edit Profile</a>
-                            <a class="dropdown-item" href="#">Deactivate Account</a>
+                            <a class="dropdown-item" href="{{route('sales.profile.edit.password')}}">Change Password</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Separated link</a>
                         </div>

@@ -99,8 +99,8 @@
                             <td>{{$user['created_at']}}</td>
                             
                             <td>
-                                <a href="/HR/user/edit/{{$user['id']}}" class="btn btn-success m-1"> Update </a>
-                                <a href="/HR/user/delete/{{$user['id']}}" class="btn btn-danger m-1"> Delete </a>
+                                <a href="/HR/user/edit/{{$user['id']}}" class="btn btn-success btn-block"> Update </a>
+                                <a href="/HR/user/delete/{{$user['id']}}" class="btn btn-danger btn-block"> Delete </a>
                            
                             </td>
                         </tr>

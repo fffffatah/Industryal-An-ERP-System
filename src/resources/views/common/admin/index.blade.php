@@ -54,19 +54,19 @@
                     <table>
                             <tr>
                                 <th>Manager: </th>
-                                <td>John Doe</td>
+                                <td>{{$HrManager['username']}}</td>
                             </tr>
                             <tr>
                                 <th>Email: </th>
-                                <td>abc@def.com</td>
+                                <td>{{$HrManager['email']}}</td>
                             </tr>
                             <tr>
                                 <th>Phone: </th>
-                                <td>1234567</td>
+                                <td>{{$HrManager['phone']}}</td>
                             </tr>
                         </table>
                     </div>
-                    <div class="card-footer"><a class="btn btn-info" href="#">Control Panel</a></div>
+                    <div class="card-footer"><a class="btn btn-info" href="{{route('HRhome.index')}}">Control Panel</a></div>
                 </div>
             </td>
             <td align="center" style="padding:20px;">

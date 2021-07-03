@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Expense;
+use App\Exports\ExpenseExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class HRexpenseListController extends Controller
 {
@@ -43,5 +45,9 @@ class HRexpenseListController extends Controller
         Expense::destroy($id);
         $req->session()->flash('msg','Delete successfully');
         return redirect()->route('HRexpenseList.list');
+    }
+    public function ExplistExport()
+    {
+        return Excel::download(new ExpenseExport, 'expense.xlsx');
     }
 }

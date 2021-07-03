@@ -1,5 +1,5 @@
 @include('sales.layouts.header')
-<div style="width:100%;padding-left:300px;">
+<div style="width:100%;padding-left:120px;">
   <div class="container">
     <div class="row">
       <div class="panel panel-default">
@@ -8,7 +8,7 @@
         </div>
         <div class="panel-body">
           <div class="form-group">
-            <input type="text" class="form-controller" id="search" name="search" placeholder="Enter order ID"></input>
+            <input type="text" style="width:500px;" class="form-controller" id="search" name="search" placeholder="Enter order ID"></input>
           </div>
         </div>
       </div>
@@ -16,6 +16,9 @@
   </div>
 </div>
 <span align="center" style="font-weight: bold;padding-left:150px;" class="text-success">{{session('successful')}}</span>
+<div style="float:right;padding-right:138px;padding-bottom:15px">
+  <a class="btn btn-info text-left" href="orders/export">Download as Excel</a>
+</div>
 <table class="table table-hover table-bordered" style="width: 80%" align="center">
     <thead>
       <tr>
@@ -40,7 +43,7 @@
         <td>{{$order->status}}</td>
         <td>{{$order->delivered_on}}</td>
         <td align="center">
-          <a class="btn btn-info text-left" href="#">Update</a>
+          <a class="btn btn-info text-left" href="./orders/edit/{{$order['id']}}">Update</a>
         </td>
       </tr>
       @endforeach

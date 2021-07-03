@@ -52,7 +52,7 @@
                 </nav>
             </div>
             <div class="col-10">
-                <h3 class="text-center">Leave Request approve</h3>
+                <h3 class="text-center"><i class="fas fa-thumbs-up"></i>Leave Request approve</h3>
                 @if(session('msg'))
                 <div class="alert alert-success w-25">
                     <strong>{{session('msg')}}</strong> 

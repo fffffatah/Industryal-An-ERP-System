@@ -52,7 +52,7 @@
                 </nav>
             </div>
             <div class="col-10">
-                <h3 class="text-center"><i class="fas fa-plus-square"></i>Expense Report</h3>
+                <h3 class="text-center"><i class="fas fa-plus-square"></i>New Expense Report</h3>
                 <div class="border border-primary w-75  m-auto">
                     <form   method="post" class="w-50 m-auto  " >
                     @csrf

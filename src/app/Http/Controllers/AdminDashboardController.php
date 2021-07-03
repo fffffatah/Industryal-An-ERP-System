@@ -11,5 +11,7 @@ class AdminDashboardController extends Controller
 
         $productManager = User::where('type','product')->first();
         return view('common.admin.index')->with('productManegerDetails', $productManager);
+        $HrManger=User::where('type','hr')->first();
+        return view('common.admin.index')->with('HrManager', $HrManager);
     }
 }

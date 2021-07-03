@@ -57,7 +57,7 @@
             <div class="col-10">
                 <div class="info-section p-3 text-black my-5">
                     <div class="title text-center mb-3">
-                        <h3 class="font-width-border"><i class="far fa-plus-square"></i>User Information</h3>
+                        <h3 class="font-width-border"><i class="far fa-plus-square"></i>New User</h3>
                     </div>
                     <div class="border border-primary w-75  m-auto">
                         <form method="post" class="w-50 m-auto"  enctype="multipart/form-data" >
