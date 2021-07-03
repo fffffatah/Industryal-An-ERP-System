@@ -17,6 +17,20 @@ class SalesProfileController extends Controller
         return view('sales.profile.edit.edit')->with('user', $user);
     }
 
+    public function updateProfile(Request $req){
+        $user = User::where('id', session('id'))->first();
+        $user->firstname = $req->firstname;
+        $user->lastname = $req->lastname;
+        $user->email = $req->email;
+        $user->phone = $req->phone;
+        $user->username = $req->username;
+        $user->address = $req->address;
+        $user->updated_at = date('Y-m-d');
+        $user->save();
+        $req->session()->flash('successful', 'Successfully updated!');
+        return redirect()->route('sales.profile.details.index');
+    }
+
     public function updatePassword(){
         return view('sales.profile.edit.password');
     }

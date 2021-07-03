@@ -11,8 +11,7 @@
                     <h4>{{$user->firstname}} {{$user->lastname}}</h4>
                     <p class="text-secondary mb-1">Sales Manager</p>
                     <p class="text-muted font-size-sm">{{$user->address}}</p>
-                    <button class="btn btn-primary">Follow</button>
-                    <button class="btn btn-outline-primary">Message</button>
+                    <a href="https://github.com/snigdho611/">Github</a>
                   </div>
                 </div>
               </div>
@@ -69,7 +68,7 @@
                 <hr>
                 <div class="row">
                   <div class="col-sm-12">
-                    <a class="btn btn-info " href="{{route('sales.profile.edit')}}">Edit</a>
+                    <a class="btn btn-info " href="{{route('sales.profile.edit')}}">Edit Profile</a>
                   </div>
                 </div>
               </div>
