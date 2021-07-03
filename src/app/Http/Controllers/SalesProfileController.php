@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Sales\SalesProfileUpdateRequest;
 use App\Models\Finance\Leave;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -17,7 +18,7 @@ class SalesProfileController extends Controller
         return view('sales.profile.edit.edit')->with('user', $user);
     }
 
-    public function updateProfile(Request $req){
+    public function updateProfile(SalesProfileUpdateRequest $req){
         $user = User::where('id', session('id'))->first();
         $user->firstname = $req->firstname;
         $user->lastname = $req->lastname;
@@ -31,7 +32,7 @@ class SalesProfileController extends Controller
         return redirect()->route('sales.profile.details.index');
     }
 
-    public function updatePassword(){
+    public function editPassword(){
         return view('sales.profile.edit.password');
     }
 

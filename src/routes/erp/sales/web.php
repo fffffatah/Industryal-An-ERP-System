@@ -35,7 +35,7 @@ Route::group(["middleware" => "sales_session"],function () {
     Route::get('/sales/profile/',[SalesProfileController::class, 'profileIndex'])->name('sales.profile.details.index');
     Route::get('/sales/profile/edit',[SalesProfileController::class, 'editProfile'])->name('sales.profile.edit');
     Route::post('/sales/profile/edit',[SalesProfileController::class, 'updateProfile']);
-    Route::get('/sales/profile/change/password',[SalesProfileController::class, 'updatePassword'])->name('sales.profile.edit.password');
+    Route::get('/sales/profile/change/password',[SalesProfileController::class, 'editPassword'])->name('sales.profile.edit.password');
 
     //Leave
     Route::get('/sales/profile/leave',[SalesProfileController::class, 'leave'])->name('sales.profile.leave.index');

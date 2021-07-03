@@ -18,12 +18,14 @@
                       <div class="form-group">
                         <label class="bmd-label-floating">First Name</label>
                         <input type="text" name="firstname" value="{{$user->firstname}}"  class="form-control">
+                        <span style="font-weight: bold" class="text-danger">{{$errors->first('firstname')}}</span>
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
                         <label class="bmd-label-floating">Last Name</label>
                         <input type="text" name="lastname" value="{{$user->lastname}}"  class="form-control">
+                        <span style="font-weight: bold" class="text-danger">{{$errors->first('lastname')}}</span>
                       </div>
                     </div>
                   </div>
@@ -32,18 +34,21 @@
                       <div class="form-group">
                         <label class="bmd-label-floating">Phone</label>
                         <input type="text" class="form-control" name="phone" value="{{$user->phone}}">
+                        <span style="font-weight: bold" class="text-danger">{{$errors->first('phone')}}</span>
                       </div>
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
                         <label class="bmd-label-floating">Username</label>
                         <input type="text" name="username" value="{{$user->username}}" class="form-control">
+                        <span style="font-weight: bold" class="text-danger">{{$errors->first('username')}}</span>
                       </div>
                     </div>
                     <div class="col-md-4">
                       <div class="form-group">
                         <label class="bmd-label-floating">Email address</label>
                         <input type="email" name="email" value="{{$user->email}}"  class="form-control">
+                        <span style="font-weight: bold" class="text-danger">{{$errors->first('email')}}</span>
                       </div>
                     </div>
                   </div>

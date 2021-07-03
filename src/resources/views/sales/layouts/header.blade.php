@@ -70,7 +70,7 @@
                         </button>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="{{route('sales.profile.edit')}}">Edit Profile</a>
-                            <a class="dropdown-item" href="#">Deactivate Account</a>
+                            <a class="dropdown-item" href="{{route('sales.profile.edit.password')}}">Change Password</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Separated link</a>
                         </div>
