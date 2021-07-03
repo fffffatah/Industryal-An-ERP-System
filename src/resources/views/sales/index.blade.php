@@ -1,1 +1,0 @@
-{{redirect('sales.dashboard.index')}}

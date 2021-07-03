@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Finance\Leave;
-use App\Models\Finance\User;
+use App\Models\User;
 use Illuminate\Http\Request;
 class SalesProfileController extends Controller
 {
     public function profileIndex(){
-        return view('sales.profile.details.index');
+        $user = User::where('id', session('id'))->first();
+        return view('sales.profile.details.index')->with('user', $user);
     }
 
     public function editProfile(){
