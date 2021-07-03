@@ -16,6 +16,9 @@
   </div>
 </div>
 <span align="center" style="font-weight: bold;padding-left:150px;" class="text-success">{{session('successful')}}</span>
+<div style="float:right;padding-right:138px;padding-bottom:15px">
+  <a class="btn btn-info text-left" href="orders/export">Download as Excel</a>
+</div>
 <table class="table table-hover table-bordered" style="width: 80%" align="center">
     <thead>
       <tr>

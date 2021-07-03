@@ -51,6 +51,7 @@ Route::group(["middleware" => "sales_session"],function () {
 
     //Import/Export
     Route::get('/sales/customers/export/',[SalesImportExportController::class, 'exportCustomer']);
+    Route::get('/sales/orders/export/',[SalesImportExportController::class, 'exportOrder']);
 
     //Orders
     Route::get('/sales/orders/',[SalesOrderController::class, 'ordersList'])->name('sales.orders.index');
