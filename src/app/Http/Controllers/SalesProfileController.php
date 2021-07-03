@@ -13,7 +13,8 @@ class SalesProfileController extends Controller
     }
 
     public function editProfile(){
-        return view('sales.profile.edit.edit');
+        $user = User::where('id', session('id'))->first();
+        return view('sales.profile.edit.edit')->with('user', $user);
     }
 
     public function updatePassword(){
