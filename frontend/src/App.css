@@ -23,7 +23,6 @@
   padding: 5px 10px 5px 10px;
   font-size: 15px;
   border-radius: 5px;
-  /* background-color: crimson; */
   font-weight:600;
   transition: background-color 0.3s;
 }
@@ -35,7 +34,7 @@
 }
 
 body{
-  background-color: beige;
+  background-color: rgb(255, 255, 255);
 }
 
 .NavIcon 
@@ -45,5 +44,109 @@ body{
   padding-left: 10px;
 }
 
+#sideMenu
+{
+  position: absolute;
+  top: 100px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
+#btn 
+{
+  position: fixed;
+  z-index: 5px;
+  top: 70px;
+  left: 15px;
+  cursor: pointer;
+  transition: left 500ms;
+}
 
+#btn div
+{
+  width: 25px;
+  height: 2px;
+  margin-bottom: 8px;
+  background-color: blue;
+  transition: transform 500ms green, opacity 500ms, background-color 250ms;
+}
+
+#btn.active{
+  left: 230px;
+}
+
+#btn.active #top
+{
+  background-color: black;
+}
+
+#btn.active #top
+{
+  transform: translateY(10px) rotate(-135deg);
+}
+
+#btn.active #middle
+{
+  /* background-color: black; */
+  opacity: 0;
+	transform: rotate(135deg);
+}
+
+#btn.active #bottom
+{
+  /* background-color: black; */
+  opacity: 0;
+	transform: rotate(135deg);
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+#Menu {
+	position: fixed;
+	z-index: 4;
+	overflow: auto;
+	top: 0px;
+	left: -275px;
+	width: 275px;
+	opacity: 0;
+	padding: 20px 0px;
+	height: 100%;
+	background-color: #f6f6f6;
+	color: #343838;
+	transition: all 350ms cubic-bezier(0.6, 0.05, 0.28, 0.91);
+}
+
+#Menu.active {
+	left: 0px;
+	opacity: 1;
+}
+
+#OptionsList
+{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#OptionsList .Option
+{
+  position: relative;
+  cursor: pointer;
+  font-size: 2em;
+  padding: 15px 30px;
+  transition: all 250ms;
+}
+
+#OptionsList .Option:hover
+{
+  padding: 15px 45px;
+  background-color: transparentize(#343838);
+}
+
+#btn, #btn * {
+	will-change: transform;
+}
+
+#Menu {
+	will-change: transform, opacity;
+}
