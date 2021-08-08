@@ -1,5 +1,6 @@
 import NavBar from './components/NavBar'
 import SideMenu from './components/SideMenu';
+import TableCustomer from './components/TableCustomer';
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
 import './App.css'
 
@@ -12,19 +13,25 @@ function App() {
         <Switch>
           <Route exact path="/">
             <NavBar/>
-            <SideMenu/>
+            {/* <SideMenu/> */}
+            home
           </Route>
           <Route path="/orders">
             <NavBar/>
-            2
+            orders
           </Route>
           <Route path="/customers">
             <NavBar/>
-            3
+            <TableCustomer/>
+            customers
           </Route>
           <Route path="/statistics">
             <NavBar/>
-            4
+            statistics
+          </Route>
+          <Route path="/emails">
+            <NavBar/>
+            emails
           </Route>
         </Switch>
       </Router>
