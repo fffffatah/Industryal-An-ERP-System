@@ -43,7 +43,7 @@ body{
   padding-right: 10px;
   padding-left: 10px;
 }
-
+/* 
 #sideMenu
 {
   position: absolute;
@@ -88,14 +88,12 @@ body{
 
 #btn.active #middle
 {
-  /* background-color: black; */
   opacity: 0;
 	transform: rotate(135deg);
 }
 
 #btn.active #bottom
 {
-  /* background-color: black; */
   opacity: 0;
 	transform: rotate(135deg);
   transform: translateY(-10px) rotate(-45deg);
@@ -149,4 +147,4 @@ body{
 
 #Menu {
 	will-change: transform, opacity;
-}
+} */
