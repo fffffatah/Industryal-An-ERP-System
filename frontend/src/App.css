@@ -4,8 +4,9 @@
 }
 .NavBar
 {
-  height: 50px;
+  height: 55px;
   background-color: cornflowerblue;
+  background-image: linear-gradient(to right, rgb(79, 129, 221), rgb(16, 63, 151));
   display: flex;
   flex-direction: row;
 }
@@ -28,8 +29,8 @@
 
 .Link:hover
 {
-  background-color: rgb(7, 98, 158);
-  color: rgb(157, 190, 252);
+  background-color: rgb(16, 63, 151);
+  color: beige;
 }
 
 body{
@@ -43,5 +44,10 @@ body{
   padding-left: 10px;
 }
 
+.NavIcon:hover
+{
+  /* height: 110px; */
+  /* box-shadow: 3px 3px 3px black; */
+}
 
 
